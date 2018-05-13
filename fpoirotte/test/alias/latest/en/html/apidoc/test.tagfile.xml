@@ -1,0 +1,297 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="interface">
+    <name>ArrayAccess</name>
+    <filename>interfaceArrayAccess.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>offsetExists</name>
+      <anchorfile>interfaceArrayAccess.html</anchorfile>
+      <anchor>a454d8c6cbdf1ca618bb5e4c6990ee2d7</anchor>
+      <arglist>($offset)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>offsetGet</name>
+      <anchorfile>interfaceArrayAccess.html</anchorfile>
+      <anchor>aacb498902c0ff91644950464a4878065</anchor>
+      <arglist>($offset)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>offsetSet</name>
+      <anchorfile>interfaceArrayAccess.html</anchorfile>
+      <anchor>a078fe2c2dd26b38820fe26e07637cedf</anchor>
+      <arglist>($offset, $value)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>offsetUnset</name>
+      <anchorfile>interfaceArrayAccess.html</anchorfile>
+      <anchor>ab06dde01e31346c31eb5c78a8b97e833</anchor>
+      <arglist>($offset)</arglist>
+    </member>
+  </compound>
+  <compound kind="interface">
+    <name>Countable</name>
+    <filename>interfaceCountable.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>count</name>
+      <anchorfile>interfaceCountable.html</anchorfile>
+      <anchor>a232cb3087338d9a39c3f1e97b8177ab9</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="interface">
+    <name>Iterator</name>
+    <filename>interfaceIterator.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>current</name>
+      <anchorfile>interfaceIterator.html</anchorfile>
+      <anchor>a20bbada11975a50f67f09c89b701b62a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>key</name>
+      <anchorfile>interfaceIterator.html</anchorfile>
+      <anchor>a8d44935a1d73bdd72e30ef9db8d98802</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>next</name>
+      <anchorfile>interfaceIterator.html</anchorfile>
+      <anchor>ad070572b372a7072b6b2261b246454f7</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>rewind</name>
+      <anchorfile>interfaceIterator.html</anchorfile>
+      <anchor>a14aecb20f83f32fcf6df1587d146f082</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>valid</name>
+      <anchorfile>interfaceIterator.html</anchorfile>
+      <anchor>a5458af9a43e73ac8d87785d93f2d5297</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="interface">
+    <name>IteratorAggregate</name>
+    <filename>interfaceIteratorAggregate.html</filename>
+    <base>Traversable</base>
+    <member kind="function">
+      <type></type>
+      <name>getIterator</name>
+      <anchorfile>interfaceIteratorAggregate.html</anchorfile>
+      <anchor>ac947e5d77832186a3eb9f432ad55efe2</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="interface">
+    <name>Serializable</name>
+    <filename>interfaceSerializable.html</filename>
+  </compound>
+  <compound kind="interface">
+    <name>Traversable</name>
+    <filename>interfaceTraversable.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Admin</name>
+    <filename>classErebot_1_1Module_1_1Admin.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>getHelp</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a3bfd0d4eea1f6a612dfffa2db9f8ab4e</anchor>
+      <arglist>(\Erebot\Interfaces\Event\Base\TextMessage $event,\Erebot\Interfaces\TextWrapper $words)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleDeHalfOp</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a38bcd1d68d4b933eaea61b92d30a49bd</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\ChanText $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleDeOp</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a8440d621f99f8bc3c8ab0dfa22528860</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\ChanText $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleDeOwner</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a3fe73e8fad42d5bc3c22d30c3ef3a332</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\ChanText $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleDeProtect</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a17d8f647110a2c713b9e0630c14b47fb</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\ChanText $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleDeVoice</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a0df57051aaf633c4c3fe0cc9b7cc4c7f</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\ChanText $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleHalfOp</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a55510f4828d856f646841860cf9eafc3</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\ChanText $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleJoin</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>afff8c05db50a80d87f05390f5de20313</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\Base\TextMessage $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleOp</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a378176d2ffcceed5a49741c4f3451cf2</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\ChanText $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleOwner</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>adbf57cd2aa4f0ab8fd2c916535e93379</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\ChanText $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handlePart</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a032952f4e14f24171a09855669880948</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\Base\TextMessage $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleProtect</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>aab86d400919257b99fbd6f68d8f6c1b6</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\ChanText $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleQuit</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a0c21fe5a8aeff4d82fd1623cda964c3b</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\Base\TextMessage $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleReload</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a968cee7d3c5093af56a0cb720571caee</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\Base\TextMessage $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleVoice</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>aa60d2adebb6c136308ff908f5fce67dd</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\ChanText $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>reload</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a8d3035331398e25cbfde1135f6d65e0e</anchor>
+      <arglist>($flags)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>isAdmin</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a0f8a587cfa0dd695005ff71ab901cc1f</anchor>
+      <arglist>(\Erebot\Identity $identity)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>setMode</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a1ade2aed2fdb3a0f1fbbf89ae839c35e</anchor>
+      <arglist>(\Erebot\Interfaces\Event\Base\TextMessage $event, $mode)</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$admins</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a583afbbd13b6c3436b68d7c35258fad3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$handlers</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a069c430ef701ba7cab37d3722403a0df</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$triggers</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a9673ac29ae928afdb6cd94ac35f260be</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="dir">
+    <name>vendor/fpoirotte/natives4doxygen/docs</name>
+    <path>/home/travis/build/fpoirotte/test/vendor/fpoirotte/natives4doxygen/docs/</path>
+    <filename>dir_d32ef9d4e56ccb081e6c5def0b821b6a.html</filename>
+    <dir>vendor/fpoirotte/natives4doxygen/docs/interfaces</dir>
+  </compound>
+  <compound kind="dir">
+    <name>vendor/fpoirotte</name>
+    <path>/home/travis/build/fpoirotte/test/vendor/fpoirotte/</path>
+    <filename>dir_ab3486dfe647030f3c061e53e7dee820.html</filename>
+    <dir>vendor/fpoirotte/natives4doxygen</dir>
+  </compound>
+  <compound kind="dir">
+    <name>vendor/fpoirotte/natives4doxygen/docs/interfaces</name>
+    <path>/home/travis/build/fpoirotte/test/vendor/fpoirotte/natives4doxygen/docs/interfaces/</path>
+    <filename>dir_db464344948d4f8f24eda99f7ffac4e9.html</filename>
+    <file>ArrayAccess.php</file>
+    <file>Countable.php</file>
+    <file>Iterator.php</file>
+    <file>IteratorAggregate.php</file>
+    <file>Serializable.php</file>
+    <file>Traversable.php</file>
+  </compound>
+  <compound kind="dir">
+    <name>vendor/fpoirotte/natives4doxygen</name>
+    <path>/home/travis/build/fpoirotte/test/vendor/fpoirotte/natives4doxygen/</path>
+    <filename>dir_2d799ee1e6cb18c836591eedb341bb6b.html</filename>
+    <dir>vendor/fpoirotte/natives4doxygen/docs</dir>
+  </compound>
+  <compound kind="dir">
+    <name>src</name>
+    <path>/home/travis/build/fpoirotte/test/src/</path>
+    <filename>dir_6d36fb736b3ab265e99ced8547799ff4.html</filename>
+    <file>Admin.php</file>
+  </compound>
+  <compound kind="dir">
+    <name>vendor</name>
+    <path>/home/travis/build/fpoirotte/test/vendor/</path>
+    <filename>dir_5fe54a610f6a22c746e333c140f3afa5.html</filename>
+    <dir>vendor/fpoirotte</dir>
+  </compound>
+</tagfile>
