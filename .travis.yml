@@ -1,0 +1,45 @@
+language: php
+sudo: false
+dist: xenial
+
+addons:
+  apt:
+    #update: true
+    packages:
+      - python-sphinx
+      - python-babel
+      - doxygen
+      - graphviz
+      - ghostscript
+      - texlive-latex-base
+      - texlive-latex-recommended
+      - texlive-latex-extra
+      - texlive-fonts-recommended
+      - texlive-lang-french
+      - texlive-lang-english
+
+env:
+    DO_NOT_DEPLOY: "1"
+
+notifications:
+  email: false
+
+php:
+  - 7
+
+script:
+  - travis.sh
+  - export DO_NOT_DEPLOY="$?"
+
+deploy:
+  local-dir: $GHPAGES
+  provider: pages
+  target-branch: master
+  repo: erebot/erebot.github.io
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  #keep-history: true
+  verbose: true
+  on:
+    all_branches: true
+    condition: '"$DO_NOT_DEPLOY" -eq 0'
