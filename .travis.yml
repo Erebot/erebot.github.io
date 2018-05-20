@@ -32,11 +32,10 @@ before_script:
   - composer require erebot/buildenv
 
 script:
-  - ./travis.sh
-  - export DO_NOT_DEPLOY="$?"
+  - export DO_NOT_DEPLOY="$(./travis.sh >&2; echo $?)"
 
 deploy:
-  local-dir: $GHPAGES
+  local-dir: tmp/output
   provider: pages
   target-branch: master
   repo: erebot/erebot.github.io
