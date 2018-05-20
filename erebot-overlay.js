@@ -1,39 +1,19 @@
 (function () {
   var languages = ''; //languages//;
   var versions = '';  //versions//;
+  var formats = '';  //formats//;
 
   var not_empty = function (v) { return v !== ''; };
-  var natsort = function (a, b) {
-    var convert = function (v, i) { return jQuery.isNumeric(v) ? parseInt(v) : v; };
-    var ka = jQuery.map(a.split(/(\d+)/).filter(not_empty), convert);
-    var kb = jQuery.map(b.split(/(\d+)/).filter(not_empty), convert);
-    var la = ka.length, lb = kb.length;
-    for (var i = 0, m = Math.max(la, lb); i < m; i++) {
-      if (i >= la) { return -1; }
-      if (i >= lb) { return 1; }
-
-      var ta = typeof(ka[i]), tb = typeof(kb[i]);
-      if (ta == tb) {
-        if (ka[i] != kb[i]) {
-          return (ta == 'string') ? ka[i].localeCompare(kb[i]) : ka[i] - kb[i];
-        }
-      } else {
-        var r = ka[i].toString().localeCompare(kb[i].toString());
-        return (r != 0) ? r : ta.localeCompare(tb);
-      }
-    }
-    return 0;
-  };
 
   var code_languages = '';
-  languages = languages.split(/\s+/).filter(not_empty).sort();
+  languages = languages.split(/\s+/).filter(not_empty);
   for (var lang in languages) {
     code_languages += ` <a data-value="${languages[lang]}" href="${erebot.base}../../${languages[lang]}/${erebot.builder}">${languages[lang]}</a>`
   }
 
   var code_versions = '';
   var has_aliases = false;
-  versions = versions.split(/\s+/).filter(not_empty).sort(natsort);
+  versions = versions.split(/\s+/).filter(not_empty);
   for (var ver in versions) {
     switch (versions[ver]) {
       case 'latest':
@@ -43,6 +23,22 @@
       default:
         code_versions += ` <a data-value="${versions[ver]}" href="${erebot.base}../../../../tag/${versions[ver]}/${erebot.language}/${erebot.builder}">${versions[ver]}</a>`;
     }
+  }
+
+  var code_formats = '';
+  var link_for_format = function (fmt) {
+    switch (fmt) {
+        case 'pdf':
+            return `${erebot.base}../pdf/${erebot.project.name}.pdf`;
+        case 'html':
+        default:
+            return `${erebot.base}../html/`;
+    }
+  };
+  formats = formats.split(/\s+/).filter(not_empty);
+  for (var fmt in formats) {
+    var link = link_for_format(formats[fmt]);
+    code_formats += ` <a data-value="${formats[fmt]}" href="${link}">${formats[fmt].toUpperCase()}</a>`
   }
 
   if (has_aliases) {
@@ -213,10 +209,7 @@
     </div>
     <div>
       <div>Formats:</div>
-      <div>
-        <a class="eo-active" href="${erebot.base}">HTML</a>
-        <a href="${erebot.base}../pdf/${erebot.project.name}.pdf">PDF</a>
-      </div>
+      <div id="eo-formats">${code_formats}</div>
     </div>
     <div>
       <div>Contribute:</div>
@@ -251,4 +244,5 @@
 
   $('#eo-languages a[data-value="' + erebot.language + '"]').addClass("eo-active");
   $('#eo-versions a[data-value="' + erebot.project.version + '"]').addClass("eo-active");
+  $('#eo-format a[data-value="html"]').addClass("eo-active");
 })();

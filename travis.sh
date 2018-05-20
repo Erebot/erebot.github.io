@@ -46,18 +46,52 @@ rm -rf "tmp/output/.git"
 rm -rf "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}"
 mkdir -p "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/alias" "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/tag"
 
+# Helper functions
+function build()
+{
+  # $1 = language
+  # $2 = format
+  local res
+  case "$2" in
+    html)
+      sphinx-build -T -E -b html -d ../_build/doctrees -D language="$1" . "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$1/html" || \
+      rm -rf "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$1/html/"
+      ;;
+    pdf)
+      sphinx-build -T -E -b latex -d ../_build/doctrees -D language="$1" . "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$1/pdf" && \
+      make -C "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$1/pdf/" all-pdf < /dev/null
+      if [ $? -eq 0 ]; then
+        find "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$1/pdf/" ! -name "*.pdf"
+      else
+        rm -rf "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$1/pdf/"
+      fi
+      exit 0
+      ;;
+    *)
+      echo "Unsupported format: $2" >&2
+      exit 1
+      ;;
+}
+
 # Build the new documentation
 pushd "tmp/clone/docs/src/"
 for lang in $DOC_LANGUAGES; do
-    sphinx-build -T -E -b html -d ../_build/doctrees -D language="$lang" . "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$lang/html"
-    sphinx-build -T -E -b latex -d ../_build/doctrees -D language="$lang" . "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$lang/pdf"
-    make -C "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$lang/pdf/" all-pdf < /dev/null || /bin/true
-    find "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$lang/pdf/" ! -name "*.pdf"
+  build "$lang" html
+  build "$lang" pdf
+  rm -d "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$lang" || /bin/true
 done
+rm -d "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}" || /bin/true
 popd
 
+# Sanity check
+if [ ! -d "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}" ]; then
+  echo "Fatal error: no output produced" >&2
+  exit 1
+fi
+
 # Add a redirection if necessary
-if [ ! -f "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/index.html" ]; then
+if [ -d "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/alias/latest/en/html" ] && \
+   [ ! -f "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/index.html" ]; then
   cat > "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/index.html" <<EOF
 <!DOCTYPE html>
 <html>
@@ -70,8 +104,11 @@ EOF
 fi
 
 # Update the overlay with available languages/versions
-DOC_VERSIONS="$(cd "tmp/output/${ORIG_TRAVIS_REPO_SLUG}"; find alias/ tag/ -mindepth 1 -maxdepth 1 '(' -type d -o -type l ')' -printf '%f ' 2> /dev/null)"
-printf "Languages\n---------\n%s\n\nVersions\n--------\n%s\n" "${DOC_LANGUAGES}" "${DOC_VERSIONS}"
-sed -e "s^//languages//^languages = '${DOC_LANGUAGES}'^"                                \
-    -e "s^//versions//^versions = '${DOC_VERSIONS}'^" "tmp/output/erebot-overlay.js"    \
-    > "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/erebot-overlay.js"
+DOC_VERSIONS="$(cd "tmp/output/${ORIG_TRAVIS_REPO_SLUG}"; find alias/ tag/ -mindepth 1 -maxdepth 1 '(' -type d -o -type l ')' -printf '%f ' 2> /dev/null | sort -V)"
+DOC_LANGUAGES="$(cd "tmp/output/${ORIG_TRAVIS_REPO_SLUG}"; find alias/ tag/ -mindepth 2 -maxdepth 2 '(' -type d -o -type l ')' -printf '%f ' 2> /dev/null | sort | uniq | xargs printf '%s '"
+DOC_FORMATS="$(cd "tmp/output/${ORIG_TRAVIS_REPO_SLUG}"; find alias/ tag/ -mindepth 3 -maxdepth 3 '(' -type d -o -type l ')' -printf '%f\n' 2> /dev/null | sort | uniq | xargs printf '%s ')"
+printf "\nLanguages\n---------\n%s\n\nVersions\n--------\n%s\nFormats\n-------" "${DOC_LANGUAGES}" "${DOC_VERSIONS}" "${DOC_FORMATS}"
+sed -e "s^//languages//^languages = '${DOC_LANGUAGES}'^"  \
+    -e "s^//versions//^versions = '${DOC_VERSIONS}'^"     \
+    -e "s^//formats//^formats = '${DOC_FORMATS}'^"        \
+    "tmp/output/erebot-overlay.js" > "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/erebot-overlay.js"
