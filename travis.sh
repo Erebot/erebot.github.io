@@ -21,6 +21,7 @@ fi
 # Prepare the environment
 mkdir -p "tmp/output" "tmp/clone"
 git clone --branch="$ORIG_TRAVIS_BRANCH" "https://github.com/${ORIG_TRAVIS_REPO_SLUG}.git" "tmp/clone"
+git --git-dir="tmp/clone/.git" checkout "$ORIG_TRAVIS_COMMIT"
 cp -avf *.py "tmp/clone/docs/src/"
 mv vendor "tmp/clone/"
 
