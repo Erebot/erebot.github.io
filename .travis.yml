@@ -33,7 +33,7 @@ before_script:
 
 script:
   - export DO_NOT_DEPLOY="$(./travis.sh >&2; echo $?)"
-  - echo "Do no deploy? $DO_NOT_DEPLOY"
+  - echo "Do not deploy? $DO_NOT_DEPLOY"
 
 deploy:
   local-dir: tmp/output
