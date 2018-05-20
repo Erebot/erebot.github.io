@@ -28,7 +28,7 @@ php:
   - 7
 
 script:
-  - travis.sh
+  - ./travis.sh
   - export DO_NOT_DEPLOY="$?"
 
 deploy:
