@@ -57,7 +57,7 @@ done
 popd
 
 # Add a redirection if necessary
-if [ ! -f "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/index.html" ]
+if [ ! -f "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/index.html" ]; then
   cat > "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/index.html" <<EOF
 <!DOCTYPE html>
 <html>
