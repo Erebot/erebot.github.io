@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="class">
+    <name>Erebot::Module::AutoConnect</name>
+    <filename>classErebot_1_1Module_1_1AutoConnect.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>getHelp</name>
+      <anchorfile>classErebot_1_1Module_1_1AutoConnect.html</anchorfile>
+      <anchor>a9e3f2a2eb02549841911b0a6299e4ff1</anchor>
+      <arglist>(\Erebot\Interfaces\Event\Base\TextMessage $event,\Erebot\Interfaces\TextWrapper $words)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>reload</name>
+      <anchorfile>classErebot_1_1Module_1_1AutoConnect.html</anchorfile>
+      <anchor>ad40f5c77cc626a8519c3bcc8d87cc299</anchor>
+      <arglist>($flags)</arglist>
+    </member>
+  </compound>
+  <compound kind="dir">
+    <name>src</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/</path>
+    <filename>dir_68267d1309a1af8e8297ef4c3efbcdba.html</filename>
+    <file>AutoConnect.php</file>
+  </compound>
+</tagfile>
