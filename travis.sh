@@ -71,6 +71,7 @@ function build()
       echo "Unsupported format: $2" >&2
       exit 1
       ;;
+  esac
 }
 
 # Build the new documentation
