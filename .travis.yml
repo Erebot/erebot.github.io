@@ -42,7 +42,7 @@ deploy:
   repo: erebot/erebot.github.io
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
-  #keep-history: true
+  keep-history: true
   verbose: true
   on:
     all_branches: true
