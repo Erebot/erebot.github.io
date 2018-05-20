@@ -215,7 +215,7 @@
       <div>Formats:</div>
       <div>
         <a class="eo-active" href="${erebot.base}">HTML</a>
-        <a href="${erebot.base}../latex/${erebot.project.name}.pdf">PDF</a>
+        <a href="${erebot.base}../pdf/${erebot.project.name}.pdf">PDF</a>
       </div>
     </div>
     <div>

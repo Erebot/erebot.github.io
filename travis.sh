@@ -48,11 +48,10 @@ mkdir -p "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/alias" "tmp/output/${ORIG_TRAVIS_R
 # Build the new documentation
 pushd "tmp/clone/docs/src/"
 for lang in $DOC_LANGUAGES; do
-    for builder in html latex; do
-        sphinx-build -T -E -b $builder -d ../_build/doctrees -D language="$lang" . "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$lang/$builder"
-    done
-    make -C "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$lang/latex/" all-pdf < /dev/null
-    find "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$lang/latex/" ! -name "*.pdf"
+    sphinx-build -T -E -b html -d ../_build/doctrees -D language="$lang" . "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$lang/html"
+    sphinx-build -T -E -b latex -d ../_build/doctrees -D language="$lang" . "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$lang/pdf"
+    make -C "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$lang/pdf/" all-pdf < /dev/null || /bin/true
+    find "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$lang/pdf/" ! -name "*.pdf"
 done
 popd
 
