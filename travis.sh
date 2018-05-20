@@ -70,7 +70,7 @@ EOF
 fi
 
 # Update the overlay with available languages/versions
-DOC_VERSIONS="$(cd "tmp/clone/${ORIG_TRAVIS_REPO_SLUG}"; find alias/ tag/ -mindepth 1 -maxdepth 1 '(' -type d -o -type l ')' -printf '%f ' 2> /dev/null)"
+DOC_VERSIONS="$(cd "tmp/output/${ORIG_TRAVIS_REPO_SLUG}"; find alias/ tag/ -mindepth 1 -maxdepth 1 '(' -type d -o -type l ')' -printf '%f ' 2> /dev/null)"
 printf "Languages\n---------\n%s\n\nVersions\n--------\n%s\n" "${DOC_LANGUAGES}" "${DOC_VERSIONS}"
 sed -e "s^//languages//^languages = '${DOC_LANGUAGES}'^"                                \
     -e "s^//versions//^versions = '${DOC_VERSIONS}'^" "tmp/output/erebot-overlay.js"    \
