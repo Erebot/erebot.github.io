@@ -22,6 +22,7 @@ fi
 mkdir -p "tmp/output" "tmp/clone"
 git clone --branch="$ORIG_TRAVIS_BRANCH" "https://github.com/${ORIG_TRAVIS_REPO_SLUG}.git" "tmp/clone"
 cp -avf *.py "tmp/clone/docs/src/"
+mv vendor "tmp/clone/"
 
 DEFAULT_BRANCH=`git --git-dir="tmp/clone/.git" symbolic-ref --short refs/remotes/origin/HEAD | cut -d/ -f2-`
 DOC_LANGUAGES=`printf "%s " $(ls -1 "tmp/clone/docs/i18n/")`
