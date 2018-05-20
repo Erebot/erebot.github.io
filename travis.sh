@@ -26,7 +26,7 @@ cp -avf *.py "tmp/clone/docs/src/"
 mv vendor "tmp/clone/"
 
 DEFAULT_BRANCH=`git --git-dir="tmp/clone/.git" symbolic-ref --short refs/remotes/origin/HEAD | cut -d/ -f2-`
-DOC_LANGUAGES=`printf "%s " $(ls -1 "tmp/clone/docs/i18n/")`
+DOC_LANGUAGES=`printf "%s " $(ls -1 "tmp/clone/docs/i18n/" | sort)`
 
 # Determine the name of the output directory
 if [ -n "$ORIG_TRAVIS_TAG" ]; then
