@@ -45,7 +45,9 @@ deploy:
   target-branch: master
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
-  keep-history: false
+  # Settings keep-history to true makes it easier
+  # to track the contents of the master branch.
+  keep-history: true
   verbose: true
   on:
     all_branches: true
