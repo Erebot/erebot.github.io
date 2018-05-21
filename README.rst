@@ -1,1 +1,1 @@
-See https://erebot.github.io/
+See https://docs.erebot.net/
