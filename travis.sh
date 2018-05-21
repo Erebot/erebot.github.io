@@ -85,13 +85,13 @@ rm -d "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}" || /bin/true
 popd
 
 # Sanity check
-if [ ! -d "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}" ]; then
+if [ ! -d "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}" ]; then
   echo "Fatal error: no output produced" >&2
   exit 1
 fi
 
 # Add a redirection if necessary
-if [ -d "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/alias/latest/en/html" ] && \
+if [ -d "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/alias/latest/en/html" ] && \
    [ ! -f "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/index.html" ]; then
   cat > "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/index.html" <<EOF
 <!DOCTYPE html>
