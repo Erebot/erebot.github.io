@@ -19,7 +19,7 @@ addons:
       - texlive-lang-english
 
 env:
-    DO_NOT_DEPLOY: "1"
+    SHOULD_DEPLOY: ""
 
 notifications:
   email: false
@@ -32,8 +32,8 @@ before_script:
   - composer require erebot/buildenv
 
 script:
-  - export DO_NOT_DEPLOY="$(./travis.sh >&2; echo $?)"
-  - echo "Do not deploy? $DO_NOT_DEPLOY"
+  - ./travis.sh
+  - export SHOULD_DEPLOY=`cat ".deploy"`
 
 deploy:
   local-dir: tmp/output
@@ -41,8 +41,8 @@ deploy:
   target-branch: master
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
-  keep-history: true
+  keep-history: false
   verbose: true
   on:
     all_branches: true
-    condition: '"$DO_NOT_DEPLOY" -eq 0'
+    condition: '-n "$SHOULD_DEPLOY"'
