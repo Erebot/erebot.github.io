@@ -244,5 +244,5 @@
 
   $('#eo-languages a[data-value="' + erebot.language + '"]').addClass("eo-active");
   $('#eo-versions a[data-value="' + erebot.project.version + '"]').addClass("eo-active");
-  $('#eo-format a[data-value="html"]').addClass("eo-active");
+  $('#eo-formats a[data-value="html"]').addClass("eo-active");
 })();
