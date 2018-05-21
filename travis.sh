@@ -112,4 +112,4 @@ printf "\nLanguages\n---------\n%s\n\nVersions\n--------\n%s\nFormats\n-------" 
 sed -e "s^//languages//^languages = '${DOC_LANGUAGES}'^"  \
     -e "s^//versions//^versions = '${DOC_VERSIONS}'^"     \
     -e "s^//formats//^formats = '${DOC_FORMATS}'^"        \
-    "tmp/output/erebot-overlay.js" > "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/erebot-overlay.js"
+    "erebot-overlay.js" > "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/erebot-overlay.js"
