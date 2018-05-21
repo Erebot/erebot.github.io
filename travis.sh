@@ -105,9 +105,12 @@ EOF
 fi
 
 # Update the overlay with available languages/versions
-DOC_VERSIONS="$(cd "tmp/output/${ORIG_TRAVIS_REPO_SLUG}"; find alias/ tag/ -mindepth 1 -maxdepth 1 '(' -type d -o -type l ')' -printf '%f ' 2> /dev/null | sort -V)"
-DOC_LANGUAGES="$(cd "tmp/output/${ORIG_TRAVIS_REPO_SLUG}"; find alias/ tag/ -mindepth 2 -maxdepth 2 '(' -type d -o -type l ')' -printf '%f ' 2> /dev/null | sort | uniq | xargs printf '%s '"
-DOC_FORMATS="$(cd "tmp/output/${ORIG_TRAVIS_REPO_SLUG}"; find alias/ tag/ -mindepth 3 -maxdepth 3 '(' -type d -o -type l ')' -printf '%f\n' 2> /dev/null | sort | uniq | xargs printf '%s ')"
+pushd "tmp/output/${ORIG_TRAVIS_REPO_SLUG}"
+DOC_VERSIONS=`find alias/ tag/ -mindepth 1 -maxdepth 1 '(' -type d -o -type l ')' -printf '%f ' 2> /dev/null | sort -Vr`
+DOC_LANGUAGES=`find alias/ tag/ -mindepth 2 -maxdepth 2 '(' -type d -o -type l ')' -printf '%f\n' 2> /dev/null | sort | uniq | xargs printf '%s '`
+DOC_FORMATS=`find alias/ tag/ -mindepth 3 -maxdepth 3 '(' -type d -o -type l ')' -printf '%f\n' 2> /dev/null | sort | uniq | xargs printf '%s '`
+popd
+
 printf "\nLanguages\n---------\n%s\n\nVersions\n--------\n%s\nFormats\n-------" "${DOC_LANGUAGES}" "${DOC_VERSIONS}" "${DOC_FORMATS}"
 sed -e "s^//languages//^languages = '${DOC_LANGUAGES}'^"  \
     -e "s^//versions//^versions = '${DOC_VERSIONS}'^"     \
