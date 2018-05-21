@@ -21,6 +21,10 @@ addons:
 env:
     SHOULD_DEPLOY: ""
 
+branches:
+  only:
+  - build
+
 notifications:
   email: false
 
