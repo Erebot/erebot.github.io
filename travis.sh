@@ -23,11 +23,11 @@ fi
 mkdir -p "tmp/output" "tmp/clone"
 git clone --branch="$ORIG_TRAVIS_BRANCH" "https://github.com/${ORIG_TRAVIS_REPO_SLUG}.git" "tmp/clone"
 git --git-dir="tmp/clone/.git" checkout "$ORIG_TRAVIS_COMMIT"
-cp -avf *.py "tmp/clone/docs/src/"
+cp -avf ./*.py "tmp/clone/docs/src/"
 mv vendor "tmp/clone/"
 
-DEFAULT_BRANCH=`git --git-dir="tmp/clone/.git" symbolic-ref --short refs/remotes/origin/HEAD | cut -d/ -f2-`
-DOC_LANGUAGES=`printf "%s " $(ls -1 "tmp/clone/docs/i18n/" | sort)`
+DEFAULT_BRANCH="$(git --git-dir='tmp/clone/.git' symbolic-ref --short refs/remotes/origin/HEAD | cut -d/ -f2-)"
+DOC_LANGUAGES="$(find tmp/clone/docs/i18n/ -mindepth 1 -maxdepth 1 -type d -printf '%f\000' | sort -z | xargs -0 printf '%s ')"
 
 # Determine the name of the output directory
 if [ -n "$ORIG_TRAVIS_TAG" ]; then
@@ -52,7 +52,6 @@ function build()
 {
   # $1 = language
   # $2 = format
-  local res
   case "$2" in
     html)
       sphinx-build -T -E -b html -d ../_build/doctrees -D language="$1" . "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$1/html" || \
@@ -106,9 +105,9 @@ fi
 
 # Update the overlay with available languages/versions
 pushd "tmp/output/${ORIG_TRAVIS_REPO_SLUG}"
-DOC_VERSIONS=`find alias/ tag/ -mindepth 1 -maxdepth 1 '(' -type d -o -type l ')' -printf '%f ' 2> /dev/null | sort -Vr`
-DOC_LANGUAGES=`find alias/ tag/ -mindepth 2 -maxdepth 2 '(' -type d -o -type l ')' -printf '%f\n' 2> /dev/null | sort | uniq | xargs printf '%s '`
-DOC_FORMATS=`find alias/ tag/ -mindepth 3 -maxdepth 3 '(' -type d -o -type l ')' -printf '%f\n' 2> /dev/null | sort | uniq | xargs printf '%s '`
+DOC_VERSIONS="$(find alias/ tag/ -mindepth 1 -maxdepth 1 '(' -type d -o -type l ')' -printf '%f ' 2> /dev/null | sort -Vr)"
+DOC_LANGUAGES="$(find alias/ tag/ -mindepth 2 -maxdepth 2 '(' -type d -o -type l ')' -printf '%f\n' 2> /dev/null | sort | uniq | xargs printf '%s ')"
+DOC_FORMATS="$(find alias/ tag/ -mindepth 3 -maxdepth 3 '(' -type d -o -type l ')' -printf '%f\n' 2> /dev/null | sort | uniq | xargs printf '%s ')"
 popd
 
 printf "\nLanguages\n---------\n%s\n\nVersions\n--------\n%s\nFormats\n-------" "${DOC_LANGUAGES}" "${DOC_VERSIONS}" "${DOC_FORMATS}"
