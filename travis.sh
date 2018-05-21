@@ -1,10 +1,11 @@
 #!/bin/bash
+set -v
 
 function die()
 {
-    echo "Error during this call:"
-    caller 0
-    exit 1
+    echo "Error during this call:" >&2
+    caller 0 >&2
+    exit 42
 }
 trap die ERR
 
@@ -55,7 +56,7 @@ function build()
   case "$2" in
     html)
       sphinx-build -T -E -b html -d ../_build/doctrees -D language="$1" . "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$1/html" || \
-      rm -rf "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$1/html/"
+      rm -vrf "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$1/html/"
       ;;
     pdf)
       sphinx-build -T -E -b latex -d ../_build/doctrees -D language="$1" . "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$1/pdf" && \
@@ -63,9 +64,8 @@ function build()
       if [ $? -eq 0 ]; then
         find "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$1/pdf/" ! -name "*.pdf"
       else
-        rm -rf "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$1/pdf/"
+        rm -vrf "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$1/pdf/"
       fi
-      return
       ;;
     *)
       echo "Unsupported format: $2" >&2
