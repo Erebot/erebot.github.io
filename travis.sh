@@ -65,7 +65,7 @@ function build()
       else
         rm -rf "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$1/pdf/"
       fi
-      exit 0
+      return
       ;;
     *)
       echo "Unsupported format: $2" >&2
