@@ -24,11 +24,8 @@ mkdir -p "tmp/output" "tmp/clone"
 
 # Clone the module and current doc for that module
 git clone "https://github.com/$1.git" "tmp/clone"
-git clone --branch="build-$1" "https://github.com/Erebot/erebot.github.io.git" "tmp/output" || git --git-dir=tmp/output/.git --work-tree=tmp/output init
-
-# Copy the files required to build the doc to the module's clone
-cp -avf ./*.py "tmp/clone/docs/src/"
-mv -v vendor "tmp/clone/"
+git clone --branch="build-$1" "https://github.com/Erebot/erebot.github.io.git" tmp/output || \
+    ( mkdir tmp/output && git --git-dir=tmp/output/.git --work-tree=tmp/output init )
 
 # Find the name of the default branch
 DEFAULT_BRANCH="$(git --git-dir=tmp/clone/.git symbolic-ref --short refs/remotes/origin/HEAD | cut -d/ -f2-)"
@@ -112,6 +109,10 @@ done
 for ref in $VALID_REFS; do
     # Check the reference out
     git --git-dir "tmp/clone/.git" --work-tree "tmp/clone" checkout --force "$ref"
+
+    # Copy or link the files required to build the documentation
+    cp -avf ./*.py "tmp/clone/docs/src/"
+    ln -vsfT ../../vendor tmp/clone/vendor
 
     # Find the languages available in that reference
     LANGS="$(find tmp/clone/docs/i18n/ -mindepth 1 -maxdepth 1 -type d -printf '%f\000' | sort -z | xargs -0 printf '%s ')"
