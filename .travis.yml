@@ -6,7 +6,6 @@ git:
 
 addons:
   apt:
-    #update: true
     packages:
       - python-sphinx
       - python-babel
@@ -31,12 +30,12 @@ php:
   - 7.1
 
 env:
- - MODULE=Erebot/Erebot
- - MODULE=Erebot/Module_AZ
- - MODULE=Erebot/Module_Admin
- - MODULE=Erebot/Module_AutoConnect
- - MODULE=Erebot/Module_AutoIdent
- - MODULE=Erebot/Module_AutoJoin
+  - MODULE=Erebot/Erebot
+  - MODULE=Erebot/Module_AZ
+  - MODULE=Erebot/Module_Admin
+  - MODULE=Erebot/Module_AutoConnect
+  - MODULE=Erebot/Module_AutoIdent
+  - MODULE=Erebot/Module_AutoJoin
 
 before_script:
   - phpenv config-rm xdebug.ini

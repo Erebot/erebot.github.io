@@ -24,14 +24,14 @@ mkdir -p "tmp/output" "tmp/clone"
 
 # Clone the module and current doc for that module
 git clone "https://github.com/$1.git" "tmp/clone"
-git clone --branch="build-$1" "https://github.com/Erebot/erebot.github.io.git" "tmp/output"
+git clone --branch="build-$1" "https://github.com/Erebot/erebot.github.io.git" "tmp/output" || git --git-dir=tmp/output/.git --work-tree=tmp/output init
 
 # Copy the files required to build the doc to the module's clone
 cp -avf ./*.py "tmp/clone/docs/src/"
 mv vendor "tmp/clone/"
 
 # Find the name of the default branch
-DEFAULT_BRANCH="$(git --git-dir='tmp/clone/.git' symbolic-ref --short refs/remotes/origin/HEAD | cut -d/ -f2-)"
+DEFAULT_BRANCH="$(git --git-dir=tmp/clone/.git symbolic-ref --short refs/remotes/origin/HEAD | cut -d/ -f2-)"
 
 # Find currently valid branches & tags
 VALID_REFS="$(find tmp/clone/.git/refs -type f -printf '%P\n' | grep -P '^(tags/.*|heads/(master|develop))$'"
