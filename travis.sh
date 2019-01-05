@@ -70,14 +70,16 @@ function build()
   # $1 = language
   # $2 = format
   # $3 = output directory
+  # $4 = slug
+  echo "Building $2 doc for $4 into $3"
   case "$2" in
     html)
-      sphinx-build -T -E -b html -d ../_build/doctrees -D language="$1" . "$3/html" || \
+      sphinx-build -T -E -b html -d ../_build/doctrees -D language="$1" . "$3/html" > /dev/null || \
       rm -vrf "$3/html/"
       ;;
     pdf)
-      sphinx-build -T -E -b latex -d ../_build/doctrees -D language="$1" . "$3/pdf" && \
-      make -C "$3/pdf/" all-pdf < /dev/null
+      sphinx-build -T -E -b latex -d ../_build/doctrees -D language="$1" . "$3/pdf" > /dev/null && \
+      make -C "$3/pdf/" all-pdf  > /dev/null < /dev/null
       if [ $? -eq 0 ]; then
         find "$3/pdf/" ! -name "*.pdf"
       else
@@ -125,8 +127,8 @@ for ref in $VALID_REFS; do
     pushd "tmp/clone/docs/src/"
     for lang in $LANGS; do
         mkdir "../../../output/$outdir/$lang"
-        build "$lang" html  "../../../output/$outdir/$lang"
-        build "$lang" pdf   "../../../output/$outdir/$lang"
+        build "$lang" html  "../../../output/$outdir/$lang" "$1"
+        build "$lang" pdf   "../../../output/$outdir/$lang" "$1"
         rm -vd "../../../output/$outdir/$lang" || true
     done
     popd
