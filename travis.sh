@@ -74,12 +74,12 @@ function build()
   echo "Building $2 doc for $4 into $3"
   case "$2" in
     html)
-      sphinx-build -T -E -b html -d ../_build/doctrees -D language="$1" . "$3/html" > /dev/null || \
+      sphinx-build -T -E -b html -d ../_build/doctrees -D language="$1" . "$3/html" > "$3/logs/$2_$1.log" 2>&1 || \
       rm -vrf "$3/html/"
       ;;
     pdf)
-      sphinx-build -T -E -b latex -d ../_build/doctrees -D language="$1" . "$3/pdf" > /dev/null && \
-      make -C "$3/pdf/" all-pdf  > /dev/null < /dev/null
+      sphinx-build -T -E -b latex -d ../_build/doctrees -D language="$1" . "$3/pdf" > "$3/logs/$2_$1.log" 2>&1 && \
+      make -C "$3/pdf/" all-pdf >> "$3/logs/$2_$1.log" 2>&1 < /dev/null
       if [ $? -eq 0 ]; then
         find "$3/pdf/" ! -name "*.pdf"
       else
@@ -121,24 +121,21 @@ for ref in $VALID_REFS; do
 
     # Locate the output directory and prepare it
     outdir=$(get_output_dir "$ref")
-    mkdir -vp "tmp/output/$outdir"
+    mkdir -vp "tmp/output/$outdir/logs"
 
     # For each language, build the doc in both HTML & PDF
     pushd "tmp/clone/docs/src/"
     for lang in $LANGS; do
-        mkdir "../../../output/$outdir/$lang"
-        build "$lang" html  "../../../output/$outdir/$lang" "$1"
-        build "$lang" pdf   "../../../output/$outdir/$lang" "$1"
+        mkdir -p "../../../output/$outdir/$lang"
+        if [ ! -e "../../../output/$outdir/$lang/html" ]; then
+            build "$lang" html  "../../../output/$outdir/$lang" "$1"
+        fi
+        if [ ! -e "../../../output/$outdir/$lang/pdf" ]; then
+            build "$lang" pdf   "../../../output/$outdir/$lang" "$1"
+        fi
         rm -vd "../../../output/$outdir/$lang" || true
     done
     popd
-
-    # Sanity check
-    rm -vd "tmp/output/$outdir" || true
-    if [ ! -d "tmp/output/$outdir" ]; then
-      echo "Fatal error: no output produced" >&2
-      exit 1
-    fi
 
     # Save the commit's hash for future reference
     git --git-dir "tmp/clone/.git" show-ref -s "refs/$ref" > "tmp/output/$outdir/.commit"
