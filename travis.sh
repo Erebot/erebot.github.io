@@ -32,6 +32,7 @@ DEFAULT_BRANCH="$(git --git-dir=tmp/clone/.git symbolic-ref --short refs/remotes
 
 # Find currently valid branches & tags
 VALID_REFS="$(find tmp/clone/.git/refs -type f -printf '%P\n' | grep -P '^(tags/.*|heads/(master|develop))$')"
+echo "Valid references: $VALID_REFS"
 
 # Determine the name of the output directory given a reference
 # $1 = reference name
