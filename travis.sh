@@ -1,5 +1,5 @@
 #!/bin/bash
-set -v
+set -x
 
 if [ -z "$1" ]; then
     echo "Usage: ./travis.sh <slug>" >&2
