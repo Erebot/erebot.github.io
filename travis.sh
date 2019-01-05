@@ -28,13 +28,13 @@ git clone --branch="build-$1" "https://github.com/Erebot/erebot.github.io.git" "
 
 # Copy the files required to build the doc to the module's clone
 cp -avf ./*.py "tmp/clone/docs/src/"
-mv vendor "tmp/clone/"
+mv -v vendor "tmp/clone/"
 
 # Find the name of the default branch
 DEFAULT_BRANCH="$(git --git-dir=tmp/clone/.git symbolic-ref --short refs/remotes/origin/HEAD | cut -d/ -f2-)"
 
 # Find currently valid branches & tags
-VALID_REFS="$(find tmp/clone/.git/refs -type f -printf '%P\n' | grep -P '^(tags/.*|heads/(master|develop))$'"
+VALID_REFS="$(find tmp/clone/.git/refs -type f -printf '%P\n' | grep -P '^(tags/.*|heads/(master|develop))$')"
 
 # Determine the name of the output directory given a reference
 # $1 = reference name
@@ -113,20 +113,20 @@ for ref in $VALID_REFS; do
     git --git-dir "tmp/clone/.git" --work-tree "tmp/clone" checkout --force "$ref"
 
     # Find the languages available in that reference
-    DOC_LANGUAGES="$(find tmp/clone/docs/i18n/ -mindepth 1 -maxdepth 1 -type d -printf '%f\000' | sort -z | xargs -0 printf '%s ')"
+    LANGS="$(find tmp/clone/docs/i18n/ -mindepth 1 -maxdepth 1 -type d -printf '%f\000' | sort -z | xargs -0 printf '%s ')"
 
     outdir=$(get_output_dir "$ref")
     pushd "tmp/clone/docs/src/"
 
     # For each language, build the doc in both HTML & PDF
-    mkdir -p "../../../output/$outdir"
-    for lang in $DOC_LANGUAGES; do
+    mkdir -vp "../../../output/$outdir"
+    for lang in $LANGS; do
         mkdir "../../../output/$outdir/$lang"
         build "$lang" html  "../../../output/$outdir/$lang"
         build "$lang" pdf   "../../../output/$outdir/$lang"
-        rm -d "../../../output/$outdir/$lang" || /bin/true
+        rm -vd "../../../output/$outdir/$lang" || /bin/true
     done
-    rm -d "../../../output/$outdir" || /bin/true
+    rm -vd "../../../output/$outdir" || /bin/true
 
     # Sanity check
     if [ ! -d "tmp/output/$outdir" ]; then
