@@ -27,9 +27,6 @@ branches:
 notifications:
   email: false
 
-php:
-  - 7.1
-
 env:
   - MODULE=Erebot/Erebot
   - MODULE=Erebot/Module_Admin
