@@ -45,7 +45,7 @@ script:
   - ./travis.sh $MODULE
 
 deploy:
-  local-dir: tmp/moddoc
+  local-dir: tmp/output
   provider: pages
   target-branch: build-$MODULE
   skip-cleanup: true
@@ -56,7 +56,7 @@ deploy:
   verbose: true
   on:
     all_branches: true
-    condition: '-x ".deploy"'
+    condition: '-e ".deploy"'
 
 jobs:
   include:
