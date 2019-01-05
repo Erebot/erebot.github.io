@@ -95,7 +95,7 @@ function build()
 }
 
 # Find documented references
-DOCS=$(find tmp/output -mindepth 2 -maxdepth 2 -type d -printf '%P\n' | grep -v '^\.git/' )
+DOCS=$( (find tmp/output -mindepth 2 -maxdepth 2 -type d -printf '%P\n' | grep -v '^\.git/') || true )
 
 # Remove existing documentation that has no counterpart in the repository's
 # current state or that is known to be obsolete
@@ -126,12 +126,12 @@ for ref in $VALID_REFS; do
         mkdir "../../../output/$outdir/$lang"
         build "$lang" html  "../../../output/$outdir/$lang"
         build "$lang" pdf   "../../../output/$outdir/$lang"
-        rm -vd "../../../output/$outdir/$lang" || /bin/true
+        rm -vd "../../../output/$outdir/$lang" || true
     done
     popd
 
     # Sanity check
-    rm -vd "tmp/output/$outdir" || /bin/true
+    rm -vd "tmp/output/$outdir" || true
     if [ ! -d "tmp/output/$outdir" ]; then
       echo "Fatal error: no output produced" >&2
       exit 1
