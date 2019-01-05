@@ -1,6 +1,11 @@
 #!/bin/bash
 set -v
 
+if [ -z "$1" ]; then
+    echo "Usage: ./travis.sh <slug>" >&2
+    exit 1
+fi
+
 function die()
 {
     echo "Error during this call:" >&2
@@ -10,60 +15,76 @@ function die()
 trap die ERR
 
 # Do not attempt to build pull requests
-if [ -n "$ORIG_TRAVIS_PULL_REQUEST_SLUG" ] || [ -n "$TRAVIS_PULL_REQUEST_SLUG" ]; then
-    exit 1
-fi
-
-# Build only for tags, or commits to "master" or "develop"
-if [ -z "$ORIG_TRAVIS_TAG" ] && [ "$ORIG_TRAVIS_BRANCH" != "master" ] && [ "$ORIG_TRAVIS_BRANCH" != "develop" ]; then
+if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
     exit 1
 fi
 
 # Prepare the environment
 mkdir -p "tmp/output" "tmp/clone"
-git clone --branch="$ORIG_TRAVIS_BRANCH" "https://github.com/${ORIG_TRAVIS_REPO_SLUG}.git" "tmp/clone"
-git --git-dir="tmp/clone/.git" checkout "$ORIG_TRAVIS_COMMIT"
+
+# Clone the module and current doc for that module
+git clone "https://github.com/$1.git" "tmp/clone"
+git clone --branch="build-$1" "https://github.com/Erebot/erebot.github.io.git" "tmp/output"
+
+# Copy the files required to build the doc to the module's clone
 cp -avf ./*.py "tmp/clone/docs/src/"
 mv vendor "tmp/clone/"
 
+# Find the name of the default branch
 DEFAULT_BRANCH="$(git --git-dir='tmp/clone/.git' symbolic-ref --short refs/remotes/origin/HEAD | cut -d/ -f2-)"
-DOC_LANGUAGES="$(find tmp/clone/docs/i18n/ -mindepth 1 -maxdepth 1 -type d -printf '%f\000' | sort -z | xargs -0 printf '%s ')"
 
-# Determine the name of the output directory
-if [ -n "$ORIG_TRAVIS_TAG" ]; then
-    export OUTDIR="tag/$ORIG_TRAVIS_TAG"
-elif [ "$ORIG_TRAVIS_BRANCH" = "$DEFAULT_BRANCH" ]; then
-    export OUTDIR="alias/latest"
-elif [ "$ORIG_TRAVIS_BRANCH" = "master" ]; then
-    export OUTDIR="alias/stable"
-else
-    exit 1
-fi
+# Find currently valid branches & tags
+VALID_REFS="$(find tmp/clone/.git/refs -type f -printf '%P\n' | grep -P '^(tags/.*|heads/(master|develop))$'"
 
-# Clone the repository again inside a special temporary folder,
-# and clean things up a little
-git clone --branch=master https://github.com/Erebot/erebot.github.io.git "tmp/output"
-rm -rf "tmp/output/.git"
-rm -rf "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}"
-mkdir -p "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/alias" "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/tag"
+# Determine the name of the output directory given a reference
+# $1 = reference name
+function get_output_dir()
+{
+    if [[ "$1" =~ ^tags/ ]]; then
+        echo "tag/${1#*/}" # Replace "tags/1.2.3" with "tag/1.2.3"
+    elif [ "$1" = "heads/$DEFAULT_BRANCH" ]; then
+        echo "alias/latest"
+    elif [ "$1" = "heads/master" ]; then
+        echo "alias/stable"
+    else
+        exit 1
+    fi
+}
 
-# Helper functions
+# Determine the original reference given the name of an output directory
+# $1 = short name for the directory (eg. "alias/latest")
+function get_input_ref()
+{
+    if [[ "$1" =~ ^tag/ ]]; then
+        echo "tags/${1#*/}" # Replace "tag/1.2.3" with "tags/1.2.3"
+    elif [ "$1" = "alias/latest" ]; then
+        echo "heads/$DEFAULT_BRANCH"
+    elif [ "$1" = "alias/stable" ]; then
+        echo "heads/master"
+    else
+        exit 1
+    fi
+}
+
+# This is the function that does the actual workload
+# of building a module's documentation
 function build()
 {
   # $1 = language
   # $2 = format
+  # $3 = output directory
   case "$2" in
     html)
-      sphinx-build -T -E -b html -d ../_build/doctrees -D language="$1" . "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$1/html" || \
-      rm -vrf "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$1/html/"
+      sphinx-build -T -E -b html -d ../_build/doctrees -D language="$1" . "$3/html" || \
+      rm -vrf "$3/html/"
       ;;
     pdf)
-      sphinx-build -T -E -b latex -d ../_build/doctrees -D language="$1" . "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$1/pdf" && \
-      make -C "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$1/pdf/" all-pdf < /dev/null
+      sphinx-build -T -E -b latex -d ../_build/doctrees -D language="$1" . "$3/pdf" && \
+      make -C "$3/pdf/" all-pdf < /dev/null
       if [ $? -eq 0 ]; then
-        find "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$1/pdf/" ! -name "*.pdf"
+        find "$3/pdf/" ! -name "*.pdf"
       else
-        rm -vrf "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$1/pdf/"
+        rm -vrf "$3/pdf/"
       fi
       ;;
     *)
@@ -73,47 +94,75 @@ function build()
   esac
 }
 
-# Build the new documentation
-pushd "tmp/clone/docs/src/"
-for lang in $DOC_LANGUAGES; do
-  build "$lang" html
-  build "$lang" pdf
-  rm -d "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/$lang" || /bin/true
+
+# Remove existing documentation that has no counterpart in the repository's
+# current state or that is obsolete.
+DOCS=$(find tmp/output -mindepth 2 -maxdepth 2 -type d)
+for outdir in $DOCS; do
+    inref=$(get_input_ref "$outdir")
+    ref1=$(git --git-dir tmp/clone/.git show-ref -s "refs/$inref")
+    ref2=$(cat "tmp/output/$outdir/.commit")
+    if [ "$ref1" != "$ref2" ]; then
+        git --git-dir "tmp/output/.git" --work-tree "tmp/output" rm -rf "$outdir"
+    fi
 done
-rm -d "../../../output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}" || /bin/true
-popd
 
-# Sanity check
-if [ ! -d "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}" ]; then
-  echo "Fatal error: no output produced" >&2
-  exit 1
-fi
+# For each tag/branch,
+for ref in $VALID_REFS; do
+    # Check the reference out
+    git --git-dir "tmp/clone/.git" --work-tree "tmp/clone" checkout --force "$ref"
 
-# Add a redirection if necessary
-if [ -d "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/alias/latest/en/html" ] && \
-   [ ! -f "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/index.html" ]; then
-  cat > "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/index.html" <<EOF
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="refresh" content="0; url=alias/latest/en/html/"/>
-  </head>
-  <body onload="window.location.replace('alias/latest/en/html/');"></body>
-</html>
-EOF
-fi
+    # Find the languages available in that reference
+    DOC_LANGUAGES="$(find tmp/clone/docs/i18n/ -mindepth 1 -maxdepth 1 -type d -printf '%f\000' | sort -z | xargs -0 printf '%s ')"
 
-# Update the overlay with available languages/versions
-pushd "tmp/output/${ORIG_TRAVIS_REPO_SLUG}"
-DOC_VERSIONS="$(find alias/ tag/ -mindepth 1 -maxdepth 1 '(' -type d -o -type l ')' -printf '%f ' 2> /dev/null | sort -Vr)"
-DOC_LANGUAGES="$(find alias/ tag/ -mindepth 2 -maxdepth 2 '(' -type d -o -type l ')' -printf '%f\n' 2> /dev/null | sort | uniq | xargs printf '%s ')"
-DOC_FORMATS="$(find alias/ tag/ -mindepth 3 -maxdepth 3 '(' -type d -o -type l ')' -printf '%f\n' 2> /dev/null | sort | uniq | xargs printf '%s ')"
-popd
+    outdir=$(get_output_dir "$ref")
+    pushd "tmp/clone/docs/src/"
 
-printf "\nLanguages\n---------\n%s\n\nVersions\n--------\n%s\nFormats\n-------" "${DOC_LANGUAGES}" "${DOC_VERSIONS}" "${DOC_FORMATS}"
-sed -e "s^//languages//^languages = '${DOC_LANGUAGES}'^"  \
-    -e "s^//versions//^versions = '${DOC_VERSIONS}'^"     \
-    -e "s^//formats//^formats = '${DOC_FORMATS}'^"        \
-    "erebot-overlay.js" > "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/erebot-overlay.js"
+    # For each language, build the doc in both HTML & PDF
+    mkdir -p "../../../output/$outdir"
+    for lang in $DOC_LANGUAGES; do
+        mkdir "../../../output/$outdir/$lang"
+        build "$lang" html  "../../../output/$outdir/$lang"
+        build "$lang" pdf   "../../../output/$outdir/$lang"
+        rm -d "../../../output/$outdir/$lang" || /bin/true
+    done
+    rm -d "../../../output/$outdir" || /bin/true
 
-echo 1 > .deploy
+    # Sanity check
+    if [ ! -d "tmp/output/$outdir" ]; then
+      echo "Fatal error: no output produced" >&2
+      exit 1
+    fi
+    popd
+done
+
+
+
+## Add a redirection if necessary
+#if [ -d "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/${OUTDIR}/alias/latest/en/html" ] && \
+#   [ ! -f "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/index.html" ]; then
+#  cat > "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/index.html" <<EOF
+#<!DOCTYPE html>
+#<html>
+#  <head>
+#    <meta http-equiv="refresh" content="0; url=alias/latest/en/html/"/>
+#  </head>
+#  <body onload="window.location.replace('alias/latest/en/html/');"></body>
+#</html>
+#EOF
+#fi
+
+## Update the overlay with available languages/versions
+#pushd "tmp/output/${ORIG_TRAVIS_REPO_SLUG}"
+#DOC_VERSIONS="$(find alias/ tag/ -mindepth 1 -maxdepth 1 '(' -type d -o -type l ')' -printf '%f ' 2> /dev/null | sort -Vr)"
+#DOC_LANGUAGES="$(find alias/ tag/ -mindepth 2 -maxdepth 2 '(' -type d -o -type l ')' -printf '%f\n' 2> /dev/null | sort | uniq | xargs printf '%s ')"
+#DOC_FORMATS="$(find alias/ tag/ -mindepth 3 -maxdepth 3 '(' -type d -o -type l ')' -printf '%f\n' 2> /dev/null | sort | uniq | xargs printf '%s ')"
+#popd
+
+#printf "\nLanguages\n---------\n%s\n\nVersions\n--------\n%s\nFormats\n-------" "${DOC_LANGUAGES}" "${DOC_VERSIONS}" "${DOC_FORMATS}"
+#sed -e "s^//languages//^languages = '${DOC_LANGUAGES}'^"  \
+#    -e "s^//versions//^versions = '${DOC_VERSIONS}'^"     \
+#    -e "s^//formats//^formats = '${DOC_FORMATS}'^"        \
+#    "erebot-overlay.js" > "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/erebot-overlay.js"
+
+touch .deploy

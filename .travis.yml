@@ -18,9 +18,6 @@ addons:
       - texlive-lang-french
       - texlive-lang-english
 
-env:
-    SHOULD_DEPLOY: ""
-
 branches:
   only:
   - build
@@ -31,24 +28,52 @@ notifications:
 php:
   - 7.1
 
-before_script:
-  - phpenv config-rm xdebug.ini
-  - composer require erebot/buildenv
+env:
+ - MODULE=Erebot/Erebot
+ - MODULE=Erebot/Module_AZ
+ - MODULE=Erebot/Module_Admin
+ - MODULE=Erebot/Module_AutoConnect
+ - MODULE=Erebot/Module_AutoIdent
+ - MODULE=Erebot/Module_AutoJoin
 
-script:
-  - ./travis.sh
-  - export SHOULD_DEPLOY=`cat ".deploy"`
 
-deploy:
-  local-dir: tmp/output
-  provider: pages
-  target-branch: master
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN
-  # Settings keep-history to true makes it easier
-  # to track the contents of the master branch.
-  keep-history: true
-  verbose: true
-  on:
-    all_branches: true
-    condition: '-n "$SHOULD_DEPLOY"'
+jobs:
+  include:
+    - stage: test
+      name: "Build"
+      before_script:
+        - phpenv config-rm xdebug.ini
+        - composer require erebot/buildenv
+      script:
+        - ./travis.sh $MODULE
+      deploy:
+        local-dir: tmp/moddoc
+        provider: pages
+        target-branch: build-$MODULE
+        skip-cleanup: true
+        github-token: $GITHUB_TOKEN
+        # Setting keep-history to true makes it easier
+        # to track the contents of the master branch.
+        keep-history: true
+        verbose: true
+        on:
+          all_branches: true
+          condition: '-x ".deploy"'
+
+    - stage: deploy
+      name: "Publication"
+      script:
+        - git submodule update --init --remote
+        - find staging -mindepth 3 -maxdepth 3 -type d -name .git -exec rm -rf '{}' '+'
+      deploy:
+        local-dir: staging
+        provider: pages
+        target-branch: master
+        skip-cleanup: true
+        github-token: $GITHUB_TOKEN
+        # Setting keep-history to true makes it easier
+        # to track the contents of the master branch.
+        keep-history: true
+        verbose: true
+        on:
+          all_branches: true
