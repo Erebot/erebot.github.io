@@ -1,6 +1,8 @@
 language: php
 sudo: false
 dist: xenial
+git:
+  submodules: false
 
 addons:
   apt:
@@ -36,30 +38,29 @@ env:
  - MODULE=Erebot/Module_AutoIdent
  - MODULE=Erebot/Module_AutoJoin
 
+before_script:
+  - phpenv config-rm xdebug.ini
+  - composer require erebot/buildenv
+
+script:
+  - ./travis.sh $MODULE
+
+deploy:
+  local-dir: tmp/moddoc
+  provider: pages
+  target-branch: build-$MODULE
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  # Setting keep-history to true makes it easier
+  # to track the contents of the master branch.
+  keep-history: true
+  verbose: true
+  on:
+    all_branches: true
+    condition: '-x ".deploy"'
 
 jobs:
   include:
-    - stage: test
-      name: "Build"
-      before_script:
-        - phpenv config-rm xdebug.ini
-        - composer require erebot/buildenv
-      script:
-        - ./travis.sh $MODULE
-      deploy:
-        local-dir: tmp/moddoc
-        provider: pages
-        target-branch: build-$MODULE
-        skip-cleanup: true
-        github-token: $GITHUB_TOKEN
-        # Setting keep-history to true makes it easier
-        # to track the contents of the master branch.
-        keep-history: true
-        verbose: true
-        on:
-          all_branches: true
-          condition: '-x ".deploy"'
-
     - stage: deploy
       name: "Publication"
       script:
