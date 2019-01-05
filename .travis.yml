@@ -47,6 +47,8 @@ script:
   - ./travis.sh $MODULE $BRANCH_NAME
 
 deploy:
+  edge:
+    branch: v1.8.47
   local-dir: tmp/output
   provider: pages
   target-branch: $BRANCH_NAME
@@ -68,6 +70,8 @@ jobs:
         - git submodule update --init --remote
         - find staging -mindepth 3 -maxdepth 3 -type d -name .git -exec rm -rf '{}' '+'
       deploy:
+        edge:
+          branch: v1.8.47
         local-dir: staging
         provider: pages
         target-branch: master
