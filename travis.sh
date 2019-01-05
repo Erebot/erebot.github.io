@@ -30,9 +30,8 @@ git clone --branch="build-$1" "https://github.com/Erebot/erebot.github.io.git" t
 # Find the name of the default branch
 DEFAULT_BRANCH="$(git --git-dir=tmp/clone/.git symbolic-ref --short refs/remotes/origin/HEAD | cut -d/ -f2-)"
 
-# Find currently valid branches & tags
-VALID_REFS="$(find tmp/clone/.git/refs -type f -printf '%P\n' | grep -P '^(tags/.*|heads/(master|develop))$')"
-echo "Valid references: $VALID_REFS"
+# Find currently valid branches & tags, without the "refs/" prefix
+VALID_REFS="$(git --git-dir=tmp/clone/.git show-ref --heads --tags | cut -c47-)"
 
 # Determine the name of the output directory given a reference
 # $1 = reference name
@@ -45,7 +44,7 @@ function get_output_dir()
     elif [ "$1" = "heads/master" ]; then
         echo "alias/stable"
     else
-        exit 1
+        echo ""
     fi
 }
 
@@ -122,6 +121,9 @@ for ref in $VALID_REFS; do
 
     # Locate the output directory and prepare it
     outdir=$(get_output_dir "$ref")
+    if [ -z "$outdir" ]; then
+        continue
+    fi
     mkdir -vp "tmp/output/$outdir/.logs"
 
     # For each language, build the doc in both HTML & PDF
