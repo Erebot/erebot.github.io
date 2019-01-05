@@ -94,10 +94,11 @@ function build()
   esac
 }
 
+# Find documented references
+DOCS=$(find tmp/output -mindepth 2 -maxdepth 2 -type d -printf '%P\n' | grep -v '^\.git/' )
 
 # Remove existing documentation that has no counterpart in the repository's
-# current state or that is obsolete.
-DOCS=$(find tmp/output -mindepth 2 -maxdepth 2 -type d)
+# current state or that is known to be obsolete
 for outdir in $DOCS; do
     inref=$(get_input_ref "$outdir")
     ref1=$(git --git-dir tmp/clone/.git show-ref -s "refs/$inref")
@@ -115,25 +116,29 @@ for ref in $VALID_REFS; do
     # Find the languages available in that reference
     LANGS="$(find tmp/clone/docs/i18n/ -mindepth 1 -maxdepth 1 -type d -printf '%f\000' | sort -z | xargs -0 printf '%s ')"
 
+    # Locate the output directory and prepare it
     outdir=$(get_output_dir "$ref")
-    pushd "tmp/clone/docs/src/"
+    mkdir -vp "tmp/output/$outdir"
 
     # For each language, build the doc in both HTML & PDF
-    mkdir -vp "../../../output/$outdir"
+    pushd "tmp/clone/docs/src/"
     for lang in $LANGS; do
         mkdir "../../../output/$outdir/$lang"
         build "$lang" html  "../../../output/$outdir/$lang"
         build "$lang" pdf   "../../../output/$outdir/$lang"
         rm -vd "../../../output/$outdir/$lang" || /bin/true
     done
-    rm -vd "../../../output/$outdir" || /bin/true
+    popd
 
     # Sanity check
+    rm -vd "tmp/output/$outdir" || /bin/true
     if [ ! -d "tmp/output/$outdir" ]; then
       echo "Fatal error: no output produced" >&2
       exit 1
     fi
-    popd
+
+    # Save the commit's hash for future reference
+    git --git-dir "tmp/clone/.git" show-ref -s "refs/$ref" > "tmp/output/$outdir/.commit"
 done
 
 
