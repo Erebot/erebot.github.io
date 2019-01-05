@@ -1,8 +1,8 @@
 #!/bin/bash
 set -x
 
-if [ -z "$1" ]; then
-    echo "Usage: ./travis.sh <slug>" >&2
+if [ $# -ne 2 ]; then
+    echo "Usage: ./travis.sh <slug> <branch_name>" >&2
     exit 1
 fi
 
@@ -24,7 +24,7 @@ mkdir -p "tmp/output" "tmp/clone"
 
 # Clone the module and current doc for that module
 git clone "https://github.com/$1.git" "tmp/clone"
-git clone --branch="build-$1" "https://github.com/Erebot/erebot.github.io.git" tmp/output || \
+git clone --branch="$2" "https://github.com/Erebot/erebot.github.io.git" tmp/output || \
     git --git-dir=tmp/output/.git --work-tree=tmp/output init
 
 # Find the name of the default branch

@@ -6,6 +6,7 @@ git:
 
 addons:
   apt:
+    update: false
     packages:
       - python-sphinx
       - python-babel
@@ -42,12 +43,13 @@ before_script:
   - composer require erebot/buildenv
 
 script:
-  - ./travis.sh $MODULE
+  - export BRANCH_NAME="build-${MODULE/\//-}"
+  - ./travis.sh $MODULE $BRANCH_NAME
 
 deploy:
   local-dir: tmp/output
   provider: pages
-  target-branch: build-$MODULE
+  target-branch: $BRANCH_NAME
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
   # Setting keep-history to true makes it easier
