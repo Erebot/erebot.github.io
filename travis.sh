@@ -25,7 +25,7 @@ mkdir -p "tmp/output" "tmp/clone"
 # Clone the module and current doc for that module
 git clone "https://github.com/$1.git" "tmp/clone"
 git clone --branch="build-$1" "https://github.com/Erebot/erebot.github.io.git" tmp/output || \
-    git --git-dir=tmp/output/.git --work-tree=tmp/output init
+    ( mkdir -p tmp/output && git --git-dir=tmp/output/.git --work-tree=tmp/output init )
 
 # Find the name of the default branch
 DEFAULT_BRANCH="$(git --git-dir=tmp/clone/.git symbolic-ref --short refs/remotes/origin/HEAD | cut -d/ -f2-)"
