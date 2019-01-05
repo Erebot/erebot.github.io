@@ -74,12 +74,12 @@ function build()
   echo "Building $2 doc for $4 into $3"
   case "$2" in
     html)
-      sphinx-build -T -E -b html -d ../_build/doctrees -D language="$1" . "$3/html" > "$3/logs/$2_$1.log" 2>&1 || \
+      sphinx-build -T -E -b html -d ../_build/doctrees -D language="$1" . "$3/html" > "$3/../logs/$2_$1.log" 2>&1 || \
       rm -vrf "$3/html/"
       ;;
     pdf)
-      sphinx-build -T -E -b latex -d ../_build/doctrees -D language="$1" . "$3/pdf" > "$3/logs/$2_$1.log" 2>&1 && \
-      make -C "$3/pdf/" all-pdf >> "$3/logs/$2_$1.log" 2>&1 < /dev/null
+      sphinx-build -T -E -b latex -d ../_build/doctrees -D language="$1" . "$3/pdf" > "$3/../logs/$2_$1.log" 2>&1 && \
+      make -C "$3/pdf/" all-pdf >> "$3/../logs/$2_$1.log" 2>&1 < /dev/null
       if [ $? -eq 0 ]; then
         find "$3/pdf/" ! -name "*.pdf"
       else
