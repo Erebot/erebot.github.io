@@ -75,12 +75,12 @@ function build()
   echo "Building $2 doc for $4 into $3"
   case "$2" in
     html)
-      sphinx-build -T -E -b html -d ../_build/doctrees -D language="$1" . "$3/html" > "$3/../logs/$2_$1.log" 2>&1 || \
+      sphinx-build -T -E -b html -d ../_build/doctrees -D language="$1" . "$3/html" > "$3/../.logs/$2_$1.log" 2>&1 || \
       rm -vrf "$3/html/"
       ;;
     pdf)
-      sphinx-build -T -E -b latex -d ../_build/doctrees -D language="$1" . "$3/pdf" > "$3/../logs/$2_$1.log" 2>&1 && \
-      make -C "$3/pdf/" all-pdf >> "$3/../logs/$2_$1.log" 2>&1 < /dev/null
+      sphinx-build -T -E -b latex -d ../_build/doctrees -D language="$1" . "$3/pdf" > "$3/../.logs/$2_$1.log" 2>&1 && \
+      make -C "$3/pdf/" all-pdf >> "$3/../.logs/$2_$1.log" 2>&1 < /dev/null
       if [ $? -eq 0 ]; then
         find "$3/pdf/" ! -name "*.pdf"
       else
@@ -122,7 +122,7 @@ for ref in $VALID_REFS; do
 
     # Locate the output directory and prepare it
     outdir=$(get_output_dir "$ref")
-    mkdir -vp "tmp/output/$outdir/logs"
+    mkdir -vp "tmp/output/$outdir/.logs"
 
     # For each language, build the doc in both HTML & PDF
     pushd "tmp/clone/docs/src/"
@@ -142,6 +142,19 @@ for ref in $VALID_REFS; do
     git --git-dir "tmp/clone/.git" show-ref -s "refs/$ref" > "tmp/output/$outdir/.commit"
 done
 
+## Update the overlay with available languages/versions
+#pushd "tmp/output/${ORIG_TRAVIS_REPO_SLUG}"
+#DOC_VERSIONS="$(find alias/ tag/ -mindepth 1 -maxdepth 1 '(' -type d -o -type l ')' -printf '%f ' 2> /dev/null | sort -Vr)"
+#DOC_LANGUAGES="$(find alias/ tag/ -mindepth 2 -maxdepth 2 '(' -type d -o -type l ')' -printf '%f\n' 2> /dev/null | sort | uniq | xargs printf '%s ')"
+#DOC_FORMATS="$(find alias/ tag/ -mindepth 3 -maxdepth 3 '(' -type d -o -type l ')' -printf '%f\n' 2> /dev/null | sort | uniq | xargs printf '%s ')"
+#popd
+
+#printf "\nLanguages\n---------\n%s\n\nVersions\n--------\n%s\nFormats\n-------" "${DOC_LANGUAGES}" "${DOC_VERSIONS}" "${DOC_FORMATS}"
+#sed -e "s^//languages//^languages = '${DOC_LANGUAGES}'^"  \
+#    -e "s^//versions//^versions = '${DOC_VERSIONS}'^"     \
+#    -e "s^//formats//^formats = '${DOC_FORMATS}'^"        \
+#    "erebot-overlay.js" > "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/erebot-overlay.js"
+
 
 
 ## Add a redirection if necessary
@@ -157,19 +170,6 @@ done
 #</html>
 #EOF
 #fi
-
-## Update the overlay with available languages/versions
-#pushd "tmp/output/${ORIG_TRAVIS_REPO_SLUG}"
-#DOC_VERSIONS="$(find alias/ tag/ -mindepth 1 -maxdepth 1 '(' -type d -o -type l ')' -printf '%f ' 2> /dev/null | sort -Vr)"
-#DOC_LANGUAGES="$(find alias/ tag/ -mindepth 2 -maxdepth 2 '(' -type d -o -type l ')' -printf '%f\n' 2> /dev/null | sort | uniq | xargs printf '%s ')"
-#DOC_FORMATS="$(find alias/ tag/ -mindepth 3 -maxdepth 3 '(' -type d -o -type l ')' -printf '%f\n' 2> /dev/null | sort | uniq | xargs printf '%s ')"
-#popd
-
-#printf "\nLanguages\n---------\n%s\n\nVersions\n--------\n%s\nFormats\n-------" "${DOC_LANGUAGES}" "${DOC_VERSIONS}" "${DOC_FORMATS}"
-#sed -e "s^//languages//^languages = '${DOC_LANGUAGES}'^"  \
-#    -e "s^//versions//^versions = '${DOC_VERSIONS}'^"     \
-#    -e "s^//formats//^formats = '${DOC_FORMATS}'^"        \
-#    "erebot-overlay.js" > "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/erebot-overlay.js"
 
 rm -rf tmp/output/.git
 touch .deploy
