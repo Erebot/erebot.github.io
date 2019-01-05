@@ -32,11 +32,31 @@ php:
 
 env:
   - MODULE=Erebot/Erebot
-  - MODULE=Erebot/Module_AZ
   - MODULE=Erebot/Module_Admin
   - MODULE=Erebot/Module_AutoConnect
   - MODULE=Erebot/Module_AutoIdent
   - MODULE=Erebot/Module_AutoJoin
+  - MODULE=Erebot/Module_AZ
+  - MODULE=Erebot/Module_Countdown
+  - MODULE=Erebot/Module_CtcpResponder
+  - MODULE=Erebot/Module_GoF
+  - MODULE=Erebot/Module_Helper
+  - MODULE=Erebot/Module_IrcConnector
+  - MODULE=Erebot/Module_IrcTracker
+  - MODULE=Erebot/Module_LagChecker
+  - MODULE=Erebot/Module_Math
+  - MODULE=Erebot/Module_MiniSed
+  - MODULE=Erebot/Module_PhpFilter
+  - MODULE=Erebot/Module_PingReply
+  - MODULE=Erebot/Module_RateLimiter
+  - MODULE=Erebot/Module_Roulette
+  - MODULE=Erebot/Module_ServerCapabilities
+  - MODULE=Erebot/Module_TriggerRegistry
+  - MODULE=Erebot/Module_TV
+  - MODULE=Erebot/Module_Uno
+  - MODULE=Erebot/Module_WatchList
+  - MODULE=Erebot/Module_WebGetter
+  - MODULE=Erebot/Module_Wordlists
 
 before_script:
   - phpenv config-rm xdebug.ini
