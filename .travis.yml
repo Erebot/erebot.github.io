@@ -43,13 +43,14 @@ before_script:
   - composer require erebot/buildenv
 
 script:
-  - export BRANCH_NAME="build-${MODULE/\//-}"
-  - ./travis.sh $MODULE $BRANCH_NAME
+  - ./travis.sh $MODULE
 
 deploy:
+  edge:
+    branch: v1.8.47
   local-dir: tmp/output
   provider: pages
-  target-branch: $BRANCH_NAME
+  target-branch: build-$MODULE
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
   # Setting keep-history to true makes it easier
@@ -68,6 +69,8 @@ jobs:
         - git submodule update --init --remote
         - find staging -mindepth 3 -maxdepth 3 -type d -name .git -exec rm -rf '{}' '+'
       deploy:
+        edge:
+          branch: v1.8.47
         local-dir: staging
         provider: pages
         target-branch: master
