@@ -107,7 +107,8 @@ for outdir in $DOCS; do
     fi
 done
 
-# For each tag/branch,
+# Build the doc for each tag/branch
+echo "{" > tmp/doc.json
 for ref in $VALID_REFS; do
     # Check the reference out
     git --git-dir "tmp/clone/.git" --work-tree "tmp/clone" checkout --force "$ref"
@@ -140,9 +141,46 @@ for ref in $VALID_REFS; do
     done
     popd
 
+    # If at least one doc was successfully built,
+    # add this reference to the JSON manifest.
+    langcount=$(find "tmp/output/$outdir/" -mindepth 1 -maxdepth 1 -type d -a '!' -name .logs | wc -l)
+    if [ $langcount -gt 0 ]; then
+        # We know that at least one language has some documentation.
+        # Add it to the manifest.
+        printf '"%s":{' "$outdir" >> tmp/doc.json
+        index=0
+        for lang in $LANGS; do
+            if [ ! -d "tmp/output/$outdir/$lang" ]; then
+                continue
+            fi
+
+            if [ $index -gt 0 ];
+                echo "," >> tmp/doc.json
+            fi
+            index=$((index + 1))
+
+            # We know this language contains some documentation, trace that.
+            printf '"%s":[' "$outdir" >> tmp/doc.json
+
+            # Find all available documentation formats for that language,
+            # add quotes around every entry, then join them with commas
+            # and store the result inside the manifest.
+            find "tmp/output/$outdir/$lang" -maxdepth 1 -type d -printf "%P\0" | \
+                sed -z -r 's/^(.+)$/"\1"/g;2,$s/^/,/' | \
+                xargs -0 printf "%s" >> tmp/doc.json
+
+            echo "]" >> tmp/doc.json
+        done
+        echo "}" >> tmp/doc.json
+    fi
+
     # Save the commit's hash for future reference
     git --git-dir "tmp/clone/.git" show-ref -s "refs/$ref" > "tmp/output/$outdir/.commit"
 done
+echo "}" >> tmp/doc.json
+
+# For debugging purposes
+cat tmp/doc.json
 
 ## Update the overlay with available languages/versions
 #pushd "tmp/output/${ORIG_TRAVIS_REPO_SLUG}"
