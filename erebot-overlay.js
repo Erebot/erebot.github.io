@@ -19,11 +19,6 @@
     return;
   }
 
-
-  var languages = ''; //languages//;
-  var versions = '';  //versions//;
-  var formats = '';  //formats//;
-
   var code_languages = '';
   var languages = metadata[erebot.project.version];
   for (var lang in languages) {
