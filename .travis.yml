@@ -1,0 +1,94 @@
+language: php
+sudo: false
+dist: trusty
+git:
+  submodules: false
+
+addons:
+  apt:
+    update: false
+    packages:
+      - python-sphinx
+      - python-babel
+      - doxygen
+      - graphviz
+      - ghostscript
+      - texlive-latex-base
+      - texlive-latex-recommended
+      - texlive-latex-extra
+      - texlive-fonts-recommended
+      - texlive-lang-french
+      - texlive-lang-english
+
+branches:
+  only:
+  - build
+  - trigger
+
+notifications:
+  email: false
+
+env:
+  - MODULE=Erebot/Erebot
+  - MODULE=Erebot/Module_Admin
+  - MODULE=Erebot/Module_AutoConnect
+  - MODULE=Erebot/Module_AutoIdent
+  - MODULE=Erebot/Module_AutoJoin
+  - MODULE=Erebot/Module_AZ
+  - MODULE=Erebot/Module_Countdown
+  - MODULE=Erebot/Module_CtcpResponder
+  - MODULE=Erebot/Module_GoF
+  - MODULE=Erebot/Module_Helper
+  - MODULE=Erebot/Module_IrcConnector
+  - MODULE=Erebot/Module_IrcTracker
+  - MODULE=Erebot/Module_LagChecker
+  - MODULE=Erebot/Module_Math
+  - MODULE=Erebot/Module_MiniSed
+  - MODULE=Erebot/Module_PhpFilter
+  - MODULE=Erebot/Module_PingReply
+  - MODULE=Erebot/Module_RateLimiter
+  - MODULE=Erebot/Module_Roulette
+  - MODULE=Erebot/Module_ServerCapabilities
+  - MODULE=Erebot/Module_TriggerRegistry
+  - MODULE=Erebot/Module_TV
+  - MODULE=Erebot/Module_Uno
+  - MODULE=Erebot/Module_WatchList
+  - MODULE=Erebot/Module_WebGetter
+  - MODULE=Erebot/Module_Wordlists
+
+before_script:
+  - phpenv config-rm xdebug.ini
+  - composer require erebot/buildenv
+
+script:
+  - ./travis.sh $MODULE
+
+deploy:
+  local-dir: tmp/output
+  provider: pages
+  target-branch: build-$MODULE
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: false
+  verbose: true
+  on:
+    all_branches: true
+    condition: '-e ".deploy"'
+
+jobs:
+  include:
+    - stage: deploy
+      name: "Publication"
+      script:
+        - git submodule update --init --remote
+        - find staging -mindepth 3 -maxdepth 3 -type d -name .git -exec rm -rf '{}' '+'
+      deploy:
+        local-dir: staging
+        provider: pages
+        target-branch: master
+        skip-cleanup: true
+        github-token: $GITHUB_TOKEN
+        keep-history: false
+        verbose: true
+        on:
+          all_branches: true

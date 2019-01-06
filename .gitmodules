@@ -1,0 +1,104 @@
+[submodule "staging/Erebot/Erebot"]
+	path = staging/Erebot/Erebot
+	url = https://github.com/Erebot/erebot.github.io.git
+	branch = build-Erebot/Erebot
+[submodule "staging/Erebot/Module_Admin"]
+	path = staging/Erebot/Module_Admin
+	url = https://github.com/Erebot/erebot.github.io.git
+	branch = build-Erebot/Module_Admin
+[submodule "staging/Erebot/Module_AutoConnect"]
+	path = staging/Erebot/Module_AutoConnect
+	url = https://github.com/Erebot/erebot.github.io.git
+	branch = build-Erebot/Module_AutoConnect
+[submodule "staging/Erebot/Module_AutoIdent"]
+	path = staging/Erebot/Module_AutoIdent
+	url = https://github.com/Erebot/erebot.github.io.git
+	branch = build-Erebot/Module_AutoIdent
+[submodule "staging/Erebot/Module_AutoJoin"]
+	path = staging/Erebot/Module_AutoJoin
+	url = https://github.com/Erebot/erebot.github.io.git
+	branch = build-Erebot/Module_AutoJoin
+[submodule "staging/Erebot/Module_AZ"]
+	path = staging/Erebot/Module_AZ
+	url = https://github.com/Erebot/erebot.github.io.git
+	branch = build-Erebot/Module_AZ
+[submodule "staging/Erebot/Module_Countdown"]
+	path = staging/Erebot/Module_Countdown
+	url = https://github.com/Erebot/erebot.github.io.git
+	branch = build-Erebot/Module_Countdown
+[submodule "staging/Erebot/Module_CtcpResponder"]
+	path = staging/Erebot/Module_CtcpResponder
+	url = https://github.com/Erebot/erebot.github.io.git
+	branch = build-Erebot/Module_CtcpResponder
+[submodule "staging/Erebot/Module_GoF"]
+	path = staging/Erebot/Module_GoF
+	url = https://github.com/Erebot/erebot.github.io.git
+	branch = build-Erebot/Module_GoF
+[submodule "staging/Erebot/Module_Helper"]
+	path = staging/Erebot/Module_Helper
+	url = https://github.com/Erebot/erebot.github.io.git
+	branch = build-Erebot/Module_Helper
+[submodule "staging/Erebot/Module_IrcConnector"]
+	path = staging/Erebot/Module_IrcConnector
+	url = https://github.com/Erebot/erebot.github.io.git
+	branch = build-Erebot/Module_IrcConnector
+[submodule "staging/Erebot/Module_IrcTracker"]
+	path = staging/Erebot/Module_IrcTracker
+	url = https://github.com/Erebot/erebot.github.io.git
+	branch = build-Erebot/Module_IrcTracker
+[submodule "staging/Erebot/Module_LagChecker"]
+	path = staging/Erebot/Module_LagChecker
+	url = https://github.com/Erebot/erebot.github.io.git
+	branch = build-Erebot/Module_LagChecker
+[submodule "staging/Erebot/Module_Math"]
+	path = staging/Erebot/Module_Math
+	url = https://github.com/Erebot/erebot.github.io.git
+	branch = build-Erebot/Module_Math
+[submodule "staging/Erebot/Module_MiniSed"]
+	path = staging/Erebot/Module_MiniSed
+	url = https://github.com/Erebot/erebot.github.io.git
+	branch = build-Erebot/Module_MiniSed
+[submodule "staging/Erebot/Module_PhpFilter"]
+	path = staging/Erebot/Module_PhpFilter
+	url = https://github.com/Erebot/erebot.github.io.git
+	branch = build-Erebot/Module_PhpFilter
+[submodule "staging/Erebot/Module_PingReply"]
+	path = staging/Erebot/Module_PingReply
+	url = https://github.com/Erebot/erebot.github.io.git
+	branch = build-Erebot/Module_PingReply
+[submodule "staging/Erebot/Module_RateLimiter"]
+	path = staging/Erebot/Module_RateLimiter
+	url = https://github.com/Erebot/erebot.github.io.git
+	branch = build-Erebot/Module_RateLimiter
+[submodule "staging/Erebot/Module_Roulette"]
+	path = staging/Erebot/Module_Roulette
+	url = https://github.com/Erebot/erebot.github.io.git
+	branch = build-Erebot/Module_Roulette
+[submodule "staging/Erebot/Module_ServerCapabilities"]
+	path = staging/Erebot/Module_ServerCapabilities
+	url = https://github.com/Erebot/erebot.github.io.git
+	branch = build-Erebot/Module_ServerCapabilities
+[submodule "staging/Erebot/Module_TriggerRegistry"]
+	path = staging/Erebot/Module_TriggerRegistry
+	url = https://github.com/Erebot/erebot.github.io.git
+	branch = build-Erebot/Module_TriggerRegistry
+[submodule "staging/Erebot/Module_TV"]
+	path = staging/Erebot/Module_TV
+	url = https://github.com/Erebot/erebot.github.io.git
+	branch = build-Erebot/Module_TV
+[submodule "staging/Erebot/Module_Uno"]
+	path = staging/Erebot/Module_Uno
+	url = https://github.com/Erebot/erebot.github.io.git
+	branch = build-Erebot/Module_Uno
+[submodule "staging/Erebot/Module_WatchList"]
+	path = staging/Erebot/Module_WatchList
+	url = https://github.com/Erebot/erebot.github.io.git
+	branch = build-Erebot/Module_WatchList
+[submodule "staging/Erebot/Module_WebGetter"]
+	path = staging/Erebot/Module_WebGetter
+	url = https://github.com/Erebot/erebot.github.io.git
+	branch = build-Erebot/Module_WebGetter
+[submodule "staging/Erebot/Module_Wordlists"]
+	path = staging/Erebot/Module_Wordlists
+	url = https://github.com/Erebot/erebot.github.io.git
+	branch = build-Erebot/Module_Wordlists
