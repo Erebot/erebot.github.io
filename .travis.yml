@@ -80,7 +80,7 @@ jobs:
     - stage: deploy
       name: "Publication"
       script:
-        - git submodule update --init --remote
+        - git submodule update --depth 1 --init --remote
         - find staging -mindepth 3 -maxdepth 3 -type d -name .git -exec rm -rf '{}' '+'
       deploy:
         local-dir: staging
