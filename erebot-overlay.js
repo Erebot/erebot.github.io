@@ -31,13 +31,13 @@
     if (!(erebot.language in metadata[ver])) {
       continue;
     }
-    switch (metadata[ver]) {
+    switch (ver) {
       case 'latest':
       case 'stable':
         has_aliases = true;
         break;
       default:
-        code_versions += ` <a data-value="${metadata[ver]}" href="${erebot.base}../../../../tag/${metadata[ver]}/${erebot.language}/${erebot.builder}">${metadata[ver]}</a>`;
+        code_versions += ` <a data-value="${ver}" href="${erebot.base}../../../../tag/${ver}/${erebot.language}/${erebot.builder}">${ver}</a>`;
     }
   }
 
@@ -59,11 +59,14 @@
 
   if (has_aliases) {
     var more_versions = '<div>';
-    for (var ver in metadata) {
-      switch (metadata[ver]) {
+    for (var ver in {"latest": null, "stable": null}) {
+      if (!(ver in metadata) || !(erebot.language in metadata[ver])) {
+        continue;
+      }
+      switch (ver) {
         case 'latest':
         case 'stable':
-          code_versions += ` <a data-value="${metadata[ver]}" href="${erebot.base}../../../../alias/${metadata[ver]}/${erebot.language}/${erebot.builder}">${metadata[ver]}</a>`;
+          code_versions += ` <a data-value="${ver}" href="${erebot.base}../../../../alias/${ver}/${erebot.language}/${erebot.builder}">${ver}</a>`;
       }
     }
     more_versions += '</div>';
