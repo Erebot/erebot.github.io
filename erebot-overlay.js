@@ -22,7 +22,7 @@
   var code_languages = '';
   var languages = metadata[erebot.project.version];
   for (var lang in languages) {
-    code_languages += ` <a data-value="${languages[lang]}" href="${erebot.base}../../${languages[lang]}/${erebot.builder}">${languages[lang]}</a>`
+    code_languages += ` <a data-value="${lang}" href="${erebot.base}../../${lang}/${erebot.builder}">${lang}</a>`
   }
 
   var code_versions = '';
