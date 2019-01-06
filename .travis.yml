@@ -69,9 +69,7 @@ deploy:
   target-branch: build-$MODULE
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
-  # Setting keep-history to true makes it easier
-  # to track the contents of the master branch.
-  keep-history: true
+  keep-history: false
   verbose: true
   on:
     all_branches: true
@@ -90,9 +88,7 @@ jobs:
         target-branch: master
         skip-cleanup: true
         github-token: $GITHUB_TOKEN
-        # Setting keep-history to true makes it easier
-        # to track the contents of the master branch.
-        keep-history: true
+        keep-history: false
         verbose: true
         on:
           all_branches: true
