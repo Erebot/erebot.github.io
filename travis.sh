@@ -109,6 +109,7 @@ done
 
 # Build the doc for each tag/branch
 echo "{" > tmp/doc.json
+docrefs=0
 for ref in $VALID_REFS; do
     # Check the reference out
     git --git-dir "tmp/clone/.git" --work-tree "tmp/clone" checkout --force "$ref"
@@ -145,8 +146,12 @@ for ref in $VALID_REFS; do
     # add this reference to the JSON manifest.
     langcount=$(find "tmp/output/$outdir/" -mindepth 1 -maxdepth 1 -type d -a '!' -name .logs | wc -l)
     if [ $langcount -gt 0 ]; then
-        # We know that at least one language has some documentation.
-        # Add it to the manifest.
+        if [ $docrefs -gt 0 ]; then
+            printf "," >> tmp/doc.json
+        fi
+
+        # We know that at least one language has some documentation
+        # for this reference. Add it to the manifest.
         printf '"%s":{' "$outdir" >> tmp/doc.json
         langindex=0
         for lang in $LANGS; do
@@ -155,23 +160,23 @@ for ref in $VALID_REFS; do
             fi
 
             if [ $langindex -gt 0 ]; then
-                echo "," >> tmp/doc.json
+                printf "," >> tmp/doc.json
             fi
             langindex=$((langindex + 1))
 
             # We know this language contains some documentation, trace that.
-            printf '"%s":[' "$outdir" >> tmp/doc.json
+            printf '"%s":[' "$lang" >> tmp/doc.json
 
             # Find all available documentation formats for that language,
             # add quotes around every entry, then join them with commas
             # and store the result inside the manifest.
-            find "tmp/output/$outdir/$lang" -maxdepth 1 -type d -printf "%P\0" | \
-                sed -z -r 's/^(.+)$/"\1"/g;2,$s/^/,/' | \
-                xargs -0 printf "%s" >> tmp/doc.json
+            find "tmp/output/$outdir/$lang" -mindepth 1 -maxdepth 1 -type d -printf "%P\0" | \
+                sed -z -r 's/^(.+)$/"\1"/g;2,$s/^/,/' | xargs -0 printf "%s" >> tmp/doc.json
 
-            echo "]" >> tmp/doc.json
+            printf "]" >> tmp/doc.json
         done
-        echo "}" >> tmp/doc.json
+        printf "}" >> tmp/doc.json
+        docrefs=$((docrefs + 1))
     fi
 
     # Save the commit's hash for future reference
