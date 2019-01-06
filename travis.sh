@@ -31,7 +31,7 @@ git clone --branch="build-$1" "https://github.com/Erebot/erebot.github.io.git" t
 DEFAULT_BRANCH="$(git --git-dir=tmp/clone/.git symbolic-ref --short refs/remotes/origin/HEAD | cut -d/ -f2-)"
 
 # Find currently valid branches & tags, without the "refs/" prefix
-VALID_REFS="$(git --git-dir=tmp/clone/.git show-ref --heads --tags | cut -c47-)"
+VALID_REFS="$(git --git-dir=tmp/clone/.git show-ref --heads --tags | cut -c47- | sort -V)"
 
 # Determine the name of the output directory given a reference
 # $1 = reference name
