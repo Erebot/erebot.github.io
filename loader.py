@@ -39,7 +39,7 @@ var erebot = %(overlay)s;
 <script type="text/javascript">
   var _paq = _paq || [];
   _paq.push(["setDocumentTitle", document.domain + " / " + document.title]);
-  if (document.domain != 'docs.erebot.net') {'
+  if (document.domain != 'docs.erebot.net') {
       _paq.push(["setCookieDomain", "erebot.github.io"]);
   }
   _paq.push(["setDomains", ["erebot.github.io", "docs.erebot.net"]]);
