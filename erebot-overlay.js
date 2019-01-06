@@ -1,27 +1,48 @@
 (function () {
+  /*
+    {
+        "latest": {
+            "en": ["html", "pdf"],
+            "fr": ["html", "pdf"]
+        },
+        "1.0.0": {
+            "en": ["html"],
+            "fr": ["html"]
+        }
+    }
+    erebot.language = en
+    erebot.project.version = latest
+  */
+  var metadata = {}; //@METADATA@
+
+  if (!(erebot.project.version in metadata)) {
+    return;
+  }
+
+
   var languages = ''; //languages//;
   var versions = '';  //versions//;
   var formats = '';  //formats//;
 
-  var not_empty = function (v) { return v !== ''; };
-
   var code_languages = '';
-  languages = languages.split(/\s+/).filter(not_empty);
+  var languages = metadata[erebot.project.version];
   for (var lang in languages) {
     code_languages += ` <a data-value="${languages[lang]}" href="${erebot.base}../../${languages[lang]}/${erebot.builder}">${languages[lang]}</a>`
   }
 
   var code_versions = '';
   var has_aliases = false;
-  versions = versions.split(/\s+/).filter(not_empty);
-  for (var ver in versions) {
-    switch (versions[ver]) {
+  for (var ver in metadata) {
+    if (!(erebot.language in metadata[ver])) {
+      continue;
+    }
+    switch (metadata[ver]) {
       case 'latest':
       case 'stable':
         has_aliases = true;
         break;
       default:
-        code_versions += ` <a data-value="${versions[ver]}" href="${erebot.base}../../../../tag/${versions[ver]}/${erebot.language}/${erebot.builder}">${versions[ver]}</a>`;
+        code_versions += ` <a data-value="${metadata[ver]}" href="${erebot.base}../../../../tag/${metadata[ver]}/${erebot.language}/${erebot.builder}">${metadata[ver]}</a>`;
     }
   }
 
@@ -35,7 +56,7 @@
             return `${erebot.base}../html/`;
     }
   };
-  formats = formats.split(/\s+/).filter(not_empty);
+  var formats = languages[erebot.language];
   for (var fmt in formats) {
     var link = link_for_format(formats[fmt]);
     code_formats += ` <a data-value="${formats[fmt]}" href="${link}">${formats[fmt].toUpperCase()}</a>`
@@ -43,11 +64,11 @@
 
   if (has_aliases) {
     var more_versions = '<div>';
-    for (var ver in versions) {
-      switch (versions[ver]) {
+    for (var ver in metadata) {
+      switch (metadata[ver]) {
         case 'latest':
         case 'stable':
-          code_versions += ` <a data-value="${versions[ver]}" href="${erebot.base}../../../../alias/${versions[ver]}/${erebot.language}/${erebot.builder}">${versions[ver]}</a>`;
+          code_versions += ` <a data-value="${metadata[ver]}" href="${erebot.base}../../../../alias/${metadata[ver]}/${erebot.language}/${erebot.builder}">${metadata[ver]}</a>`;
       }
     }
     more_versions += '</div>';

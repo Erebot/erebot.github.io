@@ -108,7 +108,7 @@ for outdir in $DOCS; do
 done
 
 # Build the doc for each tag/branch
-echo "{" > tmp/doc.json
+printf "{" > tmp/doc.json
 docrefs=0
 for ref in $VALID_REFS; do
     # Check the reference out
@@ -152,7 +152,7 @@ for ref in $VALID_REFS; do
 
         # We know that at least one language has some documentation
         # for this reference. Add it to the manifest.
-        printf '"%s":{' "$outdir" >> tmp/doc.json
+        printf '"%s":{' "${outdir#*/}" >> tmp/doc.json
         langindex=0
         for lang in $LANGS; do
             if [ ! -d "tmp/output/$outdir/$lang" ]; then
@@ -187,19 +187,12 @@ echo "}" >> tmp/doc.json
 # For debugging purposes
 cat tmp/doc.json
 
-## Update the overlay with available languages/versions
-#pushd "tmp/output/${ORIG_TRAVIS_REPO_SLUG}"
-#DOC_VERSIONS="$(find alias/ tag/ -mindepth 1 -maxdepth 1 '(' -type d -o -type l ')' -printf '%f ' 2> /dev/null | sort -Vr)"
-#DOC_LANGUAGES="$(find alias/ tag/ -mindepth 2 -maxdepth 2 '(' -type d -o -type l ')' -printf '%f\n' 2> /dev/null | sort | uniq | xargs printf '%s ')"
-#DOC_FORMATS="$(find alias/ tag/ -mindepth 3 -maxdepth 3 '(' -type d -o -type l ')' -printf '%f\n' 2> /dev/null | sort | uniq | xargs printf '%s ')"
-#popd
-
-#printf "\nLanguages\n---------\n%s\n\nVersions\n--------\n%s\nFormats\n-------" "${DOC_LANGUAGES}" "${DOC_VERSIONS}" "${DOC_FORMATS}"
-#sed -e "s^//languages//^languages = '${DOC_LANGUAGES}'^"  \
-#    -e "s^//versions//^versions = '${DOC_VERSIONS}'^"     \
-#    -e "s^//formats//^formats = '${DOC_FORMATS}'^"        \
-#    "erebot-overlay.js" > "tmp/output/${ORIG_TRAVIS_REPO_SLUG}/erebot-overlay.js"
-
+# Add the manifest to the overlay
+printf ";" | cat tmp/doc.json /dev/stdin | tr -d '\n' | \
+sed 's/^/  var metadata = /' | sed '/@METADATA@/{
+r /dev/stdin
+d
+}' erebot-overlay.js > "tmp/output/$1/erebot-overlay.js"
 
 
 ## Add a redirection if necessary
