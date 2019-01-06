@@ -192,7 +192,7 @@ printf ";" | cat tmp/doc.json /dev/stdin | tr -d '\n' | \
 sed 's/^/  var metadata = /' | sed '/@METADATA@/{
 r /dev/stdin
 d
-}' erebot-overlay.js > "tmp/output/$1/erebot-overlay.js"
+}' erebot-overlay.js > "tmp/output/erebot-overlay.js"
 
 
 ## Add a redirection if necessary
