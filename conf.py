@@ -36,28 +36,17 @@ class Context(dict):
 
 
 def prepare(globs, locs):
-    # RTD defaults the current working directory to where conf.py resides.
-    # In our case, that means <root>/docs/src/.
+    # travis.sh sets the current working directory
+    # to <root>/docs/src/ before running sphinx-build.
     cwd = os.getcwd()
     root = os.path.abspath(join(cwd, '..', '..'))
+    builder = sys.argv[sys.argv.index('-b') + 1]
+    os.chdir(root)
 
     git = Popen('which git 2> %s' % os.devnull, shell=True,
                 stdout=PIPE).stdout.read().strip()
     doxygen = Popen('which doxygen 2> %s' % os.devnull, shell=True,
                 stdout=PIPE).stdout.read().strip()
-
-    locs['rtd_slug'] = os.path.basename(os.path.dirname(os.path.dirname(root)))
-    locs['rtd_version'] = os.path.basename(root)
-    pybabel = 'pybabel'
-    builder = sys.argv[sys.argv.index('-b') + 1]
-
-    print "Building version %s for %s in %s [builder: %s]" % (
-        locs['rtd_version'],
-        locs['rtd_slug'],
-        root,
-        builder
-    )
-    os.chdir(root)
 
     # Retrieve several values from git
     origin = Popen([git, 'config', '--local', 'remote.origin.url'],
@@ -75,6 +64,7 @@ def prepare(globs, locs):
     default_branch = git_default.split('/', 1)[-1]
     if project.endswith('.git'):
         project = project[:-4]
+
     os.environ['SPHINX_PROJECT'] = project
     os.environ['SPHINX_PROJECT_SLUG'] = ("%s/%s" % (vendor, project)).lower()
     os.environ['SPHINX_DEFAULT_BRANCH'] = default_branch
@@ -88,10 +78,9 @@ def prepare(globs, locs):
         os.environ['SPHINX_RELEASE'] = 'latest-%s' % (commit, )
         locs['tags'].add('devel')
 
-    composer = json.load(open(join(root, 'composer.json'), 'r'))
-
     if builder == 'html':
         # Run doxygen
+        composer = json.load(open(join(root, 'composer.json'), 'r'))
         call([doxygen, join(root, 'Doxyfile')], env={
             'COMPONENT_NAME': os.environ['SPHINX_PROJECT'],
             'COMPONENT_VERSION': os.environ['SPHINX_VERSION'],
@@ -118,27 +107,6 @@ def prepare(globs, locs):
             )
         except OSError:
             pass
-
-    # Copy translations for generic docs to catalogs folder.
-    gen_i18n = join(root, 'docs', 'src', 'generic', 'i18n', '.')[:-1]
-    for translation in glob.iglob(join(gen_i18n, '*')):
-        target_dir = join(
-            root, 'docs', 'i18n',
-            translation[len(gen_i18n):],
-            'LC_MESSAGES', 'generic'
-        )
-        translation = join(translation, 'LC_MESSAGES', 'generic')
-        shutil.rmtree(target_dir, ignore_errors=True)
-        shutil.copytree(translation, target_dir)
-
-    # Compile translation catalogs.
-    for locale_dir in glob.iglob(join(root, 'docs', 'i18n', '*')):
-        for base, dirnames, filenames in os.walk(locale_dir):
-            for po in fnmatch.filter(filenames, '*.po'):
-                po = join(base, po)
-                mo = po[:-3] + '.mo'
-                call([pybabel, 'compile', '-f', '--statistics',
-                      '-i', po, '-o', mo])
 
     # Load the real Sphinx configuration file.
     os.chdir(cwd)

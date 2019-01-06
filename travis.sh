@@ -131,6 +131,11 @@ for ref in $VALID_REFS; do
     # For each language, build the doc in both HTML & PDF
     pushd "tmp/clone/docs/src/"
     for lang in $LANGS; do
+        # Compile the translation catalogs for that language
+        while IFS= read -r -d $'\0' po; do
+            pybabel compile -f --statistics -i "$po" -o "${po%.po}.mo"
+        done < <( find ../i18n/$lang/LC_MESSAGES/ -name '*.po' -print0 )
+
         mkdir -p "../../../output/$outdir/$lang"
         if [ ! -e "../../../output/$outdir/$lang/html" ]; then
             build "$lang" html  "../../../output/$outdir/$lang" "$1"
