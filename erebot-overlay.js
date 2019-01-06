@@ -227,7 +227,7 @@
       <div>Formats:</div>
       <div id="eo-formats">${code_formats}</div>
     </div>
-    <div>
+    <div id="eo-contribute">
       <div>Contribute:</div>
       <div>
         <a target="_blank" href="https://github.com/${erebot.project.slug}/edit/${erebot.default_branch}/docs/src/${erebot.page}${erebot.source_suffix}">Edit</a>
@@ -257,6 +257,10 @@
     $(".eo-toggle").toggle();
     $(this).toggleClass("eo-opened");
   });
+
+  if (erebot.project.version !== 'latest' && erebot.project.version !== 'stable') {
+    $('#eo-contribute').hide();
+  }
 
   $('#eo-languages a[data-value="' + erebot.language + '"]').addClass("eo-active");
   $('#eo-versions a[data-value="' + erebot.project.version + '"]').addClass("eo-active");
