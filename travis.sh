@@ -148,16 +148,16 @@ for ref in $VALID_REFS; do
         # We know that at least one language has some documentation.
         # Add it to the manifest.
         printf '"%s":{' "$outdir" >> tmp/doc.json
-        index=0
+        langindex=0
         for lang in $LANGS; do
             if [ ! -d "tmp/output/$outdir/$lang" ]; then
                 continue
             fi
 
-            if [ $index -gt 0 ];
+            if [ $langindex -gt 0 ]; then
                 echo "," >> tmp/doc.json
             fi
-            index=$((index + 1))
+            langindex=$((langindex + 1))
 
             # We know this language contains some documentation, trace that.
             printf '"%s":[' "$outdir" >> tmp/doc.json
