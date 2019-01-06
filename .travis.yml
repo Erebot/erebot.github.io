@@ -23,6 +23,7 @@ addons:
 branches:
   only:
   - build
+  - trigger
 
 notifications:
   email: false
