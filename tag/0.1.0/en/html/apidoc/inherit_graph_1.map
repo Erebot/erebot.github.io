@@ -1,0 +1,8 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$classErebot_1_1Module_1_1Math_1_1Exception.html" title="Generic exception used as the base for other exceptions defined by this module. " alt="" coords="133,135,272,177"/>
+<area shape="rect" id="node3" href="$classErebot_1_1Module_1_1Math_1_1DivisionByZeroException.html" title="Raised when an attempt is made to divide some value by 0 (zero). " alt="" coords="335,5,508,46"/>
+<area shape="rect" id="node4" href="$classErebot_1_1Module_1_1Math_1_1ExponentTooBigException.html" title="Raised when an attempt is made to compute the exponentiation of a number using some high exponent..." alt="" coords="331,70,511,111"/>
+<area shape="rect" id="node5" href="$classErebot_1_1Module_1_1Math_1_1NegativeExponentException.html" title="Raised when an attempt is made to compute the exponentiation of a number using a negative exponent..." alt="" coords="326,135,517,177"/>
+<area shape="rect" id="node6" href="$classErebot_1_1Module_1_1Math_1_1NoModulusOnRealsException.html" title="Raised when an attempt is made to compute the modulus of a floating value (real number). " alt="" coords="321,201,522,242"/>
+<area shape="rect" id="node7" href="$classErebot_1_1Module_1_1Math_1_1SyntaxErrorException.html" title="Raised when a syntax error is detected in a given formula. " alt="" coords="345,266,498,307"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Erebot\Module\Math\Exception" name="Erebot\Module\Math\Exception">
+<area shape="rect" id="node3" href="$classErebot_1_1Module_1_1Math_1_1DivisionByZeroException.html" title="Raised when an attempt is made to divide some value by 0 (zero). " alt="" coords="5,273,179,365"/>
+<area shape="rect" id="node4" href="$classErebot_1_1Module_1_1Math_1_1ExponentTooBigException.html" title="Raised when an attempt is made to compute the exponentiation of a number using some high exponent..." alt="" coords="203,273,383,365"/>
+<area shape="rect" id="node5" href="$classErebot_1_1Module_1_1Math_1_1NegativeExponentException.html" title="Raised when an attempt is made to compute the exponentiation of a number using a negative exponent..." alt="" coords="407,273,597,365"/>
+<area shape="rect" id="node6" href="$classErebot_1_1Module_1_1Math_1_1NoModulusOnRealsException.html" title="Raised when an attempt is made to compute the modulus of a floating value (real number). " alt="" coords="622,273,823,365"/>
+<area shape="rect" id="node7" href="$classErebot_1_1Module_1_1Math_1_1SyntaxErrorException.html" title="Raised when a syntax error is detected in a given formula. " alt="" coords="847,273,1000,365"/>
+</map>
