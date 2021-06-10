@@ -1,0 +1,12 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$classErebot_1_1Module_1_1GoF_1_1Exception.html" title="Generic base exception. " alt="" coords="133,273,331,300"/>
+<area shape="rect" id="node3" href="$classErebot_1_1Module_1_1GoF_1_1EnoughPlayersException.html" title="Raised when someone tries to join the current game but are already 4 players. " alt="" coords="403,5,586,46"/>
+<area shape="rect" id="node4" href="$classErebot_1_1Module_1_1GoF_1_1InferiorComboException.html" title="Raised when trying to play a combination that is inferior to the currently leading one..." alt="" coords="405,70,584,111"/>
+<area shape="rect" id="node5" href="$classErebot_1_1Module_1_1GoF_1_1InternalErrorException.html" title="Raised in various cases where an internal error has been detected. " alt="" coords="403,135,586,177"/>
+<area shape="rect" id="node6" href="$classErebot_1_1Module_1_1GoF_1_1InvalidCardException.html" title="Raised when someone tries to play something which is not a valid card. " alt="" coords="406,201,583,242"/>
+<area shape="rect" id="node7" href="$classErebot_1_1Module_1_1GoF_1_1InvalidComboException.html" title="Raised when someone tries to play an invalid combination of cards, such as a double pair..." alt="" coords="406,266,583,307"/>
+<area shape="rect" id="node8" href="$classErebot_1_1Module_1_1GoF_1_1NoSuchCardException.html" title="Raised a person tries to play a card he/she doesn&#39;t have. " alt="" coords="401,331,588,373"/>
+<area shape="rect" id="node9" href="$classErebot_1_1Module_1_1GoF_1_1NotComparableException.html" title="Raised when an attempt is made to compare two things that cannot be compared together, such as two incompatible combinations. " alt="" coords="379,397,610,438"/>
+<area shape="rect" id="node10" href="$classErebot_1_1Module_1_1GoF_1_1StartWithMulti1Exception.html" title="Raised when the first player of the first round has the Multicolor One (m1) but tried not to play it..." alt="" coords="397,462,592,503"/>
+<area shape="rect" id="node11" href="$classErebot_1_1Module_1_1GoF_1_1WaitingForCardException.html" title="Raised when a round has ended and the bot is waiting for the winner of that round to choose one card ..." alt="" coords="403,527,586,569"/>
+</map>

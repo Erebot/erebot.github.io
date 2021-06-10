@@ -1,0 +1,11 @@
+<map id="Erebot\Module\GoF\Exception" name="Erebot\Module\GoF\Exception">
+<area shape="rect" id="node3" href="$classErebot_1_1Module_1_1GoF_1_1EnoughPlayersException.html" title="Raised when someone tries to join the current game but are already 4 players. " alt="" coords="5,263,187,355"/>
+<area shape="rect" id="node4" href="$classErebot_1_1Module_1_1GoF_1_1InferiorComboException.html" title="Raised when trying to play a combination that is inferior to the currently leading one..." alt="" coords="212,256,391,363"/>
+<area shape="rect" id="node5" href="$classErebot_1_1Module_1_1GoF_1_1InternalErrorException.html" title="Raised in various cases where an internal error has been detected. " alt="" coords="415,263,597,355"/>
+<area shape="rect" id="node6" href="$classErebot_1_1Module_1_1GoF_1_1InvalidCardException.html" title="Raised when someone tries to play something which is not a valid card. " alt="" coords="622,263,799,355"/>
+<area shape="rect" id="node7" href="$classErebot_1_1Module_1_1GoF_1_1InvalidComboException.html" title="Raised when someone tries to play an invalid combination of cards, such as a double pair..." alt="" coords="823,263,1000,355"/>
+<area shape="rect" id="node8" href="$classErebot_1_1Module_1_1GoF_1_1NoSuchCardException.html" title="Raised a person tries to play a card he/she doesn&#39;t have. " alt="" coords="1025,263,1212,355"/>
+<area shape="rect" id="node9" href="$classErebot_1_1Module_1_1GoF_1_1NotComparableException.html" title="Raised when an attempt is made to compare two things that cannot be compared together, such as two incompatible combinations. " alt="" coords="1237,263,1467,355"/>
+<area shape="rect" id="node10" href="$classErebot_1_1Module_1_1GoF_1_1StartWithMulti1Exception.html" title="Raised when the first player of the first round has the Multicolor One (m1) but tried not to play it..." alt="" coords="1492,263,1687,355"/>
+<area shape="rect" id="node11" href="$classErebot_1_1Module_1_1GoF_1_1WaitingForCardException.html" title="Raised when a round has ended and the bot is waiting for the winner of that round to choose one card ..." alt="" coords="1711,263,1893,355"/>
+</map>
