@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="class">
+    <name>Erebot::Module::Helper</name>
+    <filename>classErebot_1_1Module_1_1Helper.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>getHelp</name>
+      <anchorfile>classErebot_1_1Module_1_1Helper.html</anchorfile>
+      <anchor>a211d7b7814c14fe9af424125a79c405c</anchor>
+      <arglist>(\Erebot\Interfaces\Event\Base\TextMessage $event,\Erebot\Interfaces\TextWrapper $words)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleHelp</name>
+      <anchorfile>classErebot_1_1Module_1_1Helper.html</anchorfile>
+      <anchor>a1a1ecb923415348a6e30026a1428138f</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\Base\TextMessage $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>realRegisterHelpMethod</name>
+      <anchorfile>classErebot_1_1Module_1_1Helper.html</anchorfile>
+      <anchor>ae3089c7d820ef906cc87f9b0461c4790</anchor>
+      <arglist>(\Erebot\Module\Base $module,\Erebot\CallableInterface $callback)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>reload</name>
+      <anchorfile>classErebot_1_1Module_1_1Helper.html</anchorfile>
+      <anchor>a22a9e99900d416abec8596e03bdda5f3</anchor>
+      <arglist>($flags)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>checkCallback</name>
+      <anchorfile>classErebot_1_1Module_1_1Helper.html</anchorfile>
+      <anchor>ae81c9beac68259454eebce564849e937</anchor>
+      <arglist>(\Erebot\StylingInterface $fmt, $target, $chan, $moduleName)</arglist>
+    </member>
+    <member kind="function" protection="protected" static="yes">
+      <type>static</type>
+      <name>getModuleName</name>
+      <anchorfile>classErebot_1_1Module_1_1Helper.html</anchorfile>
+      <anchor>ab0fcc604788a6e92ae9096377aa5525b</anchor>
+      <arglist>(\Erebot\Interfaces\TextWrapper &amp;$text)</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$handler</name>
+      <anchorfile>classErebot_1_1Module_1_1Helper.html</anchorfile>
+      <anchor>afd981b0d2e188474d4579e3c92cfac8a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$helpCallbacks</name>
+      <anchorfile>classErebot_1_1Module_1_1Helper.html</anchorfile>
+      <anchor>a11efeb33cc09902f53bfc5f8a35c5bbc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$trigger</name>
+      <anchorfile>classErebot_1_1Module_1_1Helper.html</anchorfile>
+      <anchor>ad228c4cc37a84d87d7f0ad868c19f1e4</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="dir">
+    <name>src</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/</path>
+    <filename>dir_68267d1309a1af8e8297ef4c3efbcdba.html</filename>
+    <file>Helper.php</file>
+  </compound>
+</tagfile>
