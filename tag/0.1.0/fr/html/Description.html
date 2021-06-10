@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Detailed description &mdash; documentation Module_IrcTracker 0.1.0</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="documentation Module_IrcTracker 0.1.0" href="index.html" />
+    <link rel="next" title="Prerequisites" href="Prerequisites.html" />
+    <link rel="prev" title="Welcome to the documentation for Erebot_Module_IrcTracker!" href="index.html" /> 
+  </head>
+  <body>
+      <div class="header"><h1 class="heading"><a href="index.html">
+          <span>documentation Module_IrcTracker 0.1.0</span></a></h1>
+        <h2 class="heading"><span>Detailed description</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="index.html">Welcome to the documentation for Erebot_Module_IrcTracker!</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contenu</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="Prerequisites.html">Prerequisites</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <blockquote>
+<div></div></blockquote>
+<div class="section" id="detailed-description">
+<h1>Detailed description<a class="headerlink" href="#detailed-description" title="Lien permanent vers ce titre">¶</a></h1>
+<p>This module provides a way to track users through nick changes and miscellaneous
+other events based on their initial nickname. It is meant to help other modules
+build nick-independent features (such as a game capable of tracking players,
+no matter how much they change their nickname).</p>
+<p>This is achieved by associating a token with each user. This token can later
+be used to retrieve information about the corresponding user (nickname,
+identity, hostname, etc.).</p>
+<p>This module also keeps a list with the address of every known user
+(called IAL in mIRC&#8217;s terminology, for &#8220;Internal Address List&#8221;).
+This IAL can be queried in the same way tokens can.</p>
+<p>Moreover, this module keeps information on the different channels users
+have joined where the bot is also present. This information can be queried
+to determine if a particular user is present on a given channel.
+It can also be used to retrieve a list of common channels between some user
+and the bot.</p>
+<p>Last but not least, this module tracks user status on channels
+and can be used to find all operators on a channel,
+the modes affecting a given user on a channel, etc.</p>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="index.html">Welcome to the documentation for Erebot_Module_IrcTracker!</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contenu</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="Prerequisites.html">Prerequisites</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2019, The Erebot team.
+      Mis à jour le Jan 05, 2019.
+      Créé avec <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  
+<!-- Custom overlay -->
+<script type="text/javascript">
+var erebot = {"source_suffix": ".rst", "language": "fr", "builder": "html", "default_branch": "master", "project": {"version": "0.1.0", "name": "Module_IrcTracker", "slug": "erebot/module_irctracker"}, "base": "./", "page": "Description"};
+</script>
+<script type="text/javascript" src="./../../../../erebot-overlay.js"></script>
+
+<!-- Statistics -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDocumentTitle", document.domain + " / " + document.title]);
+  if (document.domain != 'docs.erebot.net') {'
+      _paq.push(["setCookieDomain", "erebot.github.io"]);
+  }
+  _paq.push(["setDomains", ["erebot.github.io", "docs.erebot.net"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.erebot.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '4']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.erebot.net/piwik.php?idsite=4" style="border:0;" alt="" /></p></noscript>
+</body>
+</html>
