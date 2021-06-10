@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="class">
+    <name>Erebot::Module::PingReply</name>
+    <filename>classErebot_1_1Module_1_1PingReply.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>handlePing</name>
+      <anchorfile>classErebot_1_1Module_1_1PingReply.html</anchorfile>
+      <anchor>a4bd58f9944e536fecc1744f5bb91fc51</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\Ping $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>reload</name>
+      <anchorfile>classErebot_1_1Module_1_1PingReply.html</anchorfile>
+      <anchor>af872e89f367b4157ab2b4a071e8bbeb8</anchor>
+      <arglist>($flags)</arglist>
+    </member>
+  </compound>
+  <compound kind="dir">
+    <name>src</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/</path>
+    <filename>dir_68267d1309a1af8e8297ef4c3efbcdba.html</filename>
+    <file>PingReply.php</file>
+  </compound>
+</tagfile>
