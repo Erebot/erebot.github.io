@@ -1,0 +1,765 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="class">
+    <name>Erebot::Module::Countdown</name>
+    <filename>classErebot_1_1Module_1_1Countdown.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>getHelp</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown.html</anchorfile>
+      <anchor>a47c4579f793c6cc18c6bb1648f2b7430</anchor>
+      <arglist>(\Erebot\Interfaces\Event\Base\TextMessage $event,\Erebot\Interfaces\TextWrapper $words)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleCountdown</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown.html</anchorfile>
+      <anchor>ae344794e80150ed40a15c2d88cbfceaa</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\ChanText $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleRawText</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown.html</anchorfile>
+      <anchor>ae55cc923b96a26ef49f3bfa1af2956de</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\ChanText $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleTimeOut</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown.html</anchorfile>
+      <anchor>adb6ca8b32de6f7efff06e839bd8574a7</anchor>
+      <arglist>(\Erebot\TimerInterface $timer, $chan)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>reload</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown.html</anchorfile>
+      <anchor>a00ff44d565de0405f2d486b04d21daf5</anchor>
+      <arglist>($flags)</arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>FORMULA_FILTER</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown.html</anchorfile>
+      <anchor>abd2cce7e1223f43c757bedc4c9ae5f05</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>unload</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown.html</anchorfile>
+      <anchor>a59527e1712b8741d4c514f0628ca1db7</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$game</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown.html</anchorfile>
+      <anchor>a8a39eae3582931e09e0b8c8e8f77497d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$rawHandler</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown.html</anchorfile>
+      <anchor>a580a28b7132f774f14807376f99f631f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$startHandler</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown.html</anchorfile>
+      <anchor>aca91c4741a314f1c4b6988490aebbb9f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$trigger</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown.html</anchorfile>
+      <anchor>aff14ae913dad5d9c2843a99487499ad6</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Countdown::DivisionByZeroException</name>
+    <filename>classErebot_1_1Module_1_1Countdown_1_1DivisionByZeroException.html</filename>
+    <base>Erebot::Module::Countdown::Exception</base>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Countdown::Exception</name>
+    <filename>classErebot_1_1Module_1_1Countdown_1_1Exception.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Countdown::Formula</name>
+    <filename>classErebot_1_1Module_1_1Countdown_1_1Formula.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>__construct</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Formula.html</anchorfile>
+      <anchor>a660c53ebde531fe67703bd34e6100047</anchor>
+      <arglist>($owner, $formula)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>__destruct</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Formula.html</anchorfile>
+      <anchor>af1e62bc80eecd72c5ae1218cd45598d5</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getFormula</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Formula.html</anchorfile>
+      <anchor>a945041e77d85fc5fa6872119e9e1e5f9</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getNumbers</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Formula.html</anchorfile>
+      <anchor>abf99773f8d432ab00e3f7fb9ea27beb9</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getOwner</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Formula.html</anchorfile>
+      <anchor>a5a176d4431bbafa719e5724f21ccb041</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getResult</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Formula.html</anchorfile>
+      <anchor>ab6109a8ace72d7f0d78c582d07d64c6c</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$formula</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Formula.html</anchorfile>
+      <anchor>afd9ece39d506fc0bfcd96dcb5e5a39aa</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$lexer</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Formula.html</anchorfile>
+      <anchor>a6f7dcc5d1a11a8f12ab808b2aeebe597</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$owner</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Formula.html</anchorfile>
+      <anchor>ae1a1decb88a204075e03f2c221397ad9</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Countdown::FormulaMustBeAStringException</name>
+    <filename>classErebot_1_1Module_1_1Countdown_1_1FormulaMustBeAStringException.html</filename>
+    <base>Erebot::Module::Countdown::Exception</base>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Countdown::Game</name>
+    <filename>classErebot_1_1Module_1_1Countdown_1_1Game.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>__construct</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Game.html</anchorfile>
+      <anchor>a8f8e4dda8480ac3ea93379fdb9e6426c</anchor>
+      <arglist>($minTarget=100, $maxTarget=999, $nbNumbers=7, $allowedNumbers=null)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>__destruct</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Game.html</anchorfile>
+      <anchor>a42a79a654fcd7356b99ee3e350783ccb</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getBestProposal</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Game.html</anchorfile>
+      <anchor>abafdb880b3818396f840c01fa9423ff6</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getNumbers</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Game.html</anchorfile>
+      <anchor>aa0e0e992627b86b11fec1b6154ea0e8b</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getTarget</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Game.html</anchorfile>
+      <anchor>ac26ec3615bda73fcb520295ca1824938</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>proposeFormula</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Game.html</anchorfile>
+      <anchor>a85a9e437626752b31731b4b50b6b3201</anchor>
+      <arglist>(\Erebot\Module\Countdown\Formula $formula)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>chooseNumbers</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Game.html</anchorfile>
+      <anchor>a707481fbb107e56929f6c31055669d6e</anchor>
+      <arglist>($nbNumbers)</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$allowedNumbers</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Game.html</anchorfile>
+      <anchor>acbddc765f078bfc637e4e462b440f46a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$bestProposal</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Game.html</anchorfile>
+      <anchor>a0dc3179daa173f4810e854757e008832</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$maxTarget</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Game.html</anchorfile>
+      <anchor>a0b9984c58730396d41eb534d6e4a1b32</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$minTarget</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Game.html</anchorfile>
+      <anchor>aeecdf5ecc2675ca74544abe9fcae8a03</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$numbers</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Game.html</anchorfile>
+      <anchor>a0ca6d309ba2b2876ed89584862aa8cc4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$target</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Game.html</anchorfile>
+      <anchor>af9f904cc8bfa9a51f6df21956cb8be08</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Countdown::InvalidValueException</name>
+    <filename>classErebot_1_1Module_1_1Countdown_1_1InvalidValueException.html</filename>
+    <base>Erebot::Module::Countdown::Exception</base>
+    <member kind="function">
+      <type></type>
+      <name>__construct</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1InvalidValueException.html</anchorfile>
+      <anchor>a549e71990034116a1722d6833a8b396b</anchor>
+      <arglist>($location, $expected, $given)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getExpectedData</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1InvalidValueException.html</anchorfile>
+      <anchor>ad6903968a734d005cbc66390de494a41</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getGivenData</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1InvalidValueException.html</anchorfile>
+      <anchor>a6a8605bf87edd7d13fe8db0f38eb005a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getLocation</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1InvalidValueException.html</anchorfile>
+      <anchor>a2a5c3326f19bbb05f443ff3119a2d575</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$expectedData</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1InvalidValueException.html</anchorfile>
+      <anchor>acac5bcc4bf65df5e3b730fd53fa56814</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$givenData</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1InvalidValueException.html</anchorfile>
+      <anchor>a2bf200a28541f0c8fa9ce8794d4e1338</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$location</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1InvalidValueException.html</anchorfile>
+      <anchor>a2b9da41bc8cce6f5de6bf5a50bb8631a</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Countdown::Lexer</name>
+    <filename>classErebot_1_1Module_1_1Countdown_1_1Lexer.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>__construct</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Lexer.html</anchorfile>
+      <anchor>a8a33dbc83cf8d1d5bdf63b0e003f3c49</anchor>
+      <arglist>($formula)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getNumbers</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Lexer.html</anchorfile>
+      <anchor>ac3b7512ecd7aed76fe6b5a3092e30a42</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getResult</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Lexer.html</anchorfile>
+      <anchor>a74290dcec45dfe8987c988700ba7d15c</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>PATT_INTEGER</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Lexer.html</anchorfile>
+      <anchor>a5b53858782b899565e4043a2633e525c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>tokenize</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Lexer.html</anchorfile>
+      <anchor>abc31babd9221f237ab30729c61b53eda</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$formula</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Lexer.html</anchorfile>
+      <anchor>a0ea25d1099afd28c1bdccecb16d0a479</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$length</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Lexer.html</anchorfile>
+      <anchor>a8b4d4f9457308b9e710336fb7bda85e8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$numbers</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Lexer.html</anchorfile>
+      <anchor>aae8164edc3042deee9e89c72b59fdd38</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$parser</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Lexer.html</anchorfile>
+      <anchor>a0127097abdb0b60d78dc314aa6607d64</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$position</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Lexer.html</anchorfile>
+      <anchor>a3a870c2785ef15537e89174bfc289595</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Countdown::NonIntegralDivisionException</name>
+    <filename>classErebot_1_1Module_1_1Countdown_1_1NonIntegralDivisionException.html</filename>
+    <base>Erebot::Module::Countdown::Exception</base>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Countdown::Parser</name>
+    <filename>classErebot_1_1Module_1_1Countdown_1_1Parser.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>__destruct</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Parser.html</anchorfile>
+      <anchor>a96516631b5c4bdab285a1b6376760f87</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>doParse</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Parser.html</anchorfile>
+      <anchor>a25ab90e308472865225279bc0e4c809d</anchor>
+      <arglist>($yymajor, $yytokenvalue)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>tokenName</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Parser.html</anchorfile>
+      <anchor>a1469b407614fc791743b2f2096453cee</anchor>
+      <arglist>($tokenType)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>yy_accept</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Parser.html</anchorfile>
+      <anchor>a13c05bb0f054d2a04b6368c0e6142664</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>yy_find_reduce_action</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Parser.html</anchorfile>
+      <anchor>ad192ccef1520bff42955afe97ce9be1e</anchor>
+      <arglist>($stateno, $iLookAhead)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>yy_find_shift_action</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Parser.html</anchorfile>
+      <anchor>ae94ade81106f0c85a807419c4114c5ef</anchor>
+      <arglist>($iLookAhead)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>yy_get_expected_tokens</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Parser.html</anchorfile>
+      <anchor>a927f5e8c96d9cc28e0a93e52aa9e5fd4</anchor>
+      <arglist>($token)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>yy_is_expected_token</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Parser.html</anchorfile>
+      <anchor>a9fcb850fec7e9b9a9b156e9f1ac42424</anchor>
+      <arglist>($token)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>yy_parse_failed</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Parser.html</anchorfile>
+      <anchor>abd66e75ca80eb66b722d7ab019919a2f</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>yy_pop_parser_stack</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Parser.html</anchorfile>
+      <anchor>ac9a8428d355562745e47e427b16c01e9</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>yy_reduce</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Parser.html</anchorfile>
+      <anchor>ad12055406b30783d3c729a871e8b1e05</anchor>
+      <arglist>($yyruleno)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>yy_shift</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Parser.html</anchorfile>
+      <anchor>af887d01fcd04bbba80e38f81fe7594c6</anchor>
+      <arglist>($yyNewState, $yyMajor, $yypMinor)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>yy_syntax_error</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Parser.html</anchorfile>
+      <anchor>aaa7da09a938d9cb22e7b965730feb4a6</anchor>
+      <arglist>($yymajor, $TOKEN)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static</type>
+      <name>PrintTrace</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Parser.html</anchorfile>
+      <anchor>a87e1e9ae178446b8c26f77e9701a9391</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static</type>
+      <name>Trace</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Parser.html</anchorfile>
+      <anchor>a6b50eda674a6f94159ef72aa0aa52c6d</anchor>
+      <arglist>($TraceFILE, $zTracePrompt)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static</type>
+      <name>yy_destructor</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Parser.html</anchorfile>
+      <anchor>a9f8534a9df2e0fff1bc1e55ccc32d8fc</anchor>
+      <arglist>($yymajor, $yypminor)</arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static</type>
+      <name>$yyFallback</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Parser.html</anchorfile>
+      <anchor>af3b7b53d04bb5bf35b3120c89a89f70a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static</type>
+      <name>$yyReduceMap</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Parser.html</anchorfile>
+      <anchor>a540b69fafdd3d20d48ba565a4fcc26f1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static</type>
+      <name>$yyRuleInfo</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Parser.html</anchorfile>
+      <anchor>a675abed30a744e069aa2ef1ae9582248</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type></type>
+      <name>$_retvalue</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Parser.html</anchorfile>
+      <anchor>a7abe3573e588d144c48ae6d534ddb5ef</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Countdown::ParseyyStackEntry</name>
+    <filename>classErebot_1_1Module_1_1Countdown_1_1ParseyyStackEntry.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Countdown::ParseyyToken</name>
+    <filename>classErebot_1_1Module_1_1Countdown_1_1ParseyyToken.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Countdown::Solver</name>
+    <filename>classErebot_1_1Module_1_1Countdown_1_1Solver.html</filename>
+    <base>Erebot::Module::Countdown::SolverInterface</base>
+    <member kind="function">
+      <type></type>
+      <name>__construct</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Solver.html</anchorfile>
+      <anchor>a21d7de91d5009a483ea500602727dd03</anchor>
+      <arglist>($target, $numbers)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>solve</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Solver.html</anchorfile>
+      <anchor>ab405c8246d9673bc9d79435b132bbfad</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$numbers</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Solver.html</anchorfile>
+      <anchor>a5747b60dc82ab0dfa4182aa2a7028841</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$target</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Solver.html</anchorfile>
+      <anchor>a8fb1275904afe12554d3bd4a56332ed8</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="interface">
+    <name>Erebot::Module::Countdown::SolverInterface</name>
+    <filename>interfaceErebot_1_1Module_1_1Countdown_1_1SolverInterface.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>__construct</name>
+      <anchorfile>interfaceErebot_1_1Module_1_1Countdown_1_1SolverInterface.html</anchorfile>
+      <anchor>a45c7f679e88e9dcd5ab4637e05079ee5</anchor>
+      <arglist>($target, $numbers)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>solve</name>
+      <anchorfile>interfaceErebot_1_1Module_1_1Countdown_1_1SolverInterface.html</anchorfile>
+      <anchor>a550b60d382fc74b20b4b2d5f2603630b</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Countdown::SyntaxErrorException</name>
+    <filename>classErebot_1_1Module_1_1Countdown_1_1SyntaxErrorException.html</filename>
+    <base>Erebot::Module::Countdown::Exception</base>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Countdown::UnavailableNumberException</name>
+    <filename>classErebot_1_1Module_1_1Countdown_1_1UnavailableNumberException.html</filename>
+    <base>Erebot::Module::Countdown::Exception</base>
+  </compound>
+  <compound kind="interface">
+    <name>Erebot::Module::Countdown::Solver::ContainerInterface</name>
+    <filename>interfaceErebot_1_1Module_1_1Countdown_1_1Solver_1_1ContainerInterface.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>__toString</name>
+      <anchorfile>interfaceErebot_1_1Module_1_1Countdown_1_1Solver_1_1ContainerInterface.html</anchorfile>
+      <anchor>aad4c2a14e4a86043f0be942aa484bf2f</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getValue</name>
+      <anchorfile>interfaceErebot_1_1Module_1_1Countdown_1_1Solver_1_1ContainerInterface.html</anchorfile>
+      <anchor>aa5100cee8bcfad19ab22b8af3c120fa3</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Countdown::Solver::Number</name>
+    <filename>classErebot_1_1Module_1_1Countdown_1_1Solver_1_1Number.html</filename>
+    <base>Erebot::Module::Countdown::Solver::ContainerInterface</base>
+    <member kind="function">
+      <type></type>
+      <name>__construct</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Solver_1_1Number.html</anchorfile>
+      <anchor>af39b61ac4f18592519b7c61f90a6a298</anchor>
+      <arglist>($value)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>__toString</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Solver_1_1Number.html</anchorfile>
+      <anchor>a05a6177faf1246485355b30056181d22</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getValue</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Solver_1_1Number.html</anchorfile>
+      <anchor>a8a7ccb232a4e7d40358e49e92da0335a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$value</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Solver_1_1Number.html</anchorfile>
+      <anchor>abd922e7e3de7b8610194f74883a122ba</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Countdown::Solver::Operation</name>
+    <filename>classErebot_1_1Module_1_1Countdown_1_1Solver_1_1Operation.html</filename>
+    <base>Erebot::Module::Countdown::Solver::ContainerInterface</base>
+    <member kind="function">
+      <type></type>
+      <name>__construct</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Solver_1_1Operation.html</anchorfile>
+      <anchor>ac147d07af2f8fe8456101132265bce47</anchor>
+      <arglist>(\Erebot\Module\Countdown\Solver\ContainerInterface $first,\Erebot\Module\Countdown\Solver\ContainerInterface $second, $operator)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>__toString</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Solver_1_1Operation.html</anchorfile>
+      <anchor>a3af1a14a5703abd192219f075d0a7a5b</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getFirst</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Solver_1_1Operation.html</anchorfile>
+      <anchor>aa4e9d7ac01e7808a448aa9458640bda7</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getSecond</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Solver_1_1Operation.html</anchorfile>
+      <anchor>a5913b066412e92b65644e482030863a0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getValue</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Solver_1_1Operation.html</anchorfile>
+      <anchor>a40218985f5c9298fbe5b9b0246c86552</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$first</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Solver_1_1Operation.html</anchorfile>
+      <anchor>a92afe69baf3e3a0bffb718c3085206f0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$operator</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Solver_1_1Operation.html</anchorfile>
+      <anchor>a8ecdd11d4e8c38f479576276374d55e3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$second</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Solver_1_1Operation.html</anchorfile>
+      <anchor>a2cd3f3cdf208e1d4133395231312b11a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$value</name>
+      <anchorfile>classErebot_1_1Module_1_1Countdown_1_1Solver_1_1Operation.html</anchorfile>
+      <anchor>a799d5e0345f60ee210a7daa352f754b3</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Countdown::Solver::SkipException</name>
+    <filename>classErebot_1_1Module_1_1Countdown_1_1Solver_1_1SkipException.html</filename>
+    <base>Erebot::Module::Countdown::Exception</base>
+  </compound>
+  <compound kind="dir">
+    <name>src/Countdown</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/Countdown/</path>
+    <filename>dir_cc7a5fc8bc2dd1a00924d1314454233c.html</filename>
+    <dir>src/Countdown/Solver</dir>
+    <file>DivisionByZeroException.php</file>
+    <file>Exception.php</file>
+    <file>Formula.php</file>
+    <file>FormulaMustBeAStringException.php</file>
+    <file>Game.php</file>
+    <file>InvalidValueException.php</file>
+    <file>Lexer.php</file>
+    <file>NonIntegralDivisionException.php</file>
+    <file>Parser.php</file>
+    <file>Solver.php</file>
+    <file>SolverInterface.php</file>
+    <file>SyntaxErrorException.php</file>
+    <file>UnavailableNumberException.php</file>
+  </compound>
+  <compound kind="dir">
+    <name>src/Countdown/Solver</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/Countdown/Solver/</path>
+    <filename>dir_13c1b23e64ce6991e2b7b2b4df763fb4.html</filename>
+    <file>ContainerInterface.php</file>
+    <file>Number.php</file>
+    <file>Operation.php</file>
+    <file>SkipException.php</file>
+  </compound>
+  <compound kind="dir">
+    <name>src</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/</path>
+    <filename>dir_68267d1309a1af8e8297ef4c3efbcdba.html</filename>
+    <dir>src/Countdown</dir>
+    <file>Countdown.php</file>
+  </compound>
+</tagfile>
