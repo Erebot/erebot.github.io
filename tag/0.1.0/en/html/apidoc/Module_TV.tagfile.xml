@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="class">
+    <name>Erebot::Module::TV</name>
+    <filename>classErebot_1_1Module_1_1TV.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>getHelp</name>
+      <anchorfile>classErebot_1_1Module_1_1TV.html</anchorfile>
+      <anchor>ad4570ae09b8ca9a235f96169a9845d23</anchor>
+      <arglist>(\Erebot\Interfaces\Event\Base\TextMessage $event,\Erebot\Interfaces\TextWrapper $words)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleTV</name>
+      <anchorfile>classErebot_1_1Module_1_1TV.html</anchorfile>
+      <anchor>a21283d59a3b7ce10befb01d8c9b1ce65</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\Base\TextMessage $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>reload</name>
+      <anchorfile>classErebot_1_1Module_1_1TV.html</anchorfile>
+      <anchor>a38b844379c594a53112432605f0aa9e8</anchor>
+      <arglist>($flags)</arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>TIME_12H_FORMAT</name>
+      <anchorfile>classErebot_1_1Module_1_1TV.html</anchorfile>
+      <anchor>af3752f4a0e4e7c56ed31d64e56bdcc27</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>TIME_24H_FORMAT</name>
+      <anchorfile>classErebot_1_1Module_1_1TV.html</anchorfile>
+      <anchor>a308fc6c937ae3ad602563ebd1b61f6db</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" protection="protected" static="yes">
+      <type>static</type>
+      <name>isAGroup</name>
+      <anchorfile>classErebot_1_1Module_1_1TV.html</anchorfile>
+      <anchor>adb3c09998c5728ec3d44c18df730c5f2</anchor>
+      <arglist>($candidate)</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$customMappings</name>
+      <anchorfile>classErebot_1_1Module_1_1TV.html</anchorfile>
+      <anchor>a12bad876e90e29ede9b87cb5d921cba4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$dateParser</name>
+      <anchorfile>classErebot_1_1Module_1_1TV.html</anchorfile>
+      <anchor>a977f8853b7618f31d813aba7d3f7c80e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$defaultGroup</name>
+      <anchorfile>classErebot_1_1Module_1_1TV.html</anchorfile>
+      <anchor>a91cf44f415a22fc523975d7228e45e5b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$tv</name>
+      <anchorfile>classErebot_1_1Module_1_1TV.html</anchorfile>
+      <anchor>af50ddce9dae8016b241b31ca63158f72</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::TV::Fetcher</name>
+    <filename>classErebot_1_1Module_1_1TV_1_1Fetcher.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>__construct</name>
+      <anchorfile>classErebot_1_1Module_1_1TV_1_1Fetcher.html</anchorfile>
+      <anchor>a98a2611b142d3cead7c0f499a71a948a</anchor>
+      <arglist>($timeout)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getChannelsData</name>
+      <anchorfile>classErebot_1_1Module_1_1TV_1_1Fetcher.html</anchorfile>
+      <anchor>a8b7bd025f2cdd8c1fdc289dedc728a21</anchor>
+      <arglist>($timestamp, $ids)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getIdFromChannel</name>
+      <anchorfile>classErebot_1_1Module_1_1TV_1_1Fetcher.html</anchorfile>
+      <anchor>ad6d783ce54a76356e2435dbb29b80ebd</anchor>
+      <arglist>($channel)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getSupportedChannels</name>
+      <anchorfile>classErebot_1_1Module_1_1TV_1_1Fetcher.html</anchorfile>
+      <anchor>af739c8f26b7e21c798f08cf32f402447</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>TARGET_URL</name>
+      <anchorfile>classErebot_1_1Module_1_1TV_1_1Fetcher.html</anchorfile>
+      <anchor>a8f70275914a3a384f48d9421f56e1b72</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>updateIds</name>
+      <anchorfile>classErebot_1_1Module_1_1TV_1_1Fetcher.html</anchorfile>
+      <anchor>a8739ef71fc43677709feece76ef91ac3</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$mapping</name>
+      <anchorfile>classErebot_1_1Module_1_1TV_1_1Fetcher.html</anchorfile>
+      <anchor>a6c54bcd1256b584a241ae03c446e2150</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$timeout</name>
+      <anchorfile>classErebot_1_1Module_1_1TV_1_1Fetcher.html</anchorfile>
+      <anchor>a3f468d9b1b9cac72e527e998b0659284</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="dir">
+    <name>src</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/</path>
+    <filename>dir_68267d1309a1af8e8297ef4c3efbcdba.html</filename>
+    <dir>src/TV</dir>
+    <file>TV.php</file>
+  </compound>
+  <compound kind="dir">
+    <name>src/TV</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/TV/</path>
+    <filename>dir_bc98e8713e4b63156b258e45b9395419.html</filename>
+    <file>Fetcher.php</file>
+  </compound>
+</tagfile>
