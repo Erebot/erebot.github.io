@@ -1,0 +1,412 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="class">
+    <name>Erebot::Module::ServerCapabilities</name>
+    <filename>classErebot_1_1Module_1_1ServerCapabilities.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>getCaseMapping</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a2b66aab6743b5e7ed6d5c0381f8151d0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getChanLimit</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>aa36e200f3abdce155b9c573e8f2fd1bb</anchor>
+      <arglist>($chanPrefix)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getChanListMode</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>ae1dac93098a1e45ac6d41e2c86d43bb1</anchor>
+      <arglist>($list)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getChanModeForPrefix</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a765f75d4414df7da2355113c635b3977</anchor>
+      <arglist>($prefix)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getChanPrefixForMode</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a05179173c39c8e56d39f01d805510b7c</anchor>
+      <arglist>($mode)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getCharset</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a0c8ca21afbb8745e600fb6a0a402fb40</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getExtendedBanModes</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a988ff0968554129970b0473f4e7cadf1</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getExtendedBanPrefix</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a66518e406b0675161f98c8fb7c791253</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getHelp</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a7360d4a938260b530465a97964832ab9</anchor>
+      <arglist>(\Erebot\Interfaces\Event\Base\TextMessage $event,\Erebot\Interfaces\TextWrapper $words)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getIdLength</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>aca68f78986e9634fd5682e53e7f05c78</anchor>
+      <arglist>($prefix)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getMaxListSize</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a0862c7a805ce5d14288cb0099d831191</anchor>
+      <arglist>($list)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getMaxParams</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a3eecd91b0a97385be473775840ba38cd</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getMaxTargets</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a1d893ca5f48264b3378fd3bbdee1105e</anchor>
+      <arglist>($cmd)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getMaxTextLen</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>ab10e84cab85534c3d0e1b21fe9f5a83e</anchor>
+      <arglist>($type)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getMaxVariableModes</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>aea6b1e0e4947776429b56135521c2d6f</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getNetworkName</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a69b09b2bce6429a2dd38853dbc962188</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getSSL</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a03a59f038113326ac6e4653895cef801</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleNumeric</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>ab686b284ceac0a758c3caddbc23fd144</anchor>
+      <arglist>(\Erebot\Interfaces\NumericHandler $handler,\Erebot\Interfaces\Event\Numeric $numeric)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>hasCommand</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a84f380c8a19dbe6d8b722545fecd59fb</anchor>
+      <arglist>($cmdName)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>hasExtendedNames</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a731c17ba6d9716221a0946f08451149a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>hasExtraPenalty</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a13bdf13546f08fea0dce9e9fd0ba58ec</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>hasForcedNickChange</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a91ee6d88a410c2abb745b53d500870ba</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>hasHybridConnectNotice</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>afe2b0d4ae2e55cb6dd16d97fd478c821</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>hasListExtension</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>afe68880d2036587564086537f28f96e3</anchor>
+      <arglist>($extension)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>hasSafeList</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a055378caab25d60ee7cf22d1800948c1</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>hasSecureList</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>aa798dffdd23e4b7656d9ba96db4f438c</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>hasStartTLS</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>ae325a0aa4963dfc610f09be66515a27f</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>hasStatusMsg</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a8d5b8ad428afc88847d2413e95735f2f</anchor>
+      <arglist>($status)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>hasUserHostNames</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a2e5a7c1d713150b42610d88a5fd5f1aa</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>isChannel</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a7f08c993d298b95c9d9fd0c433cdbd52</anchor>
+      <arglist>($chan)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>isChannelPrivilege</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a5e6f3dd600f01878cf3de2d9cd46b94e</anchor>
+      <arglist>($mode)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>qualifyChannelMode</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a58b8cc036f8501387a648a313315aa02</anchor>
+      <arglist>($mode)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>reload</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a911d402cf3d9ccb537c6b0da5fba0810</anchor>
+      <arglist>($flags)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>supportsStandard</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>af32aea448a3d1c423e3adeadc0e00da6</anchor>
+      <arglist>($standard)</arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>ELIST_CREATION</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a69ab81ed13518b63036801a4b2552482</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>ELIST_MASK</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a0d23501024d7d8f954ac99bb3a43eb35</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>ELIST_NEG_MASK</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>ad64ade7e363ea1746d15c2f0db663434</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>ELIST_TOPIC</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a7bfec000169fb5b15a56f7f4b2000125</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>ELIST_USERS</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a9de71ae5a404230b8629891083e16f03</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>LIST_BANS</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a9d7945cfc98787fe03e478997cf6ac20</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>LIST_EXCEPTS</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>abd1cc39b694d55a93fe039cd98e39696</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>LIST_INVITES</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a5ccf684701779b4421c7e9f4430998ef</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>LIST_SILENCES</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a1e3bf4c39427e63adb193a4c45070bf8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>LIST_WATCHES</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>ac9d8fcb1f3efe341f341a1cc97ef8e3b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>MODE_TYPE_A</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>ab82dad9e1786af1c436461ad77f68e95</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>MODE_TYPE_B</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>ab12fdef453302bb3c6302c766eed028b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>MODE_TYPE_C</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a53830d05a59aac07109c8941b948af8a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>MODE_TYPE_D</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a41f9966de67c1baa796a1d2ea6f19a98</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>PATTERN_PREFIX</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a35e6c82b7221018187aa8326bbe49ca4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>TEXT_AWAY</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a92a678e2e6902ff7902a9965be8c3d34</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>TEXT_CHAN_NAME</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a34808b9dc8a6486e3a371a20b2216f4e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>TEXT_KICK</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>ad2eb1a8c437293881e17d90b34255f88</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>TEXT_NICKNAME</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a80a10ad62445f32c25de4b7599004011</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>TEXT_TOPIC</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>a3dec550bcd755e1033f44407da7e78b0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>parseToken</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>ac080111ee0dadd01c824d9c2b4d05b42</anchor>
+      <arglist>($token)</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$parsed</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>ad7d9030bf2c578bd8f2d6fb92c5dd99d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$supported</name>
+      <anchorfile>classErebot_1_1Module_1_1ServerCapabilities.html</anchorfile>
+      <anchor>adcc3c4930c209041d481145c0fce3930</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="dir">
+    <name>src</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/</path>
+    <filename>dir_68267d1309a1af8e8297ef4c3efbcdba.html</filename>
+    <file>ServerCapabilities.php</file>
+  </compound>
+</tagfile>
