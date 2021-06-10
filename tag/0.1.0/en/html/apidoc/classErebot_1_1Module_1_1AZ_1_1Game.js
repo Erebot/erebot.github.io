@@ -1,0 +1,25 @@
+var classErebot_1_1Module_1_1AZ_1_1Game =
+[
+    [ "__construct", "classErebot_1_1Module_1_1AZ_1_1Game.html#a21bc05a8c247027626590d82f3ac4a22", null ],
+    [ "__destruct", "classErebot_1_1Module_1_1AZ_1_1Game.html#a62c92e8abf2ace7ce87bc6e329405321", null ],
+    [ "compareWords", "classErebot_1_1Module_1_1AZ_1_1Game.html#a495c6f7015554cb05590fef1484ed0c4", null ],
+    [ "getAttemptsCount", "classErebot_1_1Module_1_1AZ_1_1Game.html#a3537c7db3de82705727b5f6ad0fe4eea", null ],
+    [ "getElapsedTime", "classErebot_1_1Module_1_1AZ_1_1Game.html#a7a834559df2b395eb36e92af9a817b03", null ],
+    [ "getInvalidWordsCount", "classErebot_1_1Module_1_1AZ_1_1Game.html#aa747377cc34c70839f5919bfcff15c48", null ],
+    [ "getLoadedListsNames", "classErebot_1_1Module_1_1AZ_1_1Game.html#ab158377c986517d0dc2c07a154648379", null ],
+    [ "getMaximum", "classErebot_1_1Module_1_1AZ_1_1Game.html#a178c71f8251d1c5a7dddc4c64b338115", null ],
+    [ "getMinimum", "classErebot_1_1Module_1_1AZ_1_1Game.html#a356d529a69acd44c6d761a00de8974cc", null ],
+    [ "getTarget", "classErebot_1_1Module_1_1AZ_1_1Game.html#af0523d70770c623d7617f4f772ae2f9a", null ],
+    [ "getWordsCount", "classErebot_1_1Module_1_1AZ_1_1Game.html#ae135ff08c0f5ae00b6623973f9be2e39", null ],
+    [ "isValidWord", "classErebot_1_1Module_1_1AZ_1_1Game.html#ab713fb4dbad72a586b179361828bbc71", null ],
+    [ "proposeWord", "classErebot_1_1Module_1_1AZ_1_1Game.html#ae5d998859e2ba216e965fdc1d5448120", null ],
+    [ "$attempts", "classErebot_1_1Module_1_1AZ_1_1Game.html#a6946e5de6f7d6ae79f5053392ed0cdf8", null ],
+    [ "$collator", "classErebot_1_1Module_1_1AZ_1_1Game.html#a711bff391895cef700f0c2d03b4bb239", null ],
+    [ "$invalidWords", "classErebot_1_1Module_1_1AZ_1_1Game.html#a1281c17c7fb1ccc0c2524ee0a14e56d6", null ],
+    [ "$lists", "classErebot_1_1Module_1_1AZ_1_1Game.html#a62326ade14464a2fb825f01e54470f8a", null ],
+    [ "$max", "classErebot_1_1Module_1_1AZ_1_1Game.html#a6944ec5db4d661ec0edbc6778b3de685", null ],
+    [ "$min", "classErebot_1_1Module_1_1AZ_1_1Game.html#ab67fa9432dfcf9178d97f55f8fe04856", null ],
+    [ "$started", "classErebot_1_1Module_1_1AZ_1_1Game.html#af2856664fa5029084402c84435a6f1db", null ],
+    [ "$target", "classErebot_1_1Module_1_1AZ_1_1Game.html#afd6ad6375a1f3870b8b8e01fd9e3085c", null ],
+    [ "$wordsCount", "classErebot_1_1Module_1_1AZ_1_1Game.html#adc97bd3e1e36c869522d94efaafcd212", null ]
+];
