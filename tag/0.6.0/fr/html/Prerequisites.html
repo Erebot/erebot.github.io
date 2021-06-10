@@ -1,0 +1,638 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Prerequisites &mdash; documentation Erebot 0.6.0</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.6.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="documentation Erebot 0.6.0" href="index.html" />
+    <link rel="next" title="Installation" href="Installation.html" />
+    <link rel="prev" title="Welcome to Erebot’s documentation!" href="index.html" /> 
+  </head>
+  <body>
+      <div class="header"><h1 class="heading"><a href="index.html">
+          <span>documentation Erebot 0.6.0</span></a></h1>
+        <h2 class="heading"><span>Prerequisites</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="index.html">Welcome to Erebot&#8217;s documentation!</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contenu</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="Installation.html">Installation</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <blockquote>
+<div></div></blockquote>
+<div class="section" id="prerequisites">
+<span id="id1"></span><h1>Prerequisites<a class="headerlink" href="#prerequisites" title="Lien permanent vers ce titre">¶</a></h1>
+<p>This page assumes that the reader has a working PHP setup (either installed
+using some distribution&#8217;s package manager or manually) and lists
+the dependencies required to use Erebot.
+In case you compiled PHP yourself, you may need to recompile it to include
+additional extensions (see the list of required <a class="reference internal" href="#php-dependencies">PHP dependencies</a> for more
+information).</p>
+<p>As of this writing, Erebot is known to work on all PHP versions since PHP 5.2.1.
+Also, Erebot should run correctly on both Windows (XP or later) and most Linux
+distributions.
+The code is tested using an automated process on several operating systems,
+as reflected by our <a class="reference external" href="https://buildbot.erebot.net/components/">Continuous Integration server</a>.</p>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#how-to-read-this-page" id="id13">How to read this page</a></li>
+<li><a class="reference internal" href="#system-dependencies" id="id14">System dependencies</a><ul>
+<li><a class="reference internal" href="#instructions-for-linux-users" id="id15">Instructions for Linux users</a></li>
+<li><a class="reference internal" href="#instructions-for-windows-users" id="id16">Instructions for Windows users</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#php-dependencies" id="id17">PHP dependencies</a><ul>
+<li><a class="reference internal" href="#compatible-installers" id="id18">Compatible installers</a></li>
+<li><a class="reference internal" href="#pecl-extensions" id="id19">PECL extensions</a></li>
+<li><a class="reference internal" href="#pear-packages" id="id20">PEAR packages</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="how-to-read-this-page">
+<h2><a class="toc-backref" href="#id13">How to read this page</a><a class="headerlink" href="#how-to-read-this-page" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Each dependency is associated with a &#8220;profile&#8221; which indicates who might be
+interested in installing that particular dependency.
+Currently, the following profiles are used:</p>
+<dl class="glossary docutils">
+<dt id="term-developer">developer</dt>
+<dd>Someone who contributes to the project, eg. by sending patches or pull
+requests. The developer profile is usually a superset of the end-user
+profile as developers tend to run the bot to test their work.</dd>
+<dt id="term-end-user">end-user</dt>
+<dd>Someone who wants to run the bot, ie. have it connect to and interact
+with some IRC server. Only a few dependencies are required for this
+profile.</dd>
+<dt id="term-packager">packager</dt>
+<dd>Someone who creates (PHAR) packages from Erebot&#8217;s source code.
+This profile does not include distribution maintainers.</dd>
+</dl>
+<p>You only need to install the dependencies associated with the profile that
+best matches what you plan on doing.</p>
+</div>
+<div class="section" id="system-dependencies">
+<h2><a class="toc-backref" href="#id14">System dependencies</a><a class="headerlink" href="#system-dependencies" title="Lien permanent vers ce titre">¶</a></h2>
+<p>The following table lists system dependencies. Make sure to read
+the installation instructions relevant to your system <strong>before</strong>
+you start the installation:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#instructions-for-linux-users">Instructions for Linux users</a></li>
+<li><a class="reference internal" href="#instructions-for-windows-users">Instructions for Windows users</a></li>
+</ul>
+<p>For each profile, a &#8220;yes&#8221; on a dependency&#8217;s row indicates that users of the
+given profile <strong>MUST</strong> install that dependency (requirement). Optional
+dependencies are indicated using footnotes which state when the dependency
+may be of any interest for the given profile.</p>
+<p>For apt-based systems like Debian/Ubuntu, an installation link is also provided.</p>
+<table border="1" class="docutils">
+<caption>System dependencies for Erebot</caption>
+<colgroup>
+<col width="10%" />
+<col width="10%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Dependency</th>
+<th class="head">APT link</th>
+<th class="head"><a class="reference internal" href="#term-developer"><em class="xref std std-term">Developer</em></a></th>
+<th class="head"><a class="reference internal" href="#term-packager"><em class="xref std std-term">Packager</em></a></th>
+<th class="head"><a class="reference internal" href="#term-end-user"><em class="xref std std-term">End-user</em></a></th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http://www.stack.nl/~dimitri/doxygen/download.html#latestsrc">doxygen</a></td>
+<td><a class="reference external" href="apt:doxygen">Install using apt</a></td>
+<td>yes</td>
+<td>yes</td>
+<td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">doxygen</span></tt> is needed if you plan to generate the documentation
+from Erebot&#8217;s source files. We recommend version 1.7.2 or later
+as Erebot makes heavy use of PHP type-hinting and <tt class="docutils literal"><span class="pre">doxygen</span></tt>
+did not support that until 1.7.2.</td>
+</tr>
+<tr class="row-odd"><td>gettext</td>
+<td><a class="reference external" href="apt:gettext">Install using apt</a></td>
+<td>yes</td>
+<td>yes</td>
+<td>&nbsp;</td>
+<td><p class="first">The <tt class="docutils literal"><span class="pre">gettext</span></tt> package provides the <tt class="docutils literal"><span class="pre">xgettext</span></tt> command-line
+program used to extract messages marked for translation.</p>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is <strong>NOT</strong> the same as the PHP <tt class="docutils literal"><span class="pre">gettext</span></tt> extension.</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://xmlstar.sourceforge.net/download.php">xmlstarlet</a></td>
+<td><a class="reference external" href="apt:xmlstarlet">Install using apt</a></td>
+<td>&nbsp;</td>
+<td>yes</td>
+<td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">xmlstarlet</span></tt> is a <abbr title="Command-Line Interface">CLI</abbr> tool that simplifies XML files editing.
+We use it during packaging to set various settings in the
+<tt class="file docutils literal"><span class="pre">package.xml</span></tt> file.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="instructions-for-linux-users">
+<h3><a class="toc-backref" href="#id15">Instructions for Linux users</a><a class="headerlink" href="#instructions-for-linux-users" title="Lien permanent vers ce titre">¶</a></h3>
+<p>It is assumed that the reader has a working package manager which can be used
+to install those dependencies, usually by issuing one of the following commands
+<strong>as a privileged user</strong>, followed by the name of the package that provides
+the dependency:</p>
+<div class="highlight-bash"><div class="highlight"><pre>root@localhost:~# <span class="c"># For apt-based distributions (eg. Debian, Ubuntu).</span>
+root@localhost:~# apt-get install &lt;package&gt;
+
+root@localhost:~# <span class="c"># For yum-based distributions (eg. Fedora, RedHat, CentOS).</span>
+root@localhost:~# yum install &lt;package&gt;
+
+root@localhost:~# <span class="c"># For urpmi-based distributions (eg. Mandriva).</span>
+root@localhost:~# urpmi &lt;package&gt;
+
+root@localhost:~# <span class="c"># For Zypper-based distributions (eg. SuSE)</span>
+root@localhost:~# zypper install &lt;package&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="instructions-for-windows-users">
+<h3><a class="toc-backref" href="#id16">Instructions for Windows users</a><a class="headerlink" href="#instructions-for-windows-users" title="Lien permanent vers ce titre">¶</a></h3>
+<p>As Windows lacks a central package manager, each dependency must be downloaded
+and installed separately, using its specific procedure.</p>
+<p>For Doxygen, this is easy, just go to <a class="reference external" href="http://www.stack.nl/~dimitri/doxygen/download.html#latestsrc">Doxygen&#8217;s download page</a>.
+The same goes for XMLStarlet whose Windows version can easily be downloaded
+from their <a class="reference external" href="http://xmlstar.sourceforge.net/download.php">download page</a>.</p>
+<p>Installing gettext for Windows is a little bit thougher.
+First, go to <a class="reference external" href="http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/">http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/</a>
+and download the latest version (0.18.1.1-2 as of this writing)
+of the following archives :</p>
+<ul class="simple">
+<li><a class="reference external" href="http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/gettext-runtime-dev_0.18.1.1-2_win32.zip">gettext-runtime-dev</a></li>
+<li><a class="reference external" href="http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/gettext-runtime_0.18.1.1-2_win32.zip">gettext-runtime</a></li>
+<li><a class="reference external" href="http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/gettext-tools-dev_0.18.1.1-2_win32.zip">gettext-tools-dev</a></li>
+</ul>
+<p>Unzip each of these files to the same target folder (eg. <tt class="docutils literal"><span class="pre">C:\gettext</span></tt>).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">So as to avoid potential issues, we recommend that you unzip the files
+in a folder whose name is both short (eg. your disk drive&#8217;s root)
+and does not contain any special character (including spaces).</p>
+</div>
+<p>Once you are done, point your system&#8217;s <span class="target" id="index-0"></span><tt class="xref std std-envvar docutils literal"><span class="pre">PATH</span></tt> environment variable
+to that folder&#8217;s <tt class="docutils literal"><span class="pre">bin</span></tt> subdirectory (ie. <tt class="docutils literal"><span class="pre">C:\gettext\bin</span></tt>).
+The remaining folders (lib, include, share, etc.) are not required
+and can safely be removed if disk space is an issue.</p>
+<p>This setup is what we use to test Erebot on Windows on our
+<a class="reference external" href="https://buildbot.erebot.net/components/">Continuous Integration server</a>.</p>
+</div>
+</div>
+<div class="section" id="php-dependencies">
+<h2><a class="toc-backref" href="#id17">PHP dependencies</a><a class="headerlink" href="#php-dependencies" title="Lien permanent vers ce titre">¶</a></h2>
+<p>There are two kinds of dependencies:</p>
+<dl class="docutils">
+<dt>PEAR packages</dt>
+<dd>These packages contain (reusable) PHP code. They are downloaded from the
+<a class="reference external" href="http://pear.php.net/">PHP Extension and Application Repository</a>.</dd>
+<dt>PECL packages</dt>
+<dd>These packages contain code (usually written in C) that extends PHP
+with new features or changes the behaviour of existing features.
+They are downloaded from the <a class="reference external" href="http://pecl.php.net/">PHP Extension Community Library</a>.</dd>
+</dl>
+<p>For each dependency, a short description as well as the profiles that are
+likely to be interested in installing that dependency are listed.</p>
+<div class="section" id="compatible-installers">
+<h3><a class="toc-backref" href="#id18">Compatible installers</a><a class="headerlink" href="#compatible-installers" title="Lien permanent vers ce titre">¶</a></h3>
+<p>To install Erebot&#8217;s PHP dependencies, you will need a compatible installer.
+There are currently two of them:</p>
+<dl class="docutils">
+<dt><a class="reference external" href="http://pear.php.net/package/PEAR">pear</a></dt>
+<dd><p class="first">The original installer, meant to install both PEAR and PECL packages.
+The simplest way to <a class="reference external" href="http://pear.php.net/manual/en/installation.php">install pear</a> is to grab a copy of
+<a class="reference external" href="http://pear.php.net/go-pear.phar">go-pear.phar</a> and run this command
+from a shell:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>php go-pear.phar
+</pre></div>
+</div>
+<p>Then, to install a dependency using <a class="reference external" href="http://pear.php.net/package/PEAR">pear</a>, run the following command:</p>
+<div class="last highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>pear install &lt;dependency&gt;
+</pre></div>
+</div>
+</dd>
+<dt><a class="reference external" href="http://pyrus.net/">Pyrus</a> (highly experimental, see below)</dt>
+<dd><p class="first">Successor for <a class="reference external" href="http://pear.php.net/package/PEAR">pear</a>, meant to replace it someday.
+Pyrus provides the means to install and manage installations for packages
+built using package.xml version 2.0 or newer. Pyrus is redesigned from
+the ground up for PHP 5.3 or newer, and provides significant improvements
+over the older PEAR Installer.
+The latest version can be downloaded from
+<a class="reference external" href="http://pear2.php.net/pyrus.phar">this link</a>.</p>
+<p>To install a dependency using <a class="reference external" href="http://pyrus.net/">Pyrus</a>, run the following command:</p>
+<div class="last highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>php pyrus.phar install &lt;dependency&gt;
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">At the time of this writing, <a class="reference external" href="http://pyrus.net/">Pyrus</a> is still in development, with only
+alpha releases currently available.
+Pyrus may corrupt your system when using its default configuration
+and is also known to install pear packages incorrectly under certain
+circumstances.
+Unless you know exactly what you are doing, we recommend that you stick
+to the regular <a class="reference external" href="http://pear.php.net/package/PEAR">pear</a> tool to install Erebot.
+See <a class="reference external" href="https://github.com/pyrus/Pyrus/issues/8">https://github.com/pyrus/Pyrus/issues/8</a>
+and <a class="reference external" href="https://github.com/pyrus/Pyrus/issues/26">https://github.com/pyrus/Pyrus/issues/26</a> for more information.</p>
+</div>
+</div>
+<div class="section" id="pecl-extensions">
+<h3><a class="toc-backref" href="#id19">PECL extensions</a><a class="headerlink" href="#pecl-extensions" title="Lien permanent vers ce titre">¶</a></h3>
+<p>The following table lists the PECL extensions needed to use Erebot.
+You may notice that most of these extensions are actually part of PHP Core.</p>
+<p>For each profile, a &#8220;yes&#8221; on a dependency&#8217;s row indicates that users of the
+given profile <strong>MUST</strong> install that dependency (requirement). Optional
+dependencies are indicated using footnotes which state when the dependency
+may be of any interest for the given profile.</p>
+<p>Unless you have a good reason not to (such as when testing backward
+compatibility), we recommend that you always install the latest version
+available for each dependency.</p>
+<table border="1" class="docutils">
+<caption>PECL extensions used by Erebot</caption>
+<colgroup>
+<col width="15%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Dependency</th>
+<th class="head"><a class="reference internal" href="#term-developer"><em class="xref std std-term">Developer</em></a></th>
+<th class="head"><a class="reference internal" href="#term-packager"><em class="xref std std-term">Packager</em></a></th>
+<th class="head"><a class="reference internal" href="#term-end-user"><em class="xref std std-term">End-user</em></a></th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http://php.net/DOM">DOM</a></td>
+<td>yes</td>
+<td>&nbsp;</td>
+<td>yes</td>
+<td>The DOM extension parses an <abbr title="eXtensible Markup Language">XML</abbr> document into a <abbr title="Document Object Model">DOM</abbr>, making it
+easier to work with from a developer&#8217;s point of view.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://php.net/intl">intl</a></td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>Provides several helper classes to ease work on <abbr title="internationalization">i18n</abbr>
+in PHP applications.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://php.net/libxml">libxml</a></td>
+<td>yes</td>
+<td>&nbsp;</td>
+<td>yes</td>
+<td>This extension is a thin wrapper above the C <a class="reference external" href="http://xmlsoft.org/">libxml2</a> library
+and is used by other extensions (DOM, SimpleXML, XML, etc.) that
+deal with <abbr title="eXtensible Markup Language">XML</abbr> documents.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://php.net/openssl">openssl</a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="footnote-reference" href="#footnotes-openssl" id="id2">[1]</a></td>
+<td>Provides <a class="reference external" href="http://en.wikipedia.org/wiki/Secure_Sockets_Layer">SSL</a>/<a class="reference external" href="http://en.wikipedia.org/wiki/Transport_Layer_Security">TLS</a> support (secure communications) for PHP.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://php.net/pcntl">pcntl</a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="footnote-reference" href="#footnotes-pcntl" id="id3">[2]</a></td>
+<td>Process management using PHP. The functions provided by this
+extension can be used to communicate with other processes
+from PHP (using signals) and to exercise some sort of control
+over them.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://php.net/Phar">Phar</a></td>
+<td>&nbsp;</td>
+<td><a class="footnote-reference" href="#footnotes-phar-package" id="id4">[3]</a></td>
+<td><a class="footnote-reference" href="#footnotes-phar-run" id="id5">[4]</a></td>
+<td>This extension is used to create or access a PHP Archive (phar).</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://php.net/POSIX">POSIX</a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="footnote-reference" href="#footnotes-posix" id="id6">[5]</a></td>
+<td>Provides access to several functions only featured by
+<a class="reference external" href="http://en.wikipedia.org/wiki/Posix">POSIX</a>-compliant operating systems.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://php.net/Reflection">Reflection</a></td>
+<td>yes</td>
+<td>&nbsp;</td>
+<td>yes</td>
+<td>This extension makes it possible for some PHP code to inspect its
+own structure.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://php.net/SimpleXML">SimpleXML</a></td>
+<td>yes</td>
+<td>&nbsp;</td>
+<td>yes</td>
+<td>Wrapper around <a class="reference external" href="http://xmlsoft.org/">libxml2</a> designed to make working with <abbr title="eXtensible Markup Language">XML</abbr>
+documents easier.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://php.net/sockets">sockets</a></td>
+<td>yes</td>
+<td>&nbsp;</td>
+<td>yes</td>
+<td>This extensions provides networking means for PHP applications.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://php.net/SPL">SPL</a></td>
+<td>yes</td>
+<td>&nbsp;</td>
+<td>yes</td>
+<td>The <a class="reference external" href="http://php.net/spl">Standard PHP Library</a> provides several functions and classes
+meant to deal with common usage patterns, improving code reuse.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://xdebug.org/">xdebug</a></td>
+<td><a class="footnote-reference" href="#footnotes-xdebug" id="id7">[6]</a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Debugging execution of PHP code is made possible by this extension.
+It can also be used to retrieve some metrics on the code (like
+code coverage information).</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://php.net/XSL">XSL</a></td>
+<td>yes</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>The XSL extension implements the XSL standard, performing
+<a class="reference external" href="http://www.w3.org/TR/xslt">XSLT transformations</a> using the <a class="reference external" href="http://xmlsoft.org/XSLT/">libxslt library</a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://php.net/mbstring">mbstring</a>
+or <a class="reference external" href="http://php.net/iconv">iconv</a>
+or <a class="reference external" href="http://php.net/recode">recode</a>
+or <a class="reference external" href="http://php.net/XML">XML</a></td>
+<td>yes</td>
+<td>&nbsp;</td>
+<td>yes</td>
+<td>These extensions make it possible to re-encode some text (also
+known as transcoding) from one encoding to another.
+<tt class="docutils literal"><span class="pre">mbstring</span></tt> and <tt class="docutils literal"><span class="pre">iconv</span></tt> support a wider set of encodings than
+the other extensions and are thus recommended.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="pear-packages">
+<h3><a class="toc-backref" href="#id20">PEAR packages</a><a class="headerlink" href="#pear-packages" title="Lien permanent vers ce titre">¶</a></h3>
+<p>The following table lists the PEAR packages needed to use Erebot.</p>
+<p>For each profile, a &#8220;yes&#8221; on a dependency&#8217;s row indicates that users of the
+given profile <strong>MUST</strong> install that dependency (requirement). Optional
+dependencies are indicated using footnotes which state when the dependency
+may be of any interest for the given profile.</p>
+<p>Unless you have a good reason not to (such as when testing backward
+compatibility), we recommend that you always install the latest version
+available for each dependency.</p>
+<table border="1" class="docutils">
+<caption>PEAR packages used by Erebot</caption>
+<colgroup>
+<col width="20%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Dependency</th>
+<th class="head">Developer</th>
+<th class="head">Packager</th>
+<th class="head">End-user</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http://pdepend.org/">pear.pdepend.org/PHP_Depend</a></td>
+<td><a class="footnote-reference" href="#footnotes-qa-depend" id="id8">[7]</a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>PHP Depend gives several metrics on PHP code such as adherence
+between classes.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://phing.info/">pear.phing.info/Phing</a>  &gt;= 2.4.3</td>
+<td>yes</td>
+<td>yes</td>
+<td>&nbsp;</td>
+<td><abbr title="PHing Is Not GNU make">phing</abbr> is a PHP project build tool based on <a class="reference external" href="http://ant.apache.org/">Apache Ant</a>.
+It is heavily used by Erebot which provides phing targets for
+most operations you may use.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://pear.php.net/Console_CommandLine">pear.php.net/Console_CommandLine</a></td>
+<td>yes</td>
+<td>&nbsp;</td>
+<td>yes</td>
+<td>Parses command line arguments. This is used by Erebot to provide
+options for the bot (eg. to change the path to the configuration
+file, to start the bot in the background, etc.).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://pear.php.net/File_Gettext">pear.php.net/File_Gettext</a></td>
+<td>yes</td>
+<td>&nbsp;</td>
+<td>yes</td>
+<td>Erebot uses this PEAR package to handle <abbr title="internationalization">i18n</abbr>. It can be used to
+parse <a class="reference external" href="http://www.gnu.org/s/gettext/">gettext</a> translation catalogs, like the ones provided
+with Erebot.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://pear.php.net/PHP_CodeSniffer">pear.php.net/PHP_CodeSniffer</a></td>
+<td>yes <a class="footnote-reference" href="#footnotes-qa-codesniffer" id="id9">[8]</a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>This package tokenizes PHP files and detects violations of a
+defined set of coding standards. It is used by Erebot developers
+to make sure new patches comply with <a class="reference external" href="Coding_Standard.html">Erebot&#8217;s coding standard</a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://pear.php.net/PHP_ParserGenerator">pear.php.net/PHP_ParserGenerator</a></td>
+<td>yes</td>
+<td>yes</td>
+<td>&nbsp;</td>
+<td>This package is is a port of the <a class="reference external" href="http://www.hwaci.com/sw/lemon/lemon.html">Lemon parser generator</a> for PHP
+and is used by Erebot and its modules to create parsers for several
+grammars (eg. to parse expressions in styles).</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://phpmd.org/">pear.phpmd.org/PHP_PMD</a></td>
+<td><a class="footnote-reference" href="#footnotes-qa-mess" id="id10">[9]</a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>The PHP Mess Detector parses PHP files to detect overly complex
+code patterns, making it easier for developpers to refactor their
+code and to improve its readability.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://github.com/sebastianbergmann/phpcpd">pear.phpunit.de/phpcpd</a></td>
+<td><a class="footnote-reference" href="#footnotes-qa-duplicates" id="id11">[10]</a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>The PHP Copy/Paste Detector detects abusive duplication of PHP code.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://phpunit.de/">pear.phpunit.de/PHPUnit</a> &gt;= 3.4.0</td>
+<td><a class="footnote-reference" href="#footnotes-phpunit" id="id12">[11]</a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>PHP unit test framework used by Erebot. Pull requests should
+generally contain one or more unit test before they can be
+considered for review.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="footnotes-openssl" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>Needed if you want to connect to IRC servers using a secure
+(encrypted) connection. Required when running Erebot from a PHAR archive
+(used to check the archive&#8217;s origin and integrity).</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="footnotes-pcntl" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td>Required for daemonization and to change user/group information
+upon startup. Not available on Windows.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="footnotes-phar-package" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[3]</a></td><td>Only required to package Erebot as a <tt class="docutils literal"><span class="pre">.phar</span></tt> archive.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="footnotes-phar-run" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[4]</a></td><td>Only required to run Erebot from a <tt class="docutils literal"><span class="pre">.phar</span></tt> archive.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="footnotes-posix" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[5]</a></td><td>Required to change user/group information upon startup.
+Not available on Windows.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="footnotes-xdebug" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id7">[6]</a></td><td>Only required to run the test suite.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="footnotes-qa-depend" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id8">[7]</a></td><td>Required to use the <tt class="docutils literal"><span class="pre">qa_depend</span></tt> phing target.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="footnotes-qa-codesniffer" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id9">[8]</a></td><td>Required to use the <tt class="docutils literal"><span class="pre">qa_codesniffer</span></tt> phing target,
+which should <strong>ALWAYS</strong> be called before submitting a patch.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="footnotes-qa-mess" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id10">[9]</a></td><td>Required to use the <tt class="docutils literal"><span class="pre">qa_mess</span></tt> phing target.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="footnotes-qa-duplicates" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id11">[10]</a></td><td>Required to use the <tt class="docutils literal"><span class="pre">qa_duplicates</span></tt> phing target.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="footnotes-phpunit" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id12">[11]</a></td><td>Required to use any of the <tt class="docutils literal"><span class="pre">qa_coverage</span></tt>, <tt class="docutils literal"><span class="pre">qa_test</span></tt>,
+<tt class="docutils literal"><span class="pre">test</span></tt> or <tt class="docutils literal"><span class="pre">tests</span></tt> phing targets.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="index.html">Welcome to Erebot&#8217;s documentation!</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contenu</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="Installation.html">Installation</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2019, The Erebot team.
+      Mis à jour le Jan 05, 2019.
+      Créé avec <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  
+<!-- Custom overlay -->
+<script type="text/javascript">
+var erebot = {"source_suffix": ".rst", "language": "fr", "builder": "html", "default_branch": "master", "project": {"version": "0.6.0", "name": "Erebot", "slug": "erebot/erebot"}, "base": "./", "page": "Prerequisites"};
+</script>
+<script type="text/javascript" src="./../../../../erebot-overlay.js"></script>
+
+<!-- Statistics -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDocumentTitle", document.domain + " / " + document.title]);
+  if (document.domain != 'docs.erebot.net') {'
+      _paq.push(["setCookieDomain", "erebot.github.io"]);
+  }
+  _paq.push(["setDomains", ["erebot.github.io", "docs.erebot.net"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.erebot.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '4']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.erebot.net/piwik.php?idsite=4" style="border:0;" alt="" /></p></noscript>
+</body>
+</html>

@@ -1,0 +1,25 @@
+Making output directory...
+Running Sphinx v1.2.2
+
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/sphinx/cmdline.py", line 253, in main
+    warningiserror, tags, verbosity, parallel)
+  File "/usr/lib/python2.7/dist-packages/sphinx/application.py", line 107, in __init__
+    confoverrides or {}, self.tags)
+  File "/usr/lib/python2.7/dist-packages/sphinx/config.py", line 229, in __init__
+    execfile_(filename, config)
+  File "/usr/lib/python2.7/dist-packages/sphinx/util/pycompat.py", line 105, in execfile_
+    exec code in _globals
+  File "conf.py", line 134, in <module>
+    prepare(globals(), locals())
+  File "conf.py", line 83, in prepare
+    composer = json.load(open(join(root, 'composer.json'), 'r'))
+IOError: [Errno 2] No such file or directory: '/home/travis/build/Erebot/erebot.github.io/tmp/clone/composer.json'
+
+Exception occurred:
+  File "conf.py", line 83, in prepare
+    composer = json.load(open(join(root, 'composer.json'), 'r'))
+IOError: [Errno 2] No such file or directory: '/home/travis/build/Erebot/erebot.github.io/tmp/clone/composer.json'
+The full traceback has been saved in /tmp/sphinx-err-TBW0vY.log, if you want to report the issue to the developers.
+Please also report this if it was a user error, so that a better error message can be provided next time.
+A bug report can be filed in the tracker at <https://bitbucket.org/birkenfeld/sphinx/issues/>. Thanks!

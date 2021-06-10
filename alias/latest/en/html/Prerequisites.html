@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Prerequisites &mdash; Erebot latest-0.6.0-74-g691fc3f documentation</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'latest-0.6.0-74-g691fc3f',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Erebot latest-0.6.0-74-g691fc3f documentation" href="index.html" />
+    <link rel="next" title="Installation" href="Installation.html" />
+    <link rel="prev" title="Welcome to Erebot’s documentation!" href="index.html" /> 
+  </head>
+  <body>
+      <div class="header"><h1 class="heading"><a href="index.html">
+          <span>Erebot latest-0.6.0-74-g691fc3f documentation</span></a></h1>
+        <h2 class="heading"><span>Prerequisites</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="index.html">Welcome to Erebot&#8217;s documentation!</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="Installation.html">Installation</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <blockquote>
+<div></div></blockquote>
+<div class="section" id="prerequisites">
+<h1>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h1>
+<p>This page assumes that the reader has a working PHP setup (either installed
+using some distribution&#8217;s package manager or manually) and lists
+the dependencies required to use Erebot.</p>
+<p>For now, Erebot is known to work on all PHP versions &gt;= 5.3.3.
+Also, Erebot should run correctly on both Windows and most Linux distributions.</p>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#dependencies-for-regular-users" id="id8">Dependencies for regular users</a></li>
+<li><a class="reference internal" href="#additional-dependencies-for-erebot-developers" id="id9">Additional dependencies for Erebot developers</a><ul>
+<li><a class="reference internal" href="#system-dependencies" id="id10">System dependencies</a></li>
+<li><a class="reference internal" href="#php-extensions" id="id11">PHP extensions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="dependencies-for-regular-users">
+<span id="id1"></span><h2><a class="toc-backref" href="#id8">Dependencies for regular users</a><a class="headerlink" href="#dependencies-for-regular-users" title="Permalink to this headline">¶</a></h2>
+<p>The following table lists the PHP extensions that need to be available
+for the bot to work correctly.</p>
+<p>Most of these extensions are actually part of PHP&#8217;s core extensions
+and are thus usually enabled by default. Nonetheless, in case you compiled
+PHP yourself, you may need to recompile it to include the necessary extensions.</p>
+<table border="1" class="docutils">
+<caption>Required PECL extensions for regular users</caption>
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Dependency</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http://php.net/ctype">ctype</a></td>
+<td>The <tt class="docutils literal"><span class="pre">ctype</span></tt> extension provides functions to test various
+properties of an input string.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://php.net/DOM">DOM</a></td>
+<td>The <tt class="docutils literal"><span class="pre">DOM</span></tt> extension parses an <abbr title="eXtensible Markup Language">XML</abbr> document into a <abbr title="Document Object Model">DOM</abbr>,
+making it easier to work with from a developer&#8217;s point of view.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://php.net/intl">intl</a></td>
+<td>Provides several helper classes to ease work on <abbr title="internationalization">i18n</abbr>
+in PHP applications.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://php.net/libxml">libxml</a></td>
+<td>This extension is a thin wrapper above the C <a class="reference external" href="http://xmlsoft.org/">libxml2</a> library
+and is used by other extensions (DOM, SimpleXML, XML, etc.) that
+deal with <abbr title="eXtensible Markup Language">XML</abbr> documents.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://php.net/openssl">openssl</a> <a class="footnote-reference" href="#footnotes-openssl" id="id2">[1]</a></td>
+<td>Provides <a class="reference external" href="http://en.wikipedia.org/wiki/Secure_Sockets_Layer">SSL</a>/<a class="reference external" href="http://en.wikipedia.org/wiki/Transport_Layer_Security">TLS</a> support (secure communications) for PHP.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://php.net/pcntl">pcntl</a> <a class="footnote-reference" href="#footnotes-pcntl" id="id3">[2]</a></td>
+<td>Process management using PHP. The functions provided by this
+extension can be used to communicate with other processes
+from PHP (using signals) and to exercise some sort of control
+over them.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://php.net/PCRE">PCRE</a></td>
+<td>Provides Perl-Compatible Regular Expressions for PHP.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://php.net/Phar">Phar</a> <a class="footnote-reference" href="#footnotes-phar-run" id="id4">[4]</a></td>
+<td>This extension is used to access a PHP Archive (phar) files.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://php.net/POSIX">POSIX</a> <a class="footnote-reference" href="#footnotes-posix" id="id5">[5]</a></td>
+<td>Provides access to several functions only featured by
+<a class="reference external" href="http://en.wikipedia.org/wiki/Posix">POSIX</a>-compliant operating systems.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://php.net/Reflection">Reflection</a></td>
+<td>This extension makes it possible for some PHP code to inspect its
+own structure.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://php.net/SimpleXML">SimpleXML</a></td>
+<td>Wrapper around <a class="reference external" href="http://xmlsoft.org/">libxml2</a> designed to make working with <abbr title="eXtensible Markup Language">XML</abbr>
+documents easier.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://php.net/sockets">sockets</a></td>
+<td>This extensions provides networking means for PHP applications.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://php.net/SPL">SPL</a></td>
+<td>The <a class="reference external" href="http://php.net/spl">Standard PHP Library</a> provides several functions and classes
+meant to deal with common usage patterns, improving code reuse.</td>
+</tr>
+<tr class="row-odd"><td>One of <a class="reference external" href="http://php.net/mbstring">mbstring</a>, <a class="reference external" href="http://php.net/iconv">iconv</a>, <a class="reference external" href="http://php.net/recode">recode</a> or <a class="reference external" href="http://php.net/XML">XML</a></td>
+<td>These extensions make it possible to re-encode some text (also
+known as transcoding) from one encoding to another.
+<tt class="docutils literal"><span class="pre">mbstring</span></tt> and <tt class="docutils literal"><span class="pre">iconv</span></tt> support a wider set of encodings
+and are thus recommended over the other extensions.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="additional-dependencies-for-erebot-developers">
+<h2><a class="toc-backref" href="#id9">Additional dependencies for Erebot developers</a><a class="headerlink" href="#additional-dependencies-for-erebot-developers" title="Permalink to this headline">¶</a></h2>
+<p>These dependencies are only necessary if you want to participate into
+the bot&#8217;s development. For regular usage, refer to the list of
+<a class="reference internal" href="#dependencies-for-regular-users"><em>Dependencies for regular users</em></a>.</p>
+<p>Erebot developers should install both the dependencies from the regular set
+plus the ones listed below in order to get a working setup.</p>
+<p>For Linux, those dependencies can usually be installed by issuing
+one of the following commands <strong>as a privileged user</strong>:</p>
+<div class="highlight-bash"><div class="highlight"><pre>root@localhost:~# <span class="c"># For apt-based distributions (eg. Debian, Ubuntu).</span>
+root@localhost:~# apt-get install &lt;package&gt;
+
+root@localhost:~# <span class="c"># For yum-based distributions (eg. Fedora, RedHat, CentOS).</span>
+root@localhost:~# yum install &lt;package&gt;
+
+root@localhost:~# <span class="c"># For recent versions of Fedora, RedHat and CentOS.</span>
+root@localhost:~# dnf install &lt;package&gt;
+
+root@localhost:~# <span class="c"># For urpmi-based distributions (eg. Mandriva).</span>
+root@localhost:~# urpmi &lt;package&gt;
+
+root@localhost:~# <span class="c"># For Zypper-based distributions (eg. SuSE)</span>
+root@localhost:~# zypper install &lt;package&gt;
+</pre></div>
+</div>
+<p>Please refer to your distribution&#8217;s documentation for more information.</p>
+<p>For Windows, each dependency must be downloaded and installed separately
+as there is no central package manager like on Linux.</p>
+<div class="section" id="system-dependencies">
+<h3><a class="toc-backref" href="#id10">System dependencies</a><a class="headerlink" href="#system-dependencies" title="Permalink to this headline">¶</a></h3>
+<p>The following table lists the necessary system dependencies required for
+Erebot&#8217;s development. For apt-based systems like Debian/Ubuntu,
+an installation link is also provided. Instructions for Windows users
+are also provided.</p>
+<table border="1" class="docutils">
+<caption>System dependencies for developers</caption>
+<colgroup>
+<col width="15%" />
+<col width="20%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Dependency</th>
+<th class="head">APT link</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http://www.stack.nl/~dimitri/doxygen/download.html#latestsrc">doxygen</a></td>
+<td><a class="reference external" href="apt:doxygen">Install this package</a></td>
+<td><p class="first"><tt class="docutils literal"><span class="pre">doxygen</span></tt> is needed if you plan to generate the documentation
+from Erebot&#8217;s source files. We recommend version 1.8.0 or later.</p>
+<p class="last">Windows users may download a pre-built binary release
+from <a class="reference external" href="http://www.stack.nl/~dimitri/doxygen/download.html#latestsrc">Doxygen&#8217;s download page</a>.</p>
+</td>
+</tr>
+<tr class="row-odd"><td>gettext</td>
+<td><a class="reference external" href="apt:gettext">Install this package</a></td>
+<td><p class="first">The <tt class="docutils literal"><span class="pre">gettext</span></tt> package provides the <tt class="docutils literal"><span class="pre">xgettext</span></tt> command-line
+program used to extract messages marked for translation.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is <strong>NOT</strong> the same as the PHP <tt class="docutils literal"><span class="pre">gettext</span></tt> extension.</p>
+</div>
+<p>Installing gettext for Windows is a bit more tedious.
+First, go to <a class="reference external" href="http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/">http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/</a>
+and download the latest version (0.18.1.1-2 as of this writing)
+of the following archives :</p>
+<ul class="simple">
+<li><a class="reference external" href="http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/gettext-runtime-dev_0.18.1.1-2_win32.zip">gettext-runtime-dev</a></li>
+<li><a class="reference external" href="http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/gettext-runtime_0.18.1.1-2_win32.zip">gettext-runtime</a></li>
+<li><a class="reference external" href="http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/gettext-tools-dev_0.18.1.1-2_win32.zip">gettext-tools-dev</a></li>
+</ul>
+<p>Unzip each of these files to the same target folder (eg. <tt class="docutils literal"><span class="pre">C:\gettext</span></tt>).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">So as to avoid potential issues, we recommend that you unzip the files
+in a folder whose name is both short (eg. your disk drive&#8217;s root)
+and does not contain any special character (eg. no spaces).</p>
+</div>
+<p class="last">Once you are done, point your system&#8217;s <span class="target" id="index-0"></span><tt class="xref std std-envvar docutils literal"><span class="pre">PATH</span></tt> environment variable
+to that folder&#8217;s <tt class="docutils literal"><span class="pre">bin</span></tt> subdirectory (ie. <tt class="docutils literal"><span class="pre">C:\gettext\bin</span></tt>).
+The remaining folders (lib, include, share, etc.) are not required
+and can safely be removed if disk space is an issue.</p>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://xmlstar.sourceforge.net/download.php">xmlstarlet</a></td>
+<td><a class="reference external" href="apt:xmlstarlet">Install this package</a></td>
+<td><p class="first"><tt class="docutils literal"><span class="pre">xmlstarlet</span></tt> is a <abbr title="Command-Line Interface">CLI</abbr> tool that simplifies XML files editing.
+We use it during packaging to set various settings in the
+<tt class="file docutils literal"><span class="pre">package.xml</span></tt> file.</p>
+<p class="last">Windows users may download a pre-build binary release
+from the project&#8217;s <a class="reference external" href="http://xmlstar.sourceforge.net/download.php">download page</a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="php-extensions">
+<h3><a class="toc-backref" href="#id11">PHP extensions</a><a class="headerlink" href="#php-extensions" title="Permalink to this headline">¶</a></h3>
+<p>The following table lists additional PHP extension that need to be installed
+by Erebot developers.</p>
+<table border="1" class="docutils">
+<caption>Required PECL extensions for Erebot developers</caption>
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Dependency</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http://php.net/Phar">Phar</a> <a class="footnote-reference" href="#footnotes-phar-package" id="id6">[3]</a></td>
+<td><p class="first">This extension is used to create a PHP Archive (phar) containing
+the bot&#8217;s code, providing users with an easy way to install Erebot.</p>
+<p class="last">This extension is part of PHP core on Windows and so, Windows users
+don&#8217;t need to do anything specific to benefit from it.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://xdebug.org/">xdebug</a> <a class="footnote-reference" href="#footnotes-xdebug" id="id7">[6]</a></td>
+<td><p class="first">Debugging execution of PHP code is made possible by this extension.
+It is also used to retrieve code coverage information while testing
+the code.</p>
+<p class="last">Pre-built binary releases for Windows can be downloaded from
+<a class="reference external" href="https://xdebug.org/download.php">Xdebug&#8217;s download page</a>.
+Make sure to download the build matching your PHP installation
+(same VC version, same thread-safe support &amp; same architecture).</p>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://php.net/XSL">XSL</a></td>
+<td><p class="first">The XSL extension implements the XSL standard, performing
+<a class="reference external" href="http://www.w3.org/TR/xslt">XSLT transformations</a> using the <a class="reference external" href="http://xmlsoft.org/XSLT/">libxslt library</a>.</p>
+<p class="last">This extension is bundled with PHP on Windows and so, Windows users
+only need to activate it through the <tt class="file docutils literal"><span class="pre">php.ini</span></tt> configuration
+file.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="footnotes-openssl" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>Needed if you want to connect to IRC servers using a secure
+(encrypted) connection. Also required when running Erebot
+from a PHAR archive to check the archive&#8217;s integrity.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="footnotes-pcntl" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td>Required for daemonization and to change user/group information
+upon startup. (not available on Windows)</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="footnotes-phar-package" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[3]</a></td><td>Required to package Erebot as a <tt class="docutils literal"><span class="pre">.phar</span></tt> archive.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="footnotes-phar-run" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td><td>Required to run Erebot from a <tt class="docutils literal"><span class="pre">.phar</span></tt> archive.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="footnotes-posix" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[5]</a></td><td>Required to change user/group information upon startup.
+(not available on Windows)</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="footnotes-xdebug" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id7">[6]</a></td><td>Only required to run the test suite.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="index.html">Welcome to Erebot&#8217;s documentation!</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="Installation.html">Installation</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2019, The Erebot team.
+      Last updated on Jan 06, 2019.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  
+<!-- Custom overlay -->
+<script type="text/javascript">
+var erebot = {"source_suffix": ".rst", "language": "en", "builder": "html", "default_branch": "master", "project": {"version": "latest", "name": "Erebot", "slug": "erebot/erebot"}, "base": "./", "page": "Prerequisites"};
+</script>
+<script type="text/javascript" src="./../../../../erebot-overlay.js"></script>
+
+<!-- Statistics -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDocumentTitle", document.domain + " / " + document.title]);
+  if (document.domain != 'docs.erebot.net') {
+      _paq.push(["setCookieDomain", "erebot.github.io"]);
+  }
+  _paq.push(["setDomains", ["erebot.github.io", "docs.erebot.net"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.erebot.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '4']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.erebot.net/piwik.php?idsite=4" style="border:0;" alt="" /></p></noscript>
+</body>
+</html>

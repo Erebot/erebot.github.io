@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Usage &mdash; documentation Erebot latest-0.6.0-74-g691fc3f</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'latest-0.6.0-74-g691fc3f',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="documentation Erebot latest-0.6.0-74-g691fc3f" href="index.html" />
+    <link rel="next" title="Compatible modules" href="Modules.html" />
+    <link rel="prev" title="Configuration" href="Configuration.html" /> 
+  </head>
+  <body>
+      <div class="header"><h1 class="heading"><a href="index.html">
+          <span>documentation Erebot latest-0.6.0-74-g691fc3f</span></a></h1>
+        <h2 class="heading"><span>Usage</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="Configuration.html">Configuration</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contenu</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="Modules.html">Compatible modules</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <blockquote>
+<div></div></blockquote>
+<div class="section" id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Lien permanent vers ce titre">¶</a></h2>
+<dl class="option">
+<dt id="cmdoption-Erebot-c">
+<span id="cmdoption-Erebot--config"></span><tt class="descname">-c</tt><tt class="descclassname"> &lt;FILE&gt;</tt><tt class="descclassname">, </tt><tt class="descname">--config</tt><tt class="descclassname"> &lt;FILE&gt;</tt><a class="headerlink" href="#cmdoption-Erebot-c" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Use the given configuration &lt;FILE&gt; instead of the default <tt class="file docutils literal"><span class="pre">Erebot.xml</span></tt>.
+The given path is interpreted relative to the current directory.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-Erebot-d">
+<span id="cmdoption-Erebot--daemon"></span><tt class="descname">-d</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--daemon</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-Erebot-d" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Run the bot in the background.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Both the POSIX and pcntl PHP extensions must be enabled for this
+option to work.</p>
+</div>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-Erebot-n">
+<span id="cmdoption-Erebot--no-daemon"></span><tt class="descname">-n</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--no-daemon</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-Erebot-n" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Run the bot in the foreground.
+This is the default unless <a class="reference internal" href="#cmdoption-Erebot-d"><em class="xref std std-option">Erebot -d</em></a> is used.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-Erebot-p">
+<span id="cmdoption-Erebot--pidfile"></span><tt class="descname">-p</tt><tt class="descclassname"> &lt;FILE&gt;</tt><tt class="descclassname">, </tt><tt class="descname">--pidfile</tt><tt class="descclassname"> &lt;FILE&gt;</tt><a class="headerlink" href="#cmdoption-Erebot-p" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Path to the file where the bot&#8217;s <abbr title="Process IDentifier">PID</abbr>
+will be written, relative to the current directory.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-Erebot-g">
+<span id="cmdoption-Erebot--group"></span><tt class="descname">-g</tt><tt class="descclassname"> &lt;GROUP/GID&gt;</tt><tt class="descclassname">, </tt><tt class="descname">--group</tt><tt class="descclassname"> &lt;GROUP/GID&gt;</tt><a class="headerlink" href="#cmdoption-Erebot-g" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Switch to this group identity during startup.
+The group may be expressed as either a group name (eg. <tt class="docutils literal"><span class="pre">root</span></tt>)
+or as a numeric <abbr title="Group IDentifier">GID</abbr> (eg. <tt class="docutils literal"><span class="pre">0</span></tt>).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-Erebot-u">
+<span id="cmdoption-Erebot--user"></span><tt class="descname">-u</tt><tt class="descclassname"> &lt;USER/UID&gt;</tt><tt class="descclassname">, </tt><tt class="descname">--user</tt><tt class="descclassname"> &lt;USER/UID&gt;</tt><a class="headerlink" href="#cmdoption-Erebot-u" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Switch to this user identity during startup.
+The user may be expressed as either a user name (eg. <tt class="docutils literal"><span class="pre">root</span></tt>)
+or as a numeric <abbr title="User IDentifier">UID</abbr> (eg. <tt class="docutils literal"><span class="pre">0</span></tt>).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-Erebot-h">
+<span id="cmdoption-Erebot--help"></span><tt class="descname">-h</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--help</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-Erebot-h" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Display the bot&#8217;s help and exit.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-Erebot-v">
+<span id="cmdoption-Erebot--version"></span><tt class="descname">-v</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--version</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-Erebot-v" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Display the bot&#8217;s version and exit.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="environment-variables">
+<h2>Environment variables<a class="headerlink" href="#environment-variables" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Several environment variables related to language settings control the way
+the bot produces its output. The first variable to appear in the environment
+takes precedence over the others.</p>
+<dl class="envvar">
+<dt id="envvar-LANGUAGE">
+<tt class="descname">LANGUAGE</tt><a class="headerlink" href="#envvar-LANGUAGE" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Defines the system&#8217;s supported languages, as a colon-separated list
+of country names with optional regions.
+Eg.</p>
+<div class="highlight-shell"><div class="highlight"><pre>LANGUAGE=en_US:en
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-LC_ALL">
+<tt class="descname">LC_ALL</tt><a class="headerlink" href="#envvar-LC_ALL" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Defines supported languages for various types of formatting operations,
+like message formatting, date/time formatting and so on.
+Setting this variable is equivalent to setting each of the other
+<tt class="docutils literal"><span class="pre">LC_*</span></tt> variables individually to the same value.</p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-LC_MESSAGES">
+<tt class="descname">LC_MESSAGES</tt><a class="headerlink" href="#envvar-LC_MESSAGES" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Defines supported languages when outputting textual messages.</p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-LC_MONETARY">
+<tt class="descname">LC_MONETARY</tt><a class="headerlink" href="#envvar-LC_MONETARY" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Defines supported languages when outputting monetary values.</p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-LC_TIME">
+<tt class="descname">LC_TIME</tt><a class="headerlink" href="#envvar-LC_TIME" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Defines supported languages when outputting dates/times.</p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-LC_NUMERIC">
+<tt class="descname">LC_NUMERIC</tt><a class="headerlink" href="#envvar-LC_NUMERIC" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Defines supported languages when outputting other numeric values
+(eg. floating-point values).</p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-LANG">
+<tt class="descname">LANG</tt><a class="headerlink" href="#envvar-LANG" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Defines the system&#8217;s supported languages and encodings, as a colon-separated
+list of country names with their optional region and their encoding.
+Eg.</p>
+<div class="highlight-shell"><div class="highlight"><pre>LANG=en_US.utf8
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="Configuration.html">Configuration</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contenu</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="Modules.html">Compatible modules</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2019, The Erebot team.
+      Mis à jour le Jan 06, 2019.
+      Créé avec <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  
+<!-- Custom overlay -->
+<script type="text/javascript">
+var erebot = {"source_suffix": ".rst", "language": "fr", "builder": "html", "default_branch": "master", "project": {"version": "latest", "name": "Erebot", "slug": "erebot/erebot"}, "base": "./", "page": "Usage"};
+</script>
+<script type="text/javascript" src="./../../../../erebot-overlay.js"></script>
+
+<!-- Statistics -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDocumentTitle", document.domain + " / " + document.title]);
+  if (document.domain != 'docs.erebot.net') {
+      _paq.push(["setCookieDomain", "erebot.github.io"]);
+  }
+  _paq.push(["setDomains", ["erebot.github.io", "docs.erebot.net"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.erebot.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '4']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.erebot.net/piwik.php?idsite=4" style="border:0;" alt="" /></p></noscript>
+</body>
+</html>

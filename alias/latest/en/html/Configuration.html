@@ -1,0 +1,530 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Configuration &mdash; Erebot latest-0.6.0-74-g691fc3f documentation</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'latest-0.6.0-74-g691fc3f',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Erebot latest-0.6.0-74-g691fc3f documentation" href="index.html" />
+    <link rel="next" title="Usage" href="Usage.html" />
+    <link rel="prev" title="Installation" href="Installation.html" /> 
+  </head>
+  <body>
+      <div class="header"><h1 class="heading"><a href="index.html">
+          <span>Erebot latest-0.6.0-74-g691fc3f documentation</span></a></h1>
+        <h2 class="heading"><span>Configuration</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="Installation.html">Installation</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="Usage.html">Usage</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <blockquote>
+<div></div></blockquote>
+<div class="section" id="configuration">
+<h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
+<p>Erebot&#8217;s configuration is stored in an XML file.
+This file is usually called <tt class="file docutils literal"><span class="pre">Erebot.xml</span></tt> but can be renamed
+(see <a class="reference internal" href="Usage.html#cmdoption-Erebot-c"><em class="xref std std-option">Erebot -c</em></a>).</p>
+<p>This file is composed of a hierarchy of settings, with inner sections
+being able to inherit settings from outer sections.</p>
+<p>The configuration is based on 3 structures:</p>
+<ul class="simple">
+<li>general settings</li>
+<li>logging configuration</li>
+<li>IRC-related settings</li>
+</ul>
+<p>The general settings include things such as information on the current
+timezone, the locale (language) the bot should use to display messages
+in the console, etc.</p>
+<p>The logging configuration is what defines what information the bot will
+print to the logs, how the log are organized (do we store them in a syslog,
+a database, or print them directly in the console) and how they appear
+(how they&#8217;re formatted).</p>
+<p>Last but not least, the rest of the configuration is dedicated to IRC,
+with information on what networks/servers the bot should contact,
+what modules it should enable, etc.</p>
+<p>The rest of this page gives information on available options and possible
+values and is directly mapped to the actual hierarchy used in the XML
+configuration file.</p>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#id1" id="id4">&lt;configuration&gt;</a><ul>
+<li><a class="reference internal" href="#logging" id="id5">&lt;logging&gt;</a></li>
+<li><a class="reference internal" href="#modules" id="id6">&lt;modules&gt;</a><ul>
+<li><a class="reference internal" href="#module" id="id7">&lt;module&gt;</a><ul>
+<li><a class="reference internal" href="#param" id="id8">&lt;param&gt;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#networks" id="id9">&lt;networks&gt;</a><ul>
+<li><a class="reference internal" href="#network" id="id10">&lt;network&gt;</a><ul>
+<li><a class="reference internal" href="#servers" id="id11">&lt;servers&gt;</a><ul>
+<li><a class="reference internal" href="#server" id="id12">&lt;server&gt;</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#channels" id="id13">&lt;channels&gt;</a><ul>
+<li><a class="reference internal" href="#channel" id="id14">&lt;channel&gt;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The tags may be used in any order. Therefore, one could swap the general
+configuration for <a class="reference internal" href="#modules">&lt;modules&gt;</a> with the configuration for the
+<a class="reference internal" href="#logging">&lt;logging&gt;</a> subsystem in the tree above.
+You still need to maintain the hierarchy however. Therefore, a
+<a class="reference internal" href="#channels">&lt;channels&gt;</a> or <a class="reference internal" href="#servers">&lt;servers&gt;</a> tag may only be a descendant
+of a <a class="reference internal" href="#network">&lt;network&gt;</a> tag.</p>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id4">&lt;configuration&gt;</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="#id1">&lt;configuration&gt;</a> tag deals with settings related to the machine
+Erebot is running on more than to IRC itself.</p>
+<p>The following table lists attributes of this tag with their role.</p>
+<table border="1" class="docutils">
+<caption>Valid attributes for the &lt;configuration&gt; tag</caption>
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="51%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Attribute</th>
+<th class="head">Default
+value</th>
+<th class="head">Required</th>
+<th class="head">Role</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>commands-prefix</td>
+<td>n/a</td>
+<td><strong>Yes</strong></td>
+<td>The prefix used to identify
+commands adressed to the bot.
+Common values include: <tt class="docutils literal"><span class="pre">!</span></tt>,
+<tt class="docutils literal"><span class="pre">'</span></tt>, <tt class="docutils literal"><span class="pre">&#64;</span></tt>, etc.</td>
+</tr>
+<tr class="row-odd"><td>daemon</td>
+<td>n/a</td>
+<td>No</td>
+<td>Whether to start the bot as a
+daemon (<tt class="docutils literal"><span class="pre">True</span></tt>) or not
+(<tt class="docutils literal"><span class="pre">False</span></tt>).</td>
+</tr>
+<tr class="row-even"><td>group</td>
+<td>n/a</td>
+<td>No</td>
+<td>Once started, assume that group&#8217;s
+identity (given as a GID or as
+a name).</td>
+</tr>
+<tr class="row-odd"><td>language</td>
+<td>n/a</td>
+<td><strong>Yes</strong></td>
+<td>The preferred locale to use, as
+an IETF language tag (eg.
+<tt class="docutils literal"><span class="pre">en-US</span></tt> or <tt class="docutils literal"><span class="pre">fr-FR</span></tt>). The
+usual Linux format for locales
+(<tt class="docutils literal"><span class="pre">en_US</span></tt>) is also supported.</td>
+</tr>
+<tr class="row-even"><td>pidfile</td>
+<td>n/a</td>
+<td>No</td>
+<td>Store the bot&#8217;s PID in this file.</td>
+</tr>
+<tr class="row-odd"><td>timezone</td>
+<td>n/a</td>
+<td><strong>Yes</strong></td>
+<td>This computer&#8217;s current timezone,
+eg. <tt class="docutils literal"><span class="pre">Europe/Paris</span></tt>. <a class="footnote-reference" href="#id3" id="id2">[1]</a></td>
+</tr>
+<tr class="row-even"><td>user</td>
+<td>n/a</td>
+<td>No</td>
+<td>Once started, assume that user&#8217;s
+identity (given as a UID or as
+a name).</td>
+</tr>
+<tr class="row-odd"><td>version</td>
+<td>n/a</td>
+<td><strong>Yes</strong></td>
+<td>Must match the Erebot&#8217;s version.
+It is currently used as a
+failsafe to prevent the bot from
+running with an outdated
+configuration file.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>The list of supported timezones can be found on
+<a class="reference external" href="http://php.net/manual/en/timezones.php">http://php.net/manual/en/timezones.php</a></td></tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The values of the <tt class="docutils literal"><span class="pre">daemon</span></tt>, <tt class="docutils literal"><span class="pre">user</span></tt>, <tt class="docutils literal"><span class="pre">group</span></tt> &amp; <tt class="docutils literal"><span class="pre">pidfile</span></tt> options
+can be overriden from the command-line. The values given here only act
+as default ones in case the command line does not override them.</p>
+</div>
+<div class="section" id="logging">
+<h3><a class="toc-backref" href="#id5">&lt;logging&gt;</a><a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h3>
+<p>The logging system used by Erebot is highly customizable. It uses the same
+kind of API as the Python logging module as it is actually a port of that module
+for PHP, hence its name <abbr title="Python Logging On PHP">PLOP</abbr>.</p>
+<p>It was developped as a subproject of Erebot and ships with its own
+documentation.</p>
+</div>
+<div class="section" id="modules">
+<h3><a class="toc-backref" href="#id6">&lt;modules&gt;</a><a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h3>
+<p>Each of the <a class="reference internal" href="#id1">&lt;configuration&gt;</a>, <a class="reference internal" href="#network">&lt;network&gt;</a>, <a class="reference internal" href="#server">&lt;server&gt;</a> and
+<a class="reference internal" href="#channel">&lt;channel&gt;</a> tags may have a <a class="reference internal" href="#modules">&lt;modules&gt;</a> subtag to specify which modules
+should be made available at that level.</p>
+<p>This tag is a simple container for zero or more <a class="reference internal" href="#module">&lt;module&gt;</a> tags.</p>
+<div class="section" id="module">
+<h4><a class="toc-backref" href="#id7">&lt;module&gt;</a><a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h4>
+<p>This tag defines a module that will be available at the current level
+(ie. either globally or for the current network/server/channel).</p>
+<p>Settings for a module at one level will override settings for the same module
+at some higher level (hence, settings for a module in a <a class="reference internal" href="#channel">&lt;channel&gt;</a> section
+will replace settings defined at the <a class="reference internal" href="#network">&lt;network&gt;</a> level). <a class="reference internal" href="#channel">&lt;channel&gt;</a>
+is considered as being at a lower level as <a class="reference internal" href="#server">&lt;server&gt;</a> for the purposes
+of this mechanism.</p>
+<p>You may choose to enable/disable a module at a particular level by setting
+its <tt class="docutils literal"><span class="pre">active</span></tt> attribute to <tt class="docutils literal"><span class="pre">True</span></tt> or <tt class="docutils literal"><span class="pre">False</span></tt> (respectively).</p>
+<p>The following table lists attributes of this tag, their default value
+and their role.</p>
+<table border="1" class="docutils">
+<caption>Valid attributes for the &lt;module&gt; tag</caption>
+<colgroup>
+<col width="16%" />
+<col width="22%" />
+<col width="62%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Attribute</th>
+<th class="head">Default value</th>
+<th class="head">Role</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>name</td>
+<td>n/a</td>
+<td>The name of the module to load/unload.</td>
+</tr>
+<tr class="row-odd"><td>active</td>
+<td><tt class="docutils literal"><span class="pre">True</span></tt></td>
+<td>Indicates whether the module should be
+enabled at that level (<tt class="docutils literal"><span class="pre">True</span></tt>), or
+disabled (<tt class="docutils literal"><span class="pre">False</span></tt>).</td>
+</tr>
+</tbody>
+</table>
+<p>A &lt;module&gt; tag may contain zero or more <a class="reference internal" href="#param">&lt;param&gt;</a> tags to specify
+additional parameters the module should take into account (such as
+specific settings).</p>
+<div class="section" id="param">
+<h5><a class="toc-backref" href="#id8">&lt;param&gt;</a><a class="headerlink" href="#param" title="Permalink to this headline">¶</a></h5>
+<p>This tag can be used to define a parameter for a module. It has 2 (two)
+mandatory attributes, as described in the table below.</p>
+<table border="1" class="docutils">
+<caption>Valid attributes for the &lt;param&gt; tag</caption>
+<colgroup>
+<col width="16%" />
+<col width="22%" />
+<col width="62%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Attribute</th>
+<th class="head">Default value</th>
+<th class="head">Role</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>name</td>
+<td>n/a</td>
+<td>The name of the parameter.</td>
+</tr>
+<tr class="row-odd"><td>value</td>
+<td>n/a</td>
+<td>The value for that parameter. Different
+types of values are accepted. The precise
+type to use depends on the module and
+parameter.
+Read each module&#8217;s documentation for more
+information.</td>
+</tr>
+</tbody>
+</table>
+<p>A &lt;param&gt; tag may NOT contain any subtags.</p>
+</div>
+</div>
+</div>
+<div class="section" id="networks">
+<h3><a class="toc-backref" href="#id9">&lt;networks&gt;</a><a class="headerlink" href="#networks" title="Permalink to this headline">¶</a></h3>
+<p>This tag is a simple container for zero or more <a class="reference internal" href="#network">&lt;network&gt;</a>.</p>
+<div class="section" id="network">
+<h4><a class="toc-backref" href="#id10">&lt;network&gt;</a><a class="headerlink" href="#network" title="Permalink to this headline">¶</a></h4>
+<p>This tag represents an IRC network.
+The following table lists attributes of this tag with their role.</p>
+<table border="1" class="docutils">
+<caption>Valid attributes for the &lt;network&gt; tag</caption>
+<colgroup>
+<col width="16%" />
+<col width="22%" />
+<col width="62%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Attribute</th>
+<th class="head">Default value</th>
+<th class="head">Role</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>name</td>
+<td>n/a</td>
+<td>The name of that IRC network.</td>
+</tr>
+</tbody>
+</table>
+<p>The &lt;network&gt; tag <strong>MUST</strong> contain a <a class="reference internal" href="#servers">&lt;servers&gt;</a> subtag, used to describe
+IRC servers belonging to that IRC network.</p>
+<p>It may contain a <a class="reference internal" href="#modules">&lt;modules&gt;</a> subtag to change the settings of a module
+for this IRC server.</p>
+<p>It may also contain a <a class="reference internal" href="#channels">&lt;channels&gt;</a> subtag to change the settings of a module
+for some IRC channels on this network.</p>
+<div class="section" id="servers">
+<h5><a class="toc-backref" href="#id11">&lt;servers&gt;</a><a class="headerlink" href="#servers" title="Permalink to this headline">¶</a></h5>
+<p>This tag is a simple container for <strong>one</strong> or more <a class="reference internal" href="#server">&lt;server&gt;</a>.</p>
+<div class="section" id="server">
+<h6><a class="toc-backref" href="#id12">&lt;server&gt;</a><a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h6>
+<p>This tag represents the configuration of an IRC server.
+The following table lists attributes of this tag with their role.</p>
+<table border="1" class="docutils">
+<caption>Valid attributes for the &lt;server&gt; tag</caption>
+<colgroup>
+<col width="16%" />
+<col width="22%" />
+<col width="62%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Attribute</th>
+<th class="head">Default value</th>
+<th class="head">Role</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>url</td>
+<td>n/a</td>
+<td>Connection URLs to use to contact this
+IRC server.</td>
+</tr>
+</tbody>
+</table>
+<p>The <tt class="docutils literal"><span class="pre">url</span></tt> attribute contains a series of connection URLs. A connection URL
+simply gives information on how to connect to a particular IRC server.
+A valid connection URL looks like this:
+<tt class="docutils literal"><span class="pre">ircs://irc.iiens.net:7000/?verify_peer=0</span></tt></p>
+<p>The scheme part may be either <tt class="docutils literal"><span class="pre">irc</span></tt> for plain text communications
+or <tt class="docutils literal"><span class="pre">ircs</span></tt> for IRC over SSL/TLS (encrypted communications).
+The host part indicates the IP address or hostname of the IRC server.
+The port part can be used to override the default port value for
+the given scheme.</p>
+<p>By default, plain text IRC uses port 194 while IRC over SSL/TLS uses port 994.
+However, since both of these ports require root permissions on linux to launch
+a server, most IRC servers use different values like 6667 or 7000 for plain
+text communications and 6697 or 7002 for encrypted communications.</p>
+<p>Last but not least, additional parameters may be used to control various
+aspects of the connection phase. At present time, these settings only affect
+encrypted connections (IRC over SSL/TLS), but they may be later extended
+to affect plain-text connections as well. The following table lists currently
+supported parameters:</p>
+<table border="1" class="docutils">
+<caption>Valid parameters for connection URLs</caption>
+<colgroup>
+<col width="28%" />
+<col width="28%" />
+<col width="45%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Valid values</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>verify_peer</td>
+<td><tt class="docutils literal"><span class="pre">0</span></tt> or <tt class="docutils literal"><span class="pre">1</span></tt></td>
+<td>Check if the certificate
+really belongs to the target
+IRC server.</td>
+</tr>
+<tr class="row-odd"><td>allow_self_signed</td>
+<td><tt class="docutils literal"><span class="pre">0</span></tt> or <tt class="docutils literal"><span class="pre">1</span></tt></td>
+<td>Consider self-signed
+certificates to be valid.</td>
+</tr>
+<tr class="row-even"><td>ciphers</td>
+<td>a list of ciphers
+separated by
+colons</td>
+<td>Acceptable ciphers to use to
+encrypt communications with
+the server.</td>
+</tr>
+</tbody>
+</table>
+<p>See also <a class="reference external" href="http://php.net/manual/en/context.ssl.php">http://php.net/manual/en/context.ssl.php</a> for additional information
+on those settings.</p>
+<p>You may also specify an HTTP or SOCKS 5 server through which the connection
+should be proxied by adding a proxy URL to the <tt class="docutils literal"><span class="pre">url</span></tt> attribute.
+Several proxies can be used by prepending their URLs to that attribute,
+separated by spaces:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="c">&lt;!-- Use an HTTP proxy with username/password authentication. --&gt;</span>
+<span class="nt">&lt;server</span> <span class="na">url=</span><span class="s">&quot;http://user:pass@proxy.example.com irc://irc.example.com&quot;</span><span class="nt">/&gt;</span>
+
+<span class="c">&lt;!-- Use a SOCKS 5 proxy with username/password authentication. --&gt;</span>
+<span class="nt">&lt;server</span> <span class="na">url=</span><span class="s">&quot;socks://user:pass@proxy.example.com irc://irc.example.com&quot;</span><span class="nt">/&gt;</span>
+
+<span class="c">&lt;!--</span>
+<span class="c">  Chain two proxies before connecting to the final IRC server.</span>
+<span class="c">  The first one is an HTTP proxy running on non-standard port 8080.</span>
+<span class="c">  The second one is a regular SOCKS proxy.</span>
+<span class="c">--&gt;</span>
+<span class="nt">&lt;server</span> <span class="na">url=</span><span class="s">&quot;http://http-proxy.example.com:8080/ socks://socks-proxy.example.com/ irc://irc.example.com&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">As of this writing, Erebot does not support older versions of the SOCKS
+protocol (namely, SOCKSv4 and its derivatives).</p>
+</div>
+<p>This tag may contain a <a class="reference internal" href="#modules">&lt;modules&gt;</a> subtag to change the settings of a module
+for this IRC server.</p>
+</div>
+</div>
+<div class="section" id="channels">
+<h5><a class="toc-backref" href="#id13">&lt;channels&gt;</a><a class="headerlink" href="#channels" title="Permalink to this headline">¶</a></h5>
+<p>This tag is a simple container for zero or more <a class="reference internal" href="#channel">&lt;channel&gt;</a> tags.</p>
+<div class="section" id="channel">
+<h6><a class="toc-backref" href="#id14">&lt;channel&gt;</a><a class="headerlink" href="#channel" title="Permalink to this headline">¶</a></h6>
+<p>This tag represents the configuration of an IRC channel.
+The following table lists attributes of this tag with their role.</p>
+<table border="1" class="docutils">
+<caption>Valid attributes for the &lt;channel&gt; tag.</caption>
+<colgroup>
+<col width="16%" />
+<col width="22%" />
+<col width="62%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Attribute</th>
+<th class="head">Default value</th>
+<th class="head">Role</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>name</td>
+<td>n/a</td>
+<td>The name of the IRC channel being
+configured.</td>
+</tr>
+</tbody>
+</table>
+<p>This tag may contain a <a class="reference internal" href="#modules">&lt;modules&gt;</a> subtag to change the settings of a module
+for this IRC channel.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="Installation.html">Installation</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="Usage.html">Usage</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2019, The Erebot team.
+      Last updated on Jan 06, 2019.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  
+<!-- Custom overlay -->
+<script type="text/javascript">
+var erebot = {"source_suffix": ".rst", "language": "en", "builder": "html", "default_branch": "master", "project": {"version": "latest", "name": "Erebot", "slug": "erebot/erebot"}, "base": "./", "page": "Configuration"};
+</script>
+<script type="text/javascript" src="./../../../../erebot-overlay.js"></script>
+
+<!-- Statistics -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDocumentTitle", document.domain + " / " + document.title]);
+  if (document.domain != 'docs.erebot.net') {
+      _paq.push(["setCookieDomain", "erebot.github.io"]);
+  }
+  _paq.push(["setDomains", ["erebot.github.io", "docs.erebot.net"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.erebot.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '4']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.erebot.net/piwik.php?idsite=4" style="border:0;" alt="" /></p></noscript>
+</body>
+</html>

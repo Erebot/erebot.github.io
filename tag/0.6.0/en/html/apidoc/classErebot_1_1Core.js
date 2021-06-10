@@ -1,0 +1,26 @@
+var classErebot_1_1Core =
+[
+    [ "__construct", "classErebot_1_1Core.html#a993c06aa16eece55b761df1fe5320831", null ],
+    [ "__destruct", "classErebot_1_1Core.html#a30728fd80d7adf5de9ddd28296db7371", null ],
+    [ "__clone", "classErebot_1_1Core.html#a2aca1c9dcc440095f52bcc52f0f45170", null ],
+    [ "addConnection", "classErebot_1_1Core.html#a082d0679cf287d36e06517c425cd0323", null ],
+    [ "addTimer", "classErebot_1_1Core.html#a2e39e55c963755218a782e994044fbc2", null ],
+    [ "createConnections", "classErebot_1_1Core.html#acf547a7e272b085f5ac8ecce3095e475", null ],
+    [ "getConnections", "classErebot_1_1Core.html#ac1f68208cc9aea50a9030fabb40319b6", null ],
+    [ "getRunningTime", "classErebot_1_1Core.html#a9754a899fa710a0b6d823e1445eb5ad5", null ],
+    [ "gettext", "classErebot_1_1Core.html#a78fe9b15b23bcbcb076a611342d0637b", null ],
+    [ "getTimers", "classErebot_1_1Core.html#a97b554d135f529c79ee7ed8b8965235f", null ],
+    [ "handleSIGHUP", "classErebot_1_1Core.html#a8634ea8e7c6fc45707d889eec896af33", null ],
+    [ "handleSignal", "classErebot_1_1Core.html#ac72e7762b25cf07b75189e7751cb4a47", null ],
+    [ "realStart", "classErebot_1_1Core.html#a32001f22b482405623cd06369bba3d8b", null ],
+    [ "reload", "classErebot_1_1Core.html#af5e4b4fb9c67c7774c50e65dbea2d186", null ],
+    [ "removeConnection", "classErebot_1_1Core.html#a1f0ba397a3c1640b0b95d3c43f61ad4b", null ],
+    [ "removeTimer", "classErebot_1_1Core.html#acffe0cb0b5cde2e2f763eeb442bd0dd1", null ],
+    [ "start", "classErebot_1_1Core.html#ae485a2cc25ae28d5da4f09db7018c084", null ],
+    [ "stop", "classErebot_1_1Core.html#af2be2369f0f713114f0daa4c3b387ce4", null ],
+    [ "$connections", "classErebot_1_1Core.html#aa4c2e6488218dfceb9d64eb8caba3cfb", null ],
+    [ "$mainCfg", "classErebot_1_1Core.html#a022ef1cbb8903b769579481758ebc8a6", null ],
+    [ "$running", "classErebot_1_1Core.html#aad85d7cfd3ae369d60bdc3fc1c6811fd", null ],
+    [ "$timers", "classErebot_1_1Core.html#a04dc44d618d3b05d4f4202adee95c335", null ],
+    [ "$translator", "classErebot_1_1Core.html#a4a5179136bf97f6b4ce153f70334ffd2", null ]
+];

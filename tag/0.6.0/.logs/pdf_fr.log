@@ -1,0 +1,438 @@
+Making output directory...
+Running Sphinx v1.2.2
+Including real configuration file (/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/real_conf.py)...
+loading translations [fr]... done
+building [latex]: all documents
+updating environment: 15 added, 0 changed, 0 removed
+reading sources... [  6%] Buildslaves
+reading sources... [ 13%] Configuration
+reading sources... [ 20%] Contribute
+reading sources... [ 26%] Developers/Coding_Standard
+reading sources... [ 33%] Developers/Formatting
+reading sources... [ 40%] Developers/I18n
+reading sources... [ 46%] Developers/New_module
+reading sources... [ 53%] Developers/index
+reading sources... [ 60%] HowTo/External_Process_Interaction
+reading sources... [ 66%] HowTo/index
+reading sources... [ 73%] Installation
+reading sources... [ 80%] License
+reading sources... [ 86%] Modules
+reading sources... [ 93%] Prerequisites
+reading sources... [100%] index
+
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Developers/New_module.rst:176: ERROR: Unknown interpreted text role "api".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Developers/New_module.rst:83: ERROR: Undefined substitution referenced: "--".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Installation.rst:19: ERROR: Unknown target name: "composer installation".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Installation.rst:19: ERROR: Unknown target name: "composer".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules.rst:24: ERROR: Unknown interpreted text role "erebot:module".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules.rst:25: ERROR: Unknown interpreted text role "erebot:module".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules.rst:26: ERROR: Unknown interpreted text role "erebot:module".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules.rst:27: ERROR: Unknown interpreted text role "erebot:module".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules.rst:28: ERROR: Unknown interpreted text role "erebot:module".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules.rst:29: ERROR: Unknown interpreted text role "erebot:module".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules.rst:30: ERROR: Unknown interpreted text role "erebot:module".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules.rst:32: ERROR: Unknown interpreted text role "erebot:module".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules.rst:33: ERROR: Unknown interpreted text role "erebot:module".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules.rst:34: ERROR: Unknown interpreted text role "erebot:module".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules.rst:35: ERROR: Unknown interpreted text role "erebot:module".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules.rst:36: ERROR: Unknown interpreted text role "erebot:module".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules.rst:37: ERROR: Unknown interpreted text role "erebot:module".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules.rst:38: ERROR: Unknown interpreted text role "erebot:module".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules.rst:39: ERROR: Unknown interpreted text role "erebot:module".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules.rst:40: ERROR: Unknown interpreted text role "erebot:module".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules.rst:41: ERROR: Unknown interpreted text role "erebot:module".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules.rst:42: ERROR: Unknown interpreted text role "erebot:module".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules.rst:43: ERROR: Unknown interpreted text role "erebot:module".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules.rst:45: ERROR: Unknown interpreted text role "erebot:module".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules.rst:46: ERROR: Unknown interpreted text role "erebot:module".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules.rst:47: ERROR: Unknown interpreted text role "erebot:module".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules.rst:48: ERROR: Unknown interpreted text role "erebot:module".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules.rst:49: ERROR: Unknown interpreted text role "erebot:module".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules.rst:50: ERROR: Unknown interpreted text role "erebot:module".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/index.rst:34: WARNING: toctree contains reference to nonexisting document u'generic/Installation'
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/index.rst:40: WARNING: nonlocal image URI found: https://travis-ci.org/Erebot/Erebot.png?branch=master
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/index.rst:40: WARNING: nonlocal image URI found: https://www.versioneye.com/php/erebot:erebot/dev-master/badge.png
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/index.rst:40: WARNING: nonlocal image URI found: https://coveralls.io/repos/Erebot/Erebot/badge.png?branch=master
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/index.rst:42: WARNING: nonlocal image URI found: https://travis-ci.org/Erebot/Erebot.png?branch=master
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/index.rst:46: WARNING: nonlocal image URI found: https://www.versioneye.com/php/erebot:erebot/dev-master/badge.png
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/index.rst:50: WARNING: nonlocal image URI found: https://coveralls.io/repos/Erebot/Erebot/badge.png?branch=master
+looking for now-outdated files... none found
+pickling environment... done
+checking consistency... done
+processing Erebot.tex... index Prerequisites Installation Configuration Modules HowTo/index HowTo/External_Process_Interaction Contribute Buildslaves Developers/index Developers/Coding_Standard Developers/I18n Developers/Formatting Developers/New_module License 
+resolving references...
+writing... /home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Prerequisites.rst:: WARNING: unusable reference target found: apt:doxygen
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Prerequisites.rst:: WARNING: unusable reference target found: apt:gettext
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Prerequisites.rst:: WARNING: unusable reference target found: apt:xmlstarlet
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Prerequisites.rst:: WARNING: unusable reference target found: Coding_Standard.html
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Installation.rst:: WARNING: unusable reference target found: /Erebot_Module_IrcConnector/
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Installation.rst:: WARNING: unusable reference target found: /Erebot_Module_AutoConnect/
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Installation.rst:: WARNING: unusable reference target found: /Erebot_Module_PingReply/
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Installation.rst:: WARNING: unusable reference target found: Prerequisites.html
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Installation.rst:: WARNING: unusable reference target found: /Erebot_Module_AutoConnect/
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Installation.rst:: WARNING: unusable reference target found: /Erebot_Module_IrcConnector/
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Installation.rst:: WARNING: unusable reference target found: /Erebot_Module_PingReply/
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Installation.rst:: WARNING: unusable reference target found: Prerequisites.html
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Installation.rst:: WARNING: unusable reference target found: Prerequisites.html
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Installation.rst:: WARNING: unusable reference target found: Configuration.html
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Contribute.rst:: WARNING: unusable reference target found: irc://irc.iiens.net/Erebot
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Contribute.rst:: WARNING: unusable reference target found: Coding_Standard.html
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Contribute.rst:: WARNING: unusable reference target found: Buildslaves.html
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Developers/I18n.rst:: WARNING: unusable reference target found: Styling.html
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Developers/Formatting.rst:: WARNING: unusable reference target found: Internationalization.html
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Developers/New_module.rst:: WARNING: unusable reference target found: Styling.html
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Developers/New_module.rst:: WARNING: unusable reference target found: Internationalization.html
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Developers/New_module.rst:: WARNING: unusable reference target found: Styling.html
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Developers/New_module.rst:: WARNING: unusable reference target found: Internationalization.html
+done
+copying TeX support files...
+done
+build succeeded, 59 warnings.
+make: Entering directory `/home/travis/build/Erebot/erebot.github.io/tmp/output/tag/0.6.0/fr/pdf'
+pdflatex  'Erebot.tex'
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian)
+ restricted \write18 enabled.
+entering extended mode
+(./Erebot.tex
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 6 languages loaded.
+(./sphinxmanual.cls
+Document Class: sphinxmanual 2009/06/02 Document class (Sphinx manual)
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo)))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu)))
+(/usr/share/texlive/texmf-dist/tex/latex/cmap/cmap.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def)<<t1.cmap>>)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+(/usr/share/texlive/texmf-dist/tex/generic/babel-french/frenchb.ldf
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/carlisle/scalefnt.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty) (./fncychap.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty) (./sphinx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.dfu)))
+(/usr/share/texlive/texmf-dist/tex/latex/fancybox/fancybox.sty
+Style option: `fancybox' v1.4 <2010/05/15> (tvz)
+) (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty)
+(./tabulary.sty (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz))
+(/usr/share/texlive/texmf-dist/tex/latex/threeparttable/threeparttable.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/mdwtools/footnote.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg)))
+(/usr/share/texlive/texmf-dist/tex/plain/misc/pdfcolor.tex)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty))
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/hypcap.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+Writing index file Erebot.idx
+No file Erebot.aux.
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd)
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+Underfull \hbox (badness 10000) in paragraph at lines 120--120
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd)<<ot1.cmap>><<oml.cmap
+>><<oms.cmap>><<omx.cmap>> [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
+}] [2]
+Adding blank page after the table of contents.
+[1] [2] [1] [2]
+Chapitre 1.
+
+LaTeX Warning: Hyper reference `Prerequisites:php-dependencies' on page 3 undef
+ined on input line 161.
+
+
+LaTeX Warning: Hyper reference `Prerequisites:how-to-read-this-page' on page 3 
+undefined on input line 177.
+
+
+LaTeX Warning: Hyper reference `Prerequisites:system-dependencies' on page 3 un
+defined on input line 180.
+
+
+LaTeX Warning: Hyper reference `Prerequisites:instructions-for-linux-users' on 
+page 3 undefined on input line 183.
+
+
+LaTeX Warning: Hyper reference `Prerequisites:instructions-for-windows-users' o
+n page 3 undefined on input line 186.
+
+
+LaTeX Warning: Hyper reference `Prerequisites:php-dependencies' on page 3 undef
+ined on input line 191.
+
+
+LaTeX Warning: Hyper reference `Prerequisites:compatible-installers' on page 3 
+undefined on input line 194.
+
+
+LaTeX Warning: Hyper reference `Prerequisites:pecl-extensions' on page 3 undefi
+ned on input line 197.
+
+
+LaTeX Warning: Hyper reference `Prerequisites:pear-packages' on page 3 undefine
+d on input line 200.
+
+
+Overfull \hbox (14.79999pt too wide) in paragraph at lines 206--206
+ [] 
+
+LaTeX Warning: Hyper reference `Prerequisites:instructions-for-linux-users' on 
+page 3 undefined on input line 242.
+
+[3]
+
+LaTeX Warning: Hyper reference `Prerequisites:instructions-for-windows-users' o
+n page 4 undefined on input line 245.
+
+
+LaTeX Warning: Hyper reference `Prerequisites:term-developer' on page 4 undefin
+ed on input line 316.
+
+
+LaTeX Warning: Hyper reference `Prerequisites:term-packager' on page 4 undefine
+d on input line 316.
+
+
+LaTeX Warning: Hyper reference `Prerequisites:term-end-user' on page 4 undefine
+d on input line 316.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd)
+Overfull \hbox (1.74948pt too wide) in paragraph at lines 316--316
+\T1/phv/m/n/10 dency|  
+
+LaTeX Warning: Hyper reference `Prerequisites:term-developer' on page 4 undefin
+ed on input line 316.
+
+
+LaTeX Warning: Hyper reference `Prerequisites:term-packager' on page 4 undefine
+d on input line 316.
+
+
+LaTeX Warning: Hyper reference `Prerequisites:term-end-user' on page 4 undefine
+d on input line 316.
+
+
+Overfull \hbox (2.42838pt too wide) in paragraph at lines 316--316
+[]\T1/phv/m/sl/10 End- 
+
+Overfull \hbox (1.88339pt too wide) in paragraph at lines 316--316
+\T1/phv/m/sl/10 user|  
+
+Overfull \hbox (33.17365pt too wide) in paragraph at lines 353--357
+[]\T1/ptm/m/n/10 Installing get-text for Win-dows is a lit-tle bit thou-gher. F
+irst, go to [][]http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/[][]
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 443--454
+
+[5]
+
+LaTeX Warning: Hyper reference `Prerequisites:term-developer' on page 6 undefin
+ed on input line 641.
+
+
+LaTeX Warning: Hyper reference `Prerequisites:term-packager' on page 6 undefine
+d on input line 641.
+
+
+LaTeX Warning: Hyper reference `Prerequisites:term-end-user' on page 6 undefine
+d on input line 641.
+
+
+LaTeX Warning: Hyper reference `Prerequisites:term-developer' on page 6 undefin
+ed on input line 641.
+
+
+LaTeX Warning: Hyper reference `Prerequisites:term-packager' on page 6 undefine
+d on input line 641.
+
+
+LaTeX Warning: Hyper reference `Prerequisites:term-end-user' on page 6 undefine
+d on input line 641.
+
+
+Overfull \hbox (2.31029pt too wide) in paragraph at lines 641--641
+[]\T1/phv/m/sl/10 End- 
+
+Overfull \hbox (1.7653pt too wide) in paragraph at lines 641--641
+\T1/phv/m/sl/10 user|  
+[6]
+Overfull \hbox (2.78275pt too wide) in paragraph at lines 775--775
+[]\T1/phv/m/n/10 End- 
+
+Overfull \hbox (1.11282pt too wide) in paragraph at lines 775--775
+\T1/phv/m/n/10 user|  
+
+Overfull \hbox (62.52701pt too wide) in paragraph at lines 775--775
+[][][]\T1/ptm/m/n/10 pear.pdepend.org/PHP_Depend[][]|  
+
+Overfull \hbox (23.28697pt too wide) in paragraph at lines 775--775
+[][][]\T1/ptm/m/n/10 pear.phing.info/Phing[][] 
+
+Overfull \hbox (86.05635pt too wide) in paragraph at lines 775--775
+[][][]\T1/ptm/m/n/10 pear.php.net/Console_CommandLine[][]|  
+
+Overfull \hbox (38.12653pt too wide) in paragraph at lines 775--775
+[][][]\T1/ptm/m/n/10 pear.php.net/File_Gettext[][]|  
+
+Overfull \hbox (60.24658pt too wide) in paragraph at lines 775--775
+[][][]\T1/ptm/m/n/10 pear.php.net/PHP_CodeSniffer[][]|  
+
+Overfull \hbox (2.27747pt too wide) in paragraph at lines 775--775
+[]\T1/ptm/m/n/10 yes[][][][][]|  
+
+Overfull \hbox (76.4364pt too wide) in paragraph at lines 775--775
+[][][]\T1/ptm/m/n/10 pear.php.net/PHP_ParserGenerator[][]|  
+
+Overfull \hbox (46.99696pt too wide) in paragraph at lines 775--775
+[][][]\T1/ptm/m/n/10 pear.phpmd.org/PHP_PMD[][]|  
+
+Overfull \hbox (30.49707pt too wide) in paragraph at lines 775--775
+[][][]\T1/ptm/m/n/10 pear.phpunit.de/phpcpd[][]|  
+
+Overfull \hbox (37.17673pt too wide) in paragraph at lines 775--775
+[][][]\T1/ptm/m/n/10 pear.phpunit.de/PHPUnit[][] 
+[7] [8]
+Chapitre 2.
+
+LaTeX Warning: Hyper reference `Installation:installation-using-phar-archives' 
+on page 9 undefined on input line 791.
+
+
+LaTeX Warning: Hyper reference `Installation:installation-from-source' on page 
+9 undefined on input line 794.
+
+
+LaTeX Warning: Hyper reference `Installation:final-steps' on page 9 undefined o
+n input line 797.
+
+
+Overfull \hbox (14.79999pt too wide) in paragraph at lines 801--801
+ [] 
+
+Underfull \hbox (badness 10000) in paragraph at lines 803--807
+
+
+LaTeX Warning: Hyper reference `Installation:phar-installation' on page 9 undef
+ined on input line 809.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 838--843
+[]\T1/ptm/m/n/10 Download the PHAR ar-chive for Ere-bot it-self. You can grab t
+he la-test ver-sion from
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 980--1009
+
+[10]
+
+LaTeX Warning: Hyper reference `Installation:final-steps' on page 11 undefined 
+on input line 1017.
+
+[11]
+
+LaTeX Warning: Hyper reference `Installation:final-steps' on page 12 undefined 
+on input line 1098.
+
+[12] [13] [14]
+Chapitre 3.
+
+LaTeX Warning: Hyper reference `Configuration:id1' on page 15 undefined on inpu
+t line 1194.
+
+
+LaTeX Warning: Hyper reference `Configuration:logging' on page 15 undefined on 
+input line 1197.
+
+
+LaTeX Warning: Hyper reference `Configuration:modules' on page 15 undefined on 
+input line 1200.
+
+
+LaTeX Warning: Hyper reference `Configuration:module' on page 15 undefined on i
+nput line 1203.
+
+
+LaTeX Warning: Hyper reference `Configuration:param' on page 15 undefined on in
+put line 1206.
+
+
+LaTeX Warning: Hyper reference `Configuration:networks' on page 15 undefined on
+ input line 1213.
+
+
+LaTeX Warning: Hyper reference `Configuration:network' on page 15 undefined on 
+input line 1216.
+
+
+LaTeX Warning: Hyper reference `Configuration:servers' on page 15 undefined on 
+input line 1219.
+
+
+! LaTeX Error: Too deeply nested.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1220 \begin{itemize}
+                      
+? 
+! Emergency stop.
+ ...                                              
+                                                  
+l.1220 \begin{itemize}
+                      
+!  ==> Fatal error occurred, no output PDF file produced!
+Transcript written on Erebot.log.
+make: *** [Erebot.pdf] Error 1
+make: Leaving directory `/home/travis/build/Erebot/erebot.github.io/tmp/output/tag/0.6.0/fr/pdf'

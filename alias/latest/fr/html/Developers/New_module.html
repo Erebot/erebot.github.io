@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Writing a new module &mdash; documentation Erebot latest-0.6.0-74-g691fc3f</title>
+    
+    <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'latest-0.6.0-74-g691fc3f',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="top" title="documentation Erebot latest-0.6.0-74-g691fc3f" href="../index.html" />
+    <link rel="up" title="Developer Zone" href="index.html" />
+    <link rel="next" title="Licenses" href="../License.html" />
+    <link rel="prev" title="Formatting" href="Formatting.html" /> 
+  </head>
+  <body>
+      <div class="header"><h1 class="heading"><a href="../index.html">
+          <span>documentation Erebot latest-0.6.0-74-g691fc3f</span></a></h1>
+        <h2 class="heading"><span>Writing a new module</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="Formatting.html">Formatting</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contenu</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="../License.html">Licenses</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <blockquote>
+<div></div></blockquote>
+<div class="section" id="writing-a-new-module">
+<h1>Writing a new module<a class="headerlink" href="#writing-a-new-module" title="Lien permanent vers ce titre">¶</a></h1>
+<p>This page acts like a guide for those who may be interested in writing a new
+module for Erebot. It assumes basic knowledge of some of the features provided
+by Erebot for developers (such as the <a class="reference external" href="Styling.html">styling features</a> and <a class="reference external" href="Internationalization.html">i18n features</a>).</p>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#quick-start" id="id6">Quick start</a></li>
+<li><a class="reference internal" href="#general-structure" id="id7">General structure</a></li>
+<li><a class="reference internal" href="#providing-help" id="id8">Providing help</a></li>
+<li><a class="reference internal" href="#frequently-asked-questions" id="id9">Frequently Asked Questions</a><ul>
+<li><a class="reference internal" href="#what-features-can-i-use-in-a-new-module" id="id10">What features can I use in a new module?</a></li>
+<li><a class="reference internal" href="#are-there-patterns-i-should-avoid" id="id11">Are there patterns I should avoid?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="quick-start">
+<h2><a class="toc-backref" href="#id6">Quick start</a><a class="headerlink" href="#quick-start" title="Lien permanent vers ce titre">¶</a></h2>
+<p>To quickly create the file structure for a new module, you can start by
+cloning/forking the git repository for the <a class="reference external" href="https://github.com/Erebot/Module_Skeleton/">Module_Skeleton</a> virtual module.
+This will provide you with the basic structure and necessary files.</p>
+<p>Please note that the <a class="reference external" href="https://github.com/Erebot/Module_Skeleton/">Module_Skeleton</a> module uses Composer to handle dependencies,
+and so, it is worth reading <cite>Composer&#8217;s documentation &lt;https://getcomposer.org/doc/&gt;</cite>
+if you are new to PHP packages and dependency management.</p>
+</div>
+<div class="section" id="general-structure">
+<h2><a class="toc-backref" href="#id7">General structure</a><a class="headerlink" href="#general-structure" title="Lien permanent vers ce titre">¶</a></h2>
+<p>An Erebot module is a PHP class that extends <tt class="docutils literal"><span class="pre">Erebot_Module_Base</span></tt>.
+As such, it must have at least two methods (declared <em>abstract</em> in
+<tt class="docutils literal"><span class="pre">Erebot_Module_Base</span></tt>):</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">_reload()</span></tt> is called when the module is (re)loaded with some
+flags giving more information about what must be (re)loaded.
+The flags are a bitwise-OR combination of the <tt class="docutils literal"><span class="pre">RELOAD_*</span></tt> constants
+found in <tt class="docutils literal"><span class="pre">Erebot_Module_Base</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">_unload()</span></tt> is called when the module is unloaded. Its purpose
+is to free any resource that may have been allocated by <tt class="docutils literal"><span class="pre">_reload()</span></tt>,
+save the current state elsewhere, etc.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When a module is reloaded, only <tt class="docutils literal"><span class="pre">_reload()</span></tt> is called.
+The only time <tt class="docutils literal"><span class="pre">_unload()</span></tt> is ever called is when the module
+is being completely unloaded (usually, right before the bot
+exits).</p>
+</div>
+</div>
+<div class="section" id="providing-help">
+<h2><a class="toc-backref" href="#id8">Providing help</a><a class="headerlink" href="#providing-help" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Adding an help method to your module is totally optional, but it is
+considered good practice as it provides some way for users to request
+help on your new module and its commands without having to read some
+online manual.</p>
+</div>
+<p>To provide help for your module, all you need is a method that handles
+help requests. The name of that method does not matter (though this method
+is called <tt class="docutils literal"><span class="pre">getHelp()</span></tt> in all modules that ship with Erebot).</p>
+<p>When someone requests help on a module or command, the help methods are
+looked up in order to find one that will acknowledge the request (see below).
+This may result in one or more help methods being called to handle the request.</p>
+<p>The help method <strong>must</strong> use the following signature.</p>
+<div class="highlight-inline-php"><div class="highlight"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">getHelp</span><span class="p">(</span>
+    <span class="nx">Erebot_Interface_Event_Base_TextMessage</span> <span class="nv">$event</span><span class="p">,</span>
+    <span class="nx">Erebot_Interface_TextWrapper</span>            <span class="nv">$words</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>This method is responsible for either acknowledging the help request
+(by returning <tt class="docutils literal"><span class="pre">TRUE</span></tt>) or ignoring it (by returning <tt class="docutils literal"><span class="pre">FALSE</span></tt> or by
+not returning anything at all). If your method chooses to ignore the
+help request, the next help method in line will be called with the
+same parameters, until either a method acknowledges the request
+or there are no more help methods to try.</p>
+<p><tt class="docutils literal"><span class="pre">$event</span></tt> will contain the original request as an event. This will either be
+an event that implements the <tt class="docutils literal"><span class="pre">Erebot_Interface_Event_Base_Private</span></tt> interface
+if the request was sent as a private query, or an event implementing the
+<tt class="docutils literal"><span class="pre">Erebot_Interface_Event_Base_Chan</span></tt> interface if it came from an IRC channel.</p>
+<p><tt class="docutils literal"><span class="pre">$words</span></tt> contains the content of the request (derived from the text in the
+original request in <tt class="docutils literal"><span class="pre">$event</span></tt>), wrapped to make it easier to look at individual
+words.</p>
+<p>Now, there are two types of requests:</p>
+<ul class="simple">
+<li>Requests for help on the module itself (<tt class="docutils literal"><span class="pre">!help</span> <span class="pre">Foo</span></tt>).
+In that case, <tt class="docutils literal"><span class="pre">$words</span></tt> will contain only one word:
+the name of the module itself inside the
+<tt class="docutils literal"><span class="pre">\\Erebot\\Module</span></tt> namespace—<tt class="docutils literal"><span class="pre">Foo</span></tt> in this case.</li>
+<li>Requests for help on a command/topic (<tt class="docutils literal"><span class="pre">!help</span> <span class="pre">foo</span></tt>, <tt class="docutils literal"><span class="pre">!help</span> <span class="pre">foo</span> <span class="pre">bar...</span></tt>).
+In that case, <tt class="docutils literal"><span class="pre">$words</span></tt> will contain 2 or more words:<ul>
+<li>The name of the current module.</li>
+<li>The name of the command (<tt class="docutils literal"><span class="pre">foo</span></tt>).</li>
+<li>Any additional parameters (<tt class="docutils literal"><span class="pre">bar...</span></tt>).</li>
+</ul>
+</li>
+</ul>
+<p>You can find out which type of request is in use by simply counting the number
+of words in <tt class="docutils literal"><span class="pre">$words</span></tt>, which is very easy as the wrapper implements the
+<tt class="docutils literal"><span class="pre">Countable</span></tt> interface:</p>
+<div class="highlight-inline-php"><div class="highlight"><pre><span class="c1">// If it&#39;s 1, it is a request for help on the module itself.</span>
+<span class="c1">// Otherwise, it&#39;s a request for help on some command/topic.</span>
+<span class="nv">$nbWords</span> <span class="o">=</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$words</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Erebot has now way (yet) to know what module provides a given
+command/topic, so for such help requests, it calls every module&#8217;s
+help method with the request until one acknowledges it.</p>
+<p class="last">This means that your help method may receive requests about commands
+or topics it knows nothing about. You <strong>must</strong> ignore such requests
+(by returning <tt class="docutils literal"><span class="pre">FALSE</span></tt> or nothing at all) and you <strong>must not</strong>
+send a message indicating an error in the request to the user.</p>
+</div>
+<p>The listing below shows an example of a very simple help method for
+an imaginary module:</p>
+<div class="highlight-inline-php"><div class="highlight"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">getHelp</span><span class="p">(</span>
+    <span class="nx">Erebot_Interface_Event_Base_TextMessage</span> <span class="nv">$event</span><span class="p">,</span>
+    <span class="nx">Erebot_Interface_TextWrapper</span>            <span class="nv">$words</span>
+<span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$event</span> <span class="nx">instanceof</span> <span class="nx">Erebot_Interface_Event_Base_Private</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$target</span> <span class="o">=</span> <span class="nv">$event</span><span class="o">-&gt;</span><span class="na">getSource</span><span class="p">();</span>
+        <span class="nv">$chan</span>   <span class="o">=</span> <span class="k">NULL</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+        <span class="nv">$target</span> <span class="o">=</span> <span class="nv">$chan</span> <span class="o">=</span> <span class="nv">$event</span><span class="o">-&gt;</span><span class="na">getChan</span><span class="p">();</span>
+
+    <span class="nv">$fmt</span>        <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getFormatter</span><span class="p">(</span><span class="nv">$chan</span><span class="p">);</span>
+    <span class="nv">$moduleName</span> <span class="o">=</span> <span class="nx">strtolower</span><span class="p">(</span><span class="nb">get_class</span><span class="p">());</span>
+    <span class="nv">$nbArgs</span>     <span class="o">=</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$words</span><span class="p">);</span>
+
+    <span class="c1">// Help request on the module itself.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$nbArgs</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="nv">$words</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="nv">$moduleName</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$msg</span> <span class="o">=</span> <span class="nv">$fmt</span><span class="o">-&gt;</span><span class="na">_</span><span class="p">(</span><span class="s1">&#39;This is an &lt;b&gt;imaginary&lt;/b&gt; module.&#39;</span><span class="p">);</span>
+
+        <span class="c1">// We send the message back to where the request came from:</span>
+        <span class="c1">// in a private query or an IRC channel.</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sendMessage</span><span class="p">(</span><span class="nv">$target</span><span class="p">,</span> <span class="nv">$msg</span><span class="p">);</span>
+        <span class="k">return</span> <span class="k">TRUE</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// This module does not care about other help requests.</span>
+    <span class="c1">// So we don&#39;t return anything here. This is the same</span>
+    <span class="c1">// as if &quot;return;&quot; or &quot;return NULL;&quot; had been used.</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">We used the <tt class="docutils literal"><span class="pre">getFormatter()</span></tt> method here to be able to <a class="reference external" href="Styling.html">format</a> the help
+message (to make &#8220;imaginary&#8221; appear in bold in the output). We also used
+the formatter&#8217;s <tt class="docutils literal"><span class="pre">_()</span></tt> method to mark the message for <a class="reference external" href="Internationalization.html">translating</a>.
+This is the recommended practice.</p>
+</div>
+<p>Once the code for your help method is ready, you have to tell Erebot about it
+by using the <tt class="docutils literal"><span class="pre">registerHelpMethod()</span></tt> method inside your module&#8217;s <tt class="docutils literal"><span class="pre">reload()</span></tt>
+method. You must call <tt class="docutils literal"><span class="pre">registerHelpMethod()</span></tt> with an object implementing the
+<a href="#id1"><span class="problematic" id="id2">:api:erebot:`\\Erebot\\CallableInterface`</span></a> interface and referring to your method.</p>
+<p>This can be done using the following snippet:</p>
+<div class="highlight-inline-php"><div class="highlight"><pre><span class="c1">// We register our help method (here, the getHelp() method</span>
+<span class="c1">// from the current object) by wrapping a callback-compatible</span>
+<span class="c1">// value referring to it a special wrapper object.</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">registerHelpMethod</span><span class="p">(</span><span class="nx">\Erebot\CallableWrapper</span><span class="o">::</span><span class="na">wrap</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="nv">$this</span><span class="p">,</span> <span class="s1">&#39;getHelp&#39;</span><span class="p">)));</span>
+</pre></div>
+</div>
+<p>Alternatively, you may mark your module as implementing the
+<a href="#id3"><span class="problematic" id="id4">:api:erebot:`\\Erebot\\Interfaces\\HelpEnabled`</span></a> interface.
+In that case, the bot will automatically register the module&#8217;s
+<tt class="docutils literal"><span class="pre">getHelp()</span></tt> method as the help method.</p>
+</div>
+<div class="section" id="frequently-asked-questions">
+<h2><a class="toc-backref" href="#id9">Frequently Asked Questions</a><a class="headerlink" href="#frequently-asked-questions" title="Lien permanent vers ce titre">¶</a></h2>
+<p>This sections contains random questions about modules&#8217; development.</p>
+<div class="section" id="what-features-can-i-use-in-a-new-module">
+<h3><a class="toc-backref" href="#id10">What features can I use in a new module?</a><a class="headerlink" href="#what-features-can-i-use-in-a-new-module" title="Lien permanent vers ce titre">¶</a></h3>
+<p>You can use any of the many features provided by the PHP language.
+This includes things such as sockets, databases, etc.</p>
+</div>
+<div class="section" id="are-there-patterns-i-should-avoid">
+<h3><a class="toc-backref" href="#id11">Are there patterns I should avoid?</a><a class="headerlink" href="#are-there-patterns-i-should-avoid" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Even though you can do pretty much anything you want in a module,
+you should avoid long running tasks such as downloading a big file
+from a remote server.</p>
+<p>The reason is simple: PHP does not support multithreading <a class="footnote-reference" href="#pthreads" id="id5">[1]</a>,
+so while a long running task is being executed, the rest of the bot
+is literally stopped.
+This includes other modules responsible for keeping the connection alive
+(eg. <a class="reference external" href="http://docs.erebot.net/projects/pingreply/">ErebotModulePingReply</a>).
+Hence, running a long task in your module may result in the bot
+being disconnected from IRC servers with a &#8220;Ping timeout&#8221; error.</p>
+<table class="docutils footnote" frame="void" id="pthreads" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[1]</a></td><td>This is not entirely true anymore, as there is now an extension
+that brings the power of pthreads to PHP. Anyway, PHP does not
+natively support them and the extension has a few issues of its own.
+See <a class="reference external" href="https://github.com/krakjoe/pthreads">https://github.com/krakjoe/pthreads</a> for more information.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="Formatting.html">Formatting</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contenu</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="../License.html">Licenses</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2019, The Erebot team.
+      Mis à jour le Jan 06, 2019.
+      Créé avec <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  
+<!-- Custom overlay -->
+<script type="text/javascript">
+var erebot = {"source_suffix": ".rst", "language": "fr", "builder": "html", "default_branch": "master", "project": {"version": "latest", "name": "Erebot", "slug": "erebot/erebot"}, "base": ".././", "page": "Developers/New_module"};
+</script>
+<script type="text/javascript" src=".././../../../../erebot-overlay.js"></script>
+
+<!-- Statistics -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDocumentTitle", document.domain + " / " + document.title]);
+  if (document.domain != 'docs.erebot.net') {
+      _paq.push(["setCookieDomain", "erebot.github.io"]);
+  }
+  _paq.push(["setDomains", ["erebot.github.io", "docs.erebot.net"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.erebot.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '4']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.erebot.net/piwik.php?idsite=4" style="border:0;" alt="" /></p></noscript>
+</body>
+</html>

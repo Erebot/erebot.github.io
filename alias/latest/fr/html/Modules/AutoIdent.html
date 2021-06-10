@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>AutoIdent module &mdash; documentation Erebot latest-0.6.0-74-g691fc3f</title>
+    
+    <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'latest-0.6.0-74-g691fc3f',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="top" title="documentation Erebot latest-0.6.0-74-g691fc3f" href="../index.html" />
+    <link rel="up" title="Compatible modules" href="../Modules.html" />
+    <link rel="next" title="AutoJoin module" href="AutoJoin.html" />
+    <link rel="prev" title="AutoConnect module" href="AutoConnect.html" /> 
+  </head>
+  <body>
+      <div class="header"><h1 class="heading"><a href="../index.html">
+          <span>documentation Erebot latest-0.6.0-74-g691fc3f</span></a></h1>
+        <h2 class="heading"><span>AutoIdent module</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="AutoConnect.html">AutoConnect module</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contenu</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="AutoJoin.html">AutoJoin module</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <blockquote>
+<div></div></blockquote>
+<div class="section" id="autoident-module">
+<h1>AutoIdent module<a class="headerlink" href="#autoident-module" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#description" id="id1">Description</a></li>
+<li><a class="reference internal" href="#configuration" id="id2">Configuration</a><ul>
+<li><a class="reference internal" href="#options" id="id3">Options</a></li>
+<li><a class="reference internal" href="#example" id="id4">Example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#usage" id="id5">Usage</a></li>
+</ul>
+</div>
+<div class="section" id="description">
+<h2><a class="toc-backref" href="#id1">Description</a><a class="headerlink" href="#description" title="Lien permanent vers ce titre">¶</a></h2>
+<p>This module makes the bot authenticate itself to a nick server (usually <tt class="docutils literal"><span class="pre">NickServ</span></tt>)
+automatically whenever it is prompted for proof of its identity.</p>
+</div>
+<div class="section" id="configuration">
+<h2><a class="toc-backref" href="#id2">Configuration</a><a class="headerlink" href="#configuration" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="options">
+<h3><a class="toc-backref" href="#id3">Options</a><a class="headerlink" href="#options" title="Lien permanent vers ce titre">¶</a></h3>
+<p>This module provides several configuration options.</p>
+<table border="1" class="docutils">
+<caption>Options for \Erebot\Module\AutoIdent</caption>
+<colgroup>
+<col width="14%" />
+<col width="11%" />
+<col width="21%" />
+<col width="53%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Default value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>nickserv</td>
+<td>string</td>
+<td>&#8220;nickserv&#8221;</td>
+<td>A space-separated list of nicknames
+NickServ may use to contact us.
+Usually &#8220;nickserv&#8221;.</td>
+</tr>
+<tr class="row-odd"><td>password</td>
+<td>string</td>
+<td>n/a</td>
+<td>The password associated with the
+bot&#8217;s nickname</td>
+</tr>
+<tr class="row-even"><td>pattern</td>
+<td>string</td>
+<td>n/a</td>
+<td>The pattern (regular expression) an
+incoming message must match before
+the bot sends out the password on
+the wire.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="example">
+<h3><a class="toc-backref" href="#id4">Example</a><a class="headerlink" href="#example" title="Lien permanent vers ce titre">¶</a></h3>
+<p>The following configuration has been used successfully on the
+<a class="reference external" href="http://epiknet.org/">EpiKnet IRC network</a> which uses <tt class="docutils literal"><span class="pre">Themis</span></tt> as NickServ&#8217;s main nickname.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;configuration</span>
+  <span class="na">xmlns=</span><span class="s">&quot;http://localhost/Erebot/&quot;</span>
+  <span class="na">version=</span><span class="s">&quot;...&quot;</span>
+  <span class="na">language=</span><span class="s">&quot;fr-FR&quot;</span>
+  <span class="na">timezone=</span><span class="s">&quot;Europe/Paris&quot;</span>
+  <span class="na">commands-prefix=</span><span class="s">&quot;!&quot;</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;modules&gt;</span>
+    <span class="c">&lt;!-- Other modules ignored for clarity. --&gt;</span>
+
+    <span class="c">&lt;!-- Configure the bot&#39;s nickname, etc. --&gt;</span>
+    <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">&quot;\Erebot\Module\AutoIdent&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;nickname&quot;</span> <span class="na">value=</span><span class="s">&quot;Erebot&quot;</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;identity&quot;</span> <span class="na">value=</span><span class="s">&quot;Erebot&quot;</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;hostname&quot;</span> <span class="na">value=</span><span class="s">&quot;Erebot&quot;</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;realname&quot;</span> <span class="na">value=</span><span class="s">&quot;Doh!&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/module&gt;</span>
+  <span class="nt">&lt;/modules&gt;</span>
+
+  <span class="nt">&lt;networks&gt;</span>
+    <span class="nt">&lt;network</span> <span class="na">name=</span><span class="s">&quot;EpiKnet&quot;</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;modules&gt;</span>
+         <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">&quot;\Erebot\Module\AutoIdent&quot;</span><span class="nt">&gt;</span>
+           <span class="c">&lt;!--</span>
+<span class="c">             &quot;NickServ&quot; is called &quot;Themis&quot; on EpiKnet.</span>
+<span class="c">             Both names are whitelisted here.</span>
+<span class="c">           --&gt;</span>
+           <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;nickserv&quot;</span> <span class="na">value=</span><span class="s">&quot;Themis NickServ&quot;</span> <span class="nt">/&gt;</span>
+           <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;password&quot;</span> <span class="na">value=</span><span class="s">&quot;my-secret-password&quot;</span> <span class="nt">/&gt;</span>
+
+           <span class="c">&lt;!--</span>
+<span class="c">             EpiKnet&#39;s nickname service is configured to use french</span>
+<span class="c">             by default to communicate.</span>
+<span class="c">             Therefore, The pattern needed to match the warning about</span>
+<span class="c">             registered nicknames has been translated to french.</span>
+
+<span class="c">             Of course, a pattern like &quot;.*(enregistré|registered).*&quot;</span>
+<span class="c">             would also work and would match both the french</span>
+<span class="c">             and english variants of the message.</span>
+<span class="c">           --&gt;</span>
+           <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;pattern&quot;</span>  <span class="na">value=</span><span class="s">&quot;.*enregistré.*&quot;</span> <span class="nt">/&gt;</span>
+         <span class="nt">&lt;/module&gt;</span>
+       <span class="nt">&lt;/modules&gt;</span>
+
+       <span class="nt">&lt;servers&gt;</span>
+          <span class="nt">&lt;server</span> <span class="na">url=</span><span class="s">&quot;irc://irc.epiknet.org:6667/&quot;</span> <span class="nt">/&gt;</span>
+       <span class="nt">&lt;/servers&gt;</span>
+    <span class="nt">&lt;/network&gt;</span>
+  <span class="nt">&lt;/networks&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="usage">
+<h2><a class="toc-backref" href="#id5">Usage</a><a class="headerlink" href="#usage" title="Lien permanent vers ce titre">¶</a></h2>
+<p>This module does not provide any command. Just add this module to your
+configuration and you&#8217;re done.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="AutoConnect.html">AutoConnect module</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contenu</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="AutoJoin.html">AutoJoin module</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2019, The Erebot team.
+      Mis à jour le Jan 06, 2019.
+      Créé avec <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  
+<!-- Custom overlay -->
+<script type="text/javascript">
+var erebot = {"source_suffix": ".rst", "language": "fr", "builder": "html", "default_branch": "master", "project": {"version": "latest", "name": "Erebot", "slug": "erebot/erebot"}, "base": ".././", "page": "Modules/AutoIdent"};
+</script>
+<script type="text/javascript" src=".././../../../../erebot-overlay.js"></script>
+
+<!-- Statistics -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDocumentTitle", document.domain + " / " + document.title]);
+  if (document.domain != 'docs.erebot.net') {
+      _paq.push(["setCookieDomain", "erebot.github.io"]);
+  }
+  _paq.push(["setDomains", ["erebot.github.io", "docs.erebot.net"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.erebot.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '4']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.erebot.net/piwik.php?idsite=4" style="border:0;" alt="" /></p></noscript>
+</body>
+</html>

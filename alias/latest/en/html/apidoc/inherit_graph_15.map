@@ -1,0 +1,8 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$classErebot_1_1Event_1_1Match_1_1Always.html" title="A filter that always matches. " alt="" coords="129,5,268,46"/>
+<area shape="rect" id="node3" href="$classErebot_1_1Event_1_1Match_1_1Chan.html" title="A filter that compares the target channel for an event with some predefined value. " alt="" coords="112,71,285,97"/>
+<area shape="rect" id="node4" href="$classErebot_1_1Event_1_1Match_1_1Never.html" title="A filter that never matches. " alt="" coords="129,122,268,163"/>
+<area shape="rect" id="node5" href="$classErebot_1_1Event_1_1Match_1_1Not.html" title="A filter that negates the result of a sub&#45;filter. " alt="" coords="117,188,280,215"/>
+<area shape="rect" id="node6" href="$classErebot_1_1Event_1_1Match_1_1Source.html" title="A filter which matches when the source of the event equals some predefined value. ..." alt="" coords="129,239,268,281"/>
+<area shape="rect" id="node7" href="$classErebot_1_1Event_1_1Match_1_1Type.html" title="A filter that matches based on the type of event provided. " alt="" coords="113,305,284,332"/>
+</map>

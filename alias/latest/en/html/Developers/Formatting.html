@@ -1,0 +1,665 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Formatting &mdash; Erebot latest-0.6.0-74-g691fc3f documentation</title>
+    
+    <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'latest-0.6.0-74-g691fc3f',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Erebot latest-0.6.0-74-g691fc3f documentation" href="../index.html" />
+    <link rel="up" title="Developer Zone" href="index.html" />
+    <link rel="next" title="Writing a new module" href="New_module.html" />
+    <link rel="prev" title="Internationalization" href="I18n.html" /> 
+  </head>
+  <body>
+      <div class="header"><h1 class="heading"><a href="../index.html">
+          <span>Erebot latest-0.6.0-74-g691fc3f documentation</span></a></h1>
+        <h2 class="heading"><span>Formatting</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="I18n.html">Internationalization</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="New_module.html">Writing a new module</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <blockquote>
+<div></div></blockquote>
+<div class="section" id="formatting">
+<h1>Formatting<a class="headerlink" href="#formatting" title="Permalink to this headline">¶</a></h1>
+<p>This page is only meant to guide you through the use of formatting codes with
+Erebot, it is not meant as a complete documentation of how styles work with IRC.
+If you want more, ask your favourite search engine ;-)</p>
+<p>Erebot provides two ways to format messages. Both methods are described here.</p>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#method-1-raw-codes" id="id8">Method #1 : raw codes</a></li>
+<li><a class="reference internal" href="#method-2-advanced-formatting" id="id9">Method #2 : &#8220;advanced formatting&#8221;</a><ul>
+<li><a class="reference internal" href="#designing-the-format-string" id="id10">Designing the format string</a></li>
+<li><a class="reference internal" href="#strong-typing" id="id11">Strong typing</a></li>
+<li><a class="reference internal" href="#template-variables" id="id12">Template variables</a></li>
+<li><a class="reference internal" href="#using-templates-in-your-code" id="id13">Using templates in your code</a></li>
+<li><a class="reference internal" href="#plurals" id="id14">Plurals</a></li>
+<li><a class="reference internal" href="#further-reading" id="id15">Further reading</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Please note that using raw codes (method 1) is considered bad practice.
+Advanced formatting (method 2) should be used in new code.</p>
+<div class="section" id="method-1-raw-codes">
+<h2><a class="toc-backref" href="#id8">Method #1 : raw codes</a><a class="headerlink" href="#method-1-raw-codes" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This method is now deprecated and should not be used in new code.
+This is because messages written using this method are very hard
+to internationalize. Please use the <a class="reference internal" href="#second-method">second method</a> instead.</p>
+</div>
+<p>The <a class="reference external" href="https://buildbot.erebot.net/doc/api/Erebot/html/interfaceErebot__Interface__Styling.html">formatting API</a> provides constants for the raw control codes that make up
+styles. There are also constants for colors, see the source code for details.</p>
+<p>For example:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+    <span class="nv">$user</span> <span class="o">=</span> <span class="s2">&quot;Foobar&quot;</span><span class="p">;</span>
+
+    <span class="c1">// Using pseudo-HTML, this is the same as:</span>
+    <span class="c1">// &quot;&lt;b&gt;Hi &lt;u&gt;$user&lt;/u&gt;&lt;/b&gt;&quot;</span>
+    <span class="nv">$message</span> <span class="o">=</span>  <span class="nx">Erebot_Styling</span><span class="o">::</span><span class="na">CODE_BOLD</span><span class="o">.</span>
+                    <span class="s2">&quot;Hi &quot;</span><span class="o">.</span>
+                    <span class="nx">Erebot_Styling</span><span class="o">::</span><span class="na">CODE_UNDERLINE</span><span class="o">.</span>
+                        <span class="nv">$user</span><span class="o">.</span>
+                    <span class="nx">Erebot_Styling</span><span class="o">::</span><span class="na">CODE_UNDERLINE</span><span class="o">.</span>
+                <span class="nx">Erebot_Styling</span><span class="o">::</span><span class="na">CODE_BOLD</span><span class="p">;</span>
+    <span class="k">print</span> <span class="nv">$message</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<p>The example above would display <tt class="docutils literal"><span class="pre">Hi</span> <span class="pre">Foobar</span></tt>. The message would be displayed
+in bold, with the user&#8217;s nickname underlined when sent to an IRC server.</p>
+</div>
+<div class="section" id="method-2-advanced-formatting">
+<span id="second-method"></span><h2><a class="toc-backref" href="#id9">Method #2 : &#8220;advanced formatting&#8221;</a><a class="headerlink" href="#method-2-advanced-formatting" title="Permalink to this headline">¶</a></h2>
+<p>This method aims at separating the process of designing the format string
+from the process of actually rendering it (producing the string that would
+be sent to an IRC server).</p>
+<p>It uses an XML syntax to design the format string and a simple API to do
+the rendering. This syntax is generally more verbose than the previous one,
+but is also a lot easier to use and read.
+Moreover, each message is validated (using a <a class="reference external" href="https://github.com/Erebot/Erebot/blob/master/data/styling.rng">RelaxNG schema</a> <a class="footnote-reference" href="#id2" id="id1">[1]</a>),
+making it impossible to build invalid templates.</p>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>For more information on RelaxNG schemae, see <a class="reference external" href="http://relaxng.org/">http://relaxng.org/</a>.</td></tr>
+</tbody>
+</table>
+<div class="section" id="designing-the-format-string">
+<h3><a class="toc-backref" href="#id10">Designing the format string</a><a class="headerlink" href="#designing-the-format-string" title="Permalink to this headline">¶</a></h3>
+<p>The format string contains XML tags which are recognized by the bot
+and allow you to achieve many different formatting combinations.</p>
+<p>Currently, the following tags are available:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">&lt;b&gt;</span></tt> = bold</li>
+<li><tt class="docutils literal"><span class="pre">&lt;u&gt;</span></tt> = underline</li>
+<li><tt class="docutils literal"><span class="pre">&lt;color&gt;</span></tt> = change the (foreground and/or background) color of the text.
+This tag recognizes two optional attributes:<ul>
+<li><tt class="docutils literal"><span class="pre">fg</span></tt> (optional) = changes the foreground color. The color&#8217;s name
+should be one of the <tt class="docutils literal"><span class="pre">COLOR_</span></tt> constants defined in the styling
+class, with the <tt class="docutils literal"><span class="pre">COLOR_</span></tt> prefix stripped (eg. <tt class="docutils literal"><span class="pre">red</span></tt>).
+The color&#8217;s name is case-insensitive.</li>
+<li><tt class="docutils literal"><span class="pre">bg</span></tt> (optional) = changes the background color.
+See the description of <tt class="docutils literal"><span class="pre">fg</span></tt> for valid values.</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">At least one of the <tt class="docutils literal"><span class="pre">fg</span></tt> or <tt class="docutils literal"><span class="pre">bg</span></tt> must be provided, otherwise
+the message will be rejected as invalid.</p>
+</div>
+<ul>
+<li><p class="first"><tt class="docutils literal"><span class="pre">&lt;for&gt;</span></tt> = loop other an array to format its content.
+This tag recognizes 2 required attributes and some optional ones:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">from</span></tt> (required) = name of the variable which contains the
+array to format.</li>
+<li><tt class="docutils literal"><span class="pre">item</span></tt> (required) = a variable which will be created to store
+each value in the array (in turn).</li>
+<li><tt class="docutils literal"><span class="pre">key</span></tt> (optional) = a variable which will be created to store
+the key for that value (useful for associative arrays like in
+our example above).</li>
+<li><tt class="docutils literal"><span class="pre">separator</span></tt> (optional) = a separator to add between all entries
+in the array, except for the last two. Defaults to a comma followed
+by a single space.</li>
+<li><tt class="docutils literal"><span class="pre">sep</span></tt> (optional) = alias for <tt class="docutils literal"><span class="pre">separator</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">last_separator</span></tt> (optional) = a separator to add between
+the last 2 entries of the array. If no <tt class="docutils literal"><span class="pre">separator</span></tt> attribute has
+been set, defaults to an ampersand between two spaces.
+Otherwise, defaults to the value of the <tt class="docutils literal"><span class="pre">separator</span></tt> attribute.</li>
+<li><tt class="docutils literal"><span class="pre">last_sep</span></tt> (optional) = alias for <tt class="docutils literal"><span class="pre">last_separator</span></tt>.</li>
+</ul>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">&lt;var&gt;</span></tt> = insert the value of the given variable at this point.
+The value will be rendered in a locale-dependent way, depending on
+the <a class="reference internal" href="#type-of-variable">type of variable</a> used. This tag accepts one attribute:</p>
+<ul class="simple">
+<li>name (required) = variable to insert. See <a class="reference internal" href="#template-variables">template variables</a>
+below for the various syntaxes supported by this attribute.</li>
+</ul>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">&lt;plural&gt;</span></tt> = use the correct plural form for that sentence.
+This tag has a required attribute called <tt class="docutils literal"><span class="pre">var</span></tt> that is used to
+determine the correct plural form to use. See <a class="reference internal" href="#template-variables">template variables</a>
+below for the various syntaxes supported by this attribute.</p>
+<p>The content of this attribute should evaluate to an integer.
+Depending on the locale in use and this number, the appropriate plural
+form will be selected from a set of possibilities (cases).</p>
+<p>A <tt class="docutils literal"><span class="pre">&lt;plural&gt;</span></tt> tag contains one or more <tt class="docutils literal"><span class="pre">&lt;case&gt;</span></tt> subtags.
+Each <tt class="docutils literal"><span class="pre">&lt;case&gt;</span></tt> contains some inline text and comes with a required
+<tt class="docutils literal"><span class="pre">form</span></tt> attribute indicating when this text should be used <a class="footnote-reference" href="#id4" id="id3">[2]</a>.</p>
+<p>You <strong>MUST</strong> add a <tt class="docutils literal"><span class="pre">&lt;case&gt;</span></tt> subtag with the special form called
+<tt class="docutils literal"><span class="pre">other</span></tt>. This special form will be used when no specific rule
+applies for this word&#8217;s plural.</p>
+</li>
+</ul>
+</div></blockquote>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td>The page at <a class="reference external" href="http://unicode.org/cldr/data/charts/supplemental/language_plural_rules.html">http://unicode.org/cldr/data/charts/supplemental/language_plural_rules.html</a>
+lists all available forms.</td></tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>If you&#8217;re used to <a class="reference external" href="http://www.gnu.org/s/hello/manual/gettext/Plural-forms.html">gettext&#8217;s syntax for plurals</a> (using a predicate
+and a fixed array of translations), you&#8217;ll notice the format used here
+is much more flexible, as it enables one to write something such as:</p>
+<div class="highlight-python"><div class="highlight"><pre>There is/are &lt;x&gt; girl(s) and &lt;y&gt; boy(s) in this classroom.
+</pre></div>
+</div>
+<p>using the <a class="reference internal" href="#correct-form-for-each-word">correct form for each word</a> (noun or verb), while gettext
+would require you to either split the text in multiple sentences
+or define a complicated predicate to retrieve the correct plural.</p>
+<p class="last">Also, please note that although gettext is used to store translations,
+the plural handling mechanism from gettext is never used by Erebot
+(ie. Erebot never calls <tt class="docutils literal"><span class="pre">ngettext</span></tt> or its variants).
+Instead, each message embeds both the singular and plural forms
+and an algorithm is used at runtime to decide which of the forms
+should be used.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">See also the documentation on the <a class="reference external" href="https://buildbot.erebot.net/doc/api/Erebot/html/interfaceErebot__Interface__Styling.html">formatting API</a> for more information.</p>
+</div>
+</div>
+<div class="section" id="strong-typing">
+<span id="type-of-variable"></span><h3><a class="toc-backref" href="#id11">Strong typing</a><a class="headerlink" href="#strong-typing" title="Permalink to this headline">¶</a></h3>
+<p>Each variable in a template has an associated type.
+The following classes are available by default to represent some of the most
+common types:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">Erebot_Styling_Integer</span></tt></dt>
+<dd><p class="first">Represents an integer.</p>
+<div class="last highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+    <span class="nv">$formatter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Erebot_Styling</span><span class="p">(</span><span class="nv">$translator</span><span class="p">);</span>
+    <span class="nv">$source</span> <span class="o">=</span> <span class="s1">&#39;&lt;var name=&quot;leet&quot;/&gt;&#39;</span><span class="p">;</span>
+    <span class="nv">$vars</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;leet&#39;</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">Erebot_Styling_Integer</span><span class="p">(</span><span class="mi">1337</span><span class="p">));</span>
+
+    <span class="c1">// This may be rendered as &quot;1 337&quot;,</span>
+    <span class="c1">// depending on the translator&#39;s locale.</span>
+    <span class="k">echo</span> <span class="nv">$formatter</span><span class="o">-&gt;</span><span class="na">_</span><span class="p">(</span><span class="nv">$source</span><span class="p">,</span> <span class="nv">$vars</span><span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">Erebot_Styling_String</span></tt></dt>
+<dd><p class="first">Represents a string. The value will be passed as is.</p>
+<div class="last highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+    <span class="nv">$formatter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Erebot_Styling</span><span class="p">(</span><span class="nv">$translator</span><span class="p">);</span>
+    <span class="nv">$source</span> <span class="o">=</span> <span class="s1">&#39;&lt;var name=&quot;name&quot;/&gt;&#39;</span><span class="p">;</span>
+    <span class="nv">$vars</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">Erebot_Styling_String</span><span class="p">(</span><span class="s1">&#39;Clicky&#39;</span><span class="p">));</span>
+    <span class="k">echo</span> <span class="nv">$formatter</span><span class="o">-&gt;</span><span class="na">_</span><span class="p">(</span><span class="nv">$source</span><span class="p">,</span> <span class="nv">$vars</span><span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">Erebot_Styling_Float</span></tt></dt>
+<dd><p class="first">Represents a floating-point value.</p>
+<div class="last highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+    <span class="nv">$formatter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Erebot_Styling</span><span class="p">(</span><span class="nv">$translator</span><span class="p">);</span>
+    <span class="nv">$source</span> <span class="o">=</span> <span class="s1">&#39;&lt;var name=&quot;avg&quot;/&gt;&#39;</span><span class="p">;</span>
+    <span class="nv">$vars</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;avg&#39;</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">Erebot_Styling_Float</span><span class="p">(</span><span class="mf">1234.56</span><span class="p">));</span>
+
+    <span class="c1">// This would be rendered as &quot;1 234,56&quot; in french.</span>
+    <span class="k">echo</span> <span class="nv">$formatter</span><span class="o">-&gt;</span><span class="na">_</span><span class="p">(</span><span class="nv">$source</span><span class="p">,</span> <span class="nv">$vars</span><span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">Erebot_Styling_Currency</span></tt></dt>
+<dd><p class="first">Represents a monetary value expressed in some currency.</p>
+<div class="last highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+    <span class="nv">$formatter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Erebot_Styling</span><span class="p">(</span><span class="nv">$translator</span><span class="p">);</span>
+    <span class="nv">$source</span> <span class="o">=</span> <span class="s1">&#39;&lt;var name=&quot;price&quot;/&gt;&#39;</span><span class="p">;</span>
+
+    <span class="c1">// Note: the currency can be passed as an additional parameter.</span>
+    <span class="c1">// If omitted, the currency from the locale configured in the</span>
+    <span class="c1">// $transator is used.</span>
+    <span class="nv">$vars</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;price&#39;</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">Erebot_Styling_Currency</span><span class="p">(</span><span class="mf">1234.567</span><span class="p">,</span> <span class="s1">&#39;EUR&#39;</span><span class="p">));</span>
+
+    <span class="c1">// This would be rendered as &quot;€1,234.57&quot; for US english.</span>
+    <span class="c1">// Note that monetary values are rounded to two places.</span>
+    <span class="k">echo</span> <span class="nv">$formatter</span><span class="o">-&gt;</span><span class="na">_</span><span class="p">(</span><span class="nv">$source</span><span class="p">,</span> <span class="nv">$vars</span><span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">Erebot_Styling_DateTime</span></tt></dt>
+<dd><p class="first">Represents a date and/or time.
+Some extra values (passed as additional parameters to this class)
+are necessary to represent such data. Thus, the arguments for this
+class&#8217; constructor are:</p>
+<ul>
+<li><p class="first"><tt class="docutils literal"><span class="pre">$value</span></tt></p>
+<p>Either a <a class="reference external" href="http://php.net/class.datetime.php">DateTime</a> object, an integer representing some
+Unix timestamp (seconds since Epoch, UTC) or an array using
+the same format as what is output by the <a class="reference external" href="http://php.net/function.localtime.php">localtime()</a> PHP
+function.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><a class="reference external" href="http://php.net/class.datetime.php">DateTime</a> objects are only supported since PHP 5.3.4,
+you should not rely on them in code intended to be backward
+compatible.</p>
+</div>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">$datetype</span></tt></p>
+<p>One of <tt class="docutils literal"><span class="pre">IntlDateFormatter::NONE</span></tt>, <tt class="docutils literal"><span class="pre">IntlDateFormatter::FULL</span></tt>,
+<tt class="docutils literal"><span class="pre">IntlDateFormatter::LONG</span></tt>, <tt class="docutils literal"><span class="pre">IntlDateFormatter::MEDIUM</span></tt> or
+<tt class="docutils literal"><span class="pre">IntlDateFormatter::SHORT</span></tt> <a class="footnote-reference" href="#id6" id="id5">[3]</a>. This indicates how the date part
+of the value will be represented.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">$timetype</span></tt></p>
+<p>One of <tt class="docutils literal"><span class="pre">IntlDateFormatter::NONE</span></tt>, <tt class="docutils literal"><span class="pre">IntlDateFormatter::FULL</span></tt>,
+<tt class="docutils literal"><span class="pre">IntlDateFormatter::LONG</span></tt>, <tt class="docutils literal"><span class="pre">IntlDateFormatter::MEDIUM</span></tt> or
+<tt class="docutils literal"><span class="pre">IntlDateFormatter::SHORT</span></tt>. This indicates how the time part
+of the value will be represented.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">$timezone</span></tt></p>
+<p>A timezone identifier (such as &#8220;Europe/Paris&#8221;). This value is
+ignored when a Unix timestamp is passed as the <tt class="docutils literal"><span class="pre">$value</span></tt>.</p>
+</li>
+</ul>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+    <span class="nv">$formatter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Erebot_Styling</span><span class="p">(</span><span class="nv">$translator</span><span class="p">);</span>
+    <span class="nv">$source</span> <span class="o">=</span> <span class="s1">&#39;&lt;var name=&quot;now&quot;/&gt;&#39;</span><span class="p">;</span>
+    <span class="nv">$vars</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;now&#39;</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">Erebot_Styling_DateTime</span><span class="p">(</span>
+            <span class="nb">time</span><span class="p">(),</span>
+            <span class="nx">IntlDateFormatter</span><span class="o">::</span><span class="na">FULL</span><span class="p">,</span>
+            <span class="nx">IntlDateFormatter</span><span class="o">::</span><span class="na">FULL</span>
+        <span class="p">)</span>
+    <span class="p">);</span>
+
+    <span class="c1">// In US English, this may be rendered like this:</span>
+    <span class="c1">// &quot;Wednesday, December 31, 1969 4:00:00 PM PT&quot;.</span>
+    <span class="k">echo</span> <span class="nv">$formatter</span><span class="o">-&gt;</span><span class="na">_</span><span class="p">(</span><span class="nv">$source</span><span class="p">,</span> <span class="nv">$vars</span><span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<table class="last docutils footnote" frame="void" id="id6" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[3]</a></td><td>See <a class="reference external" href="http://php.net/class.intldateformatter.php">http://php.net/class.intldateformatter.php</a> for the meaning
+of each one of these constants.</td></tr>
+</tbody>
+</table>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">Erebot_Styling_Duration</span></tt></dt>
+<dd><p class="first">Represents a duration in spelled out form, with a precision up to the
+seconds.</p>
+<div class="last highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+    <span class="nv">$formatter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Erebot_Styling</span><span class="p">(</span><span class="nv">$translator</span><span class="p">);</span>
+    <span class="nv">$source</span> <span class="o">=</span> <span class="s1">&#39;&lt;var name=&quot;duration&quot;/&gt;&#39;</span><span class="p">;</span>
+    <span class="nv">$vars</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;duration&#39;</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">Erebot_Styling_Duration</span><span class="p">(</span><span class="mi">1389722</span><span class="p">));</span>
+
+    <span class="c1">// This would be rendered as:</span>
+    <span class="c1">// &quot;2 weeks, 2 days, 2 hours, 2 minutes, 2 seconds&quot; in english.</span>
+    <span class="k">echo</span> <span class="nv">$formatter</span><span class="o">-&gt;</span><span class="na">_</span><span class="p">(</span><span class="nv">$source</span><span class="p">,</span> <span class="nv">$vars</span><span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">If you need to represent a value without any modification, pass it
+as a string or wrap it in an instance of <tt class="docutils literal"><span class="pre">Erebot_Styling_String</span></tt>.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>For basic scalar types (integer, string or float), the API will wrap
+the value automatically for you using the appropriate class
+(<tt class="docutils literal"><span class="pre">Erebot_Styling_Integer</span></tt>, <tt class="docutils literal"><span class="pre">Erebot_Styling_String</span></tt> or
+<tt class="docutils literal"><span class="pre">Erebot_Styling_Float</span></tt>, respectively).
+Arrays do not need to be wrapped in any class (but their values do!).</p>
+<p>You may change the default classes used to wrap scalar types for a
+specific template using the <tt class="docutils literal"><span class="pre">setClass()</span></tt> method, eg:</p>
+<div class="last highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+    <span class="nv">$translator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Erebot_I18n</span><span class="p">();</span>
+    <span class="nv">$tpl</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Erebot_Styling</span><span class="p">(</span><span class="nv">$translator</span><span class="p">);</span>
+
+    <span class="c1">// Change the classes used to wrap basic scalar types.</span>
+    <span class="nv">$tpl</span><span class="o">-&gt;</span><span class="na">setClass</span><span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">,</span>       <span class="s1">&#39;Custom_Int_Wrapper&#39;</span><span class="p">);</span>
+    <span class="nv">$tpl</span><span class="o">-&gt;</span><span class="na">setClass</span><span class="p">(</span><span class="s1">&#39;string&#39;</span><span class="p">,</span>    <span class="s1">&#39;Custom_String_Wrapper&#39;</span><span class="p">);</span>
+    <span class="nv">$tpl</span><span class="o">-&gt;</span><span class="na">setClass</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">,</span>     <span class="s1">&#39;Custom_Float_Wrapper&#39;</span><span class="p">);</span>
+
+    <span class="c1">// Use $tpl as we&#39;d normally do.</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="template-variables">
+<span id="id7"></span><h3><a class="toc-backref" href="#id12">Template variables</a><a class="headerlink" href="#template-variables" title="Permalink to this headline">¶</a></h3>
+<p>When referencing a variable from a template using the <tt class="docutils literal"><span class="pre">&lt;var</span> <span class="pre">name=&quot;...&quot;/&gt;</span></tt>
+or <tt class="docutils literal"><span class="pre">&lt;plural</span> <span class="pre">var=&quot;...&quot;/&gt;</span></tt> tags, various syntaxes are available.</p>
+<p>Hence, <tt class="docutils literal"><span class="pre">...</span></tt> may actually contain:</p>
+<ul>
+<li><p class="first">Actual variable passed to the template, eg. <tt class="docutils literal"><span class="pre">&lt;var</span> <span class="pre">name=&quot;foo&quot;/&gt;</span></tt>.</p>
+</li>
+<li><p class="first">The sum or difference between two integer or floating-point values,
+eg. <tt class="docutils literal"><span class="pre">&lt;var</span> <span class="pre">name=&quot;foo+bar&quot;/&gt;</span></tt> or <tt class="docutils literal"><span class="pre">&lt;var</span> <span class="pre">name=&quot;foo-bar&quot;&gt;</span></tt>.
+Both types may be combined together (so, &#8220;foo&#8221; may refer to an integer,
+while &#8220;bar&#8221; refers to a floating-point value).</p>
+<p>You may use litteral integer or floating-point values as well,
+eg. <tt class="docutils literal"><span class="pre">&lt;var</span> <span class="pre">name=&quot;years-18&quot;/&gt;</span></tt> or <tt class="docutils literal"><span class="pre">&lt;var</span> <span class="pre">name=&quot;century+1&quot;/&gt;</span></tt>.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">As a special bonus, you may also use the add operator (+) to append
+the values of one array to another using <tt class="docutils literal"><span class="pre">array_merge</span></tt>. The original
+arrays are left intact when this feature is used.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Any attempt to add or subtract values from incompatible types
+(eg. adding the value of an integer to a string) will result
+in an exception being thrown. In particular, subtracting one array
+from another is not supported yet.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">There is currently no plan to support the multiply (*) or divide (/)
+operators.</p>
+</div>
+</li>
+<li><p class="first">Parenthesized expressions, eg. <tt class="docutils literal"><span class="pre">&lt;var</span> <span class="pre">name=&quot;totalCards-(nbCards+1)&quot;/&gt;</span></tt>.</p>
+</li>
+<li><p class="first">The number of elements in an array passed to the template, using the
+&#8220;count operator&#8221; (#), eg. <tt class="docutils literal"><span class="pre">&lt;var</span> <span class="pre">name=&quot;#scores&quot;/&gt;</span></tt>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The count operator as higher precedence on the add/subtract operators,
+meaning that it is applied <strong>before</strong> any addition/substraction,
+unless parenthesis are used to override this.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Use of the count operator on any other type may lead to
+unpredictable results.</p>
+</div>
+</li>
+<li><p class="first">Whitespace (spaces or tabs), eg. <tt class="docutils literal"><span class="pre">&lt;var</span> <span class="pre">name=&quot;boys</span>&nbsp;&nbsp;&nbsp; <span class="pre">+</span>&nbsp;&nbsp; <span class="pre">girls&quot;/&gt;</span></tt>.
+Such whitespace is ignored while processing the variable.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Due to limitations in the XML syntax, is it not possible to use
+newlines as whitespace.</p>
+</div>
+</li>
+<li><p class="first">Any combination of the previous syntaxes,
+eg. <tt class="docutils literal"><span class="pre">&lt;var</span> <span class="pre">name=&quot;</span> <span class="pre">#</span> <span class="pre">(</span> <span class="pre">boys</span> <span class="pre">+</span> <span class="pre">girls</span> <span class="pre">)</span> <span class="pre">&quot;/&gt;</span></tt> where <tt class="docutils literal"><span class="pre">boys</span></tt> and <tt class="docutils literal"><span class="pre">girls</span></tt>
+both refer to arrays.</p>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Please keep in mind that variable names are case-sensitive.
+Any attempt to use an undefined variable in a template will
+result in an exception.</p>
+</div>
+</div>
+<div class="section" id="using-templates-in-your-code">
+<h3><a class="toc-backref" href="#id13">Using templates in your code</a><a class="headerlink" href="#using-templates-in-your-code" title="Permalink to this headline">¶</a></h3>
+<p>Once the format string has been designed, you (as a programmer, not as
+a designer) must add a few lines in your code in order to use it.</p>
+<p>This is usually done with the following steps:</p>
+<ol class="arabic">
+<li><p class="first">Create an instance of <a class="reference external" href="https://buildbot.erebot.net/doc/api/Erebot/html/classErebot__Styling.html">Erebot_Styling</a> by passing a translator object
+(an object implementing the <a class="reference external" href="https://buildbot.erebot.net/doc/api/Erebot/html/interfaceErebot__Interface__I18n.html">Erebot_Interface_I18n</a> interface) to its
+constructor.
+This is the creation step, where a formatter is created and bound to a
+translator.</p>
+</li>
+<li><p class="first">Prepare the values (either scalar types, objects implementing the
+<a class="reference external" href="https://buildbot.erebot.net/doc/api/Erebot/html/interfaceErebot__Interface__Styling__Variable.html">Erebot_Interface_Styling_Variable</a> interface or arrays made of
+scalar types/objects) that will be used in the template.
+This is the preparation step, where everything is setup for the final
+step.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Variable names may only contain alphanumeric characters or the
+underscore (_) and dot (.) characters.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">While designing the template, keep in mind that variable names
+are case-sensitive.</p>
+</div>
+</li>
+<li><p class="first">Render the template (with <tt class="docutils literal"><span class="pre">$fmt-&gt;render()</span></tt> or <tt class="docutils literal"><span class="pre">$fmt-&gt;_()</span></tt>) and use
+the result of that process in your code (eg. send it to an IRC channel).
+This is the rendering step.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+    <span class="c1">// The source for a template meant to display</span>
+    <span class="c1">// the scores of each player in a fictitious game.</span>
+    <span class="nv">$source</span> <span class="o">=</span>   <span class="s1">&#39;&lt;b&gt;Scores&lt;/b&gt;: &#39;</span><span class="o">.</span>
+                <span class="s1">&#39;&lt;for item=&quot;score&quot; key=&quot;nick&quot; from=&quot;scores&quot; &#39;</span><span class="o">.</span>
+                    <span class="s1">&#39;separator=&quot;, &quot; last_separator=&quot; &amp;amp; &quot;&gt;&#39;</span><span class="o">.</span>
+                    <span class="s1">&#39;&lt;b&gt;&#39;</span><span class="o">.</span>
+                        <span class="s1">&#39;&lt;u&gt;&#39;</span><span class="o">.</span>
+                            <span class="s1">&#39;&lt;color fg=&quot;green&quot;&gt;&#39;</span><span class="o">.</span>
+                                <span class="s1">&#39;&lt;var name=&quot;nick&quot;/&gt;&#39;</span><span class="o">.</span>
+                            <span class="s1">&#39;&lt;/color&gt;&#39;</span><span class="o">.</span>
+                        <span class="s1">&#39;&lt;/u&gt;&#39;</span><span class="o">.</span>
+                        <span class="s1">&#39;: &lt;var name=&quot;score&quot;/&gt;&#39;</span><span class="o">.</span>
+                    <span class="s1">&#39;&lt;/b&gt;&#39;</span><span class="o">.</span>
+                <span class="s1">&#39;&lt;/for&gt;&#39;</span><span class="p">;</span>
+
+    <span class="c1">// Step 1:</span>
+    <span class="c1">// Create a new translator and a new template from it.</span>
+    <span class="c1">// By default, the locale for the translator is &quot;en_US&quot;.</span>
+    <span class="nv">$translator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Erebot_I18n</span><span class="p">();</span>
+    <span class="nv">$formatter</span>  <span class="o">=</span> <span class="k">new</span> <span class="nx">Erebot_Styling</span><span class="p">(</span><span class="nv">$translator</span><span class="p">);</span>
+
+    <span class="c1">// Step 2:</span>
+    <span class="c1">// Prepare some variables for the template.</span>
+    <span class="nv">$vars</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;scores&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s1">&#39;Foo&#39;</span> <span class="o">=&gt;</span> <span class="mi">42</span><span class="p">,</span>
+            <span class="s1">&#39;Bar&#39;</span> <span class="o">=&gt;</span> <span class="mi">23</span><span class="p">,</span>
+            <span class="s1">&#39;Baz&#39;</span> <span class="o">=&gt;</span> <span class="mi">16</span><span class="p">,</span>
+            <span class="s1">&#39;Qux&#39;</span> <span class="o">=&gt;</span> <span class="mi">15</span><span class="p">,</span>
+            <span class="s1">&#39;Toto&#39;</span> <span class="o">=&gt;</span> <span class="mi">8</span><span class="p">,</span>
+            <span class="s1">&#39;Tata&#39;</span> <span class="o">=&gt;</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">);</span>
+
+    <span class="c1">// Step 3:</span>
+    <span class="c1">// Render the template with the given scores.</span>
+    <span class="c1">//</span>
+    <span class="c1">// This results in something like:</span>
+    <span class="c1">// &quot;Scores: Foo: 42, Bar: 23, Baz: 16, Qux: 15, Toto: 8 &amp; Tata: 4&quot;</span>
+    <span class="c1">// with most of the words represented in bold</span>
+    <span class="c1">// and the nicknames in green and underlined.</span>
+    <span class="c1">//</span>
+    <span class="c1">// Note: since we used &quot;_()&quot; to render the template,</span>
+    <span class="c1">//       a translation is automatically selected (if available).</span>
+    <span class="k">echo</span> <span class="nv">$formatter</span><span class="o">-&gt;</span><span class="na">_</span><span class="p">(</span><span class="nv">$source</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;scores&#39;</span> <span class="o">=&gt;</span> <span class="nv">$scores</span><span class="p">))</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Here, <tt class="docutils literal"><span class="pre">$source</span></tt> has been split over many lines to make it easier to
+figure out how the final message will look like. The template could actually
+be written in a much more compact way.</p>
+<p>You do not need to wrap your template (<tt class="docutils literal"><span class="pre">$source</span></tt>) in XML tags manually,
+the bot already adds an enclosing tag automatically for you.</p>
+<p>Also, the format string could be retrieved from anywhere:</p>
+<ul class="simple">
+<li>an array in a PHP script,</li>
+<li>an external process (eg. a database),</li>
+<li>a translation catalog (MO file),</li>
+<li>etc.</li>
+</ul>
+<p>We prefer to have customizable format strings in a translation catalog,
+as this gives more control to translators over the result and it is a format
+they are used to working with.</p>
+</div>
+<div class="section" id="plurals">
+<span id="correct-form-for-each-word"></span><h3><a class="toc-backref" href="#id14">Plurals</a><a class="headerlink" href="#plurals" title="Permalink to this headline">¶</a></h3>
+<p>Plurals are handled gracefully by Erebot using the <tt class="docutils literal"><span class="pre">&lt;plural&gt;</span></tt> and <tt class="docutils literal"><span class="pre">&lt;case&gt;</span></tt>
+tags.</p>
+<p>Taking the sentence from earlier as an example:</p>
+<div class="highlight-python"><div class="highlight"><pre>There is/are &lt;x&gt; girl(s) and &lt;y&gt; boy(s) in this classroom.
+</pre></div>
+</div>
+<p>The equivalent as a template would be:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+    <span class="nv">$msg</span> <span class="o">=</span> <span class="s1">&#39;There &#39;</span><span class="o">.</span>
+            <span class="s1">&#39;&lt;plural var=&quot;#(girls+boys)&quot;/&gt;&#39;</span><span class="o">.</span>
+                <span class="s1">&#39;&lt;case form=&quot;one&quot;&gt;is&lt;/case&gt;&#39;</span><span class="o">.</span>
+                <span class="s1">&#39;&lt;case form=&quot;other&quot;&gt;are&lt;/case&gt;&#39;</span><span class="o">.</span>
+            <span class="s1">&#39;&lt;/plural&gt; &#39;</span><span class="o">.</span>
+            <span class="s1">&#39;&lt;plural var=&quot;girls&quot;/&gt;&#39;</span><span class="o">.</span>
+                <span class="s1">&#39;&lt;case form=&quot;one&quot;&gt;one girl&lt;/case&gt;&#39;</span><span class="o">.</span>
+                <span class="s1">&#39;&lt;case form=&quot;other&quot;&gt;&lt;var name=&quot;girls&quot;/&gt; girls&lt;/case&gt;&#39;</span><span class="o">.</span>
+            <span class="s1">&#39;&lt;/plural&gt; &#39;</span><span class="o">.</span>
+            <span class="s1">&#39;and &#39;</span><span class="o">.</span>
+            <span class="s1">&#39;&lt;plural var=&quot;boys&quot;/&gt;&#39;</span><span class="o">.</span>
+                <span class="s1">&#39;&lt;case form=&quot;one&quot;&gt;one boy&lt;/case&gt;&#39;</span><span class="o">.</span>
+                <span class="s1">&#39;&lt;case form=&quot;other&quot;&gt;&lt;var name=&quot;boys&quot;/&gt; boys&lt;/case&gt;&#39;</span><span class="o">.</span>
+            <span class="s1">&#39;&lt;/plural&gt; &#39;</span><span class="o">.</span>
+            <span class="s1">&#39;in this classroom&#39;</span><span class="p">;</span>
+
+    <span class="nv">$formatter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Erebot_Styling</span><span class="p">(</span><span class="k">new</span> <span class="nx">Erebot_I18n</span><span class="p">());</span>
+
+    <span class="c1">// Displays &quot;There is one girl and 0 boys in this classroom&quot;.</span>
+    <span class="k">echo</span> <span class="nv">$formatter</span><span class="o">-&gt;</span><span class="na">_</span><span class="p">(</span><span class="nv">$msg</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;girls&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;boys&#39;</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">))</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+
+    <span class="c1">// Displays &quot;There are 2 girls and one boy in this classroom&quot;.</span>
+    <span class="k">echo</span> <span class="nv">$formatter</span><span class="o">-&gt;</span><span class="na">_</span><span class="p">(</span><span class="nv">$msg</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;girls&#39;</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;boys&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">))</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+
+    <span class="c1">// Displays &quot;There are one girl and 2 boys in this classroom&quot;.</span>
+    <span class="k">echo</span> <span class="nv">$formatter</span><span class="o">-&gt;</span><span class="na">_</span><span class="p">(</span><span class="nv">$msg</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;girls&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;boys&#39;</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">))</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<p>Notice how we represented the actual counts using either a spelled out form
+(&#8220;one girl&#8221; / &#8220;one boy&#8221;) or an actual number (&#8220;2 girls&#8221; / &#8220;2 boys&#8221;), simply
+by specifying different words for the different <tt class="docutils literal"><span class="pre">&lt;cases&gt;</span></tt>.</p>
+<p>You&#8217;ll also notice that this string is electable for <a class="reference external" href="Internationalization.html">Internationalization</a>.
+Translators have full control over the template used to render the sentence
+and could easily adapt it to the plural rules used in their country.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">There are often many different ways to represent the same message
+using templates. Here, we grouped words that were affected by the
+same variable together. Once again, <strong>translators are the ones
+in charge</strong> here. This is very important because they know better
+than you how the sentence should look like in their language.</p>
+</div>
+</div>
+<div class="section" id="further-reading">
+<h3><a class="toc-backref" href="#id15">Further reading</a><a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h3>
+<p>The documentation on the <a class="reference external" href="https://buildbot.erebot.net/doc/api/Erebot/html/interfaceErebot__Interface__Styling.html">formatting API</a> always reflects the latest features
+implemented, while this page may sometime fall a little behind in what it
+showcases (please <a class="reference external" href="https://github.com/Erebot/Erebot/issues/new">open a ticket</a> if you notice any discrepancy!).</p>
+</div>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="I18n.html">Internationalization</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="New_module.html">Writing a new module</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2019, The Erebot team.
+      Last updated on Jan 06, 2019.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  
+<!-- Custom overlay -->
+<script type="text/javascript">
+var erebot = {"source_suffix": ".rst", "language": "en", "builder": "html", "default_branch": "master", "project": {"version": "latest", "name": "Erebot", "slug": "erebot/erebot"}, "base": ".././", "page": "Developers/Formatting"};
+</script>
+<script type="text/javascript" src=".././../../../../erebot-overlay.js"></script>
+
+<!-- Statistics -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDocumentTitle", document.domain + " / " + document.title]);
+  if (document.domain != 'docs.erebot.net') {
+      _paq.push(["setCookieDomain", "erebot.github.io"]);
+  }
+  _paq.push(["setDomains", ["erebot.github.io", "docs.erebot.net"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.erebot.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '4']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.erebot.net/piwik.php?idsite=4" style="border:0;" alt="" /></p></noscript>
+</body>
+</html>
