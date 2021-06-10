@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="class">
+    <name>Erebot::Module::WebGetter</name>
+    <filename>classErebot_1_1Module_1_1WebGetter.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>getHelp</name>
+      <anchorfile>classErebot_1_1Module_1_1WebGetter.html</anchorfile>
+      <anchor>ab0e77e3ad64fe5bd2f750a97c5e4fda2</anchor>
+      <arglist>(\Erebot\Interfaces\Event\Base\TextMessage $event,\Erebot\Interfaces\TextWrapper $words)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleRequest</name>
+      <anchorfile>classErebot_1_1Module_1_1WebGetter.html</anchorfile>
+      <anchor>a8c348477d20b1f977562eec34e9e85e5</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\Base\TextMessage $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>reload</name>
+      <anchorfile>classErebot_1_1Module_1_1WebGetter.html</anchorfile>
+      <anchor>afd2eaa0b21ba749890cc66d0f236ca0e</anchor>
+      <arglist>($flags)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>getParams</name>
+      <anchorfile>classErebot_1_1Module_1_1WebGetter.html</anchorfile>
+      <anchor>a9026939cc3369279462c8cd340008a31</anchor>
+      <arglist>($index, $params, $context)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>getPostData</name>
+      <anchorfile>classErebot_1_1Module_1_1WebGetter.html</anchorfile>
+      <anchor>ae3ef06aecfcbd71d8330298ad9635459</anchor>
+      <arglist>($index, $params, $context)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>prepareContext</name>
+      <anchorfile>classErebot_1_1Module_1_1WebGetter.html</anchorfile>
+      <anchor>a49d59427b2549a0a61c6d81633a4c6c9</anchor>
+      <arglist>($botFmt, $text)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>processResponse</name>
+      <anchorfile>classErebot_1_1Module_1_1WebGetter.html</anchorfile>
+      <anchor>ab7f5f958c941111bbca1c1cb41d1a077</anchor>
+      <arglist>(\Requests_Response $response, $encoding, $index, $params, &amp;$context)</arglist>
+    </member>
+    <member kind="function" protection="protected" static="yes">
+      <type>static</type>
+      <name>injectContext</name>
+      <anchorfile>classErebot_1_1Module_1_1WebGetter.html</anchorfile>
+      <anchor>a6c3ebc7b9ac9c8c3fc0e297c2fd7d902</anchor>
+      <arglist>($msg, $args)</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$indexes</name>
+      <anchorfile>classErebot_1_1Module_1_1WebGetter.html</anchorfile>
+      <anchor>a603433665f28376f5780bbacfa8d874f</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="dir">
+    <name>src</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/</path>
+    <filename>dir_68267d1309a1af8e8297ef4c3efbcdba.html</filename>
+    <file>WebGetter.php</file>
+  </compound>
+</tagfile>
