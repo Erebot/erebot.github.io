@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="class">
+    <name>Erebot::Module::RateLimiter</name>
+    <filename>classErebot_1_1Module_1_1RateLimiter.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>getHelp</name>
+      <anchorfile>classErebot_1_1Module_1_1RateLimiter.html</anchorfile>
+      <anchor>acc191c8c6cdacf52991d0a0ee3981150</anchor>
+      <arglist>(\Erebot\Interfaces\Event\Base\TextMessage $event,\Erebot\Interfaces\TextWrapper $words)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>reload</name>
+      <anchorfile>classErebot_1_1Module_1_1RateLimiter.html</anchorfile>
+      <anchor>a3b40b43b9c59483ef61f783101d81ef8</anchor>
+      <arglist>($flags)</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$queue</name>
+      <anchorfile>classErebot_1_1Module_1_1RateLimiter.html</anchorfile>
+      <anchor>a8f14a8ae9bc4d4c4dcb0424ee73be988</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="dir">
+    <name>src</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/</path>
+    <filename>dir_68267d1309a1af8e8297ef4c3efbcdba.html</filename>
+    <file>RateLimiter.php</file>
+  </compound>
+</tagfile>
