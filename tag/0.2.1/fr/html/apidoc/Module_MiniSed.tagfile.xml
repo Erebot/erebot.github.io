@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="class">
+    <name>Erebot::Module::MiniSed</name>
+    <filename>classErebot_1_1Module_1_1MiniSed.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>getHelp</name>
+      <anchorfile>classErebot_1_1Module_1_1MiniSed.html</anchorfile>
+      <anchor>afdb70bef93c6a8564221d1f365160f13</anchor>
+      <arglist>(\Erebot\Interfaces\Event\Base\TextMessage $event,\Erebot\Interfaces\TextWrapper $words)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleRawText</name>
+      <anchorfile>classErebot_1_1Module_1_1MiniSed.html</anchorfile>
+      <anchor>ad5245d3a5f5aa5a51fc4a8332d10dc62</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Event\WithChanSourceTextAbstract $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleSed</name>
+      <anchorfile>classErebot_1_1Module_1_1MiniSed.html</anchorfile>
+      <anchor>a4dac639ed1c2e636da1b36a650ca4d3b</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Event\WithChanSourceTextAbstract $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>reload</name>
+      <anchorfile>classErebot_1_1Module_1_1MiniSed.html</anchorfile>
+      <anchor>a1dd41a2773b664ce1dc9bdfc439fb9c8</anchor>
+      <arglist>($flags)</arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>REPLACE_PATTERN</name>
+      <anchorfile>classErebot_1_1Module_1_1MiniSed.html</anchorfile>
+      <anchor>a52520d43df672e97969db1c8c07af13d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$chans</name>
+      <anchorfile>classErebot_1_1Module_1_1MiniSed.html</anchorfile>
+      <anchor>abfedf54a7a612bd5f156d4117c9bb325</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$handler</name>
+      <anchorfile>classErebot_1_1Module_1_1MiniSed.html</anchorfile>
+      <anchor>a47a26810479f22196b287423e2327922</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$rawHandler</name>
+      <anchorfile>classErebot_1_1Module_1_1MiniSed.html</anchorfile>
+      <anchor>ae41b2692fab97fa0a1fa55e1db65edce</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="dir">
+    <name>src</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/</path>
+    <filename>dir_68267d1309a1af8e8297ef4c3efbcdba.html</filename>
+    <file>MiniSed.php</file>
+  </compound>
+</tagfile>
