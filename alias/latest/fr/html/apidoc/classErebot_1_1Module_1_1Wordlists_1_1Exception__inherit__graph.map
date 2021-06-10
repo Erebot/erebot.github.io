@@ -1,0 +1,4 @@
+<map id="Erebot\Module\Wordlists\Exception" name="Erebot\Module\Wordlists\Exception">
+<area shape="rect" id="node3" href="$classErebot_1_1Module_1_1Wordlists_1_1BadListNameException.html" title="Raised when an invalid name is passed for a wordlist. " alt="" coords="5,273,169,365"/>
+<area shape="rect" id="node4" href="$classErebot_1_1Module_1_1Wordlists_1_1UnreadableFileException.html" title="Raised when the content of the given wordlist cannot be read. " alt="" coords="195,273,365,365"/>
+</map>
