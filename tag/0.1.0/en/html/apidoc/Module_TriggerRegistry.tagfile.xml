@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="class">
+    <name>Erebot_Module_TriggerRegistry</name>
+    <filename>classErebot__Module__TriggerRegistry.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>_reload</name>
+      <anchorfile>classErebot__Module__TriggerRegistry.html</anchorfile>
+      <anchor>a58232d5f74bb8d9b9c24e33e8aca4c3d</anchor>
+      <arglist>($flags)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>freeTriggers</name>
+      <anchorfile>classErebot__Module__TriggerRegistry.html</anchorfile>
+      <anchor>a865abcc87b6ebbeec18a840ddea4ce60</anchor>
+      <arglist>($token)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getChanTriggers</name>
+      <anchorfile>classErebot__Module__TriggerRegistry.html</anchorfile>
+      <anchor>aab611caac8cc409b50a0d1adfa998965</anchor>
+      <arglist>($channel)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getHelp</name>
+      <anchorfile>classErebot__Module__TriggerRegistry.html</anchorfile>
+      <anchor>af218b5f7309408f3cb98a9543c723b07</anchor>
+      <arglist>(Erebot_Interface_Event_Base_TextMessage $event, Erebot_Interface_TextWrapper $words)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getTriggers</name>
+      <anchorfile>classErebot__Module__TriggerRegistry.html</anchorfile>
+      <anchor>ad9e9e479e6f62a1759bc5ad77b95390a</anchor>
+      <arglist>($token)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>registerTriggers</name>
+      <anchorfile>classErebot__Module__TriggerRegistry.html</anchorfile>
+      <anchor>aae08d669921c57b9a3064833eafcdf02</anchor>
+      <arglist>($triggers, $channel)</arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>MATCH_ANY</name>
+      <anchorfile>classErebot__Module__TriggerRegistry.html</anchorfile>
+      <anchor>a3b25ee3e659a9cdd87be41388f883bd0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>_containsRecursive</name>
+      <anchorfile>classErebot__Module__TriggerRegistry.html</anchorfile>
+      <anchor>acf2837881df476c4d664f27f38fd1cf3</anchor>
+      <arglist>(&amp;$array, &amp;$value)</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$_triggers</name>
+      <anchorfile>classErebot__Module__TriggerRegistry.html</anchorfile>
+      <anchor>a6b20c676654cee5346e8e71142e7c8dc</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="dir">
+    <name>src/Erebot</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/Erebot/</path>
+    <filename>dir_3faa5d4fb109dd68a42d2cdc73f4c683.html</filename>
+    <dir>src/Erebot/Module</dir>
+  </compound>
+  <compound kind="dir">
+    <name>src/Erebot/Module</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/Erebot/Module/</path>
+    <filename>dir_75c190c4e3b6377bfae2ef99e2979ca0.html</filename>
+    <file>TriggerRegistry.php</file>
+  </compound>
+  <compound kind="dir">
+    <name>src</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/</path>
+    <filename>dir_68267d1309a1af8e8297ef4c3efbcdba.html</filename>
+    <dir>src/Erebot</dir>
+  </compound>
+</tagfile>
