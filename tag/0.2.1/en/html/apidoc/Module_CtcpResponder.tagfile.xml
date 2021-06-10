@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="class">
+    <name>Erebot::Module::CtcpResponder</name>
+    <filename>classErebot_1_1Module_1_1CtcpResponder.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>ctcpCLIENTINFO</name>
+      <anchorfile>classErebot_1_1Module_1_1CtcpResponder.html</anchorfile>
+      <anchor>ac82c312766e8f11b31de5472cfdaf83a</anchor>
+      <arglist>(\Erebot\Interfaces\Event\Base\CtcpMessage $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ctcpERRMSG</name>
+      <anchorfile>classErebot_1_1Module_1_1CtcpResponder.html</anchorfile>
+      <anchor>afe29d0efe63ec763699ea38d157fc871</anchor>
+      <arglist>(\Erebot\Interfaces\Event\Base\CtcpMessage $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ctcpFINGER</name>
+      <anchorfile>classErebot_1_1Module_1_1CtcpResponder.html</anchorfile>
+      <anchor>a2c40aa3a0f7e432d7c4cbc714bcd6833</anchor>
+      <arglist>(\Erebot\Interfaces\Event\Base\CtcpMessage $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ctcpPING</name>
+      <anchorfile>classErebot_1_1Module_1_1CtcpResponder.html</anchorfile>
+      <anchor>acfab741af2d0fb7352e0cfe0cfb99798</anchor>
+      <arglist>(\Erebot\Interfaces\Event\Base\CtcpMessage $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ctcpSOURCE</name>
+      <anchorfile>classErebot_1_1Module_1_1CtcpResponder.html</anchorfile>
+      <anchor>a14ce56db6333cf82b6e49592a3ad5b3a</anchor>
+      <arglist>(\Erebot\Interfaces\Event\Base\CtcpMessage $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ctcpTIME</name>
+      <anchorfile>classErebot_1_1Module_1_1CtcpResponder.html</anchorfile>
+      <anchor>a1c847fddcb46e541133e965abd62f0dc</anchor>
+      <arglist>(\Erebot\Interfaces\Event\Base\CtcpMessage $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ctcpVERSION</name>
+      <anchorfile>classErebot_1_1Module_1_1CtcpResponder.html</anchorfile>
+      <anchor>af9acf1607d14d64a53900b6b76a9d4f0</anchor>
+      <arglist>(\Erebot\Interfaces\Event\Base\CtcpMessage $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getHelp</name>
+      <anchorfile>classErebot_1_1Module_1_1CtcpResponder.html</anchorfile>
+      <anchor>ac463e499a0c9d9ee6f013a166627ef1d</anchor>
+      <arglist>(\Erebot\Interfaces\Event\Base\TextMessage $event,\Erebot\Interfaces\TextWrapper $words)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleCtcp</name>
+      <anchorfile>classErebot_1_1Module_1_1CtcpResponder.html</anchorfile>
+      <anchor>a87204fc35a9a6b781fdc40a8b35732e3</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\Base\CtcpMessage $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>reload</name>
+      <anchorfile>classErebot_1_1Module_1_1CtcpResponder.html</anchorfile>
+      <anchor>aa505c470a098c70fabf86f1eb1f3deea</anchor>
+      <arglist>($flags)</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$supportedTypes</name>
+      <anchorfile>classErebot_1_1Module_1_1CtcpResponder.html</anchorfile>
+      <anchor>a9a074db427d91959277e0fb18eb5b043</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="dir">
+    <name>src</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/</path>
+    <filename>dir_68267d1309a1af8e8297ef4c3efbcdba.html</filename>
+    <file>CtcpResponder.php</file>
+  </compound>
+</tagfile>
