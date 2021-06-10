@@ -1,0 +1,9 @@
+<map id="Erebot\Module\Countdown\Exception" name="Erebot\Module\Countdown\Exception">
+<area shape="rect" id="node3" href="$classErebot_1_1Module_1_1Countdown_1_1DivisionByZeroException.html" title="An exception thrown when an attempt is made to divide a value by zero (eg. &quot;2 / (1 &#45; 1)&quot;)..." alt="" coords="5,309,181,401"/>
+<area shape="rect" id="node4" href="$classErebot_1_1Module_1_1Countdown_1_1FormulaMustBeAStringException.html" title="An exception thrown when the given &quot;formula&quot; is not even a string. " alt="" coords="205,309,424,401"/>
+<area shape="rect" id="node5" href="$classErebot_1_1Module_1_1Countdown_1_1InvalidValueException.html" title="An exception thrown whenever an unexpected value was given. " alt="" coords="448,272,624,437"/>
+<area shape="rect" id="node6" href="$classErebot_1_1Module_1_1Countdown_1_1NonIntegralDivisionException.html" title="An exception thrown whenever an attempt is made to compute a non&#45;integral division (eg..." alt="" coords="649,309,847,401"/>
+<area shape="rect" id="node7" href="$classErebot_1_1Module_1_1Countdown_1_1Solver_1_1SkipException.html" title="An exception thrown whenever an operation in the solver can easily be simplified and so should be ign..." alt="" coords="872,309,1048,401"/>
+<area shape="rect" id="node8" href="$classErebot_1_1Module_1_1Countdown_1_1SyntaxErrorException.html" title="An exception thrown whenever a formula contains some syntax error. " alt="" coords="1072,309,1248,401"/>
+<area shape="rect" id="node9" href="$classErebot_1_1Module_1_1Countdown_1_1UnavailableNumberException.html" title="An exception thrown whenever a formula uses some number which is not part of the set of available num..." alt="" coords="1273,309,1471,401"/>
+</map>

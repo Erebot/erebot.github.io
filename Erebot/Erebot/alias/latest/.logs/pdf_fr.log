@@ -1,0 +1,406 @@
+Making output directory...
+Running Sphinx v1.2.2
+fatal: no tag exactly matches '691fc3fa8bc6f07061ff2b3798fec76bc3a039aa'
+Including real configuration file (/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/real_conf.py)...
+loading translations [fr]... done
+building [latex]: all documents
+updating environment: 40 added, 0 changed, 0 removed
+reading sources... [  2%] Configuration
+reading sources... [  5%] Contribute
+reading sources... [  7%] Developers/Coding_Standard
+reading sources... [ 10%] Developers/Formatting
+reading sources... [ 12%] Developers/I18n
+reading sources... [ 15%] Developers/New_module
+reading sources... [ 17%] Developers/index
+reading sources... [ 20%] HowTo/External_Process_Interaction
+reading sources... [ 22%] HowTo/index
+reading sources... [ 25%] Installation
+reading sources... [ 27%] License
+reading sources... [ 30%] Modules
+reading sources... [ 32%] Modules/AZ
+reading sources... [ 35%] Modules/Admin
+reading sources... [ 37%] Modules/AutoConnect
+reading sources... [ 40%] Modules/AutoIdent
+reading sources... [ 42%] Modules/AutoJoin
+reading sources... [ 45%] Modules/Countdown
+reading sources... [ 47%] Modules/CtcpResponder
+reading sources... [ 50%] Modules/GoF
+reading sources... [ 52%] Modules/Helper
+reading sources... [ 55%] Modules/IrcConnector
+reading sources... [ 57%] Modules/IrcTracker
+reading sources... [ 60%] Modules/LagChecker
+reading sources... [ 62%] Modules/Math
+reading sources... [ 65%] Modules/MiniSed
+reading sources... [ 67%] Modules/PhpFilter
+reading sources... [ 70%] Modules/PingReply
+reading sources... [ 72%] Modules/RateLimiter
+reading sources... [ 75%] Modules/Roulette
+reading sources... [ 77%] Modules/ServerCapabilities
+reading sources... [ 80%] Modules/TV
+reading sources... [ 82%] Modules/TriggerRegistry
+reading sources... [ 85%] Modules/Uno
+reading sources... [ 87%] Modules/WatchList
+reading sources... [ 90%] Modules/WebGetter
+reading sources... [ 92%] Modules/Wordlists
+reading sources... [ 95%] Prerequisites
+reading sources... [ 97%] Usage
+reading sources... [100%] index
+
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Developers/New_module.rst:169: ERROR: Unknown interpreted text role "api:erebot".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Developers/New_module.rst:183: ERROR: Unknown interpreted text role "api:erebot".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules/Countdown.rst:: ERROR: Undefined substitution referenced: "project".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules/CtcpResponder.rst:73: ERROR: Malformed table.
+
++-------------------+-----------------------+---------------------------+
+| CTCP type         | Default response      | Example                   |
++===================+=======================+===========================+
+| FINGER            | Information about who | clicky@madlax (started 23 |
+|                   | started the bot, the  | secondes ago)             |
+|                   | name of the machine   |                           |
+|                   | it is running on and  |                           |
+|                   | its uptime.           |                           |
++-------------------+-----------------------+---------------------------+
+| VERSION           | The bot's current     | Erebot v0.5.0-dev1 /      |
+|                   | version, as well as   | PHP 5.3.2-1ubuntu4.5 /    |
+|                   | PHP's version and     | Linux 2.6.32-27-generic   |
+|                   | information on the    |                           |
+|                   | operating system the  |                           |
+|                   | bot is running on     |                           |
+|                   | (name and version).   |                           |
++-------------------+-----------------------+---------------------------+
+| SOURCE            | URL to use to         | http://pear.erebot.net/   |
+|                   | download the bot      |                           |
++-------------------+-----------------------+---------------------------+
+| CLIENTINFO        | URL to use to get     | http://www.erebot.net/    |
+|                   | information on the    |                           |
+|                   | bot.                  |                           |
++-------------------+-----------------------+---------------------------+
+| ERRMSG            | The latest error      | Success                   |
+|                   | message detected by   |                           |
+|                   | the bot or "Success". |                           |
++-------------------+-----------------------+---------------------------+
+| PING              | Exactly the same text | n/a  |
+|                   | as in the request     |                           |
+|                   | (eg. some timestamp). |                           |
++-------------------+-----------------------+---------------------------+
+| TIME              | The current date and  | Thu, 21 Dec 2000 16:01:07 |
+|                   | time where the bot is | +0200                     |
+|                   | running, using the    |                           |
+|                   | format from           |                           |
+|                   | :rfc:`2822`.          |                           |
++-------------------+-----------------------+---------------------------+
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules/CtcpResponder.rst:71: ERROR: Error parsing content block for the "table" directive: exactly one table expected.
+
+..  table:: Default responses to the usual CTCP requests
+
+    +-------------------+-----------------------+---------------------------+
+    | CTCP type         | Default response      | Example                   |
+    +===================+=======================+===========================+
+    | FINGER            | Information about who | clicky@madlax (started 23 |
+    |                   | started the bot, the  | secondes ago)             |
+    |                   | name of the machine   |                           |
+    |                   | it is running on and  |                           |
+    |                   | its uptime.           |                           |
+    +-------------------+-----------------------+---------------------------+
+    | VERSION           | The bot's current     | Erebot v0.5.0-dev1 /      |
+    |                   | version, as well as   | PHP 5.3.2-1ubuntu4.5 /    |
+    |                   | PHP's version and     | Linux 2.6.32-27-generic   |
+    |                   | information on the    |                           |
+    |                   | operating system the  |                           |
+    |                   | bot is running on     |                           |
+    |                   | (name and version).   |                           |
+    +-------------------+-----------------------+---------------------------+
+    | SOURCE            | URL to use to         | http://pear.erebot.net/   |
+    |                   | download the bot      |                           |
+    +-------------------+-----------------------+---------------------------+
+    | CLIENTINFO        | URL to use to get     | http://www.erebot.net/    |
+    |                   | information on the    |                           |
+    |                   | bot.                  |                           |
+    +-------------------+-----------------------+---------------------------+
+    | ERRMSG            | The latest error      | Success                   |
+    |                   | message detected by   |                           |
+    |                   | the bot or "Success". |                           |
+    +-------------------+-----------------------+---------------------------+
+    | PING              | Exactly the same text | n/a  |
+    |                   | as in the request     |                           |
+    |                   | (eg. some timestamp). |                           |
+    +-------------------+-----------------------+---------------------------+
+    | TIME              | The current date and  | Thu, 21 Dec 2000 16:01:07 |
+    |                   | time where the bot is | +0200                     |
+    |                   | running, using the    |                           |
+    |                   | format from           |                           |
+    |                   | :rfc:`2822`.          |                           |
+    +-------------------+-----------------------+---------------------------+
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules/Uno.rst:13: ERROR: Unknown target name: "mattel's uno game".
+looking for now-outdated files... none found
+pickling environment... done
+checking consistency... done
+processing Erebot.tex... index Prerequisites Installation Configuration Usage Modules Modules/AZ Modules/Admin Modules/AutoConnect Modules/AutoIdent Modules/AutoJoin Modules/Countdown Modules/CtcpResponder Modules/GoF Modules/Helper Modules/IrcConnector Modules/IrcTracker Modules/LagChecker Modules/Math Modules/MiniSed Modules/PhpFilter Modules/PingReply Modules/RateLimiter Modules/Roulette Modules/ServerCapabilities Modules/TV Modules/TriggerRegistry Modules/Uno Modules/WatchList Modules/WebGetter Modules/Wordlists HowTo/index HowTo/External_Process_Interaction Contribute Developers/index Developers/Coding_Standard Developers/I18n Developers/Formatting Developers/New_module License 
+resolving references...
+None:None: WARNING: undefined label: configuration options (if the link has no caption the label must precede a section header)
+None:None: WARNING: undefined label: configuration options (if the link has no caption the label must precede a section header)
+None:None: WARNING: undefined label: configuration options (if the link has no caption the label must precede a section header)
+None:None: WARNING: undefined label: configuration options (if the link has no caption the label must precede a section header)
+None:None: WARNING: undefined label: commands_provided (if the link has no caption the label must precede a section header)
+None:None: WARNING: undefined label: configuration options (if the link has no caption the label must precede a section header)
+None:None: WARNING: undefined label: configuration options (if the link has no caption the label must precede a section header)
+None:None: WARNING: undefined label: configuration options (if the link has no caption the label must precede a section header)
+None:None: WARNING: undefined label: configuration options (if the link has no caption the label must precede a section header)
+None:None: WARNING: undefined label: configuration options (if the link has no caption the label must precede a section header)
+None:None: WARNING: undefined label: configuration options (if the link has no caption the label must precede a section header)
+None:None: WARNING: undefined label: variations (if the link has no caption the label must precede a section header)
+None:None: WARNING: undefined label: variations (if the link has no caption the label must precede a section header)
+writing... /home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/index.rst:: WARNING: unusable reference target found: ./apidoc/
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Prerequisites.rst:: WARNING: unusable reference target found: apt:doxygen
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Prerequisites.rst:: WARNING: unusable reference target found: apt:gettext
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Prerequisites.rst:: WARNING: unusable reference target found: apt:xmlstarlet
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Installation.rst:: WARNING: unusable reference target found: ./projects/autoconnect/
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Installation.rst:: WARNING: unusable reference target found: ./projects/ircconnector/
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Installation.rst:: WARNING: unusable reference target found: ./projects/pingreply/
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Installation.rst:: WARNING: unusable reference target found: Configuration.html
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Usage.rst:: WARNING: Pygments lexer name u'shell' is not known
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Usage.rst:: WARNING: Pygments lexer name u'shell' is not known
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules/AutoConnect.rst:: WARNING: unusable reference target found: irc://localhost:6667/
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules/AutoConnect.rst:: WARNING: unusable reference target found: irc://irc.iiens.net:6667/
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules/AutoIdent.rst:: WARNING: unusable reference target found: irc://irc.epiknet.org:6667/
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules/AutoJoin.rst:: WARNING: unusable reference target found: irc://localhost:6667/
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Modules/IrcConnector.rst:: WARNING: unusable reference target found: irc://localhost:6667/?upgrade=1
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Contribute.rst:: WARNING: unusable reference target found: irc://irc.iiens.net/Erebot
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Developers/I18n.rst:: WARNING: unusable reference target found: Styling.html
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Developers/Formatting.rst:: WARNING: unusable reference target found: Internationalization.html
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Developers/New_module.rst:: WARNING: unusable reference target found: Styling.html
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Developers/New_module.rst:: WARNING: unusable reference target found: Internationalization.html
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Developers/New_module.rst:: WARNING: unusable reference target found: Styling.html
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Developers/New_module.rst:: WARNING: unusable reference target found: Internationalization.html
+done
+copying TeX support files...
+done
+build succeeded, 41 warnings.
+make: Entering directory `/home/travis/build/Erebot/erebot.github.io/tmp/output/alias/latest/fr/pdf'
+pdflatex  'Erebot.tex'
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian)
+ restricted \write18 enabled.
+entering extended mode
+(./Erebot.tex
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 6 languages loaded.
+(./sphinxmanual.cls
+Document Class: sphinxmanual 2009/06/02 Document class (Sphinx manual)
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo)))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu)))
+(/usr/share/texlive/texmf-dist/tex/latex/cmap/cmap.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def)<<t1.cmap>>)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+(/usr/share/texlive/texmf-dist/tex/generic/babel-french/frenchb.ldf
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/carlisle/scalefnt.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty) (./fncychap.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty) (./sphinx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.dfu)))
+(/usr/share/texlive/texmf-dist/tex/latex/fancybox/fancybox.sty
+Style option: `fancybox' v1.4 <2010/05/15> (tvz)
+) (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty)
+(./tabulary.sty (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz))
+(/usr/share/texlive/texmf-dist/tex/latex/threeparttable/threeparttable.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/mdwtools/footnote.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg)))
+(/usr/share/texlive/texmf-dist/tex/plain/misc/pdfcolor.tex)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty))
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/hypcap.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+Writing index file Erebot.idx
+No file Erebot.aux.
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd)
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+Underfull \hbox (badness 10000) in paragraph at lines 120--120
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd)<<ot1.cmap>><<oml.cmap
+>><<oms.cmap>><<omx.cmap>> [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
+}] [2]
+Adding blank page after the table of contents.
+[1] [2] [1] [2]
+Chapitre 1.
+
+LaTeX Warning: Hyper reference `Prerequisites:dependencies-for-regular-users' o
+n page 3 undefined on input line 167.
+
+
+LaTeX Warning: Hyper reference `Prerequisites:additional-dependencies-for-erebo
+t-developers' on page 3 undefined on input line 170.
+
+
+LaTeX Warning: Hyper reference `Prerequisites:system-dependencies' on page 3 un
+defined on input line 173.
+
+
+LaTeX Warning: Hyper reference `Prerequisites:php-extensions' on page 3 undefin
+ed on input line 176.
+
+
+Overfull \hbox (14.79999pt too wide) in paragraph at lines 182--182
+ [] 
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd) [3]
+
+LaTeX Warning: Hyper reference `Prerequisites:dependencies-for-regular-users' o
+n page 4 undefined on input line 312.
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 386--390
+[]\T1/ptm/m/n/10 Installing get-text for Win-dows
+
+Overfull \hbox (100.89426pt too wide) in paragraph at lines 386--390
+[][]\T1/ptm/m/n/10 http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/[
+][]
+
+Underfull \hbox (badness 5374) in paragraph at lines 386--390
+\T1/ptm/m/n/10 and down-load the la-test ver-sion
+
+Overfull \hbox (14.58386pt too wide) in paragraph at lines 352--430
+[] 
+[5] [6] [7] [8]
+Chapitre 2.
+
+LaTeX Warning: Hyper reference `Installation:installation-using-phar-archives' 
+on page 9 undefined on input line 500.
+
+
+LaTeX Warning: Hyper reference `Installation:installation-using-composer' on pa
+ge 9 undefined on input line 503.
+
+
+LaTeX Warning: Hyper reference `Installation:final-steps' on page 9 undefined o
+n input line 506.
+
+
+Overfull \hbox (14.79999pt too wide) in paragraph at lines 510--510
+ [] 
+
+Underfull \hbox (badness 10000) in paragraph at lines 512--516
+
+
+LaTeX Warning: Hyper reference `Prerequisites::doc' on page 9 undefined on inpu
+t line 539.
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 647--676
+
+
+LaTeX Warning: Hyper reference `Installation:final-steps' on page 10 undefined 
+on input line 684.
+
+[10]
+
+LaTeX Warning: Hyper reference `Installation:final-steps' on page 11 undefined 
+on input line 721.
+
+[11] [12]
+Chapitre 3.
+
+LaTeX Warning: Hyper reference `Usage:cmdoption-Erebot-c' on page 13 undefined 
+on input line 775.
+
+
+LaTeX Warning: Hyper reference `Configuration:id1' on page 13 undefined on inpu
+t line 817.
+
+
+LaTeX Warning: Hyper reference `Configuration:logging' on page 13 undefined on 
+input line 820.
+
+
+LaTeX Warning: Hyper reference `Configuration:modules' on page 13 undefined on 
+input line 823.
+
+
+LaTeX Warning: Hyper reference `Configuration:module' on page 13 undefined on i
+nput line 826.
+
+
+LaTeX Warning: Hyper reference `Configuration:param' on page 13 undefined on in
+put line 829.
+
+
+LaTeX Warning: Hyper reference `Configuration:networks' on page 13 undefined on
+ input line 836.
+
+
+LaTeX Warning: Hyper reference `Configuration:network' on page 13 undefined on 
+input line 839.
+
+
+LaTeX Warning: Hyper reference `Configuration:servers' on page 13 undefined on 
+input line 842.
+
+
+! LaTeX Error: Too deeply nested.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.843 \begin{itemize}
+                     
+? 
+! Emergency stop.
+ ...                                              
+                                                  
+l.843 \begin{itemize}
+                     
+!  ==> Fatal error occurred, no output PDF file produced!
+Transcript written on Erebot.log.
+make: *** [Erebot.pdf] Error 1
+make: Leaving directory `/home/travis/build/Erebot/erebot.github.io/tmp/output/alias/latest/fr/pdf'

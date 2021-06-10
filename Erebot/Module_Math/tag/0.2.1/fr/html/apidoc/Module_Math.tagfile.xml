@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="class">
+    <name>Erebot::Module::Math</name>
+    <filename>classErebot_1_1Module_1_1Math.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>getHelp</name>
+      <anchorfile>classErebot_1_1Module_1_1Math.html</anchorfile>
+      <anchor>aee706c1620719375993e56ef49d08410</anchor>
+      <arglist>(\Erebot\Interfaces\Event\Base\TextMessage $event,\Erebot\Interfaces\TextWrapper $words)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleMath</name>
+      <anchorfile>classErebot_1_1Module_1_1Math.html</anchorfile>
+      <anchor>a7510bb73486843e455a3902aa4444f43</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\Base\TextMessage $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>reload</name>
+      <anchorfile>classErebot_1_1Module_1_1Math.html</anchorfile>
+      <anchor>a25be4161187aa3a804039f8a57a29f57</anchor>
+      <arglist>($flags)</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$handler</name>
+      <anchorfile>classErebot_1_1Module_1_1Math.html</anchorfile>
+      <anchor>afbe7d6830d16f6df95a79057d39c7f9f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$trigger</name>
+      <anchorfile>classErebot_1_1Module_1_1Math.html</anchorfile>
+      <anchor>afd510d4460e19c8b74a13b6af2ec4494</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Math::DivisionByZeroException</name>
+    <filename>classErebot_1_1Module_1_1Math_1_1DivisionByZeroException.html</filename>
+    <base>Erebot::Module::Math::Exception</base>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Math::Exception</name>
+    <filename>classErebot_1_1Module_1_1Math_1_1Exception.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Math::ExponentTooBigException</name>
+    <filename>classErebot_1_1Module_1_1Math_1_1ExponentTooBigException.html</filename>
+    <base>Erebot::Module::Math::Exception</base>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Math::Lexer</name>
+    <filename>classErebot_1_1Module_1_1Math_1_1Lexer.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>__construct</name>
+      <anchorfile>classErebot_1_1Module_1_1Math_1_1Lexer.html</anchorfile>
+      <anchor>a5090fe146b9ba29972bab443dcde432e</anchor>
+      <arglist>($formula)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getResult</name>
+      <anchorfile>classErebot_1_1Module_1_1Math_1_1Lexer.html</anchorfile>
+      <anchor>a5b64151e7e0a63d22865137a892b2bbc</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>PATT_INTEGER</name>
+      <anchorfile>classErebot_1_1Module_1_1Math_1_1Lexer.html</anchorfile>
+      <anchor>ac6d1d0177ff5f822ac28ee22a8110d9a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>PATT_REAL</name>
+      <anchorfile>classErebot_1_1Module_1_1Math_1_1Lexer.html</anchorfile>
+      <anchor>a741d01fff3c8dbc24c384cba74a89ee7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>tokenize</name>
+      <anchorfile>classErebot_1_1Module_1_1Math_1_1Lexer.html</anchorfile>
+      <anchor>add327dd93bb75766cd223c28cfec6dc6</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$formula</name>
+      <anchorfile>classErebot_1_1Module_1_1Math_1_1Lexer.html</anchorfile>
+      <anchor>aa58ea54717bb7cd1f59793b7163a4b9f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$parser</name>
+      <anchorfile>classErebot_1_1Module_1_1Math_1_1Lexer.html</anchorfile>
+      <anchor>a5af21da72b20b182c7b8aa9ea4410bdb</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Math::NegativeExponentException</name>
+    <filename>classErebot_1_1Module_1_1Math_1_1NegativeExponentException.html</filename>
+    <base>Erebot::Module::Math::Exception</base>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Math::NoModulusOnRealsException</name>
+    <filename>classErebot_1_1Module_1_1Math_1_1NoModulusOnRealsException.html</filename>
+    <base>Erebot::Module::Math::Exception</base>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Math::SyntaxErrorException</name>
+    <filename>classErebot_1_1Module_1_1Math_1_1SyntaxErrorException.html</filename>
+    <base>Erebot::Module::Math::Exception</base>
+  </compound>
+  <compound kind="dir">
+    <name>src/Math</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/Math/</path>
+    <filename>dir_3813464283bee2267f39dcf080a84d74.html</filename>
+    <file>DivisionByZeroException.php</file>
+    <file>Exception.php</file>
+    <file>ExponentTooBigException.php</file>
+    <file>Lexer.php</file>
+    <file>NegativeExponentException.php</file>
+    <file>NoModulusOnRealsException.php</file>
+    <file>SyntaxErrorException.php</file>
+  </compound>
+  <compound kind="dir">
+    <name>src</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/</path>
+    <filename>dir_68267d1309a1af8e8297ef4c3efbcdba.html</filename>
+    <dir>src/Math</dir>
+    <file>Math.php</file>
+  </compound>
+</tagfile>

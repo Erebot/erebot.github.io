@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="class">
+    <name>Erebot::Module::AutoIdent</name>
+    <filename>classErebot_1_1Module_1_1AutoIdent.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>getHelp</name>
+      <anchorfile>classErebot_1_1Module_1_1AutoIdent.html</anchorfile>
+      <anchor>a01e92b789fb6e773485eff0714b607ee</anchor>
+      <arglist>(\Erebot\Interfaces\Event\Base\TextMessage $event,\Erebot\Interfaces\TextWrapper $words)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleIdentRequest</name>
+      <anchorfile>classErebot_1_1Module_1_1AutoIdent.html</anchorfile>
+      <anchor>a7d3680b62b27c39656b1bcd5a9134283</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\Base\Source $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>reload</name>
+      <anchorfile>classErebot_1_1Module_1_1AutoIdent.html</anchorfile>
+      <anchor>a2c16ccc15ed060666621bdf23b288e73</anchor>
+      <arglist>($flags)</arglist>
+    </member>
+  </compound>
+  <compound kind="dir">
+    <name>src</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/</path>
+    <filename>dir_68267d1309a1af8e8297ef4c3efbcdba.html</filename>
+    <file>AutoIdent.php</file>
+  </compound>
+</tagfile>

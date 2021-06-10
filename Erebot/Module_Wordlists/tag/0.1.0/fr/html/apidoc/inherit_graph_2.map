@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$classErebot_1_1Module_1_1Wordlists_1_1Proxy.html" title="Proxy class for a wordlist. " alt="" coords="253,5,419,46"/>
+<area shape="rect" id="node3" href="$classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html" title="Represents a list of words that can be iterated. " alt="" coords="253,70,419,111"/>
+<area shape="rect" id="node4" href="$classErebot_1_1Module_1_1Wordlists_1_1Base.html" title="An abstract class meant to serve as a base to define a wrapper for a list of words. " alt="" coords="6,113,205,140"/>
+</map>

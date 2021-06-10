@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="class">
+    <name>Erebot_Module_IrcConnector</name>
+    <filename>classErebot__Module__IrcConnector.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>_reload</name>
+      <anchorfile>classErebot__Module__IrcConnector.html</anchorfile>
+      <anchor>a01bb112b024fb95a430519d0ffd5c850</anchor>
+      <arglist>($flags)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getBotHostname</name>
+      <anchorfile>classErebot__Module__IrcConnector.html</anchorfile>
+      <anchor>a0857bb6a4c5be771ffc16215cdb4ec53</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getBotIdentity</name>
+      <anchorfile>classErebot__Module__IrcConnector.html</anchorfile>
+      <anchor>a0540c62fb758a206fbd4c2f6054c36ae</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getBotNickname</name>
+      <anchorfile>classErebot__Module__IrcConnector.html</anchorfile>
+      <anchor>a472a6ba31edfed54a328712452ca7ca4</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getBotRealname</name>
+      <anchorfile>classErebot__Module__IrcConnector.html</anchorfile>
+      <anchor>a1f087d53a3fc2201006d58e28e97a74d</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getHelp</name>
+      <anchorfile>classErebot__Module__IrcConnector.html</anchorfile>
+      <anchor>ab9dff413469f4d1e4cc923424ed4b788</anchor>
+      <arglist>(Erebot_Interface_Event_Base_TextMessage $event, Erebot_Interface_TextWrapper $words)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getNetPassword</name>
+      <anchorfile>classErebot__Module__IrcConnector.html</anchorfile>
+      <anchor>a4e0c9d32b268beaaf386540096d5036b</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getURIFactory</name>
+      <anchorfile>classErebot__Module__IrcConnector.html</anchorfile>
+      <anchor>a9b2347f10d5ed646a4b0da765d69eaaa</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleExit</name>
+      <anchorfile>classErebot__Module__IrcConnector.html</anchorfile>
+      <anchor>aa50d8baf4803bf867c1ea219b06a612d</anchor>
+      <arglist>(Erebot_Interface_EventHandler $handler, Erebot_Interface_Event_Exit $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleLogon</name>
+      <anchorfile>classErebot__Module__IrcConnector.html</anchorfile>
+      <anchor>ae18573464631dfb203f6c1ad36263dd4</anchor>
+      <arglist>(Erebot_Interface_EventHandler $handler, Erebot_Interface_Event_Logon $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleSTARTTLSFailure</name>
+      <anchorfile>classErebot__Module__IrcConnector.html</anchorfile>
+      <anchor>a5597a55f5009830df053f8716f5f4119</anchor>
+      <arglist>(Erebot_Interface_NumericHandler $handler, Erebot_Interface_Event_Numeric $numeric)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleSTARTTLSSuccess</name>
+      <anchorfile>classErebot__Module__IrcConnector.html</anchorfile>
+      <anchor>a9d106a638a5a21780ec6cde6e3d57bc5</anchor>
+      <arglist>(Erebot_Interface_NumericHandler $handler, Erebot_Interface_Event_Numeric $numeric)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>setURIFactory</name>
+      <anchorfile>classErebot__Module__IrcConnector.html</anchorfile>
+      <anchor>ad01c978844c67716b1f8def83f487bc0</anchor>
+      <arglist>($cls)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>_unload</name>
+      <anchorfile>classErebot__Module__IrcConnector.html</anchorfile>
+      <anchor>a2133ad9728946213dfdf93a3d9004441</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>sendCredentials</name>
+      <anchorfile>classErebot__Module__IrcConnector.html</anchorfile>
+      <anchor>a6263169137124f3748eb3638617812f7</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$_hostname</name>
+      <anchorfile>classErebot__Module__IrcConnector.html</anchorfile>
+      <anchor>ae8eb0575fe598eda4ef1c68f1dd435d9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$_identity</name>
+      <anchorfile>classErebot__Module__IrcConnector.html</anchorfile>
+      <anchor>afba9f2dbd7c725b0c2c059c60b417bd2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$_nickname</name>
+      <anchorfile>classErebot__Module__IrcConnector.html</anchorfile>
+      <anchor>a91eb62a3f7e7743b901c00eac6ff71f8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$_password</name>
+      <anchorfile>classErebot__Module__IrcConnector.html</anchorfile>
+      <anchor>a1b8ebc4971d5fe3e4cb041c18d593dfd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$_realname</name>
+      <anchorfile>classErebot__Module__IrcConnector.html</anchorfile>
+      <anchor>a1692e359e7179f11e9976d5d65d92ce5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$_uriFactory</name>
+      <anchorfile>classErebot__Module__IrcConnector.html</anchorfile>
+      <anchor>ae55378e07e0477517d32ac7a5a530f90</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="dir">
+    <name>src/Erebot</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/Erebot/</path>
+    <filename>dir_3faa5d4fb109dd68a42d2cdc73f4c683.html</filename>
+    <dir>src/Erebot/Module</dir>
+  </compound>
+  <compound kind="dir">
+    <name>src/Erebot/Module</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/Erebot/Module/</path>
+    <filename>dir_75c190c4e3b6377bfae2ef99e2979ca0.html</filename>
+    <file>IrcConnector.php</file>
+  </compound>
+  <compound kind="dir">
+    <name>src</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/</path>
+    <filename>dir_68267d1309a1af8e8297ef4c3efbcdba.html</filename>
+    <dir>src/Erebot</dir>
+  </compound>
+</tagfile>

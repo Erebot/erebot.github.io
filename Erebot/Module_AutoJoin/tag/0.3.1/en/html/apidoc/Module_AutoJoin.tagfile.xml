@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="class">
+    <name>Erebot::Module::AutoJoin</name>
+    <filename>classErebot_1_1Module_1_1AutoJoin.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>handleConnect</name>
+      <anchorfile>classErebot_1_1Module_1_1AutoJoin.html</anchorfile>
+      <anchor>a406f9d579813d7a9c0406e7bfd90b8ec</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\Connect $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>reload</name>
+      <anchorfile>classErebot_1_1Module_1_1AutoJoin.html</anchorfile>
+      <anchor>a9774c9b3a0e64cd13b69ab9e9a7e4c3a</anchor>
+      <arglist>($flags)</arglist>
+    </member>
+  </compound>
+  <compound kind="dir">
+    <name>src</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/</path>
+    <filename>dir_68267d1309a1af8e8297ef4c3efbcdba.html</filename>
+    <file>AutoJoin.php</file>
+  </compound>
+</tagfile>

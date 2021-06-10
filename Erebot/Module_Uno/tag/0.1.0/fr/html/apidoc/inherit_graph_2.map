@@ -1,0 +1,12 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$classErebot_1_1Module_1_1Uno_1_1Exception.html" title="Erebot\\Module\\Uno\\Exception" alt="" coords="134,273,330,300"/>
+<area shape="rect" id="node3" href="$classErebot_1_1Module_1_1Uno_1_1AlreadyDrewException.html" title="Erebot\\Module\\Uno\\Already\lDrewException" alt="" coords="405,5,587,46"/>
+<area shape="rect" id="node4" href="$classErebot_1_1Module_1_1Uno_1_1EmptyDeckException.html" title="Erebot\\Module\\Uno\\EmptyDeck\lException" alt="" coords="393,70,599,111"/>
+<area shape="rect" id="node5" href="$classErebot_1_1Module_1_1Uno_1_1InternalErrorException.html" title="Erebot\\Module\\Uno\\Internal\lErrorException" alt="" coords="405,135,587,177"/>
+<area shape="rect" id="node6" href="$classErebot_1_1Module_1_1Uno_1_1InvalidMoveException.html" title="Erebot\\Module\\Uno\\Invalid\lMoveException" alt="" coords="408,201,584,242"/>
+<area shape="rect" id="node7" href="$classErebot_1_1Module_1_1Uno_1_1MissingCardsException.html" title="Erebot\\Module\\Uno\\Missing\lCardsException" alt="" coords="405,266,587,307"/>
+<area shape="rect" id="node8" href="$classErebot_1_1Module_1_1Uno_1_1MoveNotAllowedException.html" title="Erebot\\Module\\Uno\\MoveNot\lAllowedException" alt="" coords="401,331,591,373"/>
+<area shape="rect" id="node9" href="$classErebot_1_1Module_1_1Uno_1_1MustDrawBeforePassException.html" title="Erebot\\Module\\Uno\\MustDraw\lBeforePassException" alt="" coords="397,397,595,438"/>
+<area shape="rect" id="node10" href="$classErebot_1_1Module_1_1Uno_1_1UnchallengeableException.html" title="Erebot\\Module\\Uno\\Unchallengeable\lException" alt="" coords="379,462,613,503"/>
+<area shape="rect" id="node11" href="$classErebot_1_1Module_1_1Uno_1_1WaitingForColorException.html" title="Erebot\\Module\\Uno\\Waiting\lForColorException" alt="" coords="405,527,587,569"/>
+</map>

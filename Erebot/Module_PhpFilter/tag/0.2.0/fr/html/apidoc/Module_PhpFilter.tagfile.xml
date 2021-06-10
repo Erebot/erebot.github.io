@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="class">
+    <name>Erebot::Module::PhpFilter</name>
+    <filename>classErebot_1_1Module_1_1PhpFilter.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>getAvailableFilters</name>
+      <anchorfile>classErebot_1_1Module_1_1PhpFilter.html</anchorfile>
+      <anchor>abfbdde8ba0ca32a59ec37ee263314cbd</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getHelp</name>
+      <anchorfile>classErebot_1_1Module_1_1PhpFilter.html</anchorfile>
+      <anchor>a56a1a2d498fd2d52f0763e935b8e3820</anchor>
+      <arglist>(\Erebot\Interfaces\Event\Base\TextMessage $event,\Erebot\Interfaces\TextWrapper $words)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleFilter</name>
+      <anchorfile>classErebot_1_1Module_1_1PhpFilter.html</anchorfile>
+      <anchor>a106464d7c28c3de9b66588fb4c7d242c</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\Base\TextMessage $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleUsage</name>
+      <anchorfile>classErebot_1_1Module_1_1PhpFilter.html</anchorfile>
+      <anchor>afc345d919a6eb0e5fe081c38246367fe</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\Base\TextMessage $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>reload</name>
+      <anchorfile>classErebot_1_1Module_1_1PhpFilter.html</anchorfile>
+      <anchor>a21515c85b746f40965d707d9f13924cc</anchor>
+      <arglist>($flags)</arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>DEFAULT_ALLOWED_FILTERS</name>
+      <anchorfile>classErebot_1_1Module_1_1PhpFilter.html</anchorfile>
+      <anchor>a7b682ecaedad5330d922d2f268e7292e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>reloadMembers</name>
+      <anchorfile>classErebot_1_1Module_1_1PhpFilter.html</anchorfile>
+      <anchor>aaa865efcb970681fa7e6b6261982208c</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$allowedFilters</name>
+      <anchorfile>classErebot_1_1Module_1_1PhpFilter.html</anchorfile>
+      <anchor>a0fb98e33fe1e073b0ca5b0af62e8bb1f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$cmdHandler</name>
+      <anchorfile>classErebot_1_1Module_1_1PhpFilter.html</anchorfile>
+      <anchor>a1a117a61eb666d97077d025bb6aaa619</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$trigger</name>
+      <anchorfile>classErebot_1_1Module_1_1PhpFilter.html</anchorfile>
+      <anchor>a637dd193a2be6788325b94a4ab899772</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$usageHandler</name>
+      <anchorfile>classErebot_1_1Module_1_1PhpFilter.html</anchorfile>
+      <anchor>abcce88496bff57af70510f8753760b73</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="dir">
+    <name>src</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/</path>
+    <filename>dir_68267d1309a1af8e8297ef4c3efbcdba.html</filename>
+    <file>PhpFilter.php</file>
+  </compound>
+</tagfile>

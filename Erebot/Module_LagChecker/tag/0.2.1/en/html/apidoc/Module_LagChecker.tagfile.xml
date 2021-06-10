@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="class">
+    <name>Erebot::Module::LagChecker</name>
+    <filename>classErebot_1_1Module_1_1LagChecker.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>checkLag</name>
+      <anchorfile>classErebot_1_1Module_1_1LagChecker.html</anchorfile>
+      <anchor>adb6999e2260bd67bb74d2b8dc8deec2b</anchor>
+      <arglist>(\Erebot\TimerInterface $timer)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>disconnect</name>
+      <anchorfile>classErebot_1_1Module_1_1LagChecker.html</anchorfile>
+      <anchor>aaebb387ae846711c80132724b0cb83cf</anchor>
+      <arglist>(\Erebot\TimerInterface $timer)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getHelp</name>
+      <anchorfile>classErebot_1_1Module_1_1LagChecker.html</anchorfile>
+      <anchor>a74733f74c35f3886444ab2c24f6446a1</anchor>
+      <arglist>(\Erebot\Interfaces\Event\Base\TextMessage $event,\Erebot\Interfaces\TextWrapper $words)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getLag</name>
+      <anchorfile>classErebot_1_1Module_1_1LagChecker.html</anchorfile>
+      <anchor>a1406ab6ee8ee1d335ad23ec1b3385b5d</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleConnect</name>
+      <anchorfile>classErebot_1_1Module_1_1LagChecker.html</anchorfile>
+      <anchor>a200238d7578f2fd109f1f68d8191ffb4</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\Connect $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleExit</name>
+      <anchorfile>classErebot_1_1Module_1_1LagChecker.html</anchorfile>
+      <anchor>a59e4f9697e9af85bde3ad85be640f162</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\ExitEvent $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleGetLag</name>
+      <anchorfile>classErebot_1_1Module_1_1LagChecker.html</anchorfile>
+      <anchor>a41849a7de167e6ebdcaae67e86494f3a</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\Base\TextMessage $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handlePong</name>
+      <anchorfile>classErebot_1_1Module_1_1LagChecker.html</anchorfile>
+      <anchor>add1d76f01da46d0e92c7be794108717c</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\Pong $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>reconnect</name>
+      <anchorfile>classErebot_1_1Module_1_1LagChecker.html</anchorfile>
+      <anchor>a33c0c30bb47da801b27ab3230ed69acf</anchor>
+      <arglist>(\Erebot\TimerInterface $timer)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>reload</name>
+      <anchorfile>classErebot_1_1Module_1_1LagChecker.html</anchorfile>
+      <anchor>aa38b76def910754794474712621d9408</anchor>
+      <arglist>($flags)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>unload</name>
+      <anchorfile>classErebot_1_1Module_1_1LagChecker.html</anchorfile>
+      <anchor>a87a1ecd5b0826bb429bfce38621f3414</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$delayPing</name>
+      <anchorfile>classErebot_1_1Module_1_1LagChecker.html</anchorfile>
+      <anchor>a14024a0f46f1a00577184ffaf007a14d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$delayPong</name>
+      <anchorfile>classErebot_1_1Module_1_1LagChecker.html</anchorfile>
+      <anchor>ac7aff2e13949f55caafc7b39092060da</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$delayReco</name>
+      <anchorfile>classErebot_1_1Module_1_1LagChecker.html</anchorfile>
+      <anchor>aafc4a343e76a45b97dc224bb3f1339bc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$lastRcvd</name>
+      <anchorfile>classErebot_1_1Module_1_1LagChecker.html</anchorfile>
+      <anchor>a43088d6e214adc70e7be4ee2eb6a7f96</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$lastSent</name>
+      <anchorfile>classErebot_1_1Module_1_1LagChecker.html</anchorfile>
+      <anchor>a70171a17f98143c583e176a18b159b96</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$timerPing</name>
+      <anchorfile>classErebot_1_1Module_1_1LagChecker.html</anchorfile>
+      <anchor>aeb1eca880d716ead912b16b80123fd66</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$timerPong</name>
+      <anchorfile>classErebot_1_1Module_1_1LagChecker.html</anchorfile>
+      <anchor>addf1ff731703de20ca90fbd8fd97222f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$timerQuit</name>
+      <anchorfile>classErebot_1_1Module_1_1LagChecker.html</anchorfile>
+      <anchor>a4a0cd162dc8eab0aa0e2ec92f76480a5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$trigger</name>
+      <anchorfile>classErebot_1_1Module_1_1LagChecker.html</anchorfile>
+      <anchor>a62130598b46824527c8c85290135ed54</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="dir">
+    <name>src</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/</path>
+    <filename>dir_68267d1309a1af8e8297ef4c3efbcdba.html</filename>
+    <file>LagChecker.php</file>
+  </compound>
+</tagfile>

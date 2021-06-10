@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Countdown module &mdash; documentation Erebot latest-0.6.0-74-g691fc3f</title>
+    
+    <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'latest-0.6.0-74-g691fc3f',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="top" title="documentation Erebot latest-0.6.0-74-g691fc3f" href="../index.html" />
+    <link rel="up" title="Compatible modules" href="../Modules.html" />
+    <link rel="next" title="CtcpResponder module" href="CtcpResponder.html" />
+    <link rel="prev" title="AutoJoin module" href="AutoJoin.html" /> 
+  </head>
+  <body>
+      <div class="header"><h1 class="heading"><a href="../index.html">
+          <span>documentation Erebot latest-0.6.0-74-g691fc3f</span></a></h1>
+        <h2 class="heading"><span>Countdown module</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="AutoJoin.html">AutoJoin module</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contenu</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="CtcpResponder.html">CtcpResponder module</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <blockquote>
+<div></div></blockquote>
+<div class="section" id="countdown-module">
+<h1>Countdown module<a class="headerlink" href="#countdown-module" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#description" id="id3">Description</a></li>
+<li><a class="reference internal" href="#configuration" id="id4">Configuration</a><ul>
+<li><a class="reference internal" href="#options" id="id5">Options</a></li>
+<li><a class="reference internal" href="#example" id="id6">Example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#usage" id="id7">Usage</a><ul>
+<li><a class="reference internal" href="#provided-commands" id="id8">Provided commands</a></li>
+<li><a class="reference internal" href="#examples" id="id9">Examples</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="description">
+<h2><a class="toc-backref" href="#id3">Description</a><a class="headerlink" href="#description" title="Lien permanent vers ce titre">¶</a></h2>
+<p>This module provides a game called &#8220;Countdown&#8221; and inspired
+by the TV show with the same name.
+Given a set of numbers and a target number, contestants have 60 seconds
+to propose formulae that produce the target number using only numbers
+from the given set and the four basic operators (+, -, *, /).</p>
+<p>The winner is the one whose result is the closest to the target number.</p>
+</div>
+<div class="section" id="configuration">
+<h2><a class="toc-backref" href="#id4">Configuration</a><a class="headerlink" href="#configuration" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="options">
+<h3><a class="toc-backref" href="#id5">Options</a><a class="headerlink" href="#options" title="Lien permanent vers ce titre">¶</a></h3>
+<p>This module provides several configuration options.</p>
+<table border="1" class="docutils">
+<caption>Options for \Erebot\Module\Countdown</caption>
+<colgroup>
+<col width="20%" />
+<col width="14%" />
+<col width="25%" />
+<col width="41%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Default value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>allowed</td>
+<td>string</td>
+<td>&#8220;1 2 3 4 5 6 7 8
+9 10 25 50 75
+100&#8221;</td>
+<td>A space-separated list of
+numbers from which the bot
+will randomly select values
+meant to help contestants.</td>
+</tr>
+<tr class="row-odd"><td>delay</td>
+<td>integer</td>
+<td>60</td>
+<td>How many seconds contestants
+have before the game ends.</td>
+</tr>
+<tr class="row-even"><td>maximum</td>
+<td>integer</td>
+<td>999</td>
+<td>The target number may not
+exceed this value.</td>
+</tr>
+<tr class="row-odd"><td>minimum</td>
+<td>integer</td>
+<td>100</td>
+<td>The target number may not be
+less than this value.</td>
+</tr>
+<tr class="row-even"><td>numbers</td>
+<td>integer</td>
+<td>7</td>
+<td>How many numbers will be
+given to help contestants.</td>
+</tr>
+<tr class="row-odd"><td>solver</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>Whether the bot should try to
+solve the game or not.
+Enabling this option has a
+great impact on the bot&#8217;s
+responsiveness. Only use it
+if you understand the
+consequences.</td>
+</tr>
+<tr class="row-even"><td>solver_class</td>
+<td>string</td>
+<td>&#8220;\Erebot\Module\Countdown\Solver&#8220;</td>
+<td>The class to use to solve the
+game (useless unless the
+<tt class="docutils literal"><span class="pre">solver</span></tt> option is set to
+TRUE).</td>
+</tr>
+<tr class="row-odd"><td>trigger</td>
+<td>string</td>
+<td>&#8220;countdown&#8221;</td>
+<td>The command to use (without
+any prefix) to start a new
+Countdown game. This text
+should only contain
+alpha-numeric characters.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="example">
+<h3><a class="toc-backref" href="#id6">Example</a><a class="headerlink" href="#example" title="Lien permanent vers ce titre">¶</a></h3>
+<p>In this example, we enable the module at the general configuration level.
+Therefore, the game will be available on all networks/servers/channels.
+Of course, you can use a more restrictive configuration file if it better
+suits your needs.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;configuration</span>
+  <span class="na">xmlns=</span><span class="s">&quot;http://localhost/Erebot/&quot;</span>
+  <span class="na">version=</span><span class="s">&quot;...&quot;</span>
+  <span class="na">language=</span><span class="s">&quot;fr-FR&quot;</span>
+  <span class="na">timezone=</span><span class="s">&quot;Europe/Paris&quot;</span>
+  <span class="na">commands-prefix=</span><span class="s">&quot;!&quot;</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;modules&gt;</span>
+    <span class="c">&lt;!-- Other modules ignored for clarity. --&gt;</span>
+
+    <span class="c">&lt;!--</span>
+<span class="c">      Configure the module:</span>
+<span class="c">      - the game will be started using the &quot;!count&quot; command.</span>
+<span class="c">      - contestants will have 2 minutes to make suggestions.</span>
+<span class="c">    --&gt;</span>
+    <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">&quot;\Erebot\Module\Countdown&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;trigger&quot;</span> <span class="na">value=</span><span class="s">&quot;count&quot;</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;delay&quot;</span>   <span class="na">value=</span><span class="s">&quot;120&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/module&gt;</span>
+  <span class="nt">&lt;/modules&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="usage">
+<h2><a class="toc-backref" href="#id7">Usage</a><a class="headerlink" href="#usage" title="Lien permanent vers ce titre">¶</a></h2>
+<p>This section assumes default values are used for all triggers.
+Please refer to <em class="xref std std-ref">configuration options</em>
+for more information on how to customize triggers.</p>
+<div class="section" id="provided-commands">
+<h3><a class="toc-backref" href="#id8">Provided commands</a><a class="headerlink" href="#provided-commands" title="Lien permanent vers ce titre">¶</a></h3>
+<p>This module provides the following commands:</p>
+<table border="1" class="docutils">
+<caption>Commands provided by <a href="#id1"><span class="problematic" id="id2">|project|</span></a></caption>
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">!countdown</span></tt></td>
+<td>Starts a new game. If a game is already running,
+displays the target number, usable numbers and
+current leader of the game.</td>
+</tr>
+</tbody>
+</table>
+<p>Once a new game has been created, contestants can make propositions directly
+by sending a new formula in the channel the game was started in.</p>
+<p>The four basic operators (+ - / *) and parenthesis may be used in the formula.</p>
+</div>
+<div class="section" id="examples">
+<h3><a class="toc-backref" href="#id9">Examples</a><a class="headerlink" href="#examples" title="Lien permanent vers ce titre">¶</a></h3>
+<p>The listing below shows a game played in french.</p>
+<div class="highlight-irc"><div class="highlight"><pre><span class="cp">17:29:20 </span><span class="nt">&lt; foobar&gt; </span>!countdown
+<span class="cp">17:29:20 </span><span class="nt">&lt; Erebot&gt; </span>Une nouvelle partie des Chiffres et des Lettres commence. Vous devez obtenir 965 grâce aux nombres
+                   suivants : 4, 2, 75, 25, 10, 7 &amp; 8. Vous avez 60 secondes pour faire des propositions.
+<span class="cp">17:29:31 </span><span class="nt">&lt; foobar&gt; </span>(75+25-4)*10
+<span class="cp">17:29:31 </span><span class="nt">&lt; Erebot&gt; </span>Félicitations foobar ! Vous êtes le plus proche avec 960.
+<span class="cp">17:29:37 </span><span class="nt">&lt; foobar&gt; </span>(75+25-4)*10+7-2
+<span class="cp">17:29:37 </span><span class="nt">&lt; Erebot&gt; </span>BINGO ! foobar a obtenu 965 avec cette formule : (75+25-4)*10+7-2.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="AutoJoin.html">AutoJoin module</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contenu</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="CtcpResponder.html">CtcpResponder module</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2019, The Erebot team.
+      Mis à jour le Jan 06, 2019.
+      Créé avec <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  
+<!-- Custom overlay -->
+<script type="text/javascript">
+var erebot = {"source_suffix": ".rst", "language": "fr", "builder": "html", "default_branch": "master", "project": {"version": "latest", "name": "Erebot", "slug": "erebot/erebot"}, "base": ".././", "page": "Modules/Countdown"};
+</script>
+<script type="text/javascript" src=".././../../../../erebot-overlay.js"></script>
+
+<!-- Statistics -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDocumentTitle", document.domain + " / " + document.title]);
+  if (document.domain != 'docs.erebot.net') {
+      _paq.push(["setCookieDomain", "erebot.github.io"]);
+  }
+  _paq.push(["setDomains", ["erebot.github.io", "docs.erebot.net"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.erebot.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '4']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.erebot.net/piwik.php?idsite=4" style="border:0;" alt="" /></p></noscript>
+</body>
+</html>

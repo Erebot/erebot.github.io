@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="class">
+    <name>Erebot::Module::Roulette</name>
+    <filename>classErebot_1_1Module_1_1Roulette.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>getHelp</name>
+      <anchorfile>classErebot_1_1Module_1_1Roulette.html</anchorfile>
+      <anchor>ad4e953f6151c866876ca97eda4ad81ee</anchor>
+      <arglist>(\Erebot\Interfaces\Event\Base\TextMessage $event,\Erebot\Interfaces\TextWrapper $words)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleRoulette</name>
+      <anchorfile>classErebot_1_1Module_1_1Roulette.html</anchorfile>
+      <anchor>a336452db2e53a52f350464832cf5c2df</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\ChanText $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>reload</name>
+      <anchorfile>classErebot_1_1Module_1_1Roulette.html</anchorfile>
+      <anchor>a5d9ba7394af7138e019bb9e06af203c6</anchor>
+      <arglist>($flags)</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$roulette</name>
+      <anchorfile>classErebot_1_1Module_1_1Roulette.html</anchorfile>
+      <anchor>a46304e8282ea45070ab8092d73acbd9b</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Roulette::AtLeastTwoChambersException</name>
+    <filename>classErebot_1_1Module_1_1Roulette_1_1AtLeastTwoChambersException.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Roulette::Game</name>
+    <filename>classErebot_1_1Module_1_1Roulette_1_1Game.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>__construct</name>
+      <anchorfile>classErebot_1_1Module_1_1Roulette_1_1Game.html</anchorfile>
+      <anchor>a5ca5d43aa625eb5c02eed2e9dad6a755</anchor>
+      <arglist>($nbChambers)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getChambersCount</name>
+      <anchorfile>classErebot_1_1Module_1_1Roulette_1_1Game.html</anchorfile>
+      <anchor>afb1e10561119af9421ef9f5d903aa841</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getPassedChambersCount</name>
+      <anchorfile>classErebot_1_1Module_1_1Roulette_1_1Game.html</anchorfile>
+      <anchor>a7bc4a098089ca394971d6eeba7d995a7</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>next</name>
+      <anchorfile>classErebot_1_1Module_1_1Roulette_1_1Game.html</anchorfile>
+      <anchor>a477558bb644912f8f6fd2462e61ab282</anchor>
+      <arglist>($shooter)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>reset</name>
+      <anchorfile>classErebot_1_1Module_1_1Roulette_1_1Game.html</anchorfile>
+      <anchor>a2ebd46d0d0af620d55f7c0c553899cb9</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>setChambersCount</name>
+      <anchorfile>classErebot_1_1Module_1_1Roulette_1_1Game.html</anchorfile>
+      <anchor>ab9619fcbe57fce936d26dfd7a25656a3</anchor>
+      <arglist>($nbChambers)</arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>STATE_BANG</name>
+      <anchorfile>classErebot_1_1Module_1_1Roulette_1_1Game.html</anchorfile>
+      <anchor>af86074d4c7d23a2e58901896378c52be</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>STATE_NORMAL</name>
+      <anchorfile>classErebot_1_1Module_1_1Roulette_1_1Game.html</anchorfile>
+      <anchor>abc89ec6066d5a299ff6dc37904f2ec5f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>STATE_RELOAD</name>
+      <anchorfile>classErebot_1_1Module_1_1Roulette_1_1Game.html</anchorfile>
+      <anchor>a125721373f5b84b1f0a6a385fe16010f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>getRandom</name>
+      <anchorfile>classErebot_1_1Module_1_1Roulette_1_1Game.html</anchorfile>
+      <anchor>a3700dd6b1f3cd7cdfdd1c2998774f46d</anchor>
+      <arglist>($max)</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$lastShooter</name>
+      <anchorfile>classErebot_1_1Module_1_1Roulette_1_1Game.html</anchorfile>
+      <anchor>adc09debfea8ecbfe540c58e22a5879f7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$loadedChamber</name>
+      <anchorfile>classErebot_1_1Module_1_1Roulette_1_1Game.html</anchorfile>
+      <anchor>a0f2265278f1a9b0ab5839bf004c8e3a3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$nbChambers</name>
+      <anchorfile>classErebot_1_1Module_1_1Roulette_1_1Game.html</anchorfile>
+      <anchor>a5b92781492446665923ddee3b31ee53a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$shotCount</name>
+      <anchorfile>classErebot_1_1Module_1_1Roulette_1_1Game.html</anchorfile>
+      <anchor>a464afa573cf79593e69b3ecceff988d5</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Roulette::TwiceInARowException</name>
+    <filename>classErebot_1_1Module_1_1Roulette_1_1TwiceInARowException.html</filename>
+  </compound>
+  <compound kind="dir">
+    <name>src/Roulette</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/Roulette/</path>
+    <filename>dir_86dc2678d69576cad635c49807eba184.html</filename>
+    <file>AtLeastTwoChambersException.php</file>
+    <file>Game.php</file>
+    <file>TwiceInARowException.php</file>
+  </compound>
+  <compound kind="dir">
+    <name>src</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/</path>
+    <filename>dir_68267d1309a1af8e8297ef4c3efbcdba.html</filename>
+    <dir>src/Roulette</dir>
+    <file>Roulette.php</file>
+  </compound>
+</tagfile>

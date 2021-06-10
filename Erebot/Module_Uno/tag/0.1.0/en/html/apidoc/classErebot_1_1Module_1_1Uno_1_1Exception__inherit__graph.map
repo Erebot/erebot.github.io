@@ -1,0 +1,11 @@
+<map id="Erebot\Module\Uno\Exception" name="Erebot\Module\Uno\Exception">
+<area shape="rect" id="node3" href="$classErebot_1_1Module_1_1Uno_1_1AlreadyDrewException.html" title="{Erebot\\Module\\Uno\\Already\lDrewException\n||}" alt="" coords="5,301,187,393"/>
+<area shape="rect" id="node4" href="$classErebot_1_1Module_1_1Uno_1_1EmptyDeckException.html" title="{Erebot\\Module\\Uno\\EmptyDeck\lException\n||}" alt="" coords="211,301,417,393"/>
+<area shape="rect" id="node5" href="$classErebot_1_1Module_1_1Uno_1_1InternalErrorException.html" title="{Erebot\\Module\\Uno\\Internal\lErrorException\n||}" alt="" coords="443,301,624,393"/>
+<area shape="rect" id="node6" href="$classErebot_1_1Module_1_1Uno_1_1InvalidMoveException.html" title="{Erebot\\Module\\Uno\\Invalid\lMoveException\n||}" alt="" coords="648,301,824,393"/>
+<area shape="rect" id="node7" href="$classErebot_1_1Module_1_1Uno_1_1MissingCardsException.html" title="{Erebot\\Module\\Uno\\Missing\lCardsException\n||}" alt="" coords="849,301,1031,393"/>
+<area shape="rect" id="node8" href="$classErebot_1_1Module_1_1Uno_1_1MoveNotAllowedException.html" title="{Erebot\\Module\\Uno\\MoveNot\lAllowedException\n|+ MULTIPLE_1VS1\l+ MULTIPLE_CARDS\l+ NOT_ALLOWED\l+ NOT_PLAYABLE\l+ ONLY_DRAWN\l# $allowed\l|+ __construct()\l+ getAllowedCards()\l}" alt="" coords="1055,257,1245,437"/>
+<area shape="rect" id="node9" href="$classErebot_1_1Module_1_1Uno_1_1MustDrawBeforePassException.html" title="{Erebot\\Module\\Uno\\MustDraw\lBeforePassException\n||}" alt="" coords="1270,301,1468,393"/>
+<area shape="rect" id="node10" href="$classErebot_1_1Module_1_1Uno_1_1UnchallengeableException.html" title="{Erebot\\Module\\Uno\\Unchallengeable\lException\n||}" alt="" coords="1492,301,1725,393"/>
+<area shape="rect" id="node11" href="$classErebot_1_1Module_1_1Uno_1_1WaitingForColorException.html" title="{Erebot\\Module\\Uno\\Waiting\lForColorException\n||}" alt="" coords="1751,301,1933,393"/>
+</map>

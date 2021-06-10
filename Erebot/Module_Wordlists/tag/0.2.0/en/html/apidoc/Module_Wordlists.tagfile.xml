@@ -1,0 +1,451 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="class">
+    <name>Erebot::Module::Wordlists</name>
+    <filename>classErebot_1_1Module_1_1Wordlists.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>getAvailableLists</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists.html</anchorfile>
+      <anchor>a835862ec8ca1ade668dfd15931992106</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getHelp</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists.html</anchorfile>
+      <anchor>a7d3bd592b8ca51c93f0b2bd5c0205e63</anchor>
+      <arglist>(\Erebot\Interfaces\Event\Base\TextMessage $event,\Erebot\Interfaces\TextWrapper $words)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getList</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists.html</anchorfile>
+      <anchor>a6e4d6b714f46b889e8e32f1e2737b7d0</anchor>
+      <arglist>($list)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>releaseList</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists.html</anchorfile>
+      <anchor>a6b5e1aa903893f1785ae8bab710a1a5f</anchor>
+      <arglist>(\Erebot\Module\Wordlists\Wordlist $list)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>reload</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists.html</anchorfile>
+      <anchor>a42ad9a14aeeb162c21c8484e3ad5477f</anchor>
+      <arglist>($flags)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static</type>
+      <name>registerPath</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists.html</anchorfile>
+      <anchor>afd04d4a0244781adf30ca8d4623188d7</anchor>
+      <arglist>($path)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static</type>
+      <name>unregisterPath</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists.html</anchorfile>
+      <anchor>ab0cb7b328a2d9dc4568640076ba38c02</anchor>
+      <arglist>($path)</arglist>
+    </member>
+    <member kind="function" protection="protected" static="yes">
+      <type>static</type>
+      <name>compilePolicy</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists.html</anchorfile>
+      <anchor>a769af91fc339617190f902f775bde66f</anchor>
+      <arglist>($simplePatterns)</arglist>
+    </member>
+    <member kind="function" protection="protected" static="yes">
+      <type>static</type>
+      <name>filterLists</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists.html</anchorfile>
+      <anchor>a05d394efb85d4a1c3d5411522fbcf6b8</anchor>
+      <arglist>($lists, $policy)</arglist>
+    </member>
+    <member kind="variable" protection="protected" static="yes">
+      <type>static</type>
+      <name>$cache</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists.html</anchorfile>
+      <anchor>ad90403e1a0ae2ed7f83eae8e69fafae1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected" static="yes">
+      <type>static</type>
+      <name>$paths</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists.html</anchorfile>
+      <anchor>a1705e6bea10c8d9c0d3bb2eb4eea6f91</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected" static="yes">
+      <type>static</type>
+      <name>$refs</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists.html</anchorfile>
+      <anchor>a55e2d1ad2b51bb7ffbb0d5b2f5075903</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Wordlists::BadListNameException</name>
+    <filename>classErebot_1_1Module_1_1Wordlists_1_1BadListNameException.html</filename>
+    <base>Erebot::Module::Wordlists::Exception</base>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Wordlists::Base</name>
+    <filename>classErebot_1_1Module_1_1Wordlists_1_1Base.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>offsetSet</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Base.html</anchorfile>
+      <anchor>a89114f8bf128d5a33d8897cd4c5b614b</anchor>
+      <arglist>($offset, $value)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>offsetUnset</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Base.html</anchorfile>
+      <anchor>ad7ef147ae06c169d10b2472a543344f2</anchor>
+      <arglist>($offset)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static</type>
+      <name>isWord</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Base.html</anchorfile>
+      <anchor>abe625a407226557237b183eb4f6bf231</anchor>
+      <arglist>($word)</arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>WORD_FILTER</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Base.html</anchorfile>
+      <anchor>a0d505ece08575bca35cb9098245c9760</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Wordlists::Exception</name>
+    <filename>classErebot_1_1Module_1_1Wordlists_1_1Exception.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Wordlists::Proxy</name>
+    <filename>classErebot_1_1Module_1_1Wordlists_1_1Proxy.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>__clone</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Proxy.html</anchorfile>
+      <anchor>a39b3edda35adc5ac2549da3f56df29ce</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>__construct</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Proxy.html</anchorfile>
+      <anchor>a883aa6b0cb001fcd6ffb4138dd1723eb</anchor>
+      <arglist>(\Erebot\Module\Wordlists\Wordlist $list)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>__destruct</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Proxy.html</anchorfile>
+      <anchor>a3251a7b3bb47ab8bdd2d1e1075e4e4d3</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>count</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Proxy.html</anchorfile>
+      <anchor>a6e7c6e10b2f8b53924b6d3eabf7a3c7d</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>findWord</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Proxy.html</anchorfile>
+      <anchor>af1b6b121ad226d2152e74b4a32dade2b</anchor>
+      <arglist>($word)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getCollator</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Proxy.html</anchorfile>
+      <anchor>acabfce23d6d0b000546e3b84e29b81c8</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getMetadata</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Proxy.html</anchorfile>
+      <anchor>ab1213a0f2a2d61e3309d64c2e8f9270b</anchor>
+      <arglist>($type)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>offsetExists</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Proxy.html</anchorfile>
+      <anchor>a5ce24b09d4b5eb4a567cccce85bd5df9</anchor>
+      <arglist>($word)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>offsetGet</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Proxy.html</anchorfile>
+      <anchor>a06a80adb32e296f1e04e89232fb77539</anchor>
+      <arglist>($offset)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>offsetSet</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Proxy.html</anchorfile>
+      <anchor>aeb61652a3745f40840c5e3057081b607</anchor>
+      <arglist>($offset, $value)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>offsetUnset</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Proxy.html</anchorfile>
+      <anchor>a519efa98e94caa67b322a61f007b51ab</anchor>
+      <arglist>($offset)</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type></type>
+      <name>$list</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Proxy.html</anchorfile>
+      <anchor>a8a3e76d85ce3b2654f5cfe97c6f199ce</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Wordlists::UnreadableFileException</name>
+    <filename>classErebot_1_1Module_1_1Wordlists_1_1UnreadableFileException.html</filename>
+    <base>Erebot::Module::Wordlists::Exception</base>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Wordlists::Wordlist</name>
+    <filename>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</filename>
+    <base>Erebot::Module::Wordlists::Base</base>
+    <member kind="function">
+      <type></type>
+      <name>__construct</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</anchorfile>
+      <anchor>a3b0bb041fb4d9d782ef746be8f79cf16</anchor>
+      <arglist>(\Erebot\Module\Wordlists $module, $name, $file)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>__destruct</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</anchorfile>
+      <anchor>abed92d217fef5c179d940419f3c73f74</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>count</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</anchorfile>
+      <anchor>a97b04bec91dfba8d92652db7a60c69de</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>findWord</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</anchorfile>
+      <anchor>a03e36ff003cf304fc4e31870f8cd0a50</anchor>
+      <arglist>($word)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>free</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</anchorfile>
+      <anchor>adf8940de66e12e24c5eeedab2a57a399</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getCollator</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</anchorfile>
+      <anchor>a8c1064fdd7f18eaa0853494b470bfd07</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getMetadata</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</anchorfile>
+      <anchor>a273ad9ed2ae2f7d93fba80abee787adf</anchor>
+      <arglist>($type)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>offsetExists</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</anchorfile>
+      <anchor>a7b26b327cdbfd6fd1f70499d362f8388</anchor>
+      <arglist>($word)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>offsetGet</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</anchorfile>
+      <anchor>aab2e1bd57cafbc685d592d2e5eb9bbf3</anchor>
+      <arglist>($offset)</arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>METADATA_AUTHORS</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</anchorfile>
+      <anchor>ae0968a3aaabda60d030924994b0ac0b3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>METADATA_DESCRIPTION</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</anchorfile>
+      <anchor>a8ae8ac538d7a0bbac31d9f9f7f8467ae</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>METADATA_FILE</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</anchorfile>
+      <anchor>a6d222bc65b37b8eeaa6c8015617aba7c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>METADATA_KEYWORDS</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</anchorfile>
+      <anchor>a3cd015f02f5a85067f0c3eb98f6cfe7d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>METADATA_LICENCE</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</anchorfile>
+      <anchor>ab1533e7c3821160b3618027621c4d304</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>METADATA_LICENSE</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</anchorfile>
+      <anchor>a8da40f5b5aa3e46066c3a4335d14105a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>METADATA_LOCALE</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</anchorfile>
+      <anchor>a4204a2f91a18fff9edd0fa2bbd95a52b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>METADATA_NAME</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</anchorfile>
+      <anchor>a337c5d480a6c4c6ff333e5cf47aa7d9f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>METADATA_URL</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</anchorfile>
+      <anchor>a76086e4073465a321aa108290d6e966f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>METADATA_VERSION</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</anchorfile>
+      <anchor>ade234beeae4c069526372d11afa2a166</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>parseFile</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</anchorfile>
+      <anchor>a549e927030f3fab1172a9e4cdb2acc1d</anchor>
+      <arglist>($file)</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$collator</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</anchorfile>
+      <anchor>a858ac4c6be2d53af58a825d4a731ce0c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$countQuery</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</anchorfile>
+      <anchor>a7b3c6b3d38dd3f8bbddebdb674ac0721</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$db</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</anchorfile>
+      <anchor>aa2c171bde15bf99df73b461be9833977</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$existsQuery</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</anchorfile>
+      <anchor>a23b7bbb901a4981c4ff5ebbcf3940bb1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$file</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</anchorfile>
+      <anchor>a2fba21235ca94294efb502cadac661d8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$getQuery</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</anchorfile>
+      <anchor>ac26ea11ef5390b5e1709bbe040a481d9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$metadata</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</anchorfile>
+      <anchor>a3c6c41d5336cc55c49899c12dd4731e3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$module</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</anchorfile>
+      <anchor>a2b81da8442c0aef54eb9caae7b31b045</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$name</name>
+      <anchorfile>classErebot_1_1Module_1_1Wordlists_1_1Wordlist.html</anchorfile>
+      <anchor>ae2294b88429414bbc89834be5845133a</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="dir">
+    <name>src</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/</path>
+    <filename>dir_68267d1309a1af8e8297ef4c3efbcdba.html</filename>
+    <dir>src/Wordlists</dir>
+    <file>Wordlists.php</file>
+  </compound>
+  <compound kind="dir">
+    <name>src/Wordlists</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/Wordlists/</path>
+    <filename>dir_46a1fba2b23c5290b139edaed44f6e76.html</filename>
+    <file>BadListNameException.php</file>
+    <file>Base.php</file>
+    <file>Exception.php</file>
+    <file>Proxy.php</file>
+    <file>UnreadableFileException.php</file>
+    <file>Wordlist.php</file>
+  </compound>
+</tagfile>

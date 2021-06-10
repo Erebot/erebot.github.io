@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="class">
+    <name>Erebot::Module::Admin</name>
+    <filename>classErebot_1_1Module_1_1Admin.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>getHelp</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a3bfd0d4eea1f6a612dfffa2db9f8ab4e</anchor>
+      <arglist>(\Erebot\Interfaces\Event\Base\TextMessage $event,\Erebot\Interfaces\TextWrapper $words)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleDeHalfOp</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a38bcd1d68d4b933eaea61b92d30a49bd</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\ChanText $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleDeOp</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a8440d621f99f8bc3c8ab0dfa22528860</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\ChanText $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleDeOwner</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a3fe73e8fad42d5bc3c22d30c3ef3a332</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\ChanText $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleDeProtect</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a17d8f647110a2c713b9e0630c14b47fb</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\ChanText $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleDeVoice</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a0df57051aaf633c4c3fe0cc9b7cc4c7f</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\ChanText $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleHalfOp</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a55510f4828d856f646841860cf9eafc3</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\ChanText $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleJoin</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>afff8c05db50a80d87f05390f5de20313</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\Base\TextMessage $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleOp</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a378176d2ffcceed5a49741c4f3451cf2</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\ChanText $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleOwner</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>adbf57cd2aa4f0ab8fd2c916535e93379</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\ChanText $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handlePart</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a032952f4e14f24171a09855669880948</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\Base\TextMessage $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleProtect</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>aab86d400919257b99fbd6f68d8f6c1b6</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\ChanText $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleQuit</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a0c21fe5a8aeff4d82fd1623cda964c3b</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\Base\TextMessage $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleReload</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a968cee7d3c5093af56a0cb720571caee</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\Base\TextMessage $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleVoice</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>aa60d2adebb6c136308ff908f5fce67dd</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\ChanText $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>reload</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a8d3035331398e25cbfde1135f6d65e0e</anchor>
+      <arglist>($flags)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>isAdmin</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a0f8a587cfa0dd695005ff71ab901cc1f</anchor>
+      <arglist>(\Erebot\Identity $identity)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>setMode</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a1ade2aed2fdb3a0f1fbbf89ae839c35e</anchor>
+      <arglist>(\Erebot\Interfaces\Event\Base\TextMessage $event, $mode)</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$admins</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a583afbbd13b6c3436b68d7c35258fad3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$handlers</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a069c430ef701ba7cab37d3722403a0df</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$triggers</name>
+      <anchorfile>classErebot_1_1Module_1_1Admin.html</anchorfile>
+      <anchor>a9673ac29ae928afdb6cd94ac35f260be</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="dir">
+    <name>src</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/</path>
+    <filename>dir_68267d1309a1af8e8297ef4c3efbcdba.html</filename>
+    <file>Admin.php</file>
+  </compound>
+</tagfile>

@@ -1,0 +1,311 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="class">
+    <name>Erebot::Module::IrcTracker</name>
+    <filename>classErebot_1_1Module_1_1IrcTracker.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>byChannelModes</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>ad0b4138d1ff09b5b3c7cd914da66f520</anchor>
+      <arglist>($chan, $modes, $negate=false)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getCommonChans</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>af8cb5a9d0281647095a10440a2b603c9</anchor>
+      <arglist>($nick)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getInfo</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>a2c6b47323a49438187f491976a5b3a84</anchor>
+      <arglist>($token, $info, $args=array())</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleCapabilities</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>a0ea185de81898b6b3dc9400a1c1cbbe4</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Event\ServerCapabilities $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleChanModeAddition</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>a85d8104595247a3f8e96ce9e1cf9b5e0</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\Base\ChanModeGiven $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleChanModeRemoval</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>aa8cef3b01e52014f44f86be70044dd59</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\Base\ChanModeTaken $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleJoin</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>a3813c4f1812fb5c4b4e781d3b5304404</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\Join $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleLeaving</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>a55a86dfd402949374cbf8fd36c3e44dc</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\Base\Generic $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleNames</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>a9764696cf6244dcd0a4b6550cda843ca</anchor>
+      <arglist>(\Erebot\Interfaces\NumericHandler $handler,\Erebot\Interfaces\Event\Numeric $numeric)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleNick</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>aa1d739e4dba32099cd76e8f34ec95eb6</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\Nick $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleNotification</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>a35a33976f1bc1838f6fde9fc31f28766</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\Base\Source $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleWho</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>a3cc2257466d55e75c958668b1b90cb5c</anchor>
+      <arglist>(\Erebot\Interfaces\NumericHandler $handler,\Erebot\Interfaces\Event\Numeric $numeric)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>IAL</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>aa1ec3c2f7a911db5057f374e3f7fa295</anchor>
+      <arglist>($mask, $chan=null)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>isOn</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>a59a5c7f5a0b789206fa1fb509ce64eca</anchor>
+      <arglist>($chan, $nick=null)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>reload</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>af0930c37a2915615213fc8bab9552daf</anchor>
+      <arglist>($flags)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>removeUser</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>a9fee6338ae160189400c09c7d0738fcd</anchor>
+      <arglist>(\Erebot\TimerInterface $timer, $nick)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>startTracking</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>adef436e51ad7cbea4f8d48efacc121f5</anchor>
+      <arglist>($nick, $cls= &apos;\\Erebot\\Module\\IrcTracker\\Token&apos;)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>userPrivileges</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>ab44b24d25b2f259f7307a6dd07cb87ef</anchor>
+      <arglist>($chan, $nick)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static</type>
+      <name>extractNick</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>a7eae34c73345fab48dc21dfc391794fb</anchor>
+      <arglist>($source)</arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>INFO_HOST</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>a6d77a5912f73a8b08058830c7970812a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>INFO_IDENT</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>a4ed17d4dc3a0c0ffed139d4294a71b5e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>INFO_ISON</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>a6948fd8b8133b59c72a868d6750ad2f2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>INFO_MASK</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>a5a58ff9d8aae473178d32826b296fad9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const</type>
+      <name>INFO_NICK</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>ab104209bbd32677f9401ac8e88d72c6b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>realRemoveUser</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>a9e13d77ff4831ec256c097bc8fab2fbd</anchor>
+      <arglist>($nick)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>unload</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>a1569a20ef0f1d5ecdc378ef02dd4a5a7</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>updateUser</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>a1ffae6378e23e16a4549b5f3206a654f</anchor>
+      <arglist>($nick, $ident, $host)</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$chans</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>a46918cb9758b28e678c80ffd25514b42</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$hasUHNAMES</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>a5cac2cafd10012674e066db3a5a6c941</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$ial</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>a468d5f18f1924f4f8ccfcd0149fbaccb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$nicks</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>af8c1fa64b22087b5f6708a021a9a0f00</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$sequence</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker.html</anchorfile>
+      <anchor>a552307cad403f1c4dab2e92bd0db7fb4</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::IrcTracker::Token</name>
+    <filename>classErebot_1_1Module_1_1IrcTracker_1_1Token.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>__construct</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker_1_1Token.html</anchorfile>
+      <anchor>a72756e84876938bf33173cb5920587c3</anchor>
+      <arglist>(\Erebot\Module\IrcTracker $tracker, $token)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>__toString</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker_1_1Token.html</anchorfile>
+      <anchor>a11563cb98d26cd286bc0c63cb0abf4c6</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getHost</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker_1_1Token.html</anchorfile>
+      <anchor>abd5e47fb39ffef7ef37d0717d13ccaad</anchor>
+      <arglist>($canonical)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getIdent</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker_1_1Token.html</anchorfile>
+      <anchor>a68c3d6c7631ce765535671a19c11561f</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getMask</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker_1_1Token.html</anchorfile>
+      <anchor>a06b2b4398375b8255847b947379632c2</anchor>
+      <arglist>($canonical)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getNick</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker_1_1Token.html</anchorfile>
+      <anchor>ad43e0c8a5be7ff27e398ee91693b158b</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>isOn</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker_1_1Token.html</anchorfile>
+      <anchor>a1d87af0fe3753171ffa4bc721bf35011</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$token</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker_1_1Token.html</anchorfile>
+      <anchor>a457f79a34bc74b09e8ecce3038250e71</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$tracker</name>
+      <anchorfile>classErebot_1_1Module_1_1IrcTracker_1_1Token.html</anchorfile>
+      <anchor>af3aa3603d58e25cc490c94f8408937ad</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="dir">
+    <name>src/IrcTracker</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/IrcTracker/</path>
+    <filename>dir_1710503891e6e8cb1be892e2fff4f01c.html</filename>
+    <file>Token.php</file>
+  </compound>
+  <compound kind="dir">
+    <name>src</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/</path>
+    <filename>dir_68267d1309a1af8e8297ef4c3efbcdba.html</filename>
+    <dir>src/IrcTracker</dir>
+    <file>IrcTracker.php</file>
+  </compound>
+</tagfile>

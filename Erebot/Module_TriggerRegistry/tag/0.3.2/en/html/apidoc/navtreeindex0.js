@@ -1,0 +1,26 @@
+var NAVTREEINDEX0 =
+{
+".html":[0,0,0],
+".html":[0,0,0,0],
+"TriggerRegistry_8php_source.html":[1,0,0,0],
+"annotated.html":[0,0],
+"classErebot_1_1Module_1_1TriggerRegistry.html":[0,0,0,0,0],
+"classErebot_1_1Module_1_1TriggerRegistry.html#a1aaaa6213645a8b20456b3fc54d50958":[0,0,0,0,0,3],
+"classErebot_1_1Module_1_1TriggerRegistry.html#a46f55697d27bb987d2a56957084f2918":[0,0,0,0,0,7],
+"classErebot_1_1Module_1_1TriggerRegistry.html#a56e7d3302eeabdef95a6b8ce7489d64f":[0,0,0,0,0,8],
+"classErebot_1_1Module_1_1TriggerRegistry.html#a67ac69666cc043986724d6f501882c2b":[0,0,0,0,0,0],
+"classErebot_1_1Module_1_1TriggerRegistry.html#a7ba987d52bc7caaa2bbc63d60baf73f1":[0,0,0,0,0,4],
+"classErebot_1_1Module_1_1TriggerRegistry.html#a8ac2eba584b3299b4d9482c806382a78":[0,0,0,0,0,6],
+"classErebot_1_1Module_1_1TriggerRegistry.html#a90fb68d422b4e219e233dad8b8182f1a":[0,0,0,0,0,1],
+"classErebot_1_1Module_1_1TriggerRegistry.html#aabaed1d1ee4de291d0917a70e77db119":[0,0,0,0,0,5],
+"classErebot_1_1Module_1_1TriggerRegistry.html#ad889d0ea7ae11d7cf3aad85f695a58fe":[0,0,0,0,0,2],
+"classes.html":[0,1],
+"dir_68267d1309a1af8e8297ef4c3efbcdba.html":[1,0,0],
+"files.html":[1,0],
+"functions.html":[0,3,0],
+"functions_func.html":[0,3,1],
+"functions_vars.html":[0,3,2],
+"hierarchy.html":[0,2],
+"index.html":[],
+"pages.html":[]
+};

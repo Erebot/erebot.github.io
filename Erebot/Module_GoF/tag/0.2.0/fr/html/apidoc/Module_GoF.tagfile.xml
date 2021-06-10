@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="class">
+    <name>Erebot::Module::GoF</name>
+    <filename>classErebot_1_1Module_1_1GoF.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::GoF::Card</name>
+    <filename>classErebot_1_1Module_1_1GoF_1_1Card.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::GoF::Combo</name>
+    <filename>classErebot_1_1Module_1_1GoF_1_1Combo.html</filename>
+  </compound>
+  <compound kind="interface">
+    <name>Erebot::Module::GoF::DeckInterface</name>
+    <filename>interfaceErebot_1_1Module_1_1GoF_1_1DeckInterface.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::GoF::EnoughPlayersException</name>
+    <filename>classErebot_1_1Module_1_1GoF_1_1EnoughPlayersException.html</filename>
+    <base>Erebot::Module::GoF::Exception</base>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::GoF::Exception</name>
+    <filename>classErebot_1_1Module_1_1GoF_1_1Exception.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::GoF::Game</name>
+    <filename>classErebot_1_1Module_1_1GoF_1_1Game.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::GoF::Hand</name>
+    <filename>classErebot_1_1Module_1_1GoF_1_1Hand.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::GoF::InferiorComboException</name>
+    <filename>classErebot_1_1Module_1_1GoF_1_1InferiorComboException.html</filename>
+    <base>Erebot::Module::GoF::Exception</base>
+    <member kind="function">
+      <type></type>
+      <name>getAllowedCombo</name>
+      <anchorfile>classErebot_1_1Module_1_1GoF_1_1InferiorComboException.html</anchorfile>
+      <anchor>a8a97811370928450a04ca5de62b0dfd8</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$allowed</name>
+      <anchorfile>classErebot_1_1Module_1_1GoF_1_1InferiorComboException.html</anchorfile>
+      <anchor>af7cdb8cdd89a8919202bba133c9d06ff</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::GoF::InternalErrorException</name>
+    <filename>classErebot_1_1Module_1_1GoF_1_1InternalErrorException.html</filename>
+    <base>Erebot::Module::GoF::Exception</base>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::GoF::InvalidCardException</name>
+    <filename>classErebot_1_1Module_1_1GoF_1_1InvalidCardException.html</filename>
+    <base>Erebot::Module::GoF::Exception</base>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::GoF::InvalidComboException</name>
+    <filename>classErebot_1_1Module_1_1GoF_1_1InvalidComboException.html</filename>
+    <base>Erebot::Module::GoF::Exception</base>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::GoF::NoSuchCardException</name>
+    <filename>classErebot_1_1Module_1_1GoF_1_1NoSuchCardException.html</filename>
+    <base>Erebot::Module::GoF::Exception</base>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::GoF::NotComparableException</name>
+    <filename>classErebot_1_1Module_1_1GoF_1_1NotComparableException.html</filename>
+    <base>Erebot::Module::GoF::Exception</base>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::GoF::Player</name>
+    <filename>classErebot_1_1Module_1_1GoF_1_1Player.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::GoF::StartWithMulti1Exception</name>
+    <filename>classErebot_1_1Module_1_1GoF_1_1StartWithMulti1Exception.html</filename>
+    <base>Erebot::Module::GoF::Exception</base>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::GoF::WaitingForCardException</name>
+    <filename>classErebot_1_1Module_1_1GoF_1_1WaitingForCardException.html</filename>
+    <base>Erebot::Module::GoF::Exception</base>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::GoF::Deck::Official</name>
+    <filename>classErebot_1_1Module_1_1GoF_1_1Deck_1_1Official.html</filename>
+    <base>Erebot::Module::GoF::DeckInterface</base>
+  </compound>
+  <compound kind="dir">
+    <name>src/GoF/Deck</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/GoF/Deck/</path>
+    <filename>dir_e67b9dbdafa39d9dfa986ef391d912dc.html</filename>
+    <file>Official.php</file>
+  </compound>
+  <compound kind="dir">
+    <name>src/GoF</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/GoF/</path>
+    <filename>dir_bbaa15b7f6921a13ebcfd30107eb52d0.html</filename>
+    <dir>src/GoF/Deck</dir>
+    <file>Card.php</file>
+    <file>Combo.php</file>
+    <file>DeckInterface.php</file>
+    <file>EnoughPlayersException.php</file>
+    <file>Exception.php</file>
+    <file>Game.php</file>
+    <file>Hand.php</file>
+    <file>InferiorComboException.php</file>
+    <file>InternalErrorException.php</file>
+    <file>InvalidCardException.php</file>
+    <file>InvalidComboException.php</file>
+    <file>NoSuchCardException.php</file>
+    <file>NotComparableException.php</file>
+    <file>Player.php</file>
+    <file>StartWithMulti1Exception.php</file>
+    <file>WaitingForCardException.php</file>
+  </compound>
+  <compound kind="dir">
+    <name>src</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/</path>
+    <filename>dir_68267d1309a1af8e8297ef4c3efbcdba.html</filename>
+    <dir>src/GoF</dir>
+    <file>GoF.php</file>
+  </compound>
+</tagfile>

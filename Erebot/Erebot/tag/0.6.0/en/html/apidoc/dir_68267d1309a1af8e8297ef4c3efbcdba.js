@@ -1,0 +1,25 @@
+var dir_68267d1309a1af8e8297ef4c3efbcdba =
+[
+    [ "Config", "dir_55be27304aee4fac13a1eb8fc08f58b6.html", "dir_55be27304aee4fac13a1eb8fc08f58b6" ],
+    [ "Console", "dir_08316e2c289422bf155187624e10fa91.html", "dir_08316e2c289422bf155187624e10fa91" ],
+    [ "Event", "dir_15f30029a8909ed3f59c87794e60d5e7.html", "dir_15f30029a8909ed3f59c87794e60d5e7" ],
+    [ "Identd", "dir_eeae2c75f572ce739bc4bcc8db4c4944.html", "dir_eeae2c75f572ce739bc4bcc8db4c4944" ],
+    [ "IrcCollator", "dir_42c68b9bcde54bed3bfb006120923a3c.html", "dir_42c68b9bcde54bed3bfb006120923a3c" ],
+    [ "NumericProfile", "dir_dcdac49b0dca116abe932b3407f02c99.html", "dir_dcdac49b0dca116abe932b3407f02c99" ],
+    [ "Proxy", "dir_227238b02826ed11a5bf211e70355db6.html", "dir_227238b02826ed11a5bf211e70355db6" ],
+    [ "CLI.php", "CLI_8php_source.html", null ],
+    [ "ConnectionFactory.php", "ConnectionFactory_8php_source.html", null ],
+    [ "Core.php", "Core_8php_source.html", null ],
+    [ "EventHandler.php", "EventHandler_8php_source.html", null ],
+    [ "Identity.php", "Identity_8php_source.html", null ],
+    [ "IrcConnection.php", "IrcConnection_8php_source.html", null ],
+    [ "IrcParser.php", "IrcParser_8php_source.html", null ],
+    [ "IrcTextWrapper.php", "IrcTextWrapper_8php_source.html", null ],
+    [ "LineIO.php", "LineIO_8php_source.html", null ],
+    [ "NumericHandler.php", "NumericHandler_8php_source.html", null ],
+    [ "NumericReference.php", "NumericReference_8php_source.html", null ],
+    [ "Patches.php", "Patches_8php_source.html", null ],
+    [ "Prompt.php", "Prompt_8php_source.html", null ],
+    [ "TextWrapper.php", "TextWrapper_8php_source.html", null ],
+    [ "XGlobStream.php", "XGlobStream_8php_source.html", null ]
+];

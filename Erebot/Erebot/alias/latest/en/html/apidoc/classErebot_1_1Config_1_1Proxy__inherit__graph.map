@@ -1,0 +1,6 @@
+<map id="Erebot\Config\Proxy" name="Erebot\Config\Proxy">
+<area shape="rect" id="node2" href="$classErebot_1_1Config_1_1Channel.html" title="Contains the configuration for an IRC channel. " alt="" coords="5,528,159,664"/>
+<area shape="rect" id="node3" href="$classErebot_1_1Config_1_1Main.html" title="Contains the main (general) configuration for Erebot. " alt="" coords="185,381,345,811"/>
+<area shape="rect" id="node4" href="$classErebot_1_1Config_1_1Network.html" title="This class contains the configuration for an IRC network. " alt="" coords="371,491,524,701"/>
+<area shape="rect" id="node5" href="$classErebot_1_1Config_1_1Server.html" title="This class contains the configuration for an IRC server. " alt="" coords="550,535,700,657"/>
+</map>

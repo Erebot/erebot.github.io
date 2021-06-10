@@ -1,0 +1,4 @@
+<map id="Erebot\Module\Countdown\Solver\ContainerInterface" name="Erebot\Module\Countdown\Solver\ContainerInterface">
+<area shape="rect" id="node2" href="$classErebot_1_1Module_1_1Countdown_1_1Solver_1_1Number.html" title="A container for a number that may be used by the solver. " alt="" coords="5,197,181,318"/>
+<area shape="rect" id="node3" href="$classErebot_1_1Module_1_1Countdown_1_1Solver_1_1Operation.html" title="An operation to be computed by the solver. " alt="" coords="205,160,381,355"/>
+</map>

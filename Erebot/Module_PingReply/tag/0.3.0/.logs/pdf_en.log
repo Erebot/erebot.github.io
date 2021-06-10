@@ -1,0 +1,129 @@
+Making output directory...
+Running Sphinx v1.2.2
+Including real configuration file (/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/real_conf.py)...
+loading translations [en]... done
+building [latex]: all documents
+updating environment: 4 added, 0 changed, 0 removed
+reading sources... [ 25%] Configuration
+reading sources... [ 50%] Prerequisites
+reading sources... [ 75%] Usage
+reading sources... [100%] index
+
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/Configuration.rst:21: ERROR: Undefined substitution referenced: "project".
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/index.rst:21: WARNING: nonlocal image URI found: https://secure.travis-ci.org/Erebot/Erebot_Module_PingReply.png
+/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/index.rst:23: WARNING: nonlocal image URI found: https://secure.travis-ci.org/Erebot/Erebot_Module_PingReply.png
+looking for now-outdated files... none found
+pickling environment... done
+checking consistency... done
+processing Module_PingReply.tex... index Prerequisites Configuration Usage 
+resolving references...
+writing... done
+copying TeX support files...
+done
+build succeeded, 3 warnings.
+make: Entering directory `/home/travis/build/Erebot/erebot.github.io/tmp/output/tag/0.3.0/en/pdf'
+pdflatex  'Module_PingReply.tex'
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian)
+ restricted \write18 enabled.
+entering extended mode
+(./Module_PingReply.tex
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 6 languages loaded.
+(./sphinxmanual.cls
+Document Class: sphinxmanual 2009/06/02 Document class (Sphinx manual)
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo)))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu)))
+(/usr/share/texlive/texmf-dist/tex/latex/cmap/cmap.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def)<<t1.cmap>>)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty) (./fncychap.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty) (./sphinx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.dfu)))
+(/usr/share/texlive/texmf-dist/tex/latex/fancybox/fancybox.sty
+Style option: `fancybox' v1.4 <2010/05/15> (tvz)
+) (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty)
+(./tabulary.sty (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz) (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/threeparttable/threeparttable.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/mdwtools/footnote.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg)))
+(/usr/share/texlive/texmf-dist/tex/plain/misc/pdfcolor.tex)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty))
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/hypcap.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+Writing index file Module_PingReply.idx
+No file Module_PingReply.aux.
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd)
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+Underfull \hbox (badness 10000) in paragraph at lines 120--120
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd)
+! Missing $ inserted.
+<inserted text> 
+                $
+l.120 \tableofcontents
+                      
+? 
+! Emergency stop.
+<inserted text> 
+                $
+l.120 \tableofcontents
+                      
+!  ==> Fatal error occurred, no output PDF file produced!
+Transcript written on Module_PingReply.log.
+make: *** [Module_PingReply.pdf] Error 1
+make: Leaving directory `/home/travis/build/Erebot/erebot.github.io/tmp/output/tag/0.3.0/en/pdf'

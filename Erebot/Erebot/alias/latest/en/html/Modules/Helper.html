@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Helper module &mdash; Erebot latest-0.6.0-74-g691fc3f documentation</title>
+    
+    <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'latest-0.6.0-74-g691fc3f',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Erebot latest-0.6.0-74-g691fc3f documentation" href="../index.html" />
+    <link rel="up" title="Compatible modules" href="../Modules.html" />
+    <link rel="next" title="IrcConnector module" href="IrcConnector.html" />
+    <link rel="prev" title="GoF module" href="GoF.html" /> 
+  </head>
+  <body>
+      <div class="header"><h1 class="heading"><a href="../index.html">
+          <span>Erebot latest-0.6.0-74-g691fc3f documentation</span></a></h1>
+        <h2 class="heading"><span>Helper module</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="GoF.html">GoF module</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="IrcConnector.html">IrcConnector module</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <blockquote>
+<div></div></blockquote>
+<div class="section" id="helper-module">
+<h1>Helper module<a class="headerlink" href="#helper-module" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#description" id="id1">Description</a></li>
+<li><a class="reference internal" href="#configuration" id="id2">Configuration</a><ul>
+<li><a class="reference internal" href="#options" id="id3">Options</a></li>
+<li><a class="reference internal" href="#example" id="id4">Example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#usage" id="id5">Usage</a><ul>
+<li><a class="reference internal" href="#provided-commands" id="id6">Provided commands</a></li>
+<li><a class="reference internal" href="#examples" id="id7">Examples</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="description">
+<h2><a class="toc-backref" href="#id1">Description</a><a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This module provides help about avaialble modules and commands.</p>
+</div>
+<div class="section" id="configuration">
+<h2><a class="toc-backref" href="#id2">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="options">
+<h3><a class="toc-backref" href="#id3">Options</a><a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h3>
+<p>This module provides only one configuration option.</p>
+<table border="1" class="docutils">
+<caption>Options for \Erebot\Module\Helper</caption>
+<colgroup>
+<col width="22%" />
+<col width="12%" />
+<col width="22%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Default value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>trigger</td>
+<td>string</td>
+<td>&#8220;help&#8221;</td>
+<td>The command to use to get
+help on other modules and
+commands.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="example">
+<h3><a class="toc-backref" href="#id4">Example</a><a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>The recommended way to use this module is to have it loaded at the general
+configuration level and to disable it only for specific networks, if needed.</p>
+<p>The listing below shows how to change this module&#8217;s trigger so that help
+becomes available using the command <tt class="docutils literal"><span class="pre">!helpme</span></tt> (instead of <tt class="docutils literal"><span class="pre">!help</span></tt>).</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;configuration</span>
+  <span class="na">xmlns=</span><span class="s">&quot;http://localhost/Erebot/&quot;</span>
+  <span class="na">version=</span><span class="s">&quot;...&quot;</span>
+  <span class="na">language=</span><span class="s">&quot;fr-FR&quot;</span>
+  <span class="na">timezone=</span><span class="s">&quot;Europe/Paris&quot;</span>
+  <span class="na">commands-prefix=</span><span class="s">&quot;!&quot;</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;modules&gt;</span>
+    <span class="c">&lt;!-- Other modules ignored for clarity. --&gt;</span>
+
+    <span class="c">&lt;!-- We only change the default command name. --&gt;</span>
+    <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">&quot;\Erebot\Module\Helper&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;trigger&quot;</span> <span class="na">value=</span><span class="s">&quot;sos&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/module&gt;</span>
+  <span class="nt">&lt;/modules&gt;</span>
+
+  <span class="c">&lt;!-- Rest of the configuration (networks, etc.) --&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="usage">
+<h2><a class="toc-backref" href="#id5">Usage</a><a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>This section assumes default values are used for all triggers.
+Please refer to <em class="xref std std-ref">configuration options</em>
+for more information on how to customize triggers.</p>
+<div class="section" id="provided-commands">
+<h3><a class="toc-backref" href="#id6">Provided commands</a><a class="headerlink" href="#provided-commands" title="Permalink to this headline">¶</a></h3>
+<p>This module provides the following commands:</p>
+<table border="1" class="docutils">
+<caption>Commands provided by \Erebot\Module\Helper</caption>
+<colgroup>
+<col width="44%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">!help</span></tt></td>
+<td>Gives a brief summary of usage.</td>
+</tr>
+<tr class="row-odd"><td><tt class="samp docutils literal"><span class="pre">!help</span> <em><span class="pre">Module</span></em></tt></td>
+<td>Retrieves help on module <em>Module</em>.
+The name of the module <strong>MUST</strong> start
+with an uppercase letter.</td>
+</tr>
+<tr class="row-even"><td><tt class="samp docutils literal"><span class="pre">!help</span> <em><span class="pre">command</span></em></tt></td>
+<td>Retrieves help on command <em>command</em>.
+The command&#8217;s name <strong>MAY NOT</strong> start
+with an uppercase letter.</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">!help</span> <span class="pre">Erebot_Module_Helper</span></tt></td>
+<td>Displays all available modules.</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">!help</span> <span class="pre">help</span></tt></td>
+<td>Same as if <tt class="docutils literal"><span class="pre">!help</span></tt> had been used.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="examples">
+<h3><a class="toc-backref" href="#id7">Examples</a><a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+<p>The listing below shows different sessions where commands have been used
+to get help on other modules and commands, in the same order as in the
+<em class="xref std std-ref">array above</em>.</p>
+<div class="highlight-irc"><div class="highlight"><pre><span class="cp">23:51:23 </span><span class="nt">&lt;@Clicky&gt; </span>!help
+<span class="cp">23:51:24 </span><span class="nt">&lt; Erebot&gt; </span>Usage : &quot;!help &lt;Module&gt; [commande]&quot; ou &quot;!help &lt;commande&gt;&quot;. Fournit de l&#39;aide sur un module ou une commande donné. Utilisez &quot;!help
+                   Erebot_Module_Helper&quot; pour voir la liste des modules actuellement chargés.
+
+<span class="cp">23:53:35 </span><span class="nt">&lt;@Clicky&gt; </span>!help Erebot_Module_Roulette
+<span class="cp">23:53:35 </span><span class="nt">&lt; Erebot&gt; </span>Fournit la commande !roulette qui vous fait jouer à la Roulette Russe.
+
+<span class="cp">23:53:43 </span><span class="nt">&lt;@Clicky&gt; </span>!help roulette
+<span class="cp">23:53:43 </span><span class="nt">&lt; Erebot&gt; </span>Usage : !roulette. Appuie sur la gachette du pistolet de la Roulette Russe.
+
+<span class="cp">23:53:07 </span><span class="nt">&lt;@Clicky&gt; </span>!help Erebot_Module_Helper
+<span class="cp">23:53:07 </span><span class="nt">&lt; Erebot&gt; </span>Usage : &quot;!help &lt;Module&gt; [commande]&quot;. Les noms de modules doivent commencer par une majuscule, mais ne sont pas sensibles à la casse.
+                   Les modules suivants sont chargés : Erebot_Module_AutoJoin, Erebot_Module_AZ, Erebot_Module_TriggerRegistry, Erebot_Module_Admin,
+                   Erebot_Module_AutoConnect, Erebot_Module_Countdown, Erebot_Module_Helper, Erebot_Module_CtcpResponder,
+<span class="cp">23:53:08 </span><span class="nt">&lt; Erebot&gt; </span>Erebot_Module_GoF, Erebot_Module_IrcConnector, Erebot_Module_IrcTracker, Erebot_Module_LagChecker, Erebot_Module_Math,
+                   Erebot_Module_PhpFilter, Erebot_Module_PingReply, Erebot_Module_RateLimiter, Erebot_Module_Roulette,
+                   Erebot_Module_ServerCapabilities, Erebot_Module_TV, Erebot_Module_Uno, Erebot_Module_WatchList, Erebot_Module_WebGetter &amp;
+<span class="cp">23:53:09 </span><span class="nt">&lt; Erebot&gt; </span>Erebot_Module_Wordlists.
+
+<span class="cp">23:54:09 </span><span class="nt">&lt;@Clicky&gt; </span>!help help
+<span class="cp">23:54:09 </span><span class="nt">&lt; Erebot&gt; </span>Usage : &quot;!help &lt;Module&gt; [commande]&quot; ou &quot;!help &lt;commande&gt;&quot;. Fournit de l&#39;aide sur un module ou une commande donné. Utilisez &quot;!help
+                   Erebot_Module_Helper&quot; pour voir la liste des modules actuellement chargés.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="GoF.html">GoF module</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="IrcConnector.html">IrcConnector module</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2019, The Erebot team.
+      Last updated on Jan 06, 2019.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  
+<!-- Custom overlay -->
+<script type="text/javascript">
+var erebot = {"source_suffix": ".rst", "language": "en", "builder": "html", "default_branch": "master", "project": {"version": "latest", "name": "Erebot", "slug": "erebot/erebot"}, "base": ".././", "page": "Modules/Helper"};
+</script>
+<script type="text/javascript" src=".././../../../../erebot-overlay.js"></script>
+
+<!-- Statistics -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDocumentTitle", document.domain + " / " + document.title]);
+  if (document.domain != 'docs.erebot.net') {
+      _paq.push(["setCookieDomain", "erebot.github.io"]);
+  }
+  _paq.push(["setDomains", ["erebot.github.io", "docs.erebot.net"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.erebot.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '4']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.erebot.net/piwik.php?idsite=4" style="border:0;" alt="" /></p></noscript>
+</body>
+</html>

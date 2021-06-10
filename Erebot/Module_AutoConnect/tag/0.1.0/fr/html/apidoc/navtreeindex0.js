@@ -1,0 +1,19 @@
+var NAVTREEINDEX0 =
+{
+"AutoConnect_8php_source.html":[1,0,0,0,0,0],
+"annotated.html":[0,0],
+"classErebot__Module__AutoConnect.html":[0,0,0],
+"classErebot__Module__AutoConnect.html#a5295c1e943eea7c9829135b6b50c0f75":[0,0,0,1],
+"classErebot__Module__AutoConnect.html#a901a8aa8fd8f3274f9c4f499c16d8422":[0,0,0,0],
+"classErebot__Module__AutoConnect.html#a992237f36de29cec0cc5f28e4316059d":[0,0,0,2],
+"classes.html":[0,1],
+"dir_3faa5d4fb109dd68a42d2cdc73f4c683.html":[1,0,0,0],
+"dir_68267d1309a1af8e8297ef4c3efbcdba.html":[1,0,0],
+"dir_75c190c4e3b6377bfae2ef99e2979ca0.html":[1,0,0,0,0],
+"files.html":[1,0],
+"functions.html":[0,3,0],
+"functions_func.html":[0,3,1],
+"hierarchy.html":[0,2],
+"index.html":[],
+"pages.html":[]
+};

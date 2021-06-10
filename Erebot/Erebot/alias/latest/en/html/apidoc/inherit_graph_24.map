@@ -1,0 +1,16 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$classErebot_1_1Event_1_1Ban.html" title="Triggered when a ban is set on a channel. " alt="" coords="235,7,360,33"/>
+<area shape="rect" id="node4" href="$classErebot_1_1Event_1_1DeHalfop.html" title="Triggered when someone loses HALF&#45;OPerator priviledges on a channel. " alt="" coords="219,59,376,85"/>
+<area shape="rect" id="node5" href="$classErebot_1_1Event_1_1DeOp.html" title="Triggered when someone loses OPerator priviledges on a channel. " alt="" coords="229,111,365,137"/>
+<area shape="rect" id="node6" href="$classErebot_1_1Event_1_1DeOwner.html" title="Triggered when someone loses OWNER priviledges on a channel. " alt="" coords="219,164,376,191"/>
+<area shape="rect" id="node7" href="$classErebot_1_1Event_1_1DeProtect.html" title="Triggered when someone loses PROTECTion priviledges on a channel. " alt="" coords="217,221,378,248"/>
+<area shape="rect" id="node8" href="$classErebot_1_1Event_1_1DeVoice.html" title="Triggered when someone loses VOICE priviledges on a channel. " alt="" coords="221,284,373,311"/>
+<area shape="rect" id="node9" href="$classErebot_1_1Event_1_1Except.html" title="Triggered when a ban exception is set on a channel. " alt="" coords="226,360,369,387"/>
+<area shape="rect" id="node10" href="$classErebot_1_1Event_1_1Halfop.html" title="Triggered when someone receives HALF&#45;OPerator priviledges on a channel. " alt="" coords="227,411,367,437"/>
+<area shape="rect" id="node11" href="$classErebot_1_1Event_1_1Op.html" title="Triggered when someone receives OPerator priviledges on a channel. " alt="" coords="238,461,357,488"/>
+<area shape="rect" id="node12" href="$classErebot_1_1Event_1_1Owner.html" title="Triggered when someone receives OWNER priviledges on a channel. " alt="" coords="227,512,367,539"/>
+<area shape="rect" id="node13" href="$classErebot_1_1Event_1_1Protect.html" title="Triggered when someone receives PROTECTion priviledges on a channel. " alt="" coords="225,563,369,589"/>
+<area shape="rect" id="node14" href="$classErebot_1_1Event_1_1UnBan.html" title="Triggered when a ban is removed from a channel. " alt="" coords="226,613,369,640"/>
+<area shape="rect" id="node15" href="$classErebot_1_1Event_1_1UnExcept.html" title="Triggered when a ban exception is removed from a channel. " alt="" coords="217,664,377,691"/>
+<area shape="rect" id="node16" href="$classErebot_1_1Event_1_1Voice.html" title="Triggered when someone receives VOICE priviledges on a channel. " alt="" coords="230,715,365,741"/>
+</map>

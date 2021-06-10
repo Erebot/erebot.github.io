@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="class">
+    <name>Erebot::Module::Uno</name>
+    <filename>classErebot_1_1Module_1_1Uno.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>getHelp</name>
+      <anchorfile>classErebot_1_1Module_1_1Uno.html</anchorfile>
+      <anchor>a6d3caf3d3c308e179a0f3be4b68a06c4</anchor>
+      <arglist>(\Erebot\Interfaces\Event\Base\TextMessage $event,\Erebot\Interfaces\TextWrapper $words)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Uno::AbstractDeck</name>
+    <filename>classErebot_1_1Module_1_1Uno_1_1AbstractDeck.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Uno::AlreadyDrewException</name>
+    <filename>classErebot_1_1Module_1_1Uno_1_1AlreadyDrewException.html</filename>
+    <base>Erebot::Module::Uno::Exception</base>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Uno::EmptyDeckException</name>
+    <filename>classErebot_1_1Module_1_1Uno_1_1EmptyDeckException.html</filename>
+    <base>Erebot::Module::Uno::Exception</base>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Uno::Exception</name>
+    <filename>classErebot_1_1Module_1_1Uno_1_1Exception.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Uno::Game</name>
+    <filename>classErebot_1_1Module_1_1Uno_1_1Game.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Uno::Hand</name>
+    <filename>classErebot_1_1Module_1_1Uno_1_1Hand.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Uno::InternalErrorException</name>
+    <filename>classErebot_1_1Module_1_1Uno_1_1InternalErrorException.html</filename>
+    <base>Erebot::Module::Uno::Exception</base>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Uno::InvalidMoveException</name>
+    <filename>classErebot_1_1Module_1_1Uno_1_1InvalidMoveException.html</filename>
+    <base>Erebot::Module::Uno::Exception</base>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Uno::MissingCardsException</name>
+    <filename>classErebot_1_1Module_1_1Uno_1_1MissingCardsException.html</filename>
+    <base>Erebot::Module::Uno::Exception</base>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Uno::MoveNotAllowedException</name>
+    <filename>classErebot_1_1Module_1_1Uno_1_1MoveNotAllowedException.html</filename>
+    <base>Erebot::Module::Uno::Exception</base>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Uno::MustDrawBeforePassException</name>
+    <filename>classErebot_1_1Module_1_1Uno_1_1MustDrawBeforePassException.html</filename>
+    <base>Erebot::Module::Uno::Exception</base>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Uno::UnchallengeableException</name>
+    <filename>classErebot_1_1Module_1_1Uno_1_1UnchallengeableException.html</filename>
+    <base>Erebot::Module::Uno::Exception</base>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Uno::WaitingForColorException</name>
+    <filename>classErebot_1_1Module_1_1Uno_1_1WaitingForColorException.html</filename>
+    <base>Erebot::Module::Uno::Exception</base>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Uno::Deck::Official</name>
+    <filename>classErebot_1_1Module_1_1Uno_1_1Deck_1_1Official.html</filename>
+    <base>Erebot::Module::Uno::AbstractDeck</base>
+  </compound>
+  <compound kind="class">
+    <name>Erebot::Module::Uno::Deck::Unlimited</name>
+    <filename>classErebot_1_1Module_1_1Uno_1_1Deck_1_1Unlimited.html</filename>
+    <base>Erebot::Module::Uno::AbstractDeck</base>
+  </compound>
+  <compound kind="dir">
+    <name>src/Uno/Deck</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/Uno/Deck/</path>
+    <filename>dir_019895e9e865c6b2ec4e81d5026efa1c.html</filename>
+    <file>Official.php</file>
+    <file>Unlimited.php</file>
+  </compound>
+  <compound kind="dir">
+    <name>src</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/</path>
+    <filename>dir_2567a1afc3a0d0d67708f137eff7ae68.html</filename>
+    <dir>src/Uno</dir>
+    <file>Uno.php</file>
+  </compound>
+  <compound kind="dir">
+    <name>src/Uno</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/Uno/</path>
+    <filename>dir_08f84ac7784de08962bea18804d28383.html</filename>
+    <dir>src/Uno/Deck</dir>
+    <file>AbstractDeck.php</file>
+    <file>AlreadyDrewException.php</file>
+    <file>EmptyDeckException.php</file>
+    <file>Exception.php</file>
+    <file>Game.php</file>
+    <file>Hand.php</file>
+    <file>InternalErrorException.php</file>
+    <file>InvalidMoveException.php</file>
+    <file>MissingCardsException.php</file>
+    <file>MoveNotAllowedException.php</file>
+    <file>MustDrawBeforePassException.php</file>
+    <file>UnchallengeableException.php</file>
+    <file>WaitingForColorException.php</file>
+  </compound>
+</tagfile>

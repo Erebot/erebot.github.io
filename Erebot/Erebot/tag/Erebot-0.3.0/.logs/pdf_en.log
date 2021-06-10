@@ -1,0 +1,15 @@
+Making output directory...
+Running Sphinx v1.2.2
+Including real configuration file (/home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/real_conf.py)...
+loading translations [en]... done
+building [latex]: all documents
+updating environment: 0 added, 0 changed, 0 removed
+WARNING: master file /home/travis/build/Erebot/erebot.github.io/tmp/clone/docs/src/index.rst not found
+looking for now-outdated files... none found
+WARNING: "latex_documents" config value references unknown document index
+copying TeX support files...
+done
+build succeeded, 2 warnings.
+make: Entering directory `/home/travis/build/Erebot/erebot.github.io/tmp/output/tag/Erebot-0.3.0/en/pdf'
+make: Nothing to be done for `all-pdf'.
+make: Leaving directory `/home/travis/build/Erebot/erebot.github.io/tmp/output/tag/Erebot-0.3.0/en/pdf'

@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Usage &mdash; documentation Module_TV 0.2.1</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.2.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="documentation Module_TV 0.2.1" href="index.html" />
+    <link rel="prev" title="Configuration" href="Configuration.html" /> 
+  </head>
+  <body>
+      <div class="header"><h1 class="heading"><a href="index.html">
+          <span>documentation Module_TV 0.2.1</span></a></h1>
+        <h2 class="heading"><span>Usage</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="Configuration.html">Configuration</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contenu</a>
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <blockquote>
+<div></div></blockquote>
+<div class="section" id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Lien permanent vers ce titre">¶</a></h1>
+<p>This section assumes default values are used for all triggers.
+Please refer to <a class="reference internal" href="Configuration.html#configuration-options"><em>configuration options</em></a>
+for more information on how to customize triggers.</p>
+<div class="section" id="provided-commands">
+<h2>Provided commands<a class="headerlink" href="#provided-commands" title="Lien permanent vers ce titre">¶</a></h2>
+<p>This module provides the following commands:</p>
+<table border="1" class="docutils">
+<caption>Commands provided by <a href="#id1"><span class="problematic" id="id2">|project|</span></a></caption>
+<colgroup>
+<col width="39%" />
+<col width="61%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">!tv</span></tt></td>
+<td>Displays information about currently
+airing TV programs for the default
+channels group.</td>
+</tr>
+<tr class="row-odd"><td><tt class="samp docutils literal"><span class="pre">!tv</span> <em><span class="pre">time</span></em></tt></td>
+<td>Displays information about TV programs
+for the default channels group at the
+given <em>time</em>.
+<em>time</em> may be given in either 12h or 24h
+format.</td>
+</tr>
+<tr class="row-even"><td><tt class="samp docutils literal"><span class="pre">!tv</span> <em><span class="pre">time</span></em> <em><span class="pre">channels...</span></em></tt></td>
+<td>Displays TV schedules for the given
+<em>channels</em> at the given <em>time</em>.
+You may also use a
+<a class="reference internal" href="#channel-groups"><em>channel group</em></a>
+in place of <em>channels</em>.
+<em>time</em> may be given in either 12h or 24h
+format.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note" id="channel-groups">
+<p class="first admonition-title">Note</p>
+<p class="last">A list of valid channel groups can be retrieved using <tt class="docutils literal"><span class="pre">!help</span> <span class="pre">tv</span></tt>.</p>
+</div>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-irc"><div class="highlight"><pre><span class="cp">20:58:13 </span><span class="nt">&lt;@Clicky&gt; </span>!tv
+<span class="cp">20:58:20 </span><span class="nt">&lt; Erebot&gt; </span>Programmes TV du January 17, 2012 8:58:00 PM : TF1 : Les experts : Manhattan (20:50 - 21:35) - France 2 : Le cinquième élément (20:35 -
+                   22:35) - France 3 : Famille d&#39;accueil (20:35 - 21:30) - Canal+ : Another Year (20:55 - 23:00) - France 5 : Une pieuvre nommée Bercy
+                   (20:35 - 21:45) - Arte : L&#39;effet domino (20:40 - 22:15) - M6 : Cauchemar en cuisine (20:50 - 22:05)
+
+<span class="cp">20:58:29 </span><span class="nt">&lt;@Clicky&gt; </span>!tv 22h
+<span class="cp">20:58:33 </span><span class="nt">&lt; Erebot&gt; </span>Programmes TV du January 17, 2012 10:00:00 PM : TF1 : Les experts : Manhattan (21:35 - 22:25) - France 2 : Le cinquième élément (20:35 -
+                   22:35) - France 3 : Famille d&#39;accueil (21:30 - 22:25) - Canal+ : Another Year (20:55 - 23:00) - France 5 : Le monde en face (21:45 -
+                   22:15) - Arte : L&#39;effet domino (20:40 - 22:15) - M6 : Cauchemar en cuisine (20:50 - 22:05)
+
+<span class="cp">21:28:56 </span><span class="nt">&lt;@Clicky&gt; </span>!tv 23h TF1
+<span class="cp">21:29:02 </span><span class="nt">&lt; Erebot&gt; </span>Programmes TV du January 17, 2012 11:00:00 PM : TF1 : Les experts : Manhattan (22:25 - 23:20)
+</pre></div>
+</div>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="Configuration.html">Configuration</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contenu</a>
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2019, The Erebot team.
+      Mis à jour le Jan 06, 2019.
+      Créé avec <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  
+<!-- Custom overlay -->
+<script type="text/javascript">
+var erebot = {"source_suffix": ".rst", "language": "fr", "builder": "html", "default_branch": "master", "project": {"version": "0.2.1", "name": "Module_TV", "slug": "erebot/module_tv"}, "base": "./", "page": "Usage"};
+</script>
+<script type="text/javascript" src="./../../../../erebot-overlay.js"></script>
+
+<!-- Statistics -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDocumentTitle", document.domain + " / " + document.title]);
+  if (document.domain != 'docs.erebot.net') {
+      _paq.push(["setCookieDomain", "erebot.github.io"]);
+  }
+  _paq.push(["setDomains", ["erebot.github.io", "docs.erebot.net"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.erebot.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '4']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.erebot.net/piwik.php?idsite=4" style="border:0;" alt="" /></p></noscript>
+</body>
+</html>

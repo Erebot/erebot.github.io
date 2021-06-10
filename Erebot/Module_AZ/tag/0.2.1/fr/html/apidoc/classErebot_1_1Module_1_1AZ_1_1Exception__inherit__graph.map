@@ -1,0 +1,5 @@
+<map id="Erebot\Module\AZ\Exception" name="Erebot\Module\AZ\Exception">
+<area shape="rect" id="node3" href="$classErebot_1_1Module_1_1AZ_1_1IncompatibleException.html" title="Raised when an attempt is made to mix words from two incompatible wordlists. " alt="" coords="5,257,211,349"/>
+<area shape="rect" id="node4" href="$classErebot_1_1Module_1_1AZ_1_1InvalidWordException.html" title="Raised when an invalid word is proposed. " alt="" coords="235,257,404,349"/>
+<area shape="rect" id="node5" href="$classErebot_1_1Module_1_1AZ_1_1NotEnoughWordsException.html" title="Raised when an attempt is made to start a new game and there are not enough words in the selected wor..." alt="" coords="429,257,624,349"/>
+</map>

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="class">
+    <name>Erebot_Module_AutoConnect</name>
+    <filename>classErebot__Module__AutoConnect.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>_reload</name>
+      <anchorfile>classErebot__Module__AutoConnect.html</anchorfile>
+      <anchor>a901a8aa8fd8f3274f9c4f499c16d8422</anchor>
+      <arglist>($flags)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getHelp</name>
+      <anchorfile>classErebot__Module__AutoConnect.html</anchorfile>
+      <anchor>a992237f36de29cec0cc5f28e4316059d</anchor>
+      <arglist>(Erebot_Interface_Event_Base_TextMessage $event, Erebot_Interface_TextWrapper $words)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>_unload</name>
+      <anchorfile>classErebot__Module__AutoConnect.html</anchorfile>
+      <anchor>a5295c1e943eea7c9829135b6b50c0f75</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="dir">
+    <name>src/Erebot</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/Erebot/</path>
+    <filename>dir_3faa5d4fb109dd68a42d2cdc73f4c683.html</filename>
+    <dir>src/Erebot/Module</dir>
+  </compound>
+  <compound kind="dir">
+    <name>src/Erebot/Module</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/Erebot/Module/</path>
+    <filename>dir_75c190c4e3b6377bfae2ef99e2979ca0.html</filename>
+    <file>AutoConnect.php</file>
+  </compound>
+  <compound kind="dir">
+    <name>src</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/</path>
+    <filename>dir_68267d1309a1af8e8297ef4c3efbcdba.html</filename>
+    <dir>src/Erebot</dir>
+  </compound>
+</tagfile>

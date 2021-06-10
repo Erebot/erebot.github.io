@@ -1,0 +1,388 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Installation &mdash; documentation Erebot 0.6.0</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.6.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="documentation Erebot 0.6.0" href="index.html" />
+    <link rel="next" title="Erebot’s configuration" href="Configuration.html" />
+    <link rel="prev" title="Prerequisites" href="Prerequisites.html" /> 
+  </head>
+  <body>
+      <div class="header"><h1 class="heading"><a href="index.html">
+          <span>documentation Erebot 0.6.0</span></a></h1>
+        <h2 class="heading"><span>Installation</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="Prerequisites.html">Prerequisites</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contenu</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="Configuration.html">Erebot&#8217;s configuration</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <blockquote>
+<div></div></blockquote>
+<div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Lien permanent vers ce titre">¶</a></h1>
+<p>This pages contains instructions on how to install Erebot on your machine.
+There are several ways to achieve that. Each method is described below.</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#installation-using-phar-archives" id="id1">Installation using PHAR archives</a></li>
+<li><a class="reference internal" href="#installation-from-source" id="id2">Installation from source</a></li>
+<li><a class="reference internal" href="#final-steps" id="id3">Final steps</a></li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">You cannot mix the different methods. Especially, <strong>you must use the same
+method to install modules as the one you selected for Erebot itself</strong>.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">We recommend using the <a class="reference internal" href="#phar-installation">PHAR installation</a> method
+or the <a href="#id4"><span class="problematic" id="id5">`composer installation`_</span></a> method, depending on
+whether your project already uses <a href="#id6"><span class="problematic" id="id7">`Composer`_</span></a> or not.
+Installation from sources is reserved for advanced installations (mainly
+for Erebot&#8217;s developers).</p>
+</div>
+<div class="section" id="installation-using-phar-archives">
+<span id="phar-installation"></span><h2><a class="toc-backref" href="#id1">Installation using PHAR archives</a><a class="headerlink" href="#installation-using-phar-archives" title="Lien permanent vers ce titre">¶</a></h2>
+<p>A PHAR archive is simply a way of bundling all the necessary files in one big
+file. However, PHAR&#8217;s archive does not contain any module.
+Thus, to get a working installation, you must install additional Erebot
+modules. At a minimum, this includes: <a class="reference external" href="/Erebot_Module_IrcConnector/">Erebot_Module_IrcConnector</a>,
+<a class="reference external" href="/Erebot_Module_AutoConnect/">Erebot_Module_AutoConnect</a>, <a class="reference external" href="/Erebot_Module_PingReply/">Erebot_Module_PingReply</a>.</p>
+<p>Installing Erebot as a PHAR archive only involves a few steps:</p>
+<ol class="arabic">
+<li><p class="first">Make sure your installation fulfills all of the <a class="reference external" href="Prerequisites.html">prerequisites</a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">As all of Erebot&#8217;s PHAR archives (core and modules) are digitally
+signed, you must make sure the OpenSSL extension is enabled on your
+PHP installation. Failure to do so will result in an error when trying
+to run Erebot&#8217;s PHAR archive.</p>
+</div>
+</li>
+<li><p class="first">Download the PHAR archive for Erebot itself. You can grab the latest
+version from <a class="reference external" href="https://packages.erebot.net/get/Erebot-latest.phar">https://packages.erebot.net/get/Erebot-latest.phar</a>.
+You MUST also download the public signature for the archive.
+The signature for the latest version is available at
+<a class="reference external" href="https://packages.erebot.net/get/Erebot-latest.phar.pubkey">https://packages.erebot.net/get/Erebot-latest.phar.pubkey</a>.</p>
+</li>
+<li><p class="first">Create a directory named <tt class="file docutils literal"><span class="pre">modules</span></tt> in the same folder as the PHAR.</p>
+</li>
+<li><p class="first">Go to the <tt class="file docutils literal"><span class="pre">modules</span></tt> directory and drop a copy of the following PHAR
+archives with their signature:</p>
+<ul class="simple">
+<li>Files for the <a class="reference external" href="/Erebot_Module_AutoConnect/">Erebot_Module_AutoConnect</a> module:<ul>
+<li><a class="reference external" href="https://packages.erebot.net/get/Erebot_Module_AutoConnect-latest.phar">Erebot_Module_AutoConnect-latest.phar</a></li>
+<li><a class="reference external" href="https://packages.erebot.net/get/Erebot_Module_AutoConnect-latest.phar.pubkey">Erebot_Module_AutoConnect-latest.phar&#8217;s signature</a></li>
+</ul>
+</li>
+<li>Files for the <a class="reference external" href="/Erebot_Module_IrcConnector/">Erebot_Module_IrcConnector</a> module:<ul>
+<li><a class="reference external" href="https://packages.erebot.net/get/Erebot_Module_IrcConnector-latest.phar">Erebot_Module_IrcConnector-latest.phar</a></li>
+<li><a class="reference external" href="https://packages.erebot.net/get/Erebot_Module_IrcConnector-latest.phar.pubkey">Erebot_Module_IrcConnector-latest.phar&#8217;s signature</a></li>
+</ul>
+</li>
+<li>Files for the <a class="reference external" href="/Erebot_Module_PingReply/">Erebot_Module_PingReply</a> module:<ul>
+<li><a class="reference external" href="https://packages.erebot.net/get/Erebot_Module_PingReply-latest.phar">Erebot_Module_PingReply-latest.phar</a></li>
+<li><a class="reference external" href="https://packages.erebot.net/get/Erebot_Module_PingReply-latest.phar.pubkey">Erebot_Module_PingReply-latest.phar&#8217;s signature</a></li>
+</ul>
+</li>
+</ul>
+<p>Make sure you also read each component&#8217;s documentation (especially the list
+of prerequisites).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You <strong>MUST</strong> copy both the PHAR archives and their signature in the
+<tt class="file docutils literal"><span class="pre">modules</span></tt> directory. Otherwise, PHP will refuse to load those
+PHAR archives because it cannot check their origin and integrity.</p>
+</div>
+</li>
+<li><p class="first">Optionally, download additional PHAR archives with their signature
+to install other modules.</p>
+</li>
+</ol>
+<p>Your tree should now look like this:</p>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>Erebot/</dt>
+<dd><ul class="first last">
+<li><p class="first">Erebot-latest.phar</p>
+</li>
+<li><p class="first">Erebot-latest.phar.pubkey</p>
+</li>
+<li><dl class="first docutils">
+<dt>modules/</dt>
+<dd><ul class="first last simple">
+<li>Erebot_Module_AutoConnect-latest.phar</li>
+<li>Erebot_Module_AutoConnect-latest.phar.pubkey</li>
+<li>Erebot_Module_IrcConnector-latest.phar</li>
+<li>Erebot_Module_IrcConnector-latest.phar.pubkey</li>
+<li>Erebot_Module_PingReply-latest.phar</li>
+<li>Erebot_Module_PingReply-latest.phar.pubkey</li>
+<li><em>eventually, additional PHAR archives with their signature</em></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The whole installation process using PHAR archives can be automated
+using the following commands:</p>
+<div class="last highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>wget --no-check-certificate                                                   <span class="se">\</span>
+    https://packages.erebot.net/get/Erebot-latest.phar                              <span class="se">\</span>
+    https://packages.erebot.net/get/Erebot-latest.phar.pubkey                       <span class="se">\</span>
+    https://packages.erebot.net/get/Erebot_Module_AutoConnect-latest.phar           <span class="se">\</span>
+    https://packages.erebot.net/get/Erebot_Module_AutoConnect-latest.phar.pubkey    <span class="se">\</span>
+    https://packages.erebot.net/get/Erebot_Module_IrcConnector-latest.phar          <span class="se">\</span>
+    https://packages.erebot.net/get/Erebot_Module_IrcConnector-latest.phar.pubkey   <span class="se">\</span>
+    https://packages.erebot.net/get/Erebot_Module_PingReply-latest.phar             <span class="se">\</span>
+    https://packages.erebot.net/get/Erebot_Module_PingReply-latest.phar.pubkey
+<span class="nv">$ </span>mkdir modules
+<span class="nv">$ </span>mv Erebot_Module_*-latest.phar Erebot_Module_*-latest.phar.pubkey modules/
+</pre></div>
+</div>
+</div>
+<p>Once the PHAR archives have been retrieved, you may wish to change file
+permissions on <tt class="file docutils literal"><span class="pre">Erebot-latest.phar</span></tt>, using this command:</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>chmod 0755 Erebot-latest.phar
+</pre></div>
+</div>
+</div></blockquote>
+<p>This way, you may later launch Erebot simply by executing:</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./Erebot-latest.phar
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Even though the command above should work on most installations,
+a few known problems may occur due to incompatibilities with certain
+PHP features and extensions. To avoid such issues, it is usually a good
+idea to check the following items:</p>
+<ul class="last">
+<li><p class="first">Make sure <tt class="docutils literal"><span class="pre">detect_unicode</span></tt> is set to <tt class="docutils literal"><span class="pre">Off</span></tt> in your <tt class="file docutils literal"><span class="pre">php.ini</span></tt>.
+This is especially important on MacOS where this setting tends to be
+<tt class="docutils literal"><span class="pre">On</span></tt> for a default PHP installation.</p>
+</li>
+<li><p class="first">If you applied the Suhosin security patch to your PHP installation,
+make sure <tt class="docutils literal"><span class="pre">phar</span></tt> is listed in your <tt class="file docutils literal"><span class="pre">php.ini</span></tt> under the
+<tt class="docutils literal"><span class="pre">suhosin.executor.include.whitelist</span></tt> directive.</p>
+</li>
+<li><p class="first">Please be aware of certain incompatibilities between the Phar extension
+and the ionCube Loader extension. To run Erebot from a PHAR archive,
+you will need to remove the following line from your <tt class="file docutils literal"><span class="pre">php.ini</span></tt>:</p>
+<div class="highlight-ini"><div class="highlight"><pre><span class="na">zend_extension</span><span class="o">=</span><span class="s">/usr/lib/php5/20090626+lfs/ioncube_loader_lin_5.3.so</span>
+</pre></div>
+</div>
+<p>(the path and versions may be different for your installation).</p>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When run from a PHAR archive, Erebot will first try to determine whether
+all requirements needed to run the bot and its modules are respected.
+In case an error is displayed, follow the indications given in the error
+message and try running the bot again.</p>
+</div>
+<p>That&#8217;s it! You may now read the section on <a class="reference internal" href="#final-steps">final steps</a> for a summary of
+what to do next.</p>
+</div>
+<div class="section" id="installation-from-source">
+<h2><a class="toc-backref" href="#id2">Installation from source</a><a class="headerlink" href="#installation-from-source" title="Lien permanent vers ce titre">¶</a></h2>
+<p>First, make sure a git client is installed on your machine.
+Under Linux, <strong>from a root shell</strong>, run the command that most closely matches
+the tools provided by your distribution:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># For apt-based distributions such as Debian or Ubuntu</span>
+<span class="nv">$ </span>apt-get install git
+
+<span class="c"># For yum-based distributions such as Fedora / RHEL (RedHat)</span>
+<span class="nv">$ </span>yum install git
+
+<span class="c"># For urpmi-based distributions such as MES (Mandriva)</span>
+<span class="nv">$ </span>urpmi git
+
+<span class="c"># For Zypper-based distributions such as SLES (SuSE)</span>
+<span class="nv">$ </span>zypper install git
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Windows users may be interested in installing <a class="reference external" href="http://code.google.com/p/msysgit/downloads/list">Git for Windows</a> to get
+an equivalent git client. Also, make sure that <strong class="program">git</strong> is present
+on your account&#8217;s <span class="target" id="index-0"></span><tt class="xref std std-envvar docutils literal"><span class="pre">PATH</span></tt>. If not, you&#8217;ll have to replace
+<strong class="command">git</strong> by the full path to <tt class="file docutils literal"><span class="pre">git.exe</span></tt> on every invocation
+(eg. <strong class="command">&#8220;C:\Program Files\Git\bin\git.exe&#8221; clone ...</strong>)</p>
+</div>
+<p>Also, make sure you have all the <a class="reference external" href="Prerequisites.html">required dependencies</a> installed as well.
+Now, retrieve the bot&#8217;s code from the repository, using the following command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git clone --recursive git://github.com/Erebot/Erebot.git
+<span class="nv">$ </span>mkdir -p Erebot/vendor/ <span class="o">&amp;&amp;</span> <span class="nb">cd </span>Erebot/vendor/
+<span class="nv">$ </span>git clone --recursive git://github.com/Erebot/Erebot_Module_IrcConnector.git
+<span class="nv">$ </span>git clone --recursive git://github.com/Erebot/Erebot_Module_AutoConnect.git
+<span class="nv">$ </span>git clone --recursive git://github.com/Erebot/Erebot_Module_PingReply.git
+<span class="nv">$ </span><span class="nb">cd</span> ..
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Linux users (especially Erebot developers) may prefer to create a separate
+checkout for each component and then use symbolic links to join them
+together, like this:</p>
+<div class="last highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git clone --recursive git://github.com/Erebot/Erebot.git
+<span class="nv">$ </span>git clone --recursive git://github.com/Erebot/Erebot_Module_IrcConnector.git
+<span class="nv">$ </span>git clone --recursive git://github.com/Erebot/Erebot_Module_AutoConnect.git
+<span class="nv">$ </span>git clone --recursive git://github.com/Erebot/Erebot_Module_PingReply.git
+<span class="nv">$ </span>mkdir -p Erebot/vendor/ <span class="o">&amp;&amp;</span> <span class="nb">cd </span>Erebot/vendor/
+<span class="nv">$ </span>ln -s ../../Erebot_Module_IrcConnector
+<span class="nv">$ </span>ln -s ../../Erebot_Module_AutoConnect
+<span class="nv">$ </span>ln -s ../../Erebot_Module_PingReply
+<span class="nv">$ </span><span class="nb">cd</span> ..
+</pre></div>
+</div>
+</div>
+<p>Optionally, you can compile the translation files for each component.
+However, this requires that <a class="reference external" href="http://www.gnu.org/s/gettext/">gettext</a> and <a class="reference external" href="http://www.phing.info/">phing</a> be installed on your machine
+as well. See the documentation on Erebot&#8217;s <a class="reference external" href="Prerequisites.html">prerequisites</a> for additional
+information on how to install these tools depending on your system.</p>
+<p>Once you got those two up and running, the translation files can be compiled,
+assuming you&#8217;re currently in Erebot&#8217;s folder, using these commands:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>phing
+<span class="nv">$ </span><span class="nb">cd </span>vendor/Erebot_Module_IrcConnector/
+<span class="nv">$ </span>phing
+<span class="nv">$ </span><span class="nb">cd</span> ../Erebot_Module_AutoConnect/
+<span class="nv">$ </span>phing
+<span class="nv">$ </span><span class="nb">cd</span> ../Erebot_Module_PingReply/
+<span class="nv">$ </span>phing
+<span class="nv">$ </span><span class="nb">cd</span> ../../
+</pre></div>
+</div>
+<p>Be sure to read the section on <a class="reference internal" href="#final-steps">final steps</a> for a summary of what to do next.</p>
+</div>
+<div class="section" id="final-steps">
+<h2><a class="toc-backref" href="#id3">Final steps</a><a class="headerlink" href="#final-steps" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Once Erebot (core files + a few modules) has been installed, you can
+<a class="reference external" href="Configuration.html">write a configuration file</a> for Erebot (usually named <tt class="file docutils literal"><span class="pre">Erebot.xml</span></tt>).</p>
+<p>When this is done, the bot can be started, assuming that PHP can be found
+in your <span class="target" id="index-1"></span><tt class="xref std std-envvar docutils literal"><span class="pre">PATH</span></tt> using one of the following commands.
+Exactly what command must be used depends on the installation method.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># For an installation using PHAR archives.</span>
+<span class="c"># Must be run from the folder in which Erebot was installed.</span>
+<span class="nv">$ </span>php ./Erebot-&lt;version&gt;.phar
+
+<span class="c"># For an installation from sources or using Composer.</span>
+<span class="c"># Must be run from the folder in which Erebot was installed.</span>
+<span class="nv">$ </span>php ./scripts/Erebot
+</pre></div>
+</div>
+<p>Let&#8217;s call this command <tt class="docutils literal"><span class="pre">%EREBOT%</span></tt>.</p>
+<p>In each case, the bot reacts to a few command-line options.
+Use the following command to get help on those options.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>%EREBOT% --help
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For ease of use, Linux users may prefer to add the path where
+<tt class="file docutils literal"><span class="pre">Erebot-</span><em><span class="pre">version</span></em><span class="pre">.phar</span></tt> or the <strong class="command">Erebot</strong> script resides to
+their <span class="target" id="index-2"></span><tt class="xref std std-envvar docutils literal"><span class="pre">PATH</span></tt>. This way, the bot can be started simply by launching
+<strong class="command">Erebot</strong> or <tt class="file docutils literal"><span class="pre">Erebot-</span><em><span class="pre">version</span></em><span class="pre">.phar</span></tt> from the command-line
+or by double-clicking on them from a graphical file browser.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Unfortunately for Windows users, there is no equivalent to the
+<span class="target" id="index-3"></span><tt class="xref std std-envvar docutils literal"><span class="pre">PATH</span></tt> trick noted above.
+However, it is possible to associate the <tt class="docutils literal"><span class="pre">.phar</span></tt> extension with PHP.
+This way, if Erebot was installed using PHAR archives, the bot can be
+started simply by double-clicking on <tt class="file docutils literal"><span class="pre">Erebot-</span><em><span class="pre">version</span></em><span class="pre">.phar</span></tt>.</p>
+</div>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="Prerequisites.html">Prerequisites</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contenu</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="Configuration.html">Erebot&#8217;s configuration</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2019, The Erebot team.
+      Mis à jour le Jan 05, 2019.
+      Créé avec <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  
+<!-- Custom overlay -->
+<script type="text/javascript">
+var erebot = {"source_suffix": ".rst", "language": "fr", "builder": "html", "default_branch": "master", "project": {"version": "0.6.0", "name": "Erebot", "slug": "erebot/erebot"}, "base": "./", "page": "Installation"};
+</script>
+<script type="text/javascript" src="./../../../../erebot-overlay.js"></script>
+
+<!-- Statistics -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDocumentTitle", document.domain + " / " + document.title]);
+  if (document.domain != 'docs.erebot.net') {'
+      _paq.push(["setCookieDomain", "erebot.github.io"]);
+  }
+  _paq.push(["setDomains", ["erebot.github.io", "docs.erebot.net"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.erebot.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '4']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.erebot.net/piwik.php?idsite=4" style="border:0;" alt="" /></p></noscript>
+</body>
+</html>

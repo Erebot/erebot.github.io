@@ -1,0 +1,26 @@
+var NAVTREEINDEX0 =
+{
+"TriggerRegistry_8php_source.html":[1,0,0,0,0,0],
+"annotated.html":[0,0],
+"classErebot__Module__TriggerRegistry.html":[0,0,0],
+"classErebot__Module__TriggerRegistry.html#a3b25ee3e659a9cdd87be41388f883bd0":[0,0,0,8],
+"classErebot__Module__TriggerRegistry.html#a58232d5f74bb8d9b9c24e33e8aca4c3d":[0,0,0,1],
+"classErebot__Module__TriggerRegistry.html#a6b20c676654cee5346e8e71142e7c8dc":[0,0,0,7],
+"classErebot__Module__TriggerRegistry.html#a865abcc87b6ebbeec18a840ddea4ce60":[0,0,0,2],
+"classErebot__Module__TriggerRegistry.html#aab611caac8cc409b50a0d1adfa998965":[0,0,0,3],
+"classErebot__Module__TriggerRegistry.html#aae08d669921c57b9a3064833eafcdf02":[0,0,0,6],
+"classErebot__Module__TriggerRegistry.html#acf2837881df476c4d664f27f38fd1cf3":[0,0,0,0],
+"classErebot__Module__TriggerRegistry.html#ad9e9e479e6f62a1759bc5ad77b95390a":[0,0,0,5],
+"classErebot__Module__TriggerRegistry.html#af218b5f7309408f3cb98a9543c723b07":[0,0,0,4],
+"classes.html":[0,1],
+"dir_3faa5d4fb109dd68a42d2cdc73f4c683.html":[1,0,0,0],
+"dir_68267d1309a1af8e8297ef4c3efbcdba.html":[1,0,0],
+"dir_75c190c4e3b6377bfae2ef99e2979ca0.html":[1,0,0,0,0],
+"files.html":[1,0],
+"functions.html":[0,3,0],
+"functions_func.html":[0,3,1],
+"functions_vars.html":[0,3,2],
+"hierarchy.html":[0,2],
+"index.html":[],
+"pages.html":[]
+};

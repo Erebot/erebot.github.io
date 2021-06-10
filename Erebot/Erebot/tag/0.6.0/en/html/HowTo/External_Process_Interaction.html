@@ -1,0 +1,392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>How to interact with Erebot from an external process &mdash; Erebot 0.6.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.6.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Erebot 0.6.0 documentation" href="../index.html" />
+    <link rel="up" title="Tutorials" href="index.html" />
+    <link rel="next" title="Contribute" href="../Contribute.html" />
+    <link rel="prev" title="Tutorials" href="index.html" /> 
+  </head>
+  <body>
+      <div class="header"><h1 class="heading"><a href="../index.html">
+          <span>Erebot 0.6.0 documentation</span></a></h1>
+        <h2 class="heading"><span>How to interact with Erebot from an external process</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="index.html">Tutorials</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="../Contribute.html">Contribute</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <blockquote>
+<div></div></blockquote>
+<div class="section" id="how-to-interact-with-erebot-from-an-external-process">
+<h1>How to interact with Erebot from an external process<a class="headerlink" href="#how-to-interact-with-erebot-from-an-external-process" title="Permalink to this headline">¶</a></h1>
+<p>This guide will show you how to setup Erebot so that an external process can
+interact with an IRC server through the bot.
+In the second part of this tutorial, we will also see how the logging system
+can be used to receive feedback from the bot for commands we sent to it.</p>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#sending-commands-through-the-bot" id="id1">Sending commands through the bot</a><ul>
+<li><a class="reference internal" href="#setting-things-up" id="id2">Setting things up</a></li>
+<li><a class="reference internal" href="#passing-commands-to-erebot" id="id3">Passing commands to Erebot</a><ul>
+<li><a class="reference internal" href="#what-you-need-to-know" id="id4">What you need to know</a></li>
+<li><a class="reference internal" href="#a-simple-example" id="id5">A simple example</a></li>
+<li><a class="reference internal" href="#targeting-multiple-irc-networks-at-once" id="id6">Targeting multiple IRC networks at once</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#intercepting-messages" id="id7">Intercepting messages</a></li>
+<li><a class="reference internal" href="#troubleshooting" id="id8">Troubleshooting</a><ul>
+<li><a class="reference internal" href="#php-warning-stream-socket-server-unable-to-connect-to-udg-unknown-error-in-erebot-prompt-php-on-line" id="id9"><tt class="docutils literal"><span class="pre">PHP</span> <span class="pre">Warning:</span> <span class="pre">stream_socket_server():</span> <span class="pre">unable</span> <span class="pre">to</span> <span class="pre">connect</span> <span class="pre">to</span> <span class="pre">udg:///...</span> <span class="pre">(Unknown</span> <span class="pre">error)</span> <span class="pre">in</span> <span class="pre">.../Erebot/Prompt.php</span> <span class="pre">on</span> <span class="pre">line</span> <span class="pre">...</span></tt></a></li>
+<li><a class="reference internal" href="#php-fatal-error-uncaught-exception-exception-with-message-could-not-change-group-to-for-in" id="id10"><tt class="docutils literal"><span class="pre">PHP</span> <span class="pre">Fatal</span> <span class="pre">error:</span> <span class="pre">Uncaught</span> <span class="pre">exception</span> <span class="pre">'Exception'</span> <span class="pre">with</span> <span class="pre">message</span> <span class="pre">'Could</span> <span class="pre">not</span> <span class="pre">change</span> <span class="pre">group</span> <span class="pre">to</span> <span class="pre">'...'</span> <span class="pre">for</span> <span class="pre">'...''</span> <span class="pre">in</span> <span class="pre">...</span></tt></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="sending-commands-through-the-bot">
+<h2><a class="toc-backref" href="#id1">Sending commands through the bot</a><a class="headerlink" href="#sending-commands-through-the-bot" title="Permalink to this headline">¶</a></h2>
+<p>Erebot embeds a class called <tt class="docutils literal"><span class="pre">Erebot_Prompt</span></tt> that can be used to control
+the bot remotely using a UNIX socket. This can be used for example to build
+a web frontend for the bot. It might be used to build a complete IRC client
+too.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This feature only offers a one-way communication channel with the
+bot. That is, it can be used to send commands to the bot, but it cannot be
+used to see the actual responses to those commands.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you need bidirectional communications, you can combine this feature
+with Erebot&#8217;s logging mechanism to intercept messages as the bot sends or
+receives them. See the section entitled « <a class="reference internal" href="#intercepting-messages">Intercepting messages</a> »
+for more information.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This feature is only available on platforms that implement UNIX
+sockets (especially, it is <strong>not</strong> available on Windows platforms).</p>
+</div>
+<div class="section" id="setting-things-up">
+<h3><a class="toc-backref" href="#id2">Setting things up</a><a class="headerlink" href="#setting-things-up" title="Permalink to this headline">¶</a></h3>
+<p>Enabling the prompt is actually quite easy. All you need to do is add a
+service named &#8220;prompt&#8221; to your <tt class="docutils literal"><span class="pre">defaults.xml</span></tt> configuration file.
+That service will usually be an instance of the <tt class="docutils literal"><span class="pre">Erebot_Prompt</span></tt> class
+and should be passed the bot&#8217;s service (named <tt class="docutils literal"><span class="pre">bot</span></tt>) as its first
+parameter. It also accepts a few parameters, listed in the following table.</p>
+<table border="1" class="docutils">
+<caption>Parameters accepted by <tt class="docutils literal"><span class="pre">\\Erebot\\Prompt</span></tt> (in this order)</caption>
+<colgroup>
+<col width="10%" />
+<col width="7%" />
+<col width="18%" />
+<col width="8%" />
+<col width="23%" />
+<col width="34%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+<th class="head">Required?</th>
+<th class="head">Default value</th>
+<th class="head">Example value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>$bot</td>
+<td>object</td>
+<td>Instance of the
+<tt class="docutils literal"><span class="pre">bot</span></tt> service.</td>
+<td>Yes</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="row-odd"><td>$connector</td>
+<td>string</td>
+<td>Path to the UNIX
+socket to create.</td>
+<td>No</td>
+<td>&#8220;<tt class="docutils literal"><span class="pre">/tmp/Erebot.sock</span></tt>&#8220;</td>
+<td>&#8220;<tt class="docutils literal"><span class="pre">/var/lib/Erebot/control.sock</span></tt>&#8220;</td>
+</tr>
+<tr class="row-even"><td>$group</td>
+<td>string</td>
+<td>UNIX group for
+the new socket.</td>
+<td>No</td>
+<td>Primary group of the
+user running the bot.</td>
+<td>&#8220;<tt class="docutils literal"><span class="pre">nogroup</span></tt>&#8220;</td>
+</tr>
+<tr class="row-odd"><td>$perms</td>
+<td>integer</td>
+<td>Permissions on the
+socket to create.</td>
+<td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">0660</span></tt> (<tt class="docutils literal"><span class="pre">rw-rw----</span></tt>)</td>
+<td><tt class="docutils literal"><span class="pre">0666</span></tt> (to allow any program
+to control Erebot—this
+is considered dangerous, avoid
+if possible).</td>
+</tr>
+</tbody>
+</table>
+<p>Therefore, a potential configuration for the prompt in the <tt class="docutils literal"><span class="pre">defaults.xml</span></tt>
+configuration file may look like this:</p>
+<div class="highlight-xml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span class="nt">&lt;service</span> <span class="na">id=</span><span class="s">&quot;prompt&quot;</span> <span class="na">class=</span><span class="s">&quot;\Erebot\Prompt&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">type=</span><span class="s">&quot;service&quot;</span> <span class="na">id=</span><span class="s">&quot;bot&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;argument&gt;</span>/var/lib/Erebot/control.sock<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;argument&gt;</span>nogroup<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">type=</span><span class="s">&quot;int&quot;</span><span class="nt">&gt;</span>0666<span class="nt">&lt;/argument&gt;</span>
+<span class="nt">&lt;/service&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="passing-commands-to-erebot">
+<h3><a class="toc-backref" href="#id3">Passing commands to Erebot</a><a class="headerlink" href="#passing-commands-to-erebot" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="what-you-need-to-know">
+<h4><a class="toc-backref" href="#id4">What you need to know</a><a class="headerlink" href="#what-you-need-to-know" title="Permalink to this headline">¶</a></h4>
+<p>To send commands to Erebot, you need two pieces of information:</p>
+<ul class="simple">
+<li>The path to the UNIX socket that acts as Erebot&#8217;s prompt.</li>
+<li>The name of the IRC network (as declared in Erebot&#8217;s configuration
+file) to send the commands to.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The latter is actually optional if you want to execute the command
+on all IRC networks (eg. an <tt class="docutils literal"><span class="pre">AWAY</span></tt> command before going to sleep),
+as we will see below.</p>
+</div>
+</div>
+<div class="section" id="a-simple-example">
+<h4><a class="toc-backref" href="#id5">A simple example</a><a class="headerlink" href="#a-simple-example" title="Permalink to this headline">¶</a></h4>
+<p>Once you have those information, open the UNIX socket using your favorite
+programming language.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">UNIX sockets can be opened from any language that supports them,
+including—but not limited to—Bash, Perl, PHP, Python, Java, etc.</p>
+</div>
+<p>You may now send commands using the following format:</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;pattern&gt; &lt;command&gt; &lt;line ending&gt;
+</pre></div>
+</div>
+<p>where each token is described below:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">&lt;pattern&gt;</span></tt></dt>
+<dd>A pattern that will be used to match the network&#8217;s name (as declared
+in Erebot&#8217;s configuration file). You may use wildcard characters here
+(<tt class="docutils literal"><span class="pre">?</span></tt> to match 0 or exactly 1 character, <tt class="docutils literal"><span class="pre">*</span></tt> to match 0 or more
+characters).
+The simplest way to target a specific IRC network is to simply pass
+that network&#8217;s name as the <tt class="docutils literal"><span class="pre">&lt;pattern&gt;</span></tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">&lt;command&gt;</span></tt></dt>
+<dd>The IRC command you wish to send (eg. <tt class="docutils literal"><span class="pre">AWAY</span> <span class="pre">:Gone</span> <span class="pre">to</span> <span class="pre">sleep</span></tt>).
+Please refer to <span class="target" id="index-0"></span><a class="rfc reference external" href="http://tools.ietf.org/html/rfc2812.html"><strong>RFC 2812</strong></a> for information on valid commands.</dd>
+<dt><tt class="docutils literal"><span class="pre">&lt;line</span> <span class="pre">ending&gt;</span></tt></dt>
+<dd><p class="first">One of the 3 common line endings accepted by Erebot and noted below
+using C-style espace sequences:</p>
+<ul class="last simple">
+<li>&#8220;<tt class="docutils literal"><span class="pre">\r</span></tt>&#8221; (Mac style)</li>
+<li>&#8220;<tt class="docutils literal"><span class="pre">\n</span></tt>&#8221; (Linux style)</li>
+<li>&#8220;<tt class="docutils literal"><span class="pre">\r\n</span></tt>&#8221; (Windows style)</li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When looking for the connections targeted by a command, a case-insensitive
+full-line match is performed. This means that a pattern such as
+&#8220;<tt class="docutils literal"><span class="pre">mynetwork</span></tt>&#8221; and &#8220;<tt class="docutils literal"><span class="pre">mynet*</span></tt>&#8221; will match a network named
+&#8220;<tt class="docutils literal"><span class="pre">MyNetwork</span></tt>&#8221;, but &#8220;<tt class="docutils literal"><span class="pre">mynet</span></tt>&#8221; won&#8217;t.</p>
+</div>
+<p>Here is an example using the socat command from a cron task to make
+the bot quit the &#8220;<tt class="docutils literal"><span class="pre">iiens</span></tt>&#8221; IRC network every day at midnight:</p>
+<div class="highlight-bash"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span class="c"># m h  dom mon dow   command</span>
+  0 0  *   *   *     <span class="nb">echo</span> <span class="s1">&#39;iiens QUIT :Time to sleep!&#39;</span> | socat - UNIX-SENDTO:/tmp/Erebot.sock
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="targeting-multiple-irc-networks-at-once">
+<h4><a class="toc-backref" href="#id6">Targeting multiple IRC networks at once</a><a class="headerlink" href="#targeting-multiple-irc-networks-at-once" title="Permalink to this headline">¶</a></h4>
+<p>As seen in the format above, a pattern matching the target IRC network&#8217;s
+name is passed before the actual command. Hence, targeting multiple IRC
+networks at once is only a matter of using the right pattern.
+For example, if you have multiple connections to the same IRC network,
+named &#8220;<tt class="docutils literal"><span class="pre">MyNetwork1</span></tt>&#8221;, &#8220;<tt class="docutils literal"><span class="pre">MyNetwork2</span></tt>&#8221;, etc. you could easily send
+a command to all of these connections using &#8220;<tt class="docutils literal"><span class="pre">MyNetwork*</span></tt>&#8221; as the pattern.</p>
+<p>Following the same logic, it is possible to send a command to <strong>all</strong>
+the servers the bot is currently connected to by using &#8220;<tt class="docutils literal"><span class="pre">*</span></tt>&#8221; as the
+pattern, since this will match any network, regardless of its name.</p>
+</div>
+</div>
+</div>
+<div class="section" id="intercepting-messages">
+<h2><a class="toc-backref" href="#id7">Intercepting messages</a><a class="headerlink" href="#intercepting-messages" title="Permalink to this headline">¶</a></h2>
+<p>The technic described below makes it possible to intercept both incoming and
+outgoing messages. It is ideal if you&#8217;re trying to build a frontend for Erebot
+because:</p>
+<ol class="arabic simple">
+<li>You can capture outgoing messages to get feedback on the actual commands
+being sent by the bot (keep in mind that modules may prevent certain
+commands from being sent for example).</li>
+<li>You can capture incoming messages too, which means that you can process
+them using external tools if needed (eg. display them on your website).</li>
+</ol>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Even if you could easily process messages with an external tool then
+feed the results back to Erebot using the UNIX socket, it is often a lot
+more efficient to write a module for Erebot directly (using the assets
+provided by the PHP toolbox).</p>
+</div>
+</div>
+<div class="section" id="troubleshooting">
+<h2><a class="toc-backref" href="#id8">Troubleshooting</a><a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<p>This paragraph lists the most common problems you may encounter while following
+this tutorial, as well as explanations as to why they appear and possible
+solutions or workarounds.</p>
+<div class="section" id="php-warning-stream-socket-server-unable-to-connect-to-udg-unknown-error-in-erebot-prompt-php-on-line">
+<h3><a class="toc-backref" href="#id9"><tt class="docutils literal"><span class="pre">PHP</span> <span class="pre">Warning:</span> <span class="pre">stream_socket_server():</span> <span class="pre">unable</span> <span class="pre">to</span> <span class="pre">connect</span> <span class="pre">to</span> <span class="pre">udg:///...</span> <span class="pre">(Unknown</span> <span class="pre">error)</span> <span class="pre">in</span> <span class="pre">.../Erebot/Prompt.php</span> <span class="pre">on</span> <span class="pre">line</span> <span class="pre">...</span></tt></a><a class="headerlink" href="#php-warning-stream-socket-server-unable-to-connect-to-udg-unknown-error-in-erebot-prompt-php-on-line" title="Permalink to this headline">¶</a></h3>
+<p><strong>Example</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>PHP Warning:  stream_socket_server(): unable to connect to udg:///tmp/Erebot.sock (Unknown error) in /home/clicky/Documents/Erebot/src/Prompt.php on line 44
+PHP Stack trace:
+PHP   1. {main}() /home/clicky/Documents/Erebot/bin/Erebot:0
+PHP   2. \Erebot\CLI::run() /home/clicky/Documents/Erebot/bin/Erebot:99
+PHP   3. sfServiceContainer-&gt;__get() /var/local/buildbot/pear/php/SymfonyComponents/DependencyInjection/sfServiceContainer.php:0
+PHP   4. sfServiceContainerBuilder-&gt;getService() /var/local/buildbot/pear/php/SymfonyComponents/DependencyInjection/sfServiceContainer.php:276
+PHP   5. sfServiceContainerBuilder-&gt;createService() /var/local/buildbot/pear/php/SymfonyComponents/DependencyInjection/sfServiceContainerBuilder.php:86
+PHP   6. ReflectionClass-&gt;newInstanceArgs() /var/local/buildbot/pear/php/SymfonyComponents/DependencyInjection/sfServiceContainerBuilder.php:248
+PHP   7. \Erebot\Prompt-&gt;__construct() /home/clicky/Documents/Erebot/src/Prompt.php:0
+PHP   8. stream_socket_server() /home/clicky/Documents/Erebot/src/Prompt.php:44
+</pre></div>
+</div>
+<p><strong>Origins</strong>:</p>
+<p>This error usually appears after the bot was stopped in a non-clean fashion
+(eg. after it has been killed). This is caused by a left-over UNIX socket
+created by the previous instance.
+You can fix the problem by manually removing the socket.</p>
+<p><strong>Solution</strong>:</p>
+<p>Issue the following command (adapt the path depending on the content of the error message):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">rm</span> <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">Erebot</span><span class="o">.</span><span class="n">sock</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="php-fatal-error-uncaught-exception-exception-with-message-could-not-change-group-to-for-in">
+<h3><a class="toc-backref" href="#id10"><tt class="docutils literal"><span class="pre">PHP</span> <span class="pre">Fatal</span> <span class="pre">error:</span> <span class="pre">Uncaught</span> <span class="pre">exception</span> <span class="pre">'Exception'</span> <span class="pre">with</span> <span class="pre">message</span> <span class="pre">'Could</span> <span class="pre">not</span> <span class="pre">change</span> <span class="pre">group</span> <span class="pre">to</span> <span class="pre">'...'</span> <span class="pre">for</span> <span class="pre">'...''</span> <span class="pre">in</span> <span class="pre">...</span></tt></a><a class="headerlink" href="#php-fatal-error-uncaught-exception-exception-with-message-could-not-change-group-to-for-in" title="Permalink to this headline">¶</a></h3>
+<p><strong>Example</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>PHP Fatal error:  Uncaught exception &#39;Exception&#39; with message &#39;Could not change group to &#39;nogroup&#39; for &#39;/tmp/Erebot.sock&#39;&#39; in /home/clicky/Documents/Erebot/src/Prompt.php:56
+Stack trace:
+#0 [internal function]: \Erebot\Prompt-&gt;__construct(Object(Erebot), &#39;/tmp/Erebot.soc...&#39;, &#39;nogroup&#39;, 384)
+#1 /var/local/buildbot/pear/php/SymfonyComponents/DependencyInjection/sfServiceContainerBuilder.php(248): ReflectionClass-&gt;newInstanceArgs(Array)
+#2 /var/local/buildbot/pear/php/SymfonyComponents/DependencyInjection/sfServiceContainerBuilder.php(86): sfServiceContainerBuilder-&gt;createService(Object(sfServiceDefinition))
+#3 /var/local/buildbot/pear/php/SymfonyComponents/DependencyInjection/sfServiceContainer.php(276): sfServiceContainerBuilder-&gt;getService(&#39;prompt&#39;)
+#4 /home/clicky/Documents/Erebot/src/CLI.php(363): sfServiceContainer-&gt;__get(&#39;prompt&#39;)
+#5 /home/clicky/Documents/Erebot/bin/Erebot(99): \Erebot\CLI::run()
+#6 {main}
+  thrown in /home/clicky/Documents/Erebot/src/Prompt.php on line 56
+</pre></div>
+</div>
+<p><strong>Origins</strong>:</p>
+<p>Possible reasons for this error include:</p>
+<ul class="simple">
+<li>The given group name or GID does not exist.</li>
+<li>The current user is not the superuser (root) and is not a member of the
+given group (this is a limitation from the low-level chgrp system call).
+See also <a class="reference external" href="http://php.net/chgrp">http://php.net/chgrp</a> for more information.</li>
+</ul>
+<p><strong>Solution</strong>:</p>
+<p>Make sure the given group exists and the user running the bot is a member
+of that group (or is the superuser).</p>
+</div>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="index.html">Tutorials</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="../Contribute.html">Contribute</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2019, The Erebot team.
+      Last updated on Jan 05, 2019.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  
+<!-- Custom overlay -->
+<script type="text/javascript">
+var erebot = {"source_suffix": ".rst", "language": "en", "builder": "html", "default_branch": "master", "project": {"version": "0.6.0", "name": "Erebot", "slug": "erebot/erebot"}, "base": ".././", "page": "HowTo/External_Process_Interaction"};
+</script>
+<script type="text/javascript" src=".././../../../../erebot-overlay.js"></script>
+
+<!-- Statistics -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDocumentTitle", document.domain + " / " + document.title]);
+  if (document.domain != 'docs.erebot.net') {'
+      _paq.push(["setCookieDomain", "erebot.github.io"]);
+  }
+  _paq.push(["setDomains", ["erebot.github.io", "docs.erebot.net"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.erebot.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '4']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.erebot.net/piwik.php?idsite=4" style="border:0;" alt="" /></p></noscript>
+</body>
+</html>

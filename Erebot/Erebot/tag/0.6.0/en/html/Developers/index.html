@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Developer Zone &mdash; Erebot 0.6.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.6.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Erebot 0.6.0 documentation" href="../index.html" />
+    <link rel="next" title="Coding standard" href="Coding_Standard.html" />
+    <link rel="prev" title="Buildslaves" href="../Buildslaves.html" /> 
+  </head>
+  <body>
+      <div class="header"><h1 class="heading"><a href="../index.html">
+          <span>Erebot 0.6.0 documentation</span></a></h1>
+        <h2 class="heading"><span>Developer Zone</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="../Buildslaves.html">Buildslaves</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="Coding_Standard.html">Coding standard</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <blockquote>
+<div></div></blockquote>
+<div class="section" id="developer-zone">
+<h1>Developer Zone<a class="headerlink" href="#developer-zone" title="Permalink to this headline">¶</a></h1>
+<p>This pages contains links to various resources that developers may be
+interested in:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Coding_Standard.html">Coding standard</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Coding_Standard.html#indenting-and-whitespace">Indenting and whitespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coding_Standard.html#operators">Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coding_Standard.html#casting">Casting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coding_Standard.html#control-structures">Control structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coding_Standard.html#line-length-and-wrapping">Line length and wrapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coding_Standard.html#function-method-calls">Function/method calls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coding_Standard.html#function-method-declarations">Function/method declarations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coding_Standard.html#class-constructor-calls">Class constructor calls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coding_Standard.html#arrays">Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coding_Standard.html#quotes">Quotes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coding_Standard.html#string-concatenations">String concatenations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coding_Standard.html#comments">Comments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coding_Standard.html#filesystem-paths">Filesystem paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coding_Standard.html#including-code">Including code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coding_Standard.html#php-code-tags">PHP code tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coding_Standard.html#semicolons">Semicolons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coding_Standard.html#example-urls">Example URLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coding_Standard.html#naming-conventions-functions-constants-global-variables-classes-files">Naming Conventions (Functions, Constants, Global Variables, Classes, Files)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coding_Standard.html#check-your-code">Check your code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="I18n.html">Internationalization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="I18n.html#a-practical-example">A practical example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="I18n.html#managing-translations">Managing translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="I18n.html#plurals">Plurals</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Formatting.html">Formatting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html#method-1-raw-codes">Method #1 : raw codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html#method-2-advanced-formatting">Method #2 : &#8220;advanced formatting&#8221;</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="New_module.html">Writing a new module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="New_module.html#general-structure">General structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="New_module.html#helping-users">Helping users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="New_module.html#frequently-asked-questions">Frequently Asked Questions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="../Buildslaves.html">Buildslaves</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="Coding_Standard.html">Coding standard</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2019, The Erebot team.
+      Last updated on Jan 05, 2019.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  
+<!-- Custom overlay -->
+<script type="text/javascript">
+var erebot = {"source_suffix": ".rst", "language": "en", "builder": "html", "default_branch": "master", "project": {"version": "0.6.0", "name": "Erebot", "slug": "erebot/erebot"}, "base": ".././", "page": "Developers/index"};
+</script>
+<script type="text/javascript" src=".././../../../../erebot-overlay.js"></script>
+
+<!-- Statistics -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDocumentTitle", document.domain + " / " + document.title]);
+  if (document.domain != 'docs.erebot.net') {'
+      _paq.push(["setCookieDomain", "erebot.github.io"]);
+  }
+  _paq.push(["setDomains", ["erebot.github.io", "docs.erebot.net"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.erebot.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '4']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.erebot.net/piwik.php?idsite=4" style="border:0;" alt="" /></p></noscript>
+</body>
+</html>

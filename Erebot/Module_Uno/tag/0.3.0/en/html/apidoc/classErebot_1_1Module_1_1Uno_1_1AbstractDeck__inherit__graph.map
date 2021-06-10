@@ -1,0 +1,4 @@
+<map id="Erebot\Module\Uno\AbstractDeck" name="Erebot\Module\Uno\AbstractDeck">
+<area shape="rect" id="node2" href="$classErebot_1_1Module_1_1Uno_1_1Deck_1_1Official.html" title="{Erebot\\Module\\Uno\\Deck\l\\Official\n|# $cards\l# $discarded\l# $firstCard\l|+ __construct()\l+ chooseColor()\l+ discard()\l+ draw()\l+ getLastDiscardedCard()\l+ getRemainingCardsCount()\l+ shuffle()\l# chooseFirstCard()\l}" alt="" coords="5,293,197,517"/>
+<area shape="rect" id="node3" href="$classErebot_1_1Module_1_1Uno_1_1Deck_1_1Unlimited.html" title="{Erebot\\Module\\Uno\\Deck\l\\Unlimited\n|# $discarded\l# $firstCard\l|+ __construct()\l+ chooseColor()\l+ discard()\l+ draw()\l+ getLastDiscardedCard()\l+ getRemainingCardsCount()\l+ shuffle()\l# chooseFirstCard()\l}" alt="" coords="221,301,413,510"/>
+</map>

@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="class">
+    <name>Erebot::Module::WatchList</name>
+    <filename>classErebot_1_1Module_1_1WatchList.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>getHelp</name>
+      <anchorfile>classErebot_1_1Module_1_1WatchList.html</anchorfile>
+      <anchor>a51b9ac518ceca936ca65ddfb1463f09f</anchor>
+      <arglist>(\Erebot\Interfaces\Event\Base\TextMessage $event,\Erebot\Interfaces\TextWrapper $words)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleCapabilities</name>
+      <anchorfile>classErebot_1_1Module_1_1WatchList.html</anchorfile>
+      <anchor>a7b10272b0decd83f09565dfbd79eb9b2</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\ServerCapabilities $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleConnect</name>
+      <anchorfile>classErebot_1_1Module_1_1WatchList.html</anchorfile>
+      <anchor>a140230747c57c135d8a35db8c2fbba6f</anchor>
+      <arglist>(\Erebot\Interfaces\EventHandler $handler,\Erebot\Interfaces\Event\Connect $event)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleISON</name>
+      <anchorfile>classErebot_1_1Module_1_1WatchList.html</anchorfile>
+      <anchor>adfbbbaed6ddbf34bdebb35dc98a874aa</anchor>
+      <arglist>(\Erebot\Interfaces\NumericHandler $handler,\Erebot\Interfaces\Event\Numeric $numeric)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>reload</name>
+      <anchorfile>classErebot_1_1Module_1_1WatchList.html</anchorfile>
+      <anchor>afae18c41eb4f890c61a8e11084bbcaf6</anchor>
+      <arglist>($flags)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>sendRequest</name>
+      <anchorfile>classErebot_1_1Module_1_1WatchList.html</anchorfile>
+      <anchor>ab27ee2bc7aa1fdcb81eebab68388518d</anchor>
+      <arglist>(\Erebot\TimerInterface $timer)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>splitNicks</name>
+      <anchorfile>classErebot_1_1Module_1_1WatchList.html</anchorfile>
+      <anchor>a6dfb52a8e65882247f1d3124bac653cb</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$pending</name>
+      <anchorfile>classErebot_1_1Module_1_1WatchList.html</anchorfile>
+      <anchor>ada10ada9af60da129f1e5ac1d45b2a3f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$timer</name>
+      <anchorfile>classErebot_1_1Module_1_1WatchList.html</anchorfile>
+      <anchor>adda5858b5758857e4d9f961672bc67be</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type></type>
+      <name>$watchedNicks</name>
+      <anchorfile>classErebot_1_1Module_1_1WatchList.html</anchorfile>
+      <anchor>a4b269d798a53b69ed595fd10049a4d38</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="dir">
+    <name>src</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/</path>
+    <filename>dir_68267d1309a1af8e8297ef4c3efbcdba.html</filename>
+    <file>WatchList.php</file>
+  </compound>
+</tagfile>

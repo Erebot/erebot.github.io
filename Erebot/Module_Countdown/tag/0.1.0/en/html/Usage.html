@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Usage &mdash; Module_Countdown 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Module_Countdown 0.1.0 documentation" href="index.html" />
+    <link rel="prev" title="Configuration" href="Configuration.html" /> 
+  </head>
+  <body>
+      <div class="header"><h1 class="heading"><a href="index.html">
+          <span>Module_Countdown 0.1.0 documentation</span></a></h1>
+        <h2 class="heading"><span>Usage</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="Configuration.html">Configuration</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <blockquote>
+<div></div></blockquote>
+<div class="section" id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
+<p>This section assumes default values are used for all triggers.
+Please refer to <a class="reference internal" href="Configuration.html#configuration-options"><em>configuration options</em></a>
+for more information on how to customize triggers.</p>
+<div class="section" id="provided-commands">
+<h2>Provided commands<a class="headerlink" href="#provided-commands" title="Permalink to this headline">¶</a></h2>
+<p>This module provides the following commands:</p>
+<table border="1" class="docutils">
+<caption>Commands provided by <a href="#id1"><span class="problematic" id="id2">|project|</span></a></caption>
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">!countdown</span></tt></td>
+<td>Starts a new game. If a game is already running,
+displays the target number, usable numbers and
+current leader of the game.</td>
+</tr>
+</tbody>
+</table>
+<p>Once a new game has been created, contestants can make propositions directly
+by sending a new formula in the channel the game was started in.</p>
+<p>The four basic operators (+ - / *) and parenthesis may be used in the formula.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>The listing below shows a game played in french.</p>
+<div class="highlight-irc"><div class="highlight"><pre><span class="cp">17:29:20 </span><span class="nt">&lt; foobar&gt; </span>!countdown
+<span class="cp">17:29:20 </span><span class="nt">&lt; Erebot&gt; </span>Une nouvelle partie des Chiffres et des Lettres commence. Vous devez obtenir 965 grâce aux nombres
+                   suivants : 4, 2, 75, 25, 10, 7 &amp; 8. Vous avez 60 secondes pour faire des propositions.
+<span class="cp">17:29:31 </span><span class="nt">&lt; foobar&gt; </span>(75+25-4)*10
+<span class="cp">17:29:31 </span><span class="nt">&lt; Erebot&gt; </span>Félicitations foobar ! Vous êtes le plus proche avec 960.
+<span class="cp">17:29:37 </span><span class="nt">&lt; foobar&gt; </span>(75+25-4)*10+7-2
+<span class="cp">17:29:37 </span><span class="nt">&lt; Erebot&gt; </span>BINGO ! foobar a obtenu 965 avec cette formule : (75+25-4)*10+7-2.
+</pre></div>
+</div>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="Configuration.html">Configuration</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2019, The Erebot team.
+      Last updated on Jan 05, 2019.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  
+<!-- Custom overlay -->
+<script type="text/javascript">
+var erebot = {"source_suffix": ".rst", "language": "en", "builder": "html", "default_branch": "master", "project": {"version": "0.1.0", "name": "Module_Countdown", "slug": "erebot/module_countdown"}, "base": "./", "page": "Usage"};
+</script>
+<script type="text/javascript" src="./../../../../erebot-overlay.js"></script>
+
+<!-- Statistics -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDocumentTitle", document.domain + " / " + document.title]);
+  if (document.domain != 'docs.erebot.net') {'
+      _paq.push(["setCookieDomain", "erebot.github.io"]);
+  }
+  _paq.push(["setDomains", ["erebot.github.io", "docs.erebot.net"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.erebot.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '4']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.erebot.net/piwik.php?idsite=4" style="border:0;" alt="" /></p></noscript>
+</body>
+</html>

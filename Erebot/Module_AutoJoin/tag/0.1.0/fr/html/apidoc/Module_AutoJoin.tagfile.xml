@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="class">
+    <name>Erebot_Module_AutoJoin</name>
+    <filename>classErebot__Module__AutoJoin.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>_reload</name>
+      <anchorfile>classErebot__Module__AutoJoin.html</anchorfile>
+      <anchor>acae8c70239e1ad269aa61ff92fcf9d5b</anchor>
+      <arglist>($flags)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>getHelp</name>
+      <anchorfile>classErebot__Module__AutoJoin.html</anchorfile>
+      <anchor>aa28b7b706bb39b378b0f84f10246f300</anchor>
+      <arglist>(Erebot_Interface_Event_Base_TextMessage $event, Erebot_Interface_TextWrapper $words)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>handleConnect</name>
+      <anchorfile>classErebot__Module__AutoJoin.html</anchorfile>
+      <anchor>aa172a53e0f4c19e28d692730526264d6</anchor>
+      <arglist>(Erebot_Interface_EventHandler $handler, Erebot_Interface_Event_Connect $event)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>_unload</name>
+      <anchorfile>classErebot__Module__AutoJoin.html</anchorfile>
+      <anchor>a3057655e6973debb1a5e48abd7ceb644</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="dir">
+    <name>src/Erebot</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/Erebot/</path>
+    <filename>dir_3faa5d4fb109dd68a42d2cdc73f4c683.html</filename>
+    <dir>src/Erebot/Module</dir>
+  </compound>
+  <compound kind="dir">
+    <name>src/Erebot/Module</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/Erebot/Module/</path>
+    <filename>dir_75c190c4e3b6377bfae2ef99e2979ca0.html</filename>
+    <file>AutoJoin.php</file>
+  </compound>
+  <compound kind="dir">
+    <name>src</name>
+    <path>/home/travis/build/Erebot/erebot.github.io/tmp/clone/src/</path>
+    <filename>dir_68267d1309a1af8e8297ef4c3efbcdba.html</filename>
+    <dir>src/Erebot</dir>
+  </compound>
+</tagfile>
