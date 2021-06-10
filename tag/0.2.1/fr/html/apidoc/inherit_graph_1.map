@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$classErebot_1_1Module_1_1Roulette_1_1AtLeastTwoChambersException.html" title="An exception thrown when the gun contains less than two chambers. " alt="" coords="134,5,349,46"/>
+<area shape="rect" id="node3" href="$classErebot_1_1Module_1_1Roulette_1_1TwiceInARowException.html" title="An exception thrown when someone tries to use the gun twice in a row. " alt="" coords="158,70,325,111"/>
+</map>
