@@ -1,0 +1,1 @@
+Search.setIndex({envversion:42,terms:{content:0,statu:0,http:0,administr:0,provid:0,travi:0,modul:0,erebot:0,current:0,command:0,org:0,sever:0},objtypes:{},objnames:{},filenames:["index"],titles:["Welcome to the documentation for Erebot_Module_Admin!"],objects:{},titleterms:{document:0,welcom:0,erebot_module_admin:0}})
